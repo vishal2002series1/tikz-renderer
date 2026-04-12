@@ -12,50 +12,38 @@ from botocore.config import Config
 load_dotenv()
 
 # ==========================================
-# 0. THE SYSTEM PROMPT (V7.0)
+# 0. THE SYSTEM PROMPT (SSC CGL JSON)
 # ==========================================
-SYSTEM_PROMPT = """You are an expert LaTeX, TikZ, PGFPlots, and Circuitikz developer. Your task is to generate complex, high-quality, and physically/mathematically accurate STEM problems with accompanying diagrams.
+SYSTEM_PROMPT = """You are an expert SSC CGL (Staff Selection Commission - Combined Graduate Level) exam question setter. Your task is to generate high-quality, exam-accurate questions based on specific syllabus topics.
 
-You must strictly adhere to the following compilation rules to ensure the code renders flawlessly via pdflatex without human intervention:
+Output your response STRICTLY as a valid JSON object matching the following structure. Do not include any markdown formatting outside the JSON object, conversational text, or explanations outside the JSON fields.
 
-1. DOCUMENT STRUCTURE & UI: 
-   - Start exactly with \\documentclass[varwidth=21cm, border=5mm]{standalone}.
-   - Wrap everything in \\begin{document} ... \\end{document}.
-   - Write the problem statement, questions, solutions, and figure captions as standard LaTeX text OUTSIDE the tikzpicture environment. Use tcolorbox for UI styling. Never use TikZ to draw the layout of the page.
+{
+  "id": "A unique string ID (e.g., ssc_cgl_quant_001)",
+  "text": "The question text. Use $ for inline math (e.g., $x=5$) and $$ for block math.",
+  "options": {
+    "A": "Option 1",
+    "B": "Option 2",
+    "C": "Option 3",
+    "D": "Option 4"
+  },
+  "correct_answer": "A, B, C, or D",
+  "explanation": "A detailed, step-by-step solution. Use $ for math.",
+  "Requires_Diagram": false,
+  "TikZ_Code": null,
+  "metadata": {
+    "exam": "SSC CGL",
+    "subject": "The requested subject",
+    "topic": "The requested topic",
+    "sub_topic": "The requested subtopic",
+    "difficulty_level": 3
+  }
+}
 
-2. EXPLICIT LIBRARIES: Explicitly load every package used.
-   - For UI: \\usepackage[many]{tcolorbox}
-   - For 3D: \\usepackage{tikz-3dplot}
-   - For circuits: \\usepackage{circuitikz} (NEVER draw circuit components manually).
-   - For plotting: \\usepackage{pgfplots} and \\pgfplotsset{compat=1.18}.
-   - TikZ Libraries: \\usetikzlibrary{positioning, calc, intersections, arrows.meta, backgrounds, patterns, decorations.pathmorphing}.
-
-3. SPATIAL AWARENESS & MATH IN COORDINATES:
-   - Never guess absolute (x,y) coordinates for floating annotations, text labels, or ray-tracing intersections. Use positioning or calc to ensure physical accuracy.
-   - IMPORTANT: If you perform math operations inside a TikZ coordinate, you MUST wrap the math in curly braces. E.g., Use ({5/2}, 0) NOT (5/2, 0).
-   - For mechanical springs, use decoration={coil}.
-
-4. VISUAL READABILITY & CONTRAST:
-   - All text, labels, and captions must be highly legible. Do not use low-contrast colors for typography.
-
-5. SCALE & DIMENSION LIMITS:
-   - TeX will crash with a "Dimension too large" error if coordinates exceed ~16000pt. Keep all raw TikZ coordinates between -15 and +15.
-   - Beware of rotated scopes. Ensure gravity vectors point absolutely downward relative to the page.
-
-6. VECTORS, ARROWS & ROUTING (PREVENT OVERLAPS): 
-   - Always use the arrows.meta library. Set a global style like \begin{tikzpicture}[>={Stealth[scale=1.2]}]
-   - NEVER draw straight lines (`--`) that intersect or pass through intermediate boxes. 
-   - Route arrows cleanly around objects using specific anchors (e.g., `(NodeA.east) to (NodeB.west)`) and orthogonal paths (e.g., `|-` or `-|`).
-   - Labels placed on lines MUST have a solid background fill (e.g., `node[midway, fill=white]`) so the line does not strike through the text.
-
-7. NODE LR-MODE & LINE BREAKS:
-   - If a \\node contains line breaks, you MUST provide a text width parameter.
-   - NEVER use empty line breaks anywhere in the document (causes a fatal crash). Use \\\\[1em] or blank lines for spacing.
-
-8. 3D PAINTER'S ALGORITHM: 
-   - Draw background elements first, then midground, then foreground.
-
-9. OUTPUT FORMAT: Output ONLY the raw, compilable LaTeX code inside a single markdown latex code block. No conversational filler.
+Guidelines for Difficulty Level 3/5 (Exam Level):
+- The question should match the exact difficulty, tone, and time-complexity of actual SSC CGL Tier-1 exams.
+- It should require 1 to 2 conceptual steps to solve, taking an average student about 45-60 seconds.
+- Avoid overly simple direct-formula questions, but do not make the calculation unrealistically tedious.
 """
 
 # ==========================================
@@ -77,7 +65,7 @@ def extract_latex(text: str) -> str:
     text = text.strip()
  
     # Regex to find everything between ```latex / ```tex / ``` and closing ```
-    match = re.search(r"```(latex|tex|)[ \t]*\n(.*?)\n```", text, re.DOTALL | re.IGNORECASE)
+    match = re.search(r"```(json|)[ \t]*\n(.*?)\n```", text, re.DOTALL | re.IGNORECASE)
     if match:
         return match.group(2).strip()
  
@@ -122,7 +110,7 @@ def generator_node(state: DiagramState) -> dict:
         )
     else:
         print("🧠 [Generator] Mode: Initial Creation...")
-        prompt_text = f"Create a STEM diagram/problem for the following request:\n<request>\n{user_prompt}\n</request>"
+        prompt_text = f"Generate the exam question based on the following request:\n<request>\n{user_prompt}\n</request>"
 
     llm = ChatBedrock(
         model_id=os.getenv("Model_ID","us.anthropic.claude-sonnet-4-6"),
@@ -272,20 +260,17 @@ app = workflow.compile()
 # 8. RUN THE AUTONOMOUS PIPELINE
 # ==========================================
 if __name__ == "__main__":
-    print("\n🚀 Starting Autonomous Diagram Pipeline...")
+    print("\n🚀 Testing SSC CGL Level 3 Prompt...")
     
-    # 1. Ask the user for their request via the CLI
-    print("\n📝 Enter your diagram request (Type your prompt and press Enter):")
-    user_input = input("> ")
+    # The specific test request
+    user_request = """Generate 1 question for the following SSC CGL syllabus node:
+- Subject: Quantitative Aptitude
+- Topic: Arithmetic
+- Subtopic: Time, Speed & Distance
+- Difficulty Level: 5 / 5"""
 
-    # Exit if the user just pressed Enter without typing anything
-    if not user_input.strip():
-        print("No prompt provided. Exiting.")
-        exit()
-
-    # 2. Pass the user's input into the LangGraph state
-    initial_state: DiagramState = {
-        "user_prompt": user_input,
+    test_state: DiagramState = {
+        "user_prompt": user_request,
         "generation_count": 0,
         "current_latex": None,
         "compile_error": None,
@@ -293,16 +278,8 @@ if __name__ == "__main__":
         "final_image_path": None
     }
     
-    print("\n⏳ Processing your request. Please wait...")
-
-    # 3. Stream the events as the graph executes
-    for output in app.stream(initial_state):
-        for node_name, state_update in output.items():
-            print(f"\n--- Node finished: [{node_name}] ---")
-            for key, value in state_update.items():
-                if value is not None:
-                    # Print a clean, single-line preview of the state updates
-                    preview = str(value)[:120].replace("\n", " ")
-                    print(f"  {key}: {preview}")
-                    
-    print("\n🎉 Pipeline Complete! Check 'output_diagram.svg' for the final result.")
+    # Run ONLY the generator node to see what the LLM outputs
+    new_state = generator_node(test_state)
+    
+    print("\n--- Raw JSON Output ---")
+    print(new_state["current_latex"]) # We are temporarily storing the JSON in the latex state variable

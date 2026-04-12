@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SSC CGL Question Tester</title>
+
+  <!-- KaTeX for LaTeX math rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="initKatex()"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --navy:      #1e3a5f;
+      --navy-deep: #0f1f33;
+      --blue:      #2563eb;
+      --blue-lt:   #60b5ff;
+      --green:     #10b981;
+      --red:       #ef4444;
+      --amber:     #f59e0b;
+      --purple:    #7c3aed;
+      --bg:        #f0f4f8;
+      --card:      #ffffff;
+      --border:    #e2e8f0;
+      --text:      #1e293b;
+      --muted:     #64748b;
+      --radius:    12px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: linear-gradient(135deg, var(--navy-deep), var(--navy));
+      color: #fff;
+      padding: 18px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 12px rgba(0,0,0,.25);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      letter-spacing: -.5px;
+    }
+    header h1 span { color: var(--blue-lt); }
+    .header-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: .85rem;
+      opacity: .85;
+    }
+    .badge {
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: .78rem;
+      font-weight: 600;
+    }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 28px 20px 60px;
+    }
+
+    /* ── FILE LOADER ── */
+    #loader-section {
+      background: var(--card);
+      border: 2px dashed var(--border);
+      border-radius: var(--radius);
+      padding: 48px 32px;
+      text-align: center;
+      transition: border-color .2s;
+    }
+    #loader-section:hover { border-color: var(--blue); }
+    #loader-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    #loader-section p { color: var(--muted); font-size: .9rem; margin-bottom: 24px; }
+    .file-btn {
+      display: inline-block;
+      background: var(--blue);
+      color: #fff;
+      font-weight: 700;
+      font-size: .9rem;
+      padding: 12px 28px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background .2s, transform .1s;
+      border: none;
+    }
+    .file-btn:hover { background: var(--navy); transform: translateY(-1px); }
+    #file-input { display: none; }
+    .hint { margin-top: 14px; font-size: .78rem; color: var(--muted); }
+
+    /* ── FILTERS BAR ── */
+    #filter-bar {
+      display: none;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    #filter-bar.visible { display: flex; }
+    .filter-label { font-size: .8rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
+    select {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 7px 12px;
+      font-size: .85rem;
+      font-family: inherit;
+      color: var(--text);
+      background: var(--bg);
+      cursor: pointer;
+      outline: none;
+      transition: border-color .2s;
+    }
+    select:focus { border-color: var(--blue); }
+    .stats-pill {
+      margin-left: auto;
+      background: var(--navy);
+      color: #fff;
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: .8rem;
+      font-weight: 700;
+    }
+
+    /* ── PROGRESS BAR ── */
+    #progress-wrap {
+      display: none;
+      margin-bottom: 20px;
+    }
+    #progress-wrap.visible { display: block; }
+    .progress-top {
+      display: flex;
+      justify-content: space-between;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .progress-bar-bg {
+      background: var(--border);
+      border-radius: 999px;
+      height: 6px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      background: linear-gradient(90deg, var(--blue), var(--blue-lt));
+      height: 100%;
+      border-radius: 999px;
+      transition: width .4s ease;
+    }
+
+    /* ── QUESTION CARD ── */
+    .q-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+      animation: slideIn .3s ease;
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Card header strip */
+    .q-card-header {
+      background: linear-gradient(135deg, var(--navy-deep), var(--navy));
+      color: #fff;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .q-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      opacity: .9;
+    }
+    .q-meta-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+    .tag {
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 20px;
+      padding: 3px 10px;
+      font-size: .73rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .tag.difficulty-1 { background: rgba(16,185,129,.25); border-color: rgba(16,185,129,.4); }
+    .tag.difficulty-2 { background: rgba(16,185,129,.25); border-color: rgba(16,185,129,.4); }
+    .tag.difficulty-3 { background: rgba(245,158,11,.25); border-color: rgba(245,158,11,.4); }
+    .tag.difficulty-4 { background: rgba(239,68,68,.25);  border-color: rgba(239,68,68,.4); }
+    .tag.difficulty-5 { background: rgba(239,68,68,.35);  border-color: rgba(239,68,68,.5); }
+
+    /* Card body */
+    .q-body { padding: 28px 28px 0; }
+
+    /* Question text */
+    .q-text {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--navy);
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
+    /* ── FIGURE (conditional) ── */
+    .q-figure {
+      display: none; /* hidden by default, JS shows it when image exists */
+      margin-bottom: 24px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fafbfc;
+    }
+    .q-figure.has-image { display: block; }
+    .q-figure-label {
+      font-size: .75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .6px;
+      color: var(--muted);
+      padding: 8px 16px;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+    .q-figure img,
+    .q-figure object,
+    .q-figure .svg-embed {
+      width: 100%;
+      max-height: 420px;
+      display: block;
+      padding: 16px;
+      object-fit: contain;
+    }
+    .q-figure .svg-embed { overflow: auto; }
+
+    /* ── OPTIONS ── */
+    .options-list { list-style: none; display: flex; flex-direction: column; gap: 10px; padding-bottom: 4px; }
+    .option-btn {
+      width: 100%;
+      text-align: left;
+      background: var(--bg);
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-family: inherit;
+      font-size: .95rem;
+      color: var(--text);
+      transition: border-color .15s, background .15s, transform .1s;
+    }
+    .option-btn:hover:not(:disabled) {
+      border-color: var(--blue);
+      background: #eff6ff;
+      transform: translateX(2px);
+    }
+    .option-btn:disabled { cursor: default; }
+    .option-key {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: #e2e8f0;
+      color: var(--muted);
+      font-weight: 800;
+      font-size: .82rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background .15s, color .15s;
+    }
+    .option-text { line-height: 1.5; padding-top: 2px; }
+
+    /* Selected state */
+    .option-btn.selected { border-color: var(--blue); background: #eff6ff; }
+    .option-btn.selected .option-key { background: var(--blue); color: #fff; }
+
+    /* Revealed states */
+    .option-btn.correct  { border-color: var(--green); background: #f0fdf4; }
+    .option-btn.correct  .option-key { background: var(--green); color: #fff; }
+    .option-btn.wrong    { border-color: var(--red);   background: #fef2f2; }
+    .option-btn.wrong    .option-key { background: var(--red);   color: #fff; }
+    .option-btn.dimmed   { opacity: .45; }
+
+    /* ── EXPLANATION PANEL ── */
+    .explanation-panel {
+      margin-top: 20px;
+      border-top: 2px solid var(--border);
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height .45s ease, opacity .3s ease;
+      opacity: 0;
+    }
+    .explanation-panel.open {
+      max-height: 1200px;
+      opacity: 1;
+    }
+    .explanation-inner {
+      padding: 24px 28px 28px;
+      background: #f8fafc;
+    }
+    .explanation-title {
+      font-size: .75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      color: var(--purple);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .explanation-title::before {
+      content: '';
+      display: inline-block;
+      width: 3px;
+      height: 14px;
+      background: var(--purple);
+      border-radius: 2px;
+    }
+    .explanation-body {
+      font-size: .95rem;
+      line-height: 1.8;
+      color: var(--text);
+    }
+    /* Answer verdict row */
+    .verdict-row {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .verdict-chip {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-size: .85rem;
+      font-weight: 700;
+    }
+    .verdict-chip.correct-ans { background: #f0fdf4; color: var(--green); border: 1.5px solid #bbf7d0; }
+    .verdict-chip.your-ans-correct { background: #f0fdf4; color: var(--green); border: 1.5px solid #bbf7d0; }
+    .verdict-chip.your-ans-wrong { background: #fef2f2; color: var(--red); border: 1.5px solid #fecaca; }
+
+    /* ── CARD FOOTER ── */
+    .q-footer {
+      padding: 18px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      border-top: 1px solid var(--border);
+      background: #fafbfc;
+      flex-wrap: wrap;
+    }
+    .footer-left { display: flex; gap: 10px; }
+    .footer-right { display: flex; gap: 10px; }
+
+    .btn {
+      padding: 10px 22px;
+      border-radius: 8px;
+      border: none;
+      font-family: inherit;
+      font-weight: 700;
+      font-size: .88rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all .15s;
+    }
+    .btn:disabled { opacity: .4; cursor: not-allowed; }
+    .btn-primary { background: var(--blue); color: #fff; }
+    .btn-primary:hover:not(:disabled) { background: var(--navy); }
+    .btn-ghost { background: var(--bg); color: var(--text); border: 1.5px solid var(--border); }
+    .btn-ghost:hover:not(:disabled) { background: #e2e8f0; }
+    .btn-reveal { background: var(--purple); color: #fff; }
+    .btn-reveal:hover:not(:disabled) { background: #6d28d9; }
+    .btn-explain { background: #f5f3ff; color: var(--purple); border: 1.5px solid #ddd6fe; }
+    .btn-explain:hover:not(:disabled) { background: #ede9fe; }
+    .btn-explain.active { background: var(--purple); color: #fff; }
+
+    /* Arrow icons */
+    .arrow { font-size: 1rem; }
+
+    /* ── EMPTY / NO RESULTS ── */
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--muted);
+    }
+    .empty-state .icon { font-size: 3rem; margin-bottom: 12px; }
+    .empty-state h3 { font-size: 1.1rem; margin-bottom: 6px; color: var(--navy); }
+
+    /* ── KaTeX overrides ── */
+    .katex { font-size: 1em; }
+    .katex-display { overflow-x: auto; overflow-y: hidden; padding: 4px 0; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .q-card-header { flex-direction: column; align-items: flex-start; }
+      .q-footer { flex-direction: column; align-items: stretch; }
+      .footer-left, .footer-right { justify-content: stretch; }
+      .btn { justify-content: center; flex: 1; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>SSC CGL <span>Question Tester</span></h1>
+  <div class="header-meta">
+    <span id="header-count" class="badge">No file loaded</span>
+    <span style="opacity:.6; font-size:.8rem">Internal QA Tool</span>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- FILE LOADER -->
+  <div id="loader-section">
+    <h2>Load Question Bank</h2>
+    <p>Select your <code>ssc_cgl_question_bank.json</code> file to begin reviewing questions.</p>
+    <label class="file-btn" for="file-input">📂 &nbsp;Choose JSON File</label>
+    <input type="file" id="file-input" accept=".json"/>
+    <p class="hint">Run <code>python -m http.server 8080</code> in the agents folder first so SVG diagrams load correctly.</p>
+  </div>
+
+  <!-- FILTERS -->
+  <div id="filter-bar">
+    <span class="filter-label">Filter</span>
+    <select id="filter-difficulty">
+      <option value="">All Difficulties</option>
+      <option value="1">Level 1</option>
+      <option value="2">Level 2</option>
+      <option value="3">Level 3</option>
+      <option value="4">Level 4</option>
+      <option value="5">Level 5</option>
+    </select>
+    <select id="filter-diagram">
+      <option value="">All Questions</option>
+      <option value="yes">With Diagram</option>
+      <option value="no">Without Diagram</option>
+    </select>
+    <select id="filter-topic">
+      <option value="">All Topics</option>
+    </select>
+    <span id="stats-pill" class="stats-pill">0 questions</span>
+  </div>
+
+  <!-- PROGRESS -->
+  <div id="progress-wrap">
+    <div class="progress-top">
+      <span id="progress-label">Question 1 of 0</span>
+      <span id="progress-pct">0%</span>
+    </div>
+    <div class="progress-bar-bg">
+      <div class="progress-bar-fill" id="progress-fill" style="width:0%"></div>
+    </div>
+  </div>
+
+  <!-- QUESTION CARD (rendered here) -->
+  <div id="q-container"></div>
+
+</div>
+
+<script>
+// ─────────────────────────────────────────────
+// STATE
+// ─────────────────────────────────────────────
+let allQuestions = [];
+let filtered     = [];
+let currentIdx   = 0;
+let selectedOpt  = null;   // key the user clicked
+let revealed     = false;
+let explanationOpen = false;
+
+// ─────────────────────────────────────────────
+// FILE LOAD
+// ─────────────────────────────────────────────
+document.getElementById('file-input').addEventListener('change', function(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(ev) {
+    try {
+      const data = JSON.parse(ev.target.result);
+      allQuestions = Array.isArray(data) ? data : [];
+      if (allQuestions.length === 0) { alert('No questions found in JSON.'); return; }
+      document.getElementById('loader-section').style.display = 'none';
+      document.getElementById('filter-bar').classList.add('visible');
+      document.getElementById('progress-wrap').classList.add('visible');
+      document.getElementById('header-count').textContent = allQuestions.length + ' questions';
+      populateTopicFilter();
+      applyFilters();
+    } catch(err) {
+      alert('Failed to parse JSON: ' + err.message);
+    }
+  };
+  reader.readAsText(file);
+});
+
+// ─────────────────────────────────────────────
+// FILTERS
+// ─────────────────────────────────────────────
+function populateTopicFilter() {
+  const topicSel = document.getElementById('filter-topic');
+  const topics = [...new Set(allQuestions.map(q => q.metadata?.sub_topic).filter(Boolean))].sort();
+  topics.forEach(t => {
+    const opt = document.createElement('option');
+    opt.value = t; opt.textContent = t;
+    topicSel.appendChild(opt);
+  });
+}
+
+function applyFilters() {
+  const diff    = document.getElementById('filter-difficulty').value;
+  const diagram = document.getElementById('filter-diagram').value;
+  const topic   = document.getElementById('filter-topic').value;
+
+  filtered = allQuestions.filter(q => {
+    if (diff    && String(q.metadata?.difficulty_level) !== diff) return false;
+    if (diagram === 'yes' && !q.Requires_Diagram) return false;
+    if (diagram === 'no'  &&  q.Requires_Diagram) return false;
+    if (topic   && q.metadata?.sub_topic !== topic) return false;
+    return true;
+  });
+
+  document.getElementById('stats-pill').textContent = filtered.length + ' questions';
+  currentIdx = 0;
+  selectedOpt = null;
+  revealed    = false;
+  explanationOpen = false;
+  renderQuestion();
+}
+
+['filter-difficulty','filter-diagram','filter-topic'].forEach(id => {
+  document.getElementById(id).addEventListener('change', applyFilters);
+});
+
+// ─────────────────────────────────────────────
+// RENDER QUESTION
+// ─────────────────────────────────────────────
+function renderQuestion() {
+  const container = document.getElementById('q-container');
+
+  if (filtered.length === 0) {
+    container.innerHTML = `
+      <div class="empty-state">
+        <div class="icon">🔍</div>
+        <h3>No questions match your filters</h3>
+        <p>Try adjusting the difficulty or topic filter above.</p>
+      </div>`;
+    updateProgress();
+    return;
+  }
+
+  const q = filtered[currentIdx];
+  const meta = q.metadata || {};
+  const diff = meta.difficulty_level || '';
+  const hasFigure = q.Requires_Diagram && (q.local_image_path || q.TikZ_Code);
+
+  // Build options HTML
+  const optionKeys = Object.keys(q.options || {});
+  const optionsHTML = optionKeys.map(key => `
+    <li>
+      <button
+        class="option-btn"
+        data-key="${key}"
+        onclick="selectOption('${key}')"
+        ${revealed ? 'disabled' : ''}
+      >
+        <span class="option-key">${key}</span>
+        <span class="option-text">${escapeHtml(q.options[key])}</span>
+      </button>
+    </li>
+  `).join('');
+
+  container.innerHTML = `
+    <div class="q-card">
+
+      <!-- Header strip -->
+      <div class="q-card-header">
+        <span class="q-number">Question ${currentIdx + 1}</span>
+        <div class="q-meta-tags">
+          ${meta.sub_topic  ? `<span class="tag">${escapeHtml(meta.sub_topic)}</span>` : ''}
+          ${diff            ? `<span class="tag difficulty-${diff}">Level ${diff}</span>` : ''}
+          ${q.Requires_Diagram ? `<span class="tag">📐 Diagram</span>` : ''}
+        </div>
+      </div>
+
+      <!-- Body -->
+      <div class="q-body">
+
+        <!-- Question text (LaTeX rendered after insert) -->
+        <div class="q-text" id="q-text">${escapeHtml(q.text)}</div>
+
+        <!-- ── FIGURE (shown only if diagram exists) ── -->
+        <div class="q-figure ${hasFigure ? 'has-image' : ''}" id="q-figure">
+          <div class="q-figure-label">📐 Diagram / Figure</div>
+          <div id="q-figure-content"></div>
+        </div>
+
+        <!-- Options -->
+        <ul class="options-list" id="options-list">
+          ${optionsHTML}
+        </ul>
+
+      </div><!-- /q-body -->
+
+      <!-- Explanation panel (collapsed by default) -->
+      <div class="explanation-panel" id="explanation-panel">
+        <div class="explanation-inner">
+          <div class="explanation-title">Step-by-Step Explanation</div>
+          <div class="verdict-row" id="verdict-row"></div>
+          <div class="explanation-body" id="explanation-body"></div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="q-footer">
+        <div class="footer-left">
+          <button class="btn btn-ghost" onclick="navigate(-1)" ${currentIdx === 0 ? 'disabled' : ''}>
+            <span class="arrow">←</span> Prev
+          </button>
+          <button class="btn btn-ghost" onclick="navigate(1)" ${currentIdx >= filtered.length - 1 ? 'disabled' : ''}>
+            Next <span class="arrow">→</span>
+          </button>
+        </div>
+        <div class="footer-right">
+          <button class="btn btn-reveal" id="reveal-btn" onclick="revealAnswer()" ${revealed || !selectedOpt ? 'disabled' : ''}>
+            Check Answer
+          </button>
+          <button class="btn btn-explain" id="explain-btn" onclick="toggleExplanation()" ${!revealed ? 'disabled' : ''}>
+            Explanation
+          </button>
+        </div>
+      </div>
+
+    </div><!-- /q-card -->
+  `;
+
+  // ── Render LaTeX in question text ──
+  renderLatex('q-text');
+
+  // ── Render LaTeX in options ──
+  document.querySelectorAll('.option-text').forEach(el => renderLatexInEl(el));
+
+  // ── Load figure if needed ──
+  if (hasFigure) loadFigure(q);
+
+  // ── Restore state if already answered ──
+  if (revealed) restoreRevealedState(q);
+
+  updateProgress();
+}
+
+// ─────────────────────────────────────────────
+// FIGURE LOADER  ← the key dynamic component
+// ─────────────────────────────────────────────
+function loadFigure(q) {
+  const figContent = document.getElementById('q-figure-content');
+  if (!figContent) return;
+
+  if (q.local_image_path) {
+    // Served via python -m http.server from the agents folder
+    // local_image_path is like "local_images/SSC_CGL_xxx.svg"
+    const src = q.local_image_path.replace(/\\/g, '/');
+
+    // Try as <img> first; SVGs sometimes need <object> for full rendering
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = 'Question Diagram';
+    img.style.cssText = 'width:100%; max-height:420px; display:block; padding:16px; object-fit:contain;';
+    img.onerror = function() {
+      // Fallback to <object> embed
+      figContent.innerHTML = `
+        <object data="${src}" type="image/svg+xml"
+          style="width:100%; max-height:420px; display:block; padding:16px;">
+          <p style="padding:16px; color:#ef4444;">⚠️ Could not load diagram. Make sure
+          <code>python -m http.server 8080</code> is running in your agents folder.</p>
+        </object>`;
+    };
+    figContent.appendChild(img);
+
+  } else if (q.TikZ_Code) {
+    // No compiled SVG available — show the raw LaTeX as a code block
+    figContent.innerHTML = `
+      <div style="padding:16px; background:#fafafa; border-top:1px solid #e2e8f0;">
+        <p style="font-size:.78rem; color:#f59e0b; font-weight:700; margin-bottom:8px;">
+          ⚠️ Compiled SVG not found — showing raw TikZ source
+        </p>
+        <pre style="font-size:.72rem; overflow-x:auto; white-space:pre-wrap; color:#334155; line-height:1.5;">${escapeHtml(q.TikZ_Code)}</pre>
+      </div>`;
+  }
+}
+
+// ─────────────────────────────────────────────
+// OPTION SELECTION
+// ─────────────────────────────────────────────
+function selectOption(key) {
+  if (revealed) return;
+  selectedOpt = key;
+
+  document.querySelectorAll('.option-btn').forEach(btn => {
+    btn.classList.toggle('selected', btn.dataset.key === key);
+  });
+
+  document.getElementById('reveal-btn').disabled = false;
+}
+
+// ─────────────────────────────────────────────
+// REVEAL ANSWER
+// ─────────────────────────────────────────────
+function revealAnswer() {
+  if (!selectedOpt || revealed) return;
+  revealed = true;
+  const q = filtered[currentIdx];
+  applyRevealStyles(q);
+  document.getElementById('reveal-btn').disabled = true;
+  document.getElementById('explain-btn').disabled = false;
+}
+
+function applyRevealStyles(q) {
+  const correct = q.correct_answer;
+  document.querySelectorAll('.option-btn').forEach(btn => {
+    btn.disabled = true;
+    const k = btn.dataset.key;
+    btn.classList.remove('selected');
+    if (k === correct) {
+      btn.classList.add('correct');
+    } else if (k === selectedOpt && selectedOpt !== correct) {
+      btn.classList.add('wrong');
+    } else {
+      btn.classList.add('dimmed');
+    }
+  });
+}
+
+function restoreRevealedState(q) {
+  applyRevealStyles(q);
+  document.getElementById('reveal-btn').disabled = true;
+  document.getElementById('explain-btn').disabled = false;
+  if (explanationOpen) openExplanation(q);
+}
+
+// ─────────────────────────────────────────────
+// EXPLANATION TOGGLE
+// ─────────────────────────────────────────────
+function toggleExplanation() {
+  if (!revealed) return;
+  explanationOpen = !explanationOpen;
+  const q = filtered[currentIdx];
+  if (explanationOpen) openExplanation(q);
+  else closeExplanation();
+}
+
+function openExplanation(q) {
+  explanationOpen = true;
+  const panel = document.getElementById('explanation-panel');
+  const body  = document.getElementById('explanation-body');
+  const vrow  = document.getElementById('verdict-row');
+  const btn   = document.getElementById('explain-btn');
+
+  // Verdict chips
+  const isCorrect = selectedOpt === q.correct_answer;
+  vrow.innerHTML = `
+    <div class="verdict-chip correct-ans">
+      ✅ Correct Answer: <strong>${q.correct_answer}</strong>
+      &nbsp;—&nbsp;${escapeHtml(q.options[q.correct_answer] || '')}
+    </div>
+    ${!isCorrect ? `<div class="verdict-chip your-ans-wrong">
+      ❌ Your Answer: <strong>${selectedOpt}</strong>
+    </div>` : `<div class="verdict-chip your-ans-correct">🎯 You got it right!</div>`}
+  `;
+
+  // Explanation text (render LaTeX)
+  body.textContent = q.explanation || 'No explanation provided.';
+  renderLatexInEl(body);
+
+  panel.classList.add('open');
+  btn.classList.add('active');
+  btn.textContent = 'Hide Explanation';
+
+  // Smooth scroll to explanation
+  setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
+}
+
+function closeExplanation() {
+  explanationOpen = false;
+  document.getElementById('explanation-panel').classList.remove('open');
+  const btn = document.getElementById('explain-btn');
+  btn.classList.remove('active');
+  btn.textContent = 'Explanation';
+}
+
+// ─────────────────────────────────────────────
+// NAVIGATION
+// ─────────────────────────────────────────────
+function navigate(dir) {
+  const next = currentIdx + dir;
+  if (next < 0 || next >= filtered.length) return;
+  currentIdx = next;
+  selectedOpt = null;
+  revealed    = false;
+  explanationOpen = false;
+  renderQuestion();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ─────────────────────────────────────────────
+// PROGRESS BAR
+// ─────────────────────────────────────────────
+function updateProgress() {
+  const total = filtered.length;
+  const num   = total > 0 ? currentIdx + 1 : 0;
+  const pct   = total > 0 ? Math.round((num / total) * 100) : 0;
+  document.getElementById('progress-label').textContent = `Question ${num} of ${total}`;
+  document.getElementById('progress-pct').textContent   = pct + '%';
+  document.getElementById('progress-fill').style.width  = pct + '%';
+}
+
+// ─────────────────────────────────────────────
+// KATEX RENDERING  (same approach as rehype-katex)
+// – Delimiters: $...$ inline, $$...$$ display
+// ─────────────────────────────────────────────
+function initKatex() {
+  // KaTeX auto-render is loaded; nothing extra needed here.
+  // Each render call is triggered manually via renderLatex / renderLatexInEl.
+}
+
+function renderLatex(elementId) {
+  const el = document.getElementById(elementId);
+  if (!el) return;
+  renderLatexInEl(el);
+}
+
+function renderLatexInEl(el) {
+  if (!el || typeof renderMathInElement === 'undefined') return;
+  try {
+    renderMathInElement(el, {
+      delimiters: [
+        { left: '$$', right: '$$', display: true  },
+        { left: '$',  right: '$',  display: false },
+        { left: '\\(', right: '\\)', display: false },
+        { left: '\\[', right: '\\]', display: true  },
+      ],
+      throwOnError: false,
+    });
+  } catch(e) {
+    // Silently fail — don't break the UI if LaTeX is malformed
+    console.warn('KaTeX render error:', e.message);
+  }
+}
+
+// ─────────────────────────────────────────────
+// UTILS
+// ─────────────────────────────────────────────
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', function(e) {
+  if (filtered.length === 0) return;
+  if (e.key === 'ArrowRight') navigate(1);
+  if (e.key === 'ArrowLeft')  navigate(-1);
+  if (e.key === 'Enter' && selectedOpt && !revealed) revealAnswer();
+  if (e.key === 'e' && revealed) toggleExplanation();
+  // Option shortcuts: a, b, c, d
+  if (!revealed && ['a','b','c','d'].includes(e.key.toLowerCase())) {
+    selectOption(e.key.toUpperCase());
+  }
+});
+</script>
+</body>
+</html>

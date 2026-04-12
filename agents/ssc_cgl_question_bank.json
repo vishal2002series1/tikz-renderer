@@ -1,0 +1,433 @@
+[
+  {
+    "id": "SSC_GEOMETRYTR_1_1_8ee4ee",
+    "text": "A circle has a radius of 7 cm. A chord of the circle is at a perpendicular distance of 5 cm from the centre. What is the length of the chord?",
+    "options": {
+      "A": "$2\\sqrt{6}$ cm",
+      "B": "$4\\sqrt{6}$ cm",
+      "C": "$6\\sqrt{2}$ cm",
+      "D": "$8\\sqrt{3}$ cm"
+    },
+    "correct_answer": "B",
+    "explanation": "Let the circle have centre $O$ and radius $r = 7$ cm. Let $AB$ be the chord at perpendicular distance $d = 5$ cm from the centre.\n\nThe perpendicular from the centre bisects the chord. Let $M$ be the foot of the perpendicular from $O$ to $AB$.\n\nSo $OM = 5$ cm, $OA = 7$ cm (radius), and $AM = MB$.\n\nIn right triangle $OMA$:\n$$OA^2 = OM^2 + AM^2$$\n$$49 = 25 + AM^2$$\n$$AM^2 = 24$$\n$$AM = 2\\sqrt{6} \\text{ cm}$$\n\nSince $M$ is the midpoint of $AB$:\n$$AB = 2 \\times AM = 2 \\times 2\\sqrt{6} = 4\\sqrt{6} \\text{ cm}$$\n\nThe length of the chord is $4\\sqrt{6}$ cm.",
+    "Requires_Diagram": true,
+    "TikZ_Code": "\\documentclass[varwidth=21cm, border=5mm]{standalone}\n\\usepackage{tikz}\n\\begin{document}\n\\begin{tikzpicture}\n  % Circle with centre O, radius 2.8 (scaled from 7)\n  \\draw (0,0) circle (2.8);\n  % Centre\n  \\fill (0,0) circle (0.06);\n  \\node[above right] at (0,0) {$O$};\n  % Chord AB: distance 5/7 * 2.8 = 2 from centre\n  % half-chord = sqrt(2.8^2 - 2^2) = sqrt(7.84-4) = sqrt(3.84) = 1.96\n  \\draw (-1.96,-2) -- (1.96,-2);\n  \\fill (-1.96,-2) circle (0.06);\n  \\fill (1.96,-2) circle (0.06);\n  \\node[below left] at (-1.96,-2) {$A$};\n  \\node[below right] at (1.96,-2) {$B$};\n  % Foot of perpendicular M\n  \\fill (0,-2) circle (0.06);\n  \\node[below] at (0,-2) {$M$};\n  % Perpendicular from O to M\n  \\draw (0,0) -- (0,-2);\n  \\node[right] at (0,-1) {$5$};\n  % Radius OA\n  \\draw (0,0) -- (-1.96,-2);\n  \\node[left] at (-0.98,-1) {$7$};\n  % Right angle mark at M\n  \\draw (0.15,-1.85) -- (0.15,-2) -- (0,-2);\n\\end{tikzpicture}\n\\end{document}",
+    "metadata": {
+      "exam": "SSC CGL",
+      "subject": "Quantitative Aptitude",
+      "topic": "Advanced Mathematics",
+      "sub_topic": "Geometry \u2013 Circles",
+      "difficulty_level": 1
+    },
+    "local_image_path": "local_images/SSC_GEOMETRYTR_1_1_8ee4ee.svg"
+  },
+  {
+    "id": "SSC_GEOMETRYTR_1_2_a07dcd",
+    "text": "In a circle with center $O$ and radius $10$ cm, a chord $PQ$ is drawn at a distance of $6$ cm from the center. What is the length of the chord $PQ$?",
+    "options": {
+      "A": "$16$ cm",
+      "B": "$12$ cm",
+      "C": "$14$ cm",
+      "D": "$18$ cm"
+    },
+    "correct_answer": "A",
+    "explanation": "Let $M$ be the foot of the perpendicular from center $O$ to chord $PQ$. Then $OM = 6$ cm and $OP = 10$ cm (radius).\n\nSince the perpendicular from the center bisects the chord, $PM = MQ$.\n\nIn right triangle $OMP$:\n$$OP^2 = OM^2 + PM^2$$\n$$10^2 = 6^2 + PM^2$$\n$$100 = 36 + PM^2$$\n$$PM^2 = 64$$\n$$PM = 8 \\text{ cm}$$\n\nTherefore:\n$$PQ = 2 \\times PM = 2 \\times 8 = 16 \\text{ cm}$$",
+    "Requires_Diagram": true,
+    "TikZ_Code": "\\documentclass[varwidth=21cm, border=5mm]{standalone}\n\\usepackage{tikz}\n\\begin{document}\n\\begin{tikzpicture}\n  % Draw circle with center O, radius 3\n  \\draw (0,0) circle (3);\n  % Center\n  \\fill (0,0) circle (0.06);\n  \\node[below left] at (0,0) {$O$};\n  % Chord endpoints: x=1.8 (since OM=6, scale: 6/10*3=1.8), y = sqrt(9-3.24)=sqrt(5.76)=2.4\n  \\coordinate (P) at (1.8, 2.4);\n  \\coordinate (Q) at (1.8, -2.4);\n  \\coordinate (M) at (1.8, 0);\n  % Draw chord\n  \\draw (P) -- (Q);\n  % Label P and Q\n  \\fill (P) circle (0.06);\n  \\node[above right] at (P) {$P$};\n  \\fill (Q) circle (0.06);\n  \\node[below right] at (Q) {$Q$};\n  % Draw perpendicular from O to M\n  \\draw (0,0) -- (M);\n  \\node[below] at (0.9, 0) {$6$ cm};\n  % Mark foot M\n  \\fill (M) circle (0.06);\n  \\node[right] at (M) {$M$};\n  % Right angle marker\n  \\draw (1.65,0) -- (1.65,0.15) -- (1.8,0.15);\n  % Radius label\n  \\draw[dashed] (0,0) -- (P);\n  \\node[above left] at (0.9, 1.2) {$10$ cm};\n\\end{tikzpicture}\n\\end{document}",
+    "metadata": {
+      "exam": "SSC CGL",
+      "subject": "Quantitative Aptitude",
+      "topic": "Advanced Mathematics",
+      "sub_topic": "Geometry \u2013 Circles",
+      "difficulty_level": 1
+    },
+    "local_image_path": "local_images/SSC_GEOMETRYTR_1_2_a07dcd.svg"
+  },
+  {
+    "id": "SSC_GEOMETRYTR_2_1_7bf0da",
+    "text": "A triangle has vertices at $A(1, 4)$, $B(9, 2)$, and $C(3, 8)$. Find the length of the median from vertex $A$ to the midpoint $M$ of side $BC$.",
+    "options": {
+      "A": "$\\sqrt{20}$",
+      "B": "$\\sqrt{25}$",
+      "C": "$\\sqrt{29}$",
+      "D": "$\\sqrt{32}$"
+    },
+    "correct_answer": "C",
+    "explanation": "Step 1: Find the midpoint $M$ of side $BC$.\n$$M = \\left(\\frac{9+3}{2},\\ \\frac{2+8}{2}\\right) = (6,\\ 5)$$\n\nStep 2: Apply the distance formula from $A(1, 4)$ to $M(6, 5)$.\n$$AM = \\sqrt{(6-1)^2 + (5-4)^2} = \\sqrt{25 + 4} = \\sqrt{29}$$\n\nThe length of the median from $A$ is $\\sqrt{29}$.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "SSC CGL",
+      "subject": "Quantitative Aptitude",
+      "topic": "Advanced Mathematics",
+      "sub_topic": "Geometry \u2013 Coordinate Geometry \u2013 Triangles",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "SSC_GEOMETRYTR_2_2_e3a280",
+    "text": "In triangle $ABC$, the vertices are located at $A(0, 0)$, $B(10, 0)$, and $C(2, 6)$. Find the length of the median from vertex $C$ to the midpoint $M$ of side $AB$.",
+    "options": {
+      "A": "$3\\sqrt{5}$",
+      "B": "$\\sqrt{61}$",
+      "C": "$5\\sqrt{2}$",
+      "D": "$2\\sqrt{13}$"
+    },
+    "correct_answer": "A",
+    "explanation": "Step 1: Find the midpoint $M$ of side $AB$.\n$$M = \\left(\\frac{0+10}{2},\\, \\frac{0+0}{2}\\right) = (5, 0)$$\n\nStep 2: Apply the distance formula from $C(2, 6)$ to $M(5, 0)$.\n$$CM = \\sqrt{(5-2)^2 + (0-6)^2} = \\sqrt{3^2 + 6^2} = \\sqrt{9 + 36} = \\sqrt{45} = 3\\sqrt{5}$$\n\nThe length of the median from $C$ to $M$ is $3\\sqrt{5}$.",
+    "Requires_Diagram": true,
+    "TikZ_Code": "\\documentclass[varwidth=21cm, border=5mm]{standalone}\n\\usepackage{tikz}\n\\usetikzlibrary{calc}\n\\begin{document}\n\\begin{tikzpicture}\n  \\coordinate (A) at (0, 0);\n  \\coordinate (B) at (10, 0);\n  \\coordinate (C) at (2, 6);\n  \\coordinate (M) at (5, 0);\n  \\draw[thick] (A) -- (B) -- (C) -- cycle;\n  \\draw[dashed, thick, blue] (C) -- (M);\n  \\fill (A) circle (2pt);\n  \\fill (B) circle (2pt);\n  \\fill (C) circle (2pt);\n  \\fill[red] (M) circle (2pt);\n  \\node[below left] at (A) {$A(0,0)$};\n  \\node[below right] at (B) {$B(10,0)$};\n  \\node[above left] at (C) {$C(2,6)$};\n  \\node[below, red] at (M) {$M(5,0)$};\n  \\node[fill=white, inner sep=1pt] at ($(C)!0.5!(M)$) {$?$};\n\\end{tikzpicture}\n\\end{document}",
+    "metadata": {
+      "exam": "SSC CGL",
+      "subject": "Quantitative Aptitude",
+      "topic": "Advanced Mathematics",
+      "sub_topic": "Geometry \u2013 Coordinate Geometry (Triangles)",
+      "difficulty_level": 2
+    },
+    "local_image_path": "local_images/SSC_GEOMETRYTR_2_2_e3a280.svg"
+  },
+  {
+    "id": "SSC_GEOMETRYTR_3_1_6f25ba",
+    "text": "A triangle $ABC$ has vertices at $A(0, 0)$, $B(8, 0)$, and $C(4, 6)$. Find the area of the triangle formed by joining the midpoints of the sides of triangle $ABC$.",
+    "options": {
+      "A": "6",
+      "B": "8",
+      "C": "4",
+      "D": "12"
+    },
+    "correct_answer": "A",
+    "explanation": "Step 1: Find the midpoints of the sides of triangle $ABC$.\n\nMidpoint $D$ of $AB$: $D = \\left(\\frac{0+8}{2}, \\frac{0+0}{2}\\right) = (4, 0)$\n\nMidpoint $E$ of $BC$: $E = \\left(\\frac{8+4}{2}, \\frac{0+6}{2}\\right) = (6, 3)$\n\nMidpoint $F$ of $CA$: $F = \\left(\\frac{4+0}{2}, \\frac{6+0}{2}\\right) = (2, 3)$\n\nStep 2: Find the area of triangle $ABC$ using the coordinate formula.\n\nArea of $\\triangle ABC = \\frac{1}{2}|x_A(y_B - y_C) + x_B(y_C - y_A) + x_C(y_A - y_B)|$\n\n$= \\frac{1}{2}|0(0 - 6) + 8(6 - 0) + 4(0 - 0)|$\n\n$= \\frac{1}{2}|0 + 48 + 0| = 24$\n\nStep 3: Apply the Medial Triangle theorem.\n\nThe triangle formed by joining the midpoints of the sides of a triangle (called the medial triangle) has area equal to $\\frac{1}{4}$ of the original triangle's area.\n\nArea of medial triangle $= \\frac{1}{4} \\times 24 = 6$\n\nVerification using coordinates $D(4,0)$, $E(6,3)$, $F(2,3)$:\n\nArea $= \\frac{1}{2}|4(3-3) + 6(3-0) + 2(0-3)| = \\frac{1}{2}|0 + 18 - 6| = \\frac{12}{2} = 6$ \u2713",
+    "Requires_Diagram": true,
+    "TikZ_Code": "\\documentclass[varwidth=21cm, border=5mm]{standalone}\n\\usepackage{tikz}\n\\usetikzlibrary{calc}\n\\begin{document}\n\\begin{tikzpicture}[thick]\n  \\coordinate (A) at (0, 0);\n  \\coordinate (B) at (8, 0);\n  \\coordinate (C) at (4, 6);\n  \\coordinate (D) at (4, 0);\n  \\coordinate (E) at (6, 3);\n  \\coordinate (F) at (2, 3);\n  \\draw (A) -- (B) -- (C) -- cycle;\n  \\draw[dashed] (D) -- (E) -- (F) -- cycle;\n  \\node[below left] at (A) {$A(0,0)$};\n  \\node[below right] at (B) {$B(8,0)$};\n  \\node[above] at (C) {$C(4,6)$};\n  \\node[below] at (D) {$D$};\n  \\node[right] at (E) {$E$};\n  \\node[left] at (F) {$F$};\n\\end{tikzpicture}\n\\end{document}",
+    "metadata": {
+      "exam": "SSC CGL",
+      "subject": "Tier 1 \u2013 Quantitative Aptitude",
+      "topic": "Advanced Mathematics",
+      "sub_topic": "Geometry \u2013 Triangles, Coordinate Geometry",
+      "difficulty_level": 3
+    },
+    "local_image_path": "local_images/SSC_GEOMETRYTR_3_1_6f25ba.svg"
+  },
+  {
+    "id": "SSC_GEOMETRYTR_3_2_691c4c",
+    "text": "In a triangle $ABC$, the vertices are located at $A(3, 7)$, $B(11, 2)$, and $C(3, 2)$. A circle passes through all three vertices of the triangle. What is the radius of the circumcircle of triangle $ABC$?",
+    "options": {
+      "A": "$\\frac{\\sqrt{89}}{2}$",
+      "B": "$\\sqrt{89}$",
+      "C": "$\\frac{5\\sqrt{5}}{2}$",
+      "D": "$5$"
+    },
+    "correct_answer": "A",
+    "explanation": "Step 1: Identify the triangle vertices: $A(3, 7)$, $B(11, 2)$, $C(3, 2)$.\n\nStep 2: Calculate the side lengths.\n$$AB = \\sqrt{(11-3)^2 + (2-7)^2} = \\sqrt{64 + 25} = \\sqrt{89}$$\n$$AC = \\sqrt{(3-3)^2 + (2-7)^2} = \\sqrt{0 + 25} = 5$$\n$$BC = \\sqrt{(11-3)^2 + (2-2)^2} = \\sqrt{64 + 0} = 8$$\n\nStep 3: Verify this is a right triangle. Check if $AB^2 = AC^2 + BC^2$:\n$$89 = 25 + 64 = 89$$ \u2713\n\nThe right angle is at $C$.\n\nStep 4: For a right triangle, the circumcenter is at the midpoint of the hypotenuse, and the circumradius equals half the hypotenuse.\n\nHypotenuse = $AB = \\sqrt{89}$\n\nCircumradius = $\\frac{\\sqrt{89}}{2}$",
+    "Requires_Diagram": true,
+    "TikZ_Code": "\\documentclass[varwidth=21cm, border=5mm]{standalone}\n\\usepackage{tikz}\n\\usetikzlibrary{calc}\n\\begin{document}\n\\begin{tikzpicture}[scale=0.4]\n  % Plot points\n  \\coordinate (A) at (3, 7);\n  \\coordinate (B) at (11, 2);\n  \\coordinate (C) at (3, 2);\n  \n  % Draw triangle\n  \\draw (A) -- (B) -- (C) -- (A);\n  \n  % Mark right angle at C\n  \\draw (3.6, 2) -- (3.6, 2.6) -- (3, 2.6);\n  \n  % Calculate circumcenter (midpoint of AB)\n  \\coordinate (O) at ($(A)!0.5!(B)$);\n  \n  % Draw circumcircle\n  \\draw (O) circle ({sqrt(89)/2});\n  \n  % Mark center\n  \\fill (O) circle (0.25);\n  \n  % Label vertices\n  \\node[above left] at (A) {$A(3,7)$};\n  \\node[below right] at (B) {$B(11,2)$};\n  \\node[below left] at (C) {$C(3,2)$};\n  \\node[above right] at (O) {$O$};\n\\end{tikzpicture}\n\\end{document}",
+    "metadata": {
+      "exam": "SSC CGL",
+      "subject": "Quantitative Aptitude",
+      "topic": "Advanced Mathematics",
+      "sub_topic": "Coordinate Geometry \u2013 Triangles & Circumcircles",
+      "difficulty_level": 3
+    },
+    "local_image_path": "local_images/SSC_GEOMETRYTR_3_2_691c4c.svg"
+  },
+  {
+    "id": "SSC_GEOMETRYTR_4_1_b49b17",
+    "text": "A triangle $ABC$ has vertices at $A(0, 0)$, $B(8, 0)$, and $C(0, 15)$. A point $P$ lies on the hypotenuse $BC$ such that $AP \\perp BC$. Find the length of $AP$.",
+    "options": {
+      "A": "$\\dfrac{120}{17}$",
+      "B": "$\\dfrac{100}{17}$",
+      "C": "$\\dfrac{60}{17}$",
+      "D": "$\\dfrac{80}{17}$"
+    },
+    "correct_answer": "A",
+    "explanation": "**Step 1: Identify the triangle.**\n\nSince $\\angle BAC = 90\u00b0$ (right angle at the origin), the hypotenuse is $BC$.\n\n$$BC = \\sqrt{8^2 + 15^2} = \\sqrt{64 + 225} = \\sqrt{289} = 17$$\n\n**Step 2: Compute the area of triangle $ABC$.**\n\n$$\\text{Area} = \\frac{1}{2} \\times AB \\times AC = \\frac{1}{2} \\times 8 \\times 15 = 60$$\n\n**Step 3: Use the altitude-on-hypotenuse formula.**\n\nThe altitude from the right angle to the hypotenuse is:\n\n$$AP = \\frac{2 \\times \\text{Area}}{BC} = \\frac{2 \\times 60}{17} = \\frac{120}{17}$$\n\n**Verification using coordinate geometry:**\n\nLine $BC$ passes through $B(8,0)$ and $C(0,15)$.\n\nEquation of $BC$: $\\dfrac{x}{8} + \\dfrac{y}{15} = 1 \\Rightarrow 15x + 8y - 120 = 0$\n\nDistance from $A(0,0)$ to this line:\n$$AP = \\frac{|15(0) + 8(0) - 120|}{\\sqrt{15^2 + 8^2}} = \\frac{120}{\\sqrt{225+64}} = \\frac{120}{17}$$\n\nThe answer is $\\boxed{\\dfrac{120}{17}}$.",
+    "Requires_Diagram": true,
+    "TikZ_Code": "\\documentclass[varwidth=21cm, border=5mm]{standalone}\n\\usepackage{tikz}\n\\begin{document}\n\\begin{tikzpicture}[scale=0.55]\n  % Triangle vertices: A(0,0), B(8,0), C(0,15)\n  \\coordinate (A) at (0,0);\n  \\coordinate (B) at (8,0);\n  \\coordinate (C) at (0,15);\n\n  % Foot of altitude from A to BC\n  % Line BC: 15x + 8y = 120\n  % Foot P = A - ((15*0+8*0-120)/289)*(15,8) = (120/289)*(15,8)\n  \\coordinate (P) at (6.228, 3.322);\n\n  % Draw triangle\n  \\draw[thick] (A) -- (B) -- (C) -- cycle;\n\n  % Draw altitude AP\n  \\draw[dashed] (A) -- (P);\n\n  % Right angle at A\n  \\draw (0.5,0) -- (0.5,0.5) -- (0,0.5);\n\n  % Right angle at P\n  \\draw[rotate around={-62:(6.228,3.322)}, thick] (6.228,3.322) rectangle ++(0.4,0.4);\n\n  % Labels\n  \\node[below left] at (A) {$A$};\n  \\node[below right] at (B) {$B(8,0)$};\n  \\node[above left] at (C) {$C(0,15)$};\n  \\node[right] at (P) {$P$};\n\n  % Label sides\n  \\node[below] at (4,0) {$8$};\n  \\node[left] at (0,7.5) {$15$};\n  \\node[right] at (3.5,1.5) {$AP = ?$};\n\\end{tikzpicture}\n\\end{document}",
+    "metadata": {
+      "exam": "SSC CGL Tier 1",
+      "subject": "Quantitative Aptitude",
+      "topic": "Advanced Mathematics",
+      "sub_topic": "Geometry \u2013 Triangles, Altitude on Hypotenuse",
+      "difficulty_level": 4
+    },
+    "local_image_path": "local_images/SSC_GEOMETRYTR_4_1_b49b17.svg"
+  },
+  {
+    "id": "SSC_GEOMETRYTR_4_2_7a1f55",
+    "text": "A circle is inscribed in a triangle with sides 13 cm, 14 cm, and 15 cm. What is the radius of the inscribed circle?",
+    "options": {
+      "A": "3 cm",
+      "B": "4 cm",
+      "C": "5 cm",
+      "D": "6 cm"
+    },
+    "correct_answer": "B",
+    "explanation": "The semi-perimeter $s = \\frac{13 + 14 + 15}{2} = 21$ cm.\n\nArea of the triangle using Heron's formula:\n$$\\Delta = \\sqrt{s(s-a)(s-b)(s-c)} = \\sqrt{21 \\times 8 \\times 7 \\times 6} = \\sqrt{21 \\times 8 \\times 42} = \\sqrt{7056} = 84 \\text{ cm}^2$$\n\nThe inradius $r = \\frac{\\Delta}{s} = \\frac{84}{21} = 4$ cm.\n\nTherefore, the radius of the inscribed circle is 4 cm.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "SSC CGL",
+      "subject": "Tier 1 \u2013 Quantitative Aptitude",
+      "topic": "Advanced Mathematics",
+      "sub_topic": "Geometry \u2013 Triangles, Circles, Quadrilaterals, Coordinate Geometry",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "SSC_GEOMETRYTR_5_1_44949c",
+    "text": "Two chords $AB$ and $CD$ of a circle intersect internally at point $P$. It is given that $AP = 4$ cm, $PB = 9$ cm, and $CP = 3$ cm. A tangent is drawn from an external point $Q$ to the circle, touching it at $T$. If $QP$ extended meets the circle at points $M$ and $N$ such that $QM = 3$ cm and $QN = 12$ cm, find the length of the tangent $QT$.",
+    "options": {
+      "A": "$6$ cm",
+      "B": "$4\\sqrt{3}$ cm",
+      "C": "$3\\sqrt{5}$ cm",
+      "D": "$\\sqrt{30}$ cm"
+    },
+    "correct_answer": "A",
+    "explanation": "Step 1: Verify the intersecting chords relation.\nBy the Intersecting Chords Theorem: $AP \\times PB = CP \\times PD$.\n$4 \\times 9 = 3 \\times PD \\Rightarrow PD = 12$ cm.\n\nStep 2: Find the length of tangent $QT$ using the secant-tangent relation.\nFrom external point $Q$, a secant passes through $M$ and $N$ (with $QM = 3$ cm, $QN = 12$ cm).\n\nBy the Power of a Point (external point):\n$$QT^2 = QM \\times QN$$\n$$QT^2 = 3 \\times 12 = 36$$\n$$QT = 6 \\text{ cm}$$\n\nStep 3: Verify the intersecting chords data is consistent (it provides context for the circle and serves as a check).\nThe power of point $P$ (internal): $AP \\times PB = CP \\times PD = 4 \\times 9 = 36 = 3 \\times 12$ \u2713.\n\nNote: The power of point $Q$ with respect to the circle equals $QT^2 = QM \\times QN = 36$, giving $QT = 6$ cm.\n\nAnswer: $QT = 6$ cm.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "SSC CGL",
+      "subject": "Tier 1 \u2013 Quantitative Aptitude",
+      "topic": "Advanced Mathematics",
+      "sub_topic": "Geometry \u2013 Triangles, Circles, Quadrilaterals, Coordinate Geometry",
+      "difficulty_level": 5
+    }
+  },
+  {
+    "id": "SSC_GEOMETRYTR_5_2_b2ee4e",
+    "text": "In triangle $ABC$, the incircle touches side $BC$ at $D$, side $CA$ at $E$, and side $AB$ at $F$. If $AB = 17$, $BC = 21$, and $CA = 16$, then the length $BD$ is:",
+    "options": {
+      "A": "9",
+      "B": "10",
+      "C": "11",
+      "D": "12"
+    },
+    "correct_answer": "C",
+    "explanation": "Let the tangent lengths from vertices be: from $A$ = $x$, from $B$ = $y$, from $C$ = $z$.\n\nThen:\n$x + y = AB = 17$\n$y + z = BC = 21$\n$z + x = CA = 16$\n\nAdding all three: $2(x + y + z) = 54$, so $x + y + z = 27$.\n\nFrom this:\n$z = 27 - 17 = 10$\n$x = 27 - 21 = 6$\n$y = 27 - 16 = 11$\n\nSince $BD = y$ (tangent length from $B$ to the point of tangency on $BC$):\n$BD = y = 11$\n\nVerification: $BD + DC = y + z = 11 + 10 = 21 = BC$ \u2713\n$AE + EC = x + z = 6 + 10 = 16 = CA$ \u2713\n$AF + FB = x + y = 6 + 11 = 17 = AB$ \u2713\n\nTherefore, $BD = 11$.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "SSC CGL",
+      "subject": "Quantitative Aptitude",
+      "topic": "Advanced Mathematics",
+      "sub_topic": "Geometry \u2013 Triangles, Circles",
+      "difficulty_level": 5
+    }
+  },
+  {
+    "id": "SSC_VENNDIAGRA_1_1_f676e4",
+    "text": "Which of the following numbers belongs ONLY to the set of 'Multiples of 4' and NOT to 'Multiples of 6' or 'Prime Numbers'?",
+    "options": {
+      "A": "12",
+      "B": "20",
+      "C": "24",
+      "D": "7"
+    },
+    "correct_answer": "B",
+    "explanation": "We need a number that is a multiple of 4, but NOT a multiple of 6, and NOT a prime number.\n\nCheck each option:\n- 12: Multiple of 4 \u2713, multiple of 6 (12/6 = 2) \u2717 \u2014 fails (it is in the Multiples of 6 set too)\n- 20: Multiple of 4 (20/4 = 5) \u2713, multiple of 6? (20/6 = 3.33) \u2717 \u2014 NOT in Multiples of 6 \u2713, prime? No \u2713 \u2014 20 belongs ONLY to Multiples of 4\n- 24: Multiple of 4 (24/4 = 6) \u2713, multiple of 6 (24/6 = 4) \u2717 \u2014 fails (it is in the Multiples of 6 set too)\n- 7: Not a multiple of 4 \u2717 \u2014 fails immediately (7 is prime, not a multiple of 4)\n\nOnly 20 satisfies all conditions: it is a multiple of 4, not a multiple of 6, and not a prime number. Therefore, 20 belongs exclusively to the 'Multiples of 4' region.\n\nThe answer is B.",
+    "Requires_Diagram": true,
+    "TikZ_Code": "\\documentclass[varwidth=21cm, border=5mm]{standalone}\n\\usepackage{tikz}\n\n\\begin{document}\n\\begin{tikzpicture}\n  % Circle A: Multiples of 4\n  \\draw (-1.2, 0) circle (2.2);\n  \\node at (-3.0, 1.8) {\\textbf{A}};\n  \\node[align=center] at (-3.0, 1.3) {\\small Multiples\\\\\\small of 4};\n\n  % Circle B: Multiples of 6\n  \\draw (1.2, 0) circle (2.2);\n  \\node at (3.0, 1.8) {\\textbf{B}};\n  \\node[align=center] at (3.0, 1.3) {\\small Multiples\\\\\\small of 6};\n\n  % Circle C: Prime Numbers\n  \\draw (0, -2.0) circle (2.2);\n  \\node at (0, -4.0) {\\textbf{C}};\n  \\node[align=center] at (0, -4.5) {\\small Prime\\\\\\small Numbers};\n\n  % Only-A region label\n  \\node[fill=white] at (-2.5, 0) {\\textbf{?}};\n\\end{tikzpicture}\n\\end{document}",
+    "metadata": {
+      "exam": "SSC CGL",
+      "subject": "General Intelligence & Reasoning",
+      "topic": "Non-Verbal Reasoning",
+      "sub_topic": "Venn Diagrams",
+      "difficulty_level": 1
+    },
+    "local_image_path": "local_images/SSC_VENNDIAGRA_1_1_f676e4.svg"
+  },
+  {
+    "id": "SSC_VENNDIAGRA_1_2_f0032d",
+    "text": "In a group of 50 students, 30 play Cricket, 25 play Football, and 10 play both Cricket and Football. How many students play neither Cricket nor Football?",
+    "options": {
+      "A": "5",
+      "B": "10",
+      "C": "15",
+      "D": "20"
+    },
+    "correct_answer": "A",
+    "explanation": "Using the formula: n(C \u222a F) = n(C) + n(F) \u2212 n(C \u2229 F)\nn(C \u222a F) = 30 + 25 \u2212 10 = 45\nStudents who play neither = Total \u2212 n(C \u222a F) = 50 \u2212 45 = 5",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "SSC CGL",
+      "subject": "General Intelligence & Reasoning",
+      "topic": "Non-Verbal Reasoning",
+      "sub_topic": "Venn Diagrams",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "SSC_VENNDIAGRA_2_1_b28d4a",
+    "text": "In a group of 60 people, 35 like Tea, 28 like Coffee, and 18 like both Tea and Coffee. How many people like neither Tea nor Coffee?",
+    "options": {
+      "A": "12",
+      "B": "15",
+      "C": "18",
+      "D": "20"
+    },
+    "correct_answer": "B",
+    "explanation": "Using the Venn diagram principle:\nPeople who like at least one = n(Tea) + n(Coffee) \u2212 n(Both)\n= 35 + 28 \u2212 18 = 45.\nPeople who like neither = Total \u2212 People who like at least one = 60 \u2212 45 = 15.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "SSC CGL",
+      "subject": "Tier 1 \u2013 General Intelligence & Reasoning",
+      "topic": "Non-Verbal Reasoning",
+      "sub_topic": "Venn Diagrams",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "SSC_VENNDIAGRA_2_2_d1cf7e",
+    "text": "Consider three sets: $$A = \\text{Multiples of 3}$$, $$B = \\text{Multiples of 5}$$, and $$C = \\text{Multiples of 7}$$. Which of the following numbers belongs to the intersection of all three sets (i.e., $A \\cap B \\cap C$)?",
+    "options": {
+      "A": "105",
+      "B": "45",
+      "C": "21",
+      "D": "75"
+    },
+    "correct_answer": "A",
+    "explanation": "To find $A \\cap B \\cap C$, we need a number that is a multiple of 3, 5, and 7 simultaneously.\n\nThis means we need the LCM(3, 5, 7).\n\nSince 3, 5, and 7 are all prime numbers:\n$$\\text{LCM}(3, 5, 7) = 3 \\times 5 \\times 7 = 105$$\n\nLet's verify each option:\n- **Option A: 105** \u2192 $105 \u00f7 3 = 35$ \u2713, $105 \u00f7 5 = 21$ \u2713, $105 \u00f7 7 = 15$ \u2713 \u2192 Belongs to $A \\cap B \\cap C$\n- **Option B: 45** \u2192 $45 \u00f7 3 = 15$ \u2713, $45 \u00f7 5 = 9$ \u2713, $45 \u00f7 7 = 6.43$ \u2717 \u2192 Not divisible by 7\n- **Option C: 21** \u2192 $21 \u00f7 3 = 7$ \u2713, $21 \u00f7 5 = 4.2$ \u2717 \u2192 Not divisible by 5\n- **Option D: 75** \u2192 $75 \u00f7 3 = 25$ \u2713, $75 \u00f7 5 = 15$ \u2713, $75 \u00f7 7 = 10.71$ \u2717 \u2192 Not divisible by 7\n\n**Answer: A (105)**",
+    "Requires_Diagram": true,
+    "TikZ_Code": "\\documentclass[varwidth=21cm, border=5mm]{standalone}\n\\usepackage{tikz}\n\\usetikzlibrary{shapes.geometric}\n\n\\begin{document}\n\\begin{tikzpicture}[scale=0.8]\n  % Draw three overlapping circles\n  \\draw[thick, blue] (0, 0) circle (2.5);\n  \\draw[thick, red] (-1.5, 0) circle (2.5);\n  \\draw[thick, green] (1.5, 0) circle (2.5);\n  \n  % Labels for sets\n  \\node[blue, font=\\bf] at (-2.8, 2.2) {$A$ (Mult. of 3)};\n  \\node[red, font=\\bf] at (-3.2, -1.8) {$B$ (Mult. of 5)};\n  \\node[green, font=\\bf] at (3.2, 2.2) {$C$ (Mult. of 7)};\n  \n  % Question mark in center (triple intersection)\n  \\node[font=\\Large, fill=white] at (0, 0) {$?$};\n  \n  % Regions outside all circles\n  \\node[font=\\small, gray] at (-5, 2) {Other};\n  \\node[font=\\small, gray] at (5, -2) {Other};\n\\end{tikzpicture}\n\\end{document}",
+    "metadata": {
+      "exam": "SSC CGL",
+      "subject": "Tier 1 \u2013 General Intelligence & Reasoning",
+      "topic": "Non-Verbal Reasoning",
+      "sub_topic": "Venn Diagrams",
+      "difficulty_level": 2
+    },
+    "local_image_path": "local_images/SSC_VENNDIAGRA_2_2_d1cf7e.svg"
+  },
+  {
+    "id": "SSC_VENNDIAGRA_3_1_3d7c1d",
+    "text": "In a group of 120 people, 65 read Newspaper A, 58 read Newspaper B, and 22 read neither. How many people read both Newspaper A and Newspaper B?",
+    "options": {
+      "A": "19",
+      "B": "23",
+      "C": "25",
+      "D": "27"
+    },
+    "correct_answer": "C",
+    "explanation": "Using the Venn diagram principle:\n\nGiven:\n- Total people = 120\n- |A| = 65 (read Newspaper A)\n- |B| = 58 (read Newspaper B)\n- Neither = 22\n\nPeople reading at least one newspaper:\n|A \u222a B| = Total - Neither = 120 - 22 = 98\n\nUsing the formula:\n|A \u222a B| = |A| + |B| - |A \u2229 B|\n98 = 65 + 58 - |A \u2229 B|\n98 = 123 - |A \u2229 B|\n|A \u2229 B| = 123 - 98 = 25\n\nTherefore, 25 people read both newspapers.",
+    "Requires_Diagram": true,
+    "TikZ_Code": "\\documentclass[varwidth=21cm, border=5mm]{standalone}\n\\usepackage{tikz}\n\\begin{document}\n\\begin{tikzpicture}\n  % Rectangle boundary\n  \\draw[thick] (-5,-2.5) rectangle (5,2.5);\n  % Circle A\n  \\draw[thick] (-1.2,0) circle (2cm);\n  % Circle B\n  \\draw[thick] (1.2,0) circle (2cm);\n  % Labels\n  \\node at (-2.8,2) {\\textbf{A}};\n  \\node at (2.8,2) {\\textbf{B}};\n  \\node at (4.2,-2) {Neither};\n  % Region labels\n  \\node at (-2.2,0) {Only A};\n  \\node at (0,0) {Both};\n  \\node at (2.2,0) {Only B};\n  % Total label\n  \\node at (0,-3.2) {Total = 120};\n\\end{tikzpicture}\n\\end{document}",
+    "metadata": {
+      "exam": "SSC CGL",
+      "subject": "General Intelligence & Reasoning",
+      "topic": "Non-Verbal Reasoning",
+      "sub_topic": "Venn Diagrams",
+      "difficulty_level": 3
+    },
+    "local_image_path": "local_images/SSC_VENNDIAGRA_3_1_3d7c1d.svg"
+  },
+  {
+    "id": "SSC_VENNDIAGRA_3_2_4c188f",
+    "text": "In a group of 80 students, 45 study Mathematics, 38 study Science, and 20 study both Mathematics and Science. How many students study neither Mathematics nor Science?",
+    "options": {
+      "A": "17",
+      "B": "15",
+      "C": "12",
+      "D": "23"
+    },
+    "correct_answer": "A",
+    "explanation": "Using the inclusion-exclusion principle:\n\nNumber of students who study Mathematics OR Science = n(M) + n(S) \u2212 n(M \u2229 S)\n= 45 + 38 \u2212 20\n= 63\n\nNumber of students who study NEITHER = Total \u2212 n(M \u222a S)\n= 80 \u2212 63\n= 17\n\nSo, 17 students study neither Mathematics nor Science.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "SSC CGL",
+      "subject": "General Intelligence & Reasoning",
+      "topic": "Non-Verbal Reasoning",
+      "sub_topic": "Venn Diagrams",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "SSC_VENNDIAGRA_4_1_d092af",
+    "text": "In a survey of 200 students, it was found that 120 students like Cricket, 90 like Football, and 70 like Hockey. The number of students who like both Cricket and Football is 40, both Football and Hockey is 35, and both Cricket and Hockey is 30. The number of students who like all three sports is 15. How many students like NONE of the three sports?",
+    "options": {
+      "A": "20",
+      "B": "25",
+      "C": "30",
+      "D": "10"
+    },
+    "correct_answer": "B",
+    "explanation": "Using the inclusion-exclusion principle:\n\n|C \u222a F \u222a H| = |C| + |F| + |H| \u2212 |C \u2229 F| \u2212 |F \u2229 H| \u2212 |C \u2229 H| + |C \u2229 F \u2229 H|\n\nSubstituting values:\n|C \u222a F \u222a H| = 120 + 90 + 70 \u2212 40 \u2212 35 \u2212 30 + 15\n= 280 \u2212 105 + 15\n= 175\n\nNumber of students who like NONE of the three sports = Total \u2212 |C \u222a F \u222a H|\n= 200 \u2212 175\n= 25\n\nTherefore, 25 students like none of the three sports.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "SSC CGL",
+      "subject": "General Intelligence & Reasoning",
+      "topic": "Non-Verbal Reasoning",
+      "sub_topic": "Venn Diagrams",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "SSC_VENNDIAGRA_4_2_77d93b",
+    "text": "In a survey of 500 people, the following information was collected about their preferences for three activities: Reading, Gaming, and Sports.\n\n\u2022 280 people like Reading\n\u2022 240 people like Gaming\n\u2022 220 people like Sports\n\u2022 110 people like both Reading and Gaming\n\u2022 100 people like both Gaming and Sports\n\u2022 105 people like both Reading and Sports\n\u2022 50 people like all three activities\n\nHow many people like exactly two of these activities?",
+    "options": {
+      "A": "85",
+      "B": "105",
+      "C": "115",
+      "D": "135"
+    },
+    "correct_answer": "C",
+    "explanation": "We need to find the number of people who like exactly two activities (but not all three).\n\n**Step 1: Find people in exactly two-activity regions (excluding the all-three region).**\n\nFor each pair, subtract those who like all three:\n- Only Reading \u2229 Gaming (not Sports) = 110 - 50 = 60\n- Only Gaming \u2229 Sports (not Reading) = 100 - 50 = 50\n- Only Reading \u2229 Sports (not Gaming) = 105 - 50 = 55\n\n**Step 2: Sum the exactly-two regions.**\n\nExactly two = 60 + 50 + 55 = **115**\n\n**Verification:**\nTotal in at least one activity = R + G + S - (R\u2229G) - (G\u2229S) - (R\u2229S) + (R\u2229G\u2229S)\n= 280 + 240 + 220 - 110 - 100 - 105 + 50\n= 740 - 315 + 50 = 475\n\nBreakdown of 475:\n- Exactly one: (280-60-55-50) + (240-60-50-50) + (220-50-55-50) = 115 + 80 + 65 = 260\n- Exactly two: 60 + 50 + 55 = 115\n- Exactly three: 50\n- Total: 260 + 115 + 50 = 425... \n\nWait, let me recalculate exactly-one regions:\n- Only Reading = 280 - 60 - 55 - 50 = 115\n- Only Gaming = 240 - 60 - 50 - 50 = 80\n- Only Sports = 220 - 50 - 55 - 50 = 65\n- Exactly one = 115 + 80 + 65 = 260\n\nTotal in at least one = 260 + 115 + 50 = 425\nPeople liking none = 500 - 425 = 75 \u2713\n\nTherefore, exactly two activities = **115**",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "SSC CGL",
+      "subject": "General Intelligence & Reasoning",
+      "topic": "Non-Verbal Reasoning",
+      "sub_topic": "Venn Diagrams",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "SSC_VENNDIAGRA_5_1_6472d0",
+    "text": "In a Venn diagram, three overlapping circles represent sets P (divisible by 2), Q (divisible by 3), and R (divisible by 5). Consider the following 10 numbers: 12, 15, 30, 36, 45, 60, 72, 75, 90, 150.\n\nHow many of these numbers lie in the region that belongs to both P and Q but NOT R (i.e., divisible by 6 but not by 5)?",
+    "options": {
+      "A": "2",
+      "B": "3",
+      "C": "4",
+      "D": "5"
+    },
+    "correct_answer": "B",
+    "explanation": "We need numbers divisible by both 2 and 3 (i.e., by 6), but NOT divisible by 5.\n\nStep 1: Check divisibility by 6:\n- 12: 12/6=2 YES\n- 15: not divisible by 2, NO\n- 30: 30/6=5 YES\n- 36: 36/6=6 YES\n- 45: not divisible by 2, NO\n- 60: 60/6=10 YES\n- 72: 72/6=12 YES\n- 75: not divisible by 2, NO\n- 90: 90/6=15 YES\n- 150: 150/6=25 YES\n\nDivisible by 6: {12, 30, 36, 60, 72, 90, 150}\n\nStep 2: Remove those also divisible by 5:\n- 30: divisible by 5, REMOVE\n- 60: divisible by 5, REMOVE\n- 90: divisible by 5, REMOVE\n- 150: divisible by 5, REMOVE\n\nRemaining (divisible by 6 but NOT 5): {12, 36, 72}\n\nCount = 3",
+    "Requires_Diagram": true,
+    "TikZ_Code": "\\documentclass[varwidth=21cm, border=5mm]{standalone}\n\\usepackage{tikz}\n\\usetikzlibrary{shapes,positioning}\n\n\\begin{document}\n\\begin{tikzpicture}\n% Coordinate plan:\n% Circle P center: (-1.4, 1.0), radius 2.2\n% Circle Q center: ( 1.4, 1.0), radius 2.2\n% Circle R center: ( 0.0,-1.2), radius 2.2\n% P only region: approx (-3.2, 1.0)\n% Q only region: approx ( 3.2, 1.0)\n% R only region: approx ( 0.0,-3.2)\n% P\u2229Q (not R) region: approx (0.0, 2.6)  <- target region marked with ?\n% P\u2229R (not Q) region: approx (-1.2,-0.6)\n% Q\u2229R (not P) region: approx ( 1.2,-0.6)\n% P\u2229Q\u2229R region: approx (0.0, 0.2)\n\n  % Circle P (divisible by 2)\n  \\draw[thick, fill=blue!15, fill opacity=0.5] (-1.4, 1.0) circle (2.2);\n  % Circle Q (divisible by 3)\n  \\draw[thick, fill=red!15, fill opacity=0.5] (1.4, 1.0) circle (2.2);\n  % Circle R (divisible by 5)\n  \\draw[thick, fill=green!15, fill opacity=0.5] (0.0, -1.2) circle (2.2);\n\n  % Label P (far left, outside)\n  \\node[font=\\large\\bfseries] at (-4.0, 2.5) {P};\n  \\node[font=\\small] at (-4.0, 1.9) {(div by 2)};\n\n  % Label Q (far right, outside)\n  \\node[font=\\large\\bfseries] at (4.0, 2.5) {Q};\n  \\node[font=\\small] at (4.0, 1.9) {(div by 3)};\n\n  % Label R (bottom, outside)\n  \\node[font=\\large\\bfseries] at (0.0, -4.0) {R};\n  \\node[font=\\small] at (0.0, -4.6) {(div by 5)};\n\n  % Mark the target region P\u2229Q but NOT R with ?\n  \\node[font=\\large\\bfseries, fill=white, inner sep=1pt] at (0.0, 2.5) {?};\n\n\\end{tikzpicture}\n\\end{document}",
+    "metadata": {
+      "exam": "SSC CGL",
+      "subject": "Tier 1 - General Intelligence & Reasoning",
+      "topic": "Non-Verbal Reasoning",
+      "sub_topic": "Venn Diagrams",
+      "difficulty_level": 5
+    },
+    "local_image_path": "local_images/SSC_VENNDIAGRA_5_1_6472d0.svg"
+  },
+  {
+    "id": "SSC_VENNDIAGRA_5_2_c82965",
+    "text": "In a group of 200 people, 85 like Cricket, 70 like Football, and 60 like Tennis. 30 like both Cricket and Football, 25 like both Football and Tennis, 20 like both Cricket and Tennis, and 12 like all three sports. How many people like none of these three sports?",
+    "options": {
+      "A": "42",
+      "B": "48",
+      "C": "52",
+      "D": "58"
+    },
+    "correct_answer": "B",
+    "explanation": "Using the inclusion-exclusion principle:\n\n$n(C \\cup F \\cup T) = n(C) + n(F) + n(T) - n(C \\cap F) - n(F \\cap T) - n(C \\cap T) + n(C \\cap F \\cap T)$\n\n$= 85 + 70 + 60 - 30 - 25 - 20 + 12 = 152$\n\nPeople who like none of the three sports $= 200 - 152 = 48$.\n\nVerification of each region:\n- Only all three: $12$\n- Only C and F (not T): $30 - 12 = 18$\n- Only F and T (not C): $25 - 12 = 13$\n- Only C and T (not F): $20 - 12 = 8$\n- Only Cricket: $85 - 18 - 12 - 8 = 47$\n- Only Football: $70 - 18 - 12 - 13 = 27$\n- Only Tennis: $60 - 8 - 12 - 13 = 27$\n- Total in at least one: $47 + 27 + 27 + 18 + 13 + 8 + 12 = 152$\n- None: $200 - 152 = 48$",
+    "Requires_Diagram": true,
+    "TikZ_Code": "\\documentclass[varwidth=21cm, border=5mm]{standalone}\n\\usepackage{tikz}\n\\usetikzlibrary{positioning}\n\\begin{document}\n\\begin{tikzpicture}\n  % Draw the three circles\n  \\draw[thick] (-1.5, 0.8) circle (2.2cm);\n  \\draw[thick] (1.5, 0.8) circle (2.2cm);\n  \\draw[thick] (0, -1.2) circle (2.2cm);\n  % Labels for the sets\n  \\node[font=\\bfseries] at (-3.2, 2.5) {Cricket};\n  \\node[font=\\bfseries] at (3.2, 2.5) {Football};\n  \\node[font=\\bfseries] at (0, -3.8) {Tennis};\n  % Given values outside\n  \\node[font=\\small] at (-3.5, 1.8) {$85$};\n  \\node[font=\\small] at (3.5, 1.8) {$70$};\n  \\node[font=\\small] at (0, -3.2) {$60$};\n  % Intersection labels with given values\n  \\node[fill=white, font=\\small] at (0, 1.6) {$30$};\n  \\node[fill=white, font=\\small] at (1.1, -0.6) {$25$};\n  \\node[fill=white, font=\\small] at (-1.1, -0.6) {$20$};\n  % Center\n  \\node[fill=white, font=\\small\\bfseries] at (0, 0.2) {$12$};\n  % Rectangle for universal set\n  \\draw[thick] (-5, -4.5) rectangle (5, 3.8);\n  \\node[font=\\bfseries] at (4.2, 3.4) {$U = 200$};\n  % Unknown\n  \\node[font=\\large\\bfseries] at (4, -3.8) {?};\n\\end{tikzpicture}\n\\end{document}",
+    "metadata": {
+      "exam": "SSC CGL",
+      "subject": "Tier 1 \u2013 General Intelligence & Reasoning",
+      "topic": "Non-Verbal Reasoning",
+      "sub_topic": "Venn Diagrams",
+      "difficulty_level": 5
+    },
+    "local_image_path": "local_images/SSC_VENNDIAGRA_5_2_c82965.svg"
+  }
+]
