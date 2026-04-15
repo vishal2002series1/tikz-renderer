@@ -1,0 +1,448 @@
+[
+  {
+    "id": "LSSBB_PROCESSCAP_1_1_a95cdf",
+    "text": "A manufacturing process has specification limits of LSL = 95 mm and USL = 105 mm. The process is observed to have a standard deviation of \u03c3 = 2 mm over a short-term period. The process mean is currently centered at \u03bc = 100 mm.\n\nWhich of the following correctly defines the difference between $C_p$ and $C_{pk}$ indices?",
+    "options": {
+      "A": "$C_p$ measures overall process centering and spread, while $C_{pk}$ measures only the spread relative to the nearest specification limit",
+      "B": "$C_p$ assumes the process is centered and measures potential capability, while $C_{pk}$ accounts for the actual process mean and measures actual capability",
+      "C": "$C_p$ is always greater than $C_{pk}$ regardless of process centering",
+      "D": "$C_p$ uses population standard deviation \u03c3, while $C_{pk}$ uses sample standard deviation s"
+    },
+    "correct_answer": "B",
+    "explanation": "The key conceptual difference between $C_p$ and $C_{pk}$ is:\n\n$C_p = \\frac{\\text{USL} - \\text{LSL}}{6\\sigma}$ represents the **potential capability** of the process if it were perfectly centered. It ignores where the process mean actually is located.\n\n$C_{pk} = \\min\\left[\\frac{\\text{USL} - \\mu}{3\\sigma}, \\frac{\\mu - \\text{LSL}}{3\\sigma}\\right]$ represents the **actual capability** by measuring the distance from the process mean (\u03bc) to the nearest specification limit, divided by half the spread tolerance (3\u03c3).\n\nOption A is incorrect because both indices account for specification limits and spread; the distinction is about centering and actual vs. potential.\n\nOption C is incorrect; $C_{pk}$ can equal $C_p$ when the process is perfectly centered, and $C_{pk}$ is always \u2264 $C_p$.\n\nOption D is incorrect; this distinction applies to **$C_p$ vs. $P_p$** and **$C_{pk}$ vs. $P_{pk}$** (short-term vs. long-term), not between $C_p$ and $C_{pk}$.\n\nOption B correctly states that $C_p$ is potential (assuming centering) while $C_{pk}$ is actual (accounting for where \u03bc really is).",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "IASSC LSSBB",
+      "phase": "Measure Phase",
+      "topic": "Process Capability",
+      "sub_topic": "Process Capability Indices \u2013 Cp, Cpk, Pp, Ppk",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "LSSBB_PROCESSCAP_1_2_d8fbb7",
+    "text": "A manufacturing process produces fasteners with a specification range from 9.5 mm to 10.5 mm (LSL = 9.5, USL = 10.5). A sample of 30 fasteners is collected and analyzed, yielding a sample mean of $\\bar{x} = 10.0$ mm and a sample standard deviation of $s = 0.12$ mm. Calculate the Ppk (performance index) for this process.",
+    "options": {
+      "A": "1.39",
+      "B": "1.25",
+      "C": "1.11",
+      "D": "0.97"
+    },
+    "correct_answer": "A",
+    "explanation": "Ppk is the performance index that uses the overall sample standard deviation (s) and accounts for process centering. It is calculated as:\n\n$$Ppk = \\min\\left[\\frac{USL - \\bar{x}}{3s}, \\frac{\\bar{x} - LSL}{3s}\\right]$$\n\nGiven data:\n- LSL = 9.5 mm\n- USL = 10.5 mm\n- $\\bar{x} = 10.0$ mm\n- $s = 0.12$ mm\n\nCalculate the upper capability ratio:\n$$\\frac{USL - \\bar{x}}{3s} = \\frac{10.5 - 10.0}{3 \\times 0.12} = \\frac{0.5}{0.36} = 1.389$$\n\nCalculate the lower capability ratio:\n$$\\frac{\\bar{x} - LSL}{3s} = \\frac{10.0 - 9.5}{3 \\times 0.12} = \\frac{0.5}{0.36} = 1.389$$\n\nTake the minimum:\n$$Ppk = \\min(1.389, 1.389) = 1.389 \\approx 1.39$$\n\nNote: Ppk uses the sample standard deviation (s) and reflects overall process capability. A Ppk of 1.39 indicates the process is capable (Ppk \u2265 1.33 is generally acceptable). The process is also well-centered, as both the upper and lower capability ratios are equal.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "IASSC LSSBB",
+      "phase": "Measure Phase",
+      "topic": "Process Capability",
+      "sub_topic": "Process Capability Indices \u2013 Cp, Cpk, Pp, Ppk",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "LSSBB_PROCESSCAP_2_1_a5a088",
+    "text": "A manufacturing process produces control valves with a specification of $\\text{LSL} = 48.0\\text{ mm}$ and $\\text{USL} = 52.0\\text{ mm}$. A sample of 30 valves yields a sample mean of $\\bar{x} = 50.2\\text{ mm}$ and a sample standard deviation of $s = 0.50\\text{ mm}$. Calculate the **Ppk** (performance capability index) for this process.",
+    "options": {
+      "A": "0.87",
+      "B": "1.20",
+      "C": "1.60",
+      "D": "2.13"
+    },
+    "correct_answer": "B",
+    "explanation": "The performance capability index **Ppk** uses the sample standard deviation (s) to assess long-term capability while accounting for process centering (shift from the nominal target).\n\n**Given:**\n- LSL = 48.0 mm\n- USL = 52.0 mm\n- $\\bar{x}$ = 50.2 mm\n- s = 0.50 mm\n\n**Formula:**\n$$P_{pk} = \\min\\left[\\frac{USL - \\bar{x}}{3s}, \\frac{\\bar{x} - LSL}{3s}\\right]$$\n\n**Calculate upper capability:**\n$$\\frac{USL - \\bar{x}}{3s} = \\frac{52.0 - 50.2}{3(0.50)} = \\frac{1.8}{1.50} = 1.20$$\n\n**Calculate lower capability:**\n$$\\frac{\\bar{x} - LSL}{3s} = \\frac{50.2 - 48.0}{3(0.50)} = \\frac{2.2}{1.50} = 1.467$$\n\n**Select the minimum:**\n$$P_{pk} = \\min(1.20, 1.467) = 1.20$$\n\nThe process is **centered slightly toward the upper specification limit**, making the upper side the constraining factor. The **Ppk = 1.20** indicates acceptable but not excellent long-term capability. Per IASSC standards, Ppk \u2265 1.33 is preferred for critical characteristics; Ppk = 1.20 suggests monitoring or process optimization may be warranted.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "IASSC LSSBB",
+      "phase": "Measure",
+      "topic": "Process Capability",
+      "sub_topic": "Process Capability Indices \u2013 Cp, Cpk, Pp, Ppk",
+      "difficulty_level": 2,
+      "keywords": [
+        "Ppk",
+        "performance capability index",
+        "long-term capability",
+        "sample standard deviation",
+        "process centering",
+        "specification limits"
+      ]
+    }
+  },
+  {
+    "id": "LSSBB_PROCESSCAP_2_2_c25353",
+    "text": "A manufacturing process produces electronic components with a specification of $\\text{LSL} = 18.5$ mm and $\\text{USL} = 21.5$ mm. A rational subgroup sample of 25 components was measured, yielding a sample mean $\\bar{x} = 20.0$ mm and within-subgroup standard deviation $s = 0.40$ mm. Calculate the $C_{pk}$ (short-term capability index) and determine whether the process is capable (assuming a minimum requirement of $C_{pk} \\geq 1.33$).",
+    "options": {
+      "A": "$C_{pk} = 1.25$; the process is not capable.",
+      "B": "$C_{pk} = 1.33$; the process is marginally capable.",
+      "C": "$C_{pk} = 1.50$; the process is capable.",
+      "D": "$C_{pk} = 2.00$; the process is highly capable."
+    },
+    "correct_answer": "A",
+    "explanation": "The short-term process capability index $C_{pk}$ uses the within-subgroup (short-term) standard deviation $s$ and is calculated as:\n\n$$C_{pk} = \\min\\left[\\frac{\\text{USL} - \\bar{x}}{3s}, \\frac{\\bar{x} - \\text{LSL}}{3s}\\right]$$\n\n**Calculate the upper capability:**\n$$\\frac{\\text{USL} - \\bar{x}}{3s} = \\frac{21.5 - 20.0}{3(0.40)} = \\frac{1.5}{1.2} = 1.25$$\n\n**Calculate the lower capability:**\n$$\\frac{\\bar{x} - \\text{LSL}}{3s} = \\frac{20.0 - 18.5}{3(0.40)} = \\frac{1.5}{1.2} = 1.25$$\n\n**Determine $C_{pk}$:**\n$$C_{pk} = \\min(1.25, 1.25) = 1.25$$\n\nSince $C_{pk} = 1.25 < 1.33$, the process does **not meet** the minimum capability threshold of 1.33. The process is considered not capable in the short term. This indicates that within the immediate process variation, approximately 0.82 defects per million opportunities (DPMO) are expected to fall outside specification limits, which exceeds typical Six Sigma acceptance criteria.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "IASSC LSSBB",
+      "phase": "Measure",
+      "topic": "Process Capability",
+      "sub_topic": "Process Capability Indices \u2013 Cp, Cpk, Pp, Ppk",
+      "difficulty_level": 2,
+      "key_concepts": [
+        "Cpk calculation",
+        "Short-term process capability",
+        "Within-subgroup standard deviation",
+        "Minimum capability threshold interpretation",
+        "Symmetric process centered on mean"
+      ],
+      "iassc_bok_reference": "Measure Phase > Process Capability > Capability Indices"
+    }
+  },
+  {
+    "id": "LSSBB_PROCESSCAP_3_1_336470",
+    "text": "A process fills bottles with a target volume. The specification limits are LSL = 330 mL and USL = 370 mL. A capability study using rational subgroups yields a within-subgroup standard deviation of $\\sigma = 3.5$ mL, while the overall (long-term) standard deviation is $s = 5.0$ mL. The process mean is $\\bar{x} = 345$ mL. What are the $C_{pk}$ and $P_{pk}$ values for this process, respectively?",
+    "options": {
+      "A": "$C_{pk} = 1.43$ and $P_{pk} = 1.00$",
+      "B": "$C_{pk} = 2.38$ and $P_{pk} = 1.67$",
+      "C": "$C_{pk} = 1.90$ and $P_{pk} = 1.33$",
+      "D": "$C_{pk} = 1.43$ and $P_{pk} = 1.67$"
+    },
+    "correct_answer": "A",
+    "explanation": "Step 1: Compute $C_{pk}$ using the within-subgroup $\\sigma = 3.5$ mL.\n\n$$C_{pk} = \\min\\!\\left[\\frac{USL - \\bar{x}}{3\\sigma},\\; \\frac{\\bar{x} - LSL}{3\\sigma}\\right]$$\n\n$$\\frac{USL - \\bar{x}}{3\\sigma} = \\frac{370 - 345}{3(3.5)} = \\frac{25}{10.5} = 2.381$$\n\n$$\\frac{\\bar{x} - LSL}{3\\sigma} = \\frac{345 - 330}{3(3.5)} = \\frac{15}{10.5} = 1.429$$\n\n$$C_{pk} = \\min(2.381,\\; 1.429) = 1.43$$\n\nStep 2: Compute $P_{pk}$ using the overall $s = 5.0$ mL.\n\n$$P_{pk} = \\min\\!\\left[\\frac{USL - \\bar{x}}{3s},\\; \\frac{\\bar{x} - LSL}{3s}\\right]$$\n\n$$\\frac{USL - \\bar{x}}{3s} = \\frac{370 - 345}{3(5.0)} = \\frac{25}{15} = 1.667$$\n\n$$\\frac{\\bar{x} - LSL}{3s} = \\frac{345 - 330}{3(5.0)} = \\frac{15}{15} = 1.000$$\n\n$$P_{pk} = \\min(1.667,\\; 1.000) = 1.00$$\n\nThe key distinction: $C_{pk}$ uses the short-term (within-subgroup) standard deviation and reflects the process's inherent capability, while $P_{pk}$ uses the overall (long-term) standard deviation and reflects actual performance including all sources of variation. Here $P_{pk} < C_{pk}$, indicating the presence of between-subgroup variation (e.g., shifts or drifts over time).",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "IASSC LSSBB",
+      "phase": "Measure Phase",
+      "topic": "Process Capability",
+      "sub_topic": "Process Capability Indices \u2013 Cp, Cpk, Pp, Ppk",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "LSSBB_PROCESSCAP_3_2_af47dd",
+    "text": "A manufacturing process produces shafts with a specification of $60.00 \\pm 0.90$ mm. A short-term study using a control chart estimates the within-subgroup standard deviation as $\\hat{\\sigma} = 0.18$ mm, while the overall sample standard deviation from all 80 collected parts is $s = 0.27$ mm. The process mean is measured at $\\bar{x} = 60.24$ mm. Which of the following correctly compares $C_{pk}$ and $P_{pk}$, and what does the difference indicate?",
+    "options": {
+      "A": "$C_{pk} = 1.22$, $P_{pk} = 0.81$; the difference indicates that between-subgroup variation is inflating overall process spread, suggesting the process mean shifts over time.",
+      "B": "$C_{pk} = 1.50$, $P_{pk} = 1.00$; the difference indicates measurement system error is the dominant source of variation.",
+      "C": "$C_{pk} = 1.22$, $P_{pk} = 0.81$; the difference indicates the specification limits are too tight relative to the process capability.",
+      "D": "$C_{pk} = 1.00$, $P_{pk} = 1.22$; the difference indicates within-subgroup variation exceeds between-subgroup variation."
+    },
+    "correct_answer": "A",
+    "explanation": "**Given:** USL = 60.90, LSL = 59.10, $\\hat{\\sigma} = 0.18$ mm (short-term), $s = 0.27$ mm (long-term), $\\bar{x} = 60.24$ mm.\n\n**Step 1 \u2013 Compute $C_{pk}$ (uses $\\hat{\\sigma}$):**\n$$C_{pk} = \\min\\!\\left[\\frac{USL - \\bar{x}}{3\\hat{\\sigma}},\\ \\frac{\\bar{x} - LSL}{3\\hat{\\sigma}}\\right]$$\n$$= \\min\\!\\left[\\frac{60.90 - 60.24}{3(0.18)},\\ \\frac{60.24 - 59.10}{3(0.18)}\\right]$$\n$$= \\min\\!\\left[\\frac{0.66}{0.54},\\ \\frac{1.14}{0.54}\\right] = \\min[1.222,\\ 2.111] = 1.22$$\n\n**Step 2 \u2013 Compute $P_{pk}$ (uses $s$):**\n$$P_{pk} = \\min\\!\\left[\\frac{USL - \\bar{x}}{3s},\\ \\frac{\\bar{x} - LSL}{3s}\\right]$$\n$$= \\min\\!\\left[\\frac{0.66}{3(0.27)},\\ \\frac{1.14}{3(0.27)}\\right]$$\n$$= \\min\\!\\left[\\frac{0.66}{0.81},\\ \\frac{1.14}{0.81}\\right] = \\min[0.815,\\ 1.407] = 0.81$$\n\n**Step 3 \u2013 Interpretation:** $C_{pk} = 1.22 > P_{pk} = 0.81$. When $C_{pk}$ is notably higher than $P_{pk}$, it means the process is capable in the short term (within subgroups) but performs worse over the long term. This gap is caused by between-subgroup variation \u2014 e.g., process mean drifting or shifting over time \u2014 which inflates $s$ beyond $\\hat{\\sigma}$. This is a classic indicator of process instability or mean shifts over time.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "IASSC LSSBB",
+      "phase": "Measure Phase",
+      "topic": "Process Capability",
+      "sub_topic": "Process Capability Indices \u2013 Cp, Cpk, Pp, Ppk",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "LSSBB_PROCESSCAP_4_1_3706fb",
+    "text": "A machining process produces shafts with a specification of $74.0 \\pm 1.5$ mm. A short-term capability study using a rational subgroup approach yields $\\hat{\\sigma}_{\\text{within}} = 0.35$ mm and $\\bar{x} = 74.6$ mm. A long-term performance study over several weeks yields $s_{\\text{overall}} = 0.55$ mm. Which of the following statements is BEST supported by computing all four indices ($C_p$, $C_{pk}$, $P_p$, $P_{pk}$)?",
+    "options": {
+      "A": "$C_p = 1.43$, $C_{pk} = 0.86$, $P_p = 0.91$, $P_{pk} = 0.55$: the process is short-term capable but not centered, and long-term performance is poor \u2014 indicating significant sources of between-subgroup variation (e.g., tool wear, shift changes) that must be identified and eliminated.",
+      "B": "$C_p = 1.43$, $C_{pk} = 1.43$, $P_p = 0.91$, $P_{pk} = 0.91$: the process is both capable and centered in the short and long term \u2014 no centering or variation issues exist.",
+      "C": "$C_p = 0.86$, $C_{pk} = 0.86$, $P_p = 0.55$, $P_{pk} = 0.55$: the process has a centering problem but no spread issue in either the short or long term.",
+      "D": "$C_p = 1.43$, $C_{pk} = 1.43$, $P_p = 0.91$, $P_{pk} = 0.55$: the process is perfectly centered in the short term but drifts off-center over the long term, indicating a sustained mean shift."
+    },
+    "correct_answer": "A",
+    "explanation": "**Given:** USL = 75.5 mm, LSL = 72.5 mm, $\\bar{x} = 74.6$ mm, $\\hat{\\sigma}_{\\text{within}} = 0.35$ mm, $s_{\\text{overall}} = 0.55$ mm.\n\n**Step 1 \u2014 Cp (short-term spread only):**\n$$C_p = \\frac{\\text{USL} - \\text{LSL}}{6\\hat{\\sigma}} = \\frac{75.5 - 72.5}{6 \\times 0.35} = \\frac{3.0}{2.10} = 1.43$$\n\n**Step 2 \u2014 Cpk (short-term, accounts for centering):**\n$$C_{pk} = \\min\\left[\\frac{75.5 - 74.6}{3 \\times 0.35},\\ \\frac{74.6 - 72.5}{3 \\times 0.35}\\right] = \\min\\left[\\frac{0.9}{1.05},\\ \\frac{2.1}{1.05}\\right] = \\min[0.857, 2.0] \\approx 0.86$$\n\n**Step 3 \u2014 Pp (long-term spread only):**\n$$P_p = \\frac{\\text{USL} - \\text{LSL}}{6s} = \\frac{3.0}{6 \\times 0.55} = \\frac{3.0}{3.30} = 0.91$$\n\n**Step 4 \u2014 Ppk (long-term, accounts for centering):**\n$$P_{pk} = \\min\\left[\\frac{75.5 - 74.6}{3 \\times 0.55},\\ \\frac{74.6 - 72.5}{3 \\times 0.55}\\right] = \\min\\left[\\frac{0.9}{1.65},\\ \\frac{2.1}{1.65}\\right] = \\min[0.545, 1.27] \\approx 0.55$$\n\n**Interpretation:** $C_p = 1.43 > 1.33$ shows the process has adequate short-term spread capability. However, $C_{pk} = 0.86 < 1.0$ reveals that the process mean ($74.6$) is shifted toward the USL, producing short-term centering issues. The gap between $C_p$ and $P_p$ ($1.43$ vs $0.91$) indicates significant between-subgroup variation inflating long-term spread. $P_{pk} = 0.55$ confirms the long-term performance is unacceptable. The correct action is to identify and eliminate special causes driving the between-subgroup spread (tool wear, operator shifts, raw material lots) and re-center the process. Option A correctly states all four values and draws the correct IASSC-aligned conclusion.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "IASSC LSSBB",
+      "phase": "Measure Phase",
+      "topic": "Process Capability",
+      "sub_topic": "Process Capability Indices \u2013 Cp, Cpk, Pp, Ppk",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "LSSBB_PROCESSCAP_4_2_18fddc",
+    "text": "A manufacturing process produces ceramic tiles with a thickness specification of $8.00 \\pm 0.36$ mm. A short-term capability study (subgroup data, $n = 5$ subgroups of 5) yields $\\bar{\\bar{x}} = 8.09$ mm and $\\hat{\\sigma}_{\\text{within}} = 0.08$ mm. A separate long-term study using 120 individual measurements gives $\\bar{x} = 8.09$ mm and $s_{\\text{overall}} = 0.14$ mm. A process engineer reviews both studies and makes four statements. Which statement is CORRECT?",
+    "options": {
+      "A": "$C_{pk} = 1.13$ and $P_{pk} = 0.64$; the process is capable short-term but NOT capable long-term, suggesting significant sources of variation are present between subgroups over time.",
+      "B": "$C_{pk} = 1.13$ and $P_{pk} = 0.64$; because $C_{pk} > P_{pk}$, the process is not centered and should be recentered before any other action.",
+      "C": "$C_{pk} = 1.50$ and $P_{pk} = 0.86$; the gap between $C_{pk}$ and $P_{pk}$ indicates measurement system error is the dominant root cause.",
+      "D": "$C_{pk} = 1.13$ and $P_{pk} = 1.13$; short-term and long-term capability are identical, confirming the process is in statistical control."
+    },
+    "correct_answer": "A",
+    "explanation": "Given: LSL = 7.64 mm, USL = 8.36 mm, \u03bc = 8.09 mm, \u03c3\u0302_within = 0.08 mm, s_overall = 0.14 mm.\n\n**Short-term (Cp / Cpk):**\nCp = (USL \u2212 LSL) / (6\u03c3) = (8.36 \u2212 7.64) / (6 \u00d7 0.08) = 0.72 / 0.48 = 1.50\nCpk = min[(USL \u2212 \u03bc)/(3\u03c3), (\u03bc \u2212 LSL)/(3\u03c3)]\n  Upper: (8.36 \u2212 8.09)/(3 \u00d7 0.08) = 0.27/0.24 = 1.125\n  Lower: (8.09 \u2212 7.64)/(3 \u00d7 0.08) = 0.45/0.24 = 1.875\nCpk = min(1.125, 1.875) = 1.13 (rounded to 2 d.p.)\n\n**Long-term (Pp / Ppk):**\nPp = (USL \u2212 LSL) / (6s) = 0.72 / (6 \u00d7 0.14) = 0.72 / 0.84 = 0.857\nPpk = min[(USL \u2212 \u03bc)/(3s), (\u03bc \u2212 LSL)/(3s)]\n  Upper: (8.36 \u2212 8.09)/(3 \u00d7 0.14) = 0.27/0.42 = 0.643\n  Lower: (8.09 \u2212 7.64)/(3 \u00d7 0.14) = 0.45/0.42 = 1.071\nPpk = min(0.643, 1.071) = 0.64 (rounded to 2 d.p.)\n\nSo Cpk \u2248 1.13 and Ppk \u2248 0.64. The Cpk > 1.00 indicates the process is capable within subgroups (short-term), but Ppk < 1.00 shows it is NOT capable long-term. The large gap between Cpk and Ppk (s_overall \u226b \u03c3\u0302_within) is a classic indicator that between-subgroup variation (e.g., shift, drift, lot-to-lot variation) is inflating overall spread \u2014 not measurement system error, which is Option C's claim. Recentering (Option B) does not address the root cause of excess between-subgroup variation. Option D is incorrect because \u03c3\u0302_within \u2260 s_overall. Therefore, Option A is the correct and complete interpretation.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "IASSC LSSBB",
+      "phase": "Measure Phase",
+      "topic": "Process Capability",
+      "sub_topic": "Process Capability Indices \u2013 Cp, Cpk, Pp, Ppk",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "LSSBB_PROCESSCAP_5_1_629d8f",
+    "text": "A Black Belt is analyzing a critical injection-molded dimension with specification limits of LSL = 62.0 mm and USL = 74.0 mm. Two separate analyses are performed on the same dataset of 30 subgroups (n = 5 each): a short-term study using the within-subgroup standard deviation (\u03c3\u0302 = 1.20 mm) and a long-term study using the overall sample standard deviation (s = 1.80 mm). The process mean is 69.0 mm. Which of the following statements BEST describes the process capability situation, and what is the most likely root cause of the observed difference between short-term and long-term indices?",
+    "options": {
+      "A": "Cp = 1.67, Cpk = 1.39, Pp = 1.11, Ppk = 0.93; the gap indicates significant between-subgroup variation (process drift or shifts), suggesting the process is not in statistical control.",
+      "B": "Cp = 1.67, Cpk = 1.11, Pp = 1.11, Ppk = 0.74; the gap indicates measurement system error is inflating the within-subgroup variation, requiring a Gage R&R study.",
+      "C": "Cp = 1.39, Cpk = 1.11, Pp = 0.93, Ppk = 0.74; the gap indicates excessive common-cause variation, which is typical for any stable process with large subgroup sizes.",
+      "D": "Cp = 1.67, Cpk = 1.39, Pp = 1.11, Ppk = 0.93; the gap indicates that the specification limits are too tight and should be revised to reflect actual process performance."
+    },
+    "correct_answer": "A",
+    "explanation": "Step 1 \u2014 Compute short-term indices using \u03c3\u0302 = 1.20 mm:\n  Cp  = (USL \u2212 LSL) / (6\u03c3\u0302) = (74.0 \u2212 62.0) / (6 \u00d7 1.20) = 12.0 / 7.20 = 1.67\n  Cpu = (USL \u2212 \u03bc) / (3\u03c3\u0302) = (74.0 \u2212 69.0) / (3 \u00d7 1.20) = 5.0 / 3.60 = 1.39\n  Cpl = (\u03bc \u2212 LSL) / (3\u03c3\u0302) = (69.0 \u2212 62.0) / (3 \u00d7 1.20) = 7.0 / 3.60 = 1.94\n  Cpk = min(1.39, 1.94) = 1.39\n\nStep 2 \u2014 Compute long-term indices using s = 1.80 mm:\n  Pp  = (USL \u2212 LSL) / (6s) = 12.0 / (6 \u00d7 1.80) = 12.0 / 10.80 = 1.11\n  Ppu = (USL \u2212 \u03bc) / (3s) = 5.0 / (3 \u00d7 1.80) = 5.0 / 5.40 = 0.93\n  Ppl = (\u03bc \u2212 LSL) / (3s) = 7.0 / 5.40 = 1.30\n  Ppk = min(0.93, 1.30) = 0.93\n\nStep 3 \u2014 Interpret the gap:\n  The ratio s / \u03c3\u0302 = 1.80 / 1.20 = 1.50, meaning the overall (long-term) variation is 50% larger than the within-subgroup (short-term) variation. In IASSC BoK terms, when Pp < Cp and Ppk < Cpk, the excess variation is attributable to between-subgroup variation \u2014 i.e., process drift, mean shifts, or other special-cause patterns occurring over time. This indicates the process is NOT in a state of statistical control. The correct action is to investigate assignable causes (e.g., tool wear, batch-to-batch raw material variation, operator changeovers) driving the mean or spread shifts across subgroups. Option A correctly states both index values and the correct root-cause interpretation. Option D states the same numbers but draws the wrong conclusion (blaming the spec limits rather than the process).",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "IASSC LSSBB",
+      "phase": "Measure Phase",
+      "topic": "Process Capability",
+      "sub_topic": "Process Capability Indices \u2013 Cp, Cpk, Pp, Ppk",
+      "difficulty_level": 5
+    }
+  },
+  {
+    "id": "LSSBB_PROCESSCAP_5_2_d3be46",
+    "text": "A Black Belt is evaluating a chemical filling process after a major equipment overhaul. The specification for fill volume is $112.0 \\pm 6.0$ mL. A short-term study of 25 consecutive parts yields $\\bar{x} = 114.2$ mL and $s_{\\text{short}} = 1.4$ mL. A long-term study of 200 parts collected over 4 weeks yields $\\bar{x} = 114.2$ mL and $s_{\\text{long}} = 2.1$ mL. The Black Belt computes all four indices (Cp, Cpk, Pp, Ppk). Which of the following statements BEST characterizes the process situation and the correct managerial action?",
+    "options": {
+      "A": "Cp = 1.43, Cpk = 0.90, Pp = 0.95, Ppk = 0.60. The process is centered and capable short-term but drifting significantly long-term; reduce long-term variation sources.",
+      "B": "Cp = 1.43, Cpk = 0.90, Pp = 0.95, Ppk = 0.60. The process is off-center and the long-term spread is larger than short-term spread, indicating special causes inflating long-term variation; center the process AND investigate assignable causes over the 4-week period.",
+      "C": "Cp = 1.43, Cpk = 1.43, Pp = 0.95, Ppk = 0.95. The process is perfectly centered, so Cpk = Cp and Ppk = Pp; only long-term variation needs attention.",
+      "D": "Cp = 0.95, Cpk = 0.60, Pp = 1.43, Ppk = 0.90. The long-term study is larger so Pp > Cp; the process is centered and no action is needed."
+    },
+    "correct_answer": "B",
+    "explanation": "Step 1 \u2013 Identify parameters:\n\u2022 USL = 112.0 + 6.0 = 118.0 mL; LSL = 112.0 \u2212 6.0 = 106.0 mL; tolerance = 12.0 mL.\n\u2022 Short-term: \u03c3 = s_short = 1.4 mL; Long-term: s = s_long = 2.1 mL; \u03bc = x\u0304 = 114.2 mL.\n\nStep 2 \u2013 Compute Cp and Cpk (short-term, \u03c3 = 1.4):\n\u2022 Cp = (USL \u2212 LSL)/(6\u03c3) = 12.0/(6 \u00d7 1.4) = 12.0/8.4 \u2248 1.43\n\u2022 CPU = (USL \u2212 \u03bc)/(3\u03c3) = (118.0 \u2212 114.2)/(3 \u00d7 1.4) = 3.8/4.2 \u2248 0.905\n\u2022 CPL = (\u03bc \u2212 LSL)/(3\u03c3) = (114.2 \u2212 106.0)/(3 \u00d7 1.4) = 8.2/4.2 \u2248 1.952\n\u2022 Cpk = min(0.905, 1.952) \u2248 0.90\n\nStep 3 \u2013 Compute Pp and Ppk (long-term, s = 2.1):\n\u2022 Pp = (USL \u2212 LSL)/(6s) = 12.0/(6 \u00d7 2.1) = 12.0/12.6 \u2248 0.95\n\u2022 PPU = (118.0 \u2212 114.2)/(3 \u00d7 2.1) = 3.8/6.3 \u2248 0.603\n\u2022 PPL = (114.2 \u2212 106.0)/(3 \u00d7 2.1) = 8.2/6.3 \u2248 1.302\n\u2022 Ppk = min(0.603, 1.302) \u2248 0.60\n\nStep 4 \u2013 Interpretation:\n\u2022 Cp > Ppk: the process has adequate short-term potential (Cp = 1.43 > 1.33 benchmark) but poor long-term actual performance (Ppk = 0.60 < 1.00).\n\u2022 Cpk = 0.90 < 1.00 even short-term because \u03bc = 114.2 is shifted above the nominal (112.0), biased toward the upper spec.\n\u2022 The gap between Cp/Cpk and Pp/Ppk confirms that long-term variation (s_long = 2.1 vs s_short = 1.4) has grown, indicating assignable (special) causes emerged over the 4-week period.\n\u2022 Correct action: (1) Center the process mean back to 112.0 mL to improve Cpk/Ppk, AND (2) investigate and eliminate special causes that inflated long-term \u03c3.\n\u2022 Option A incorrectly describes the process as 'centered.' Option C incorrectly equates Cpk to Cp. Option D inverts the roles of short-term and long-term indices.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "IASSC LSSBB",
+      "phase": "Measure Phase",
+      "topic": "Process Capability",
+      "sub_topic": "Process Capability Indices \u2013 Cp, Cpk, Pp, Ppk",
+      "difficulty_level": 5
+    }
+  },
+  {
+    "id": "LSSBB_HYPOTHESIS_1_1_bdd266",
+    "text": "A Black Belt is conducting a hypothesis test to determine whether a process improvement has reduced the average cycle time. The current process has a mean cycle time of 45 minutes. The Black Belt sets up the hypothesis test as follows:\n\n$$H_0: \\mu = 45 \\text{ minutes}$$\n$$H_1: \\mu < 45 \\text{ minutes}$$\n\nThe Black Belt sets $\\alpha = 0.05$ and $\\beta = 0.10$. Which of the following statements correctly describes the meaning of these error rates in the context of this hypothesis test?",
+    "options": {
+      "A": "\u03b1 = 0.05 means there is a 5% chance of rejecting H\u2080 when it is actually true (Type I error); \u03b2 = 0.10 means there is a 10% chance of failing to reject H\u2080 when H\u2081 is actually true (Type II error).",
+      "B": "\u03b1 = 0.05 means there is a 5% chance of failing to reject H\u2080 when H\u2081 is actually true; \u03b2 = 0.10 means there is a 10% chance of rejecting H\u2080 when it is actually true.",
+      "C": "\u03b1 = 0.05 represents the power of the test to detect a true reduction in cycle time; \u03b2 = 0.10 represents the risk of a false positive result.",
+      "D": "\u03b1 = 0.05 and \u03b2 = 0.10 together indicate that the total error rate cannot exceed 15%, ensuring statistical validity of the test."
+    },
+    "correct_answer": "A",
+    "explanation": "According to the IASSC Body of Knowledge and fundamental hypothesis testing framework:\n\n\u2022 **Type I Error (\u03b1)**: The probability of rejecting the null hypothesis (H\u2080) when it is actually true. Also called the significance level. In this case, \u03b1 = 0.05 means there is a 5% risk of concluding that the cycle time has been reduced when it actually has not.\n\n\u2022 **Type II Error (\u03b2)**: The probability of failing to reject the null hypothesis when the alternative hypothesis (H\u2081) is actually true. In this case, \u03b2 = 0.10 means there is a 10% risk of missing a true reduction in cycle time.\n\nOption A correctly identifies both error types and their meanings in the context of this left-tailed test.\n\nOption B reverses the definitions\u2014this is incorrect.\n\nOption C confuses \u03b1 with power (power = 1 \u2212 \u03b2 = 0.90) and incorrectly describes \u03b2 as a false positive risk.\n\nOption D misinterprets the relationship between \u03b1 and \u03b2; they do not sum to create an overall error threshold.\n\n**Correct Answer: A**",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "IASSC LSSBB",
+      "phase": "Analyse",
+      "topic": "Hypothesis Testing",
+      "sub_topic": "Hypothesis Framework \u2013 H\u2080 vs H\u2081, Type I & Type II Errors, Alpha & Beta",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "LSSBB_HYPOTHESIS_1_2_d30063",
+    "text": "A Black Belt is testing whether a process change has reduced the mean cycle time from the historical average of 42 minutes. The null and alternative hypotheses are set up as:\n\n$$H_0: \\mu = 42 \\text{ minutes}$$\n$$H_1: \\mu < 42 \\text{ minutes}$$\n\nThe Black Belt sets the significance level $\\alpha = 0.05$ (Type I error risk). Which of the following correctly describes what a Type II error ($\\beta$) would represent in this context?",
+    "options": {
+      "A": "Rejecting $H_0$ when the process mean is actually equal to 42 minutes (incorrectly claiming the change worked).",
+      "B": "Failing to reject $H_0$ when the process mean is actually less than 42 minutes (incorrectly concluding the change did not work).",
+      "C": "The probability that the sample size is too small to detect a real difference.",
+      "D": "Rejecting $H_0$ when the process mean is actually greater than 42 minutes (Type I error on the opposite tail)."
+    },
+    "correct_answer": "B",
+    "explanation": "In hypothesis testing, Type I and Type II errors are defined as follows:\n\n\u2022 **Type I Error (\u03b1)**: Rejecting $H_0$ when $H_0$ is actually true. This is the risk of a false positive.\n\u2022 **Type II Error (\u03b2)**: Failing to reject $H_0$ when $H_0$ is actually false. This is the risk of a false negative.\n\nIn this one-tailed left test:\n- $H_0: \\mu = 42$ (the process mean has not improved)\n- $H_1: \\mu < 42$ (the process mean has been reduced)\n\nA Type II error occurs when the true process mean is actually less than 42 minutes (i.e., $H_1$ is true), but the test fails to reject $H_0$. This means the Black Belt would incorrectly conclude that the process change did not work, when in fact it did reduce cycle time.\n\n**Evaluation of options:**\n- **(A)** describes a Type I error, not Type II.\n- **(B)** is correct: failing to reject $H_0$ (concluding no improvement) when the mean actually is less than 42 (improvement truly occurred).\n- **(C)** is related to power and sample size, but does not define Type II error.\n- **(D)** misidentifies Type I error and incorrectly places the outcome on the opposite tail.\n\n**Answer: B**",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "IASSC LSSBB",
+      "phase": "Analyse",
+      "topic": "Hypothesis Testing",
+      "sub_topic": "Hypothesis Framework \u2013 H0 vs H1, Type I & Type II Errors, Alpha & Beta",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "LSSBB_HYPOTHESIS_2_1_19a935",
+    "text": "A manufacturing process produces components with a historical mean diameter of $\\mu_0 = 25.0$ mm. A Black Belt conducts a hypothesis test to determine whether a recent process modification has changed the mean diameter. The test is designed with $\\alpha = 0.05$ and $\\beta = 0.12$.\n\nWhich of the following statements correctly describes the relationship between these error levels and the test's ability to detect a true shift?\n",
+    "options": {
+      "A": "The Type I error rate of 5% means there is a 5% chance of rejecting $H_0$ when it is true; the Type II error rate of 12% means there is an 88% power to detect a true shift in the mean.",
+      "B": "The Type I error rate of 5% means there is a 5% chance of failing to reject $H_0$ when it is false; the Type II error rate of 12% means there is only a 12% power to detect a true shift.",
+      "C": "The Type I error rate of 5% and Type II error rate of 12% are independent measures with no trade-off relationship; both can be reduced simultaneously without increasing sample size.",
+      "D": "The Type I error of 5% applies only to one-tailed tests; the Type II error of 12% applies only to two-tailed tests, so these parameters cannot be compared directly."
+    },
+    "correct_answer": "A",
+    "explanation": "This question tests understanding of the fundamental relationship between Type I error (\u03b1), Type II error (\u03b2), and statistical power.\n\n**Correct Reasoning:**\n\n\u2022 **Type I Error (\u03b1 = 0.05):** The probability of rejecting the null hypothesis $H_0$ when it is actually true. In this context, rejecting the claim that the process mean is 25.0 mm when it truly is 25.0 mm.\n\n\u2022 **Type II Error (\u03b2 = 0.12):** The probability of failing to reject $H_0$ when it is false. That is, concluding the mean is still 25.0 mm when it has actually shifted due to the process modification.\n\n\u2022 **Statistical Power = 1 \u2212 \u03b2 = 1 \u2212 0.12 = 0.88 (or 88%):** This is the probability of correctly rejecting $H_0$ when a true shift has occurred. A power of 88% means the test has an 88% chance of detecting the process change if one truly exists.\n\n**Analysis of Options:**\n\n**Option A (Correct):** Accurately defines Type I error as rejection of a true $H_0$, and correctly identifies power as $1 \u2212 \\beta = 0.88$ or 88%. This directly answers what the test's ability to detect a shift represents.\n\n**Option B (Incorrect):** Reverses the definition of Type I error (claims it relates to failing to reject, which is Type II) and incorrectly states that 12% is the power (it is 1 \u2212 \u03b2, so power = 88%, not 12%).\n\n**Option C (Incorrect):** Violates a core principle of hypothesis testing: there is an inherent trade-off between \u03b1 and \u03b2 for a fixed sample size. Reducing one typically increases the other unless sample size is increased.\n\n**Option D (Incorrect):** Type I and Type II errors apply to both one-tailed and two-tailed tests. The error types are not test-specific in this way; the directionality affects *which* region(s) constitute rejection, but not the definition of the errors themselves.\n\n**IASSC BoK Alignment:**\nThis question directly addresses the Analyse Phase hypothesis testing framework: understanding the role of \u03b1 (significance level), \u03b2 (Type II error), power (1 \u2212 \u03b2), and their practical interpretation in process improvement decisions.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "IASSC LSSBB",
+      "phase": "Analyse",
+      "topic": "Hypothesis Testing",
+      "sub_topic": "Hypothesis Framework \u2013 H0 vs H1, Type I & Type II Errors, Alpha & Beta",
+      "difficulty_level": 2,
+      "key_formula": "Power = 1 \u2212 \u03b2",
+      "concept_tested": "Type I error (\u03b1), Type II error (\u03b2), and statistical power relationship"
+    }
+  },
+  {
+    "id": "LSSBB_HYPOTHESIS_2_2_3516e8",
+    "text": "A manufacturing process produces widgets with a target mean weight of 500 grams. A Black Belt is testing whether the process mean has shifted. The null hypothesis is $H_0: \\mu = 500$ g and the alternative hypothesis is $H_1: \\mu \\neq 500$ g. The test is conducted at a significance level of $\\alpha = 0.05$. The Black Belt is particularly concerned about failing to detect a true process shift of 8 grams. If the probability of making a Type II error is set to $\\beta = 0.12$, what is the statistical power of this hypothesis test?",
+    "options": {
+      "A": "0.12",
+      "B": "0.88",
+      "C": "0.05",
+      "D": "0.95"
+    },
+    "correct_answer": "B",
+    "explanation": "Statistical power is defined as the probability of correctly rejecting the null hypothesis when it is false. It is the complement of the Type II error (beta). The relationship is: Power = 1 \u2212 \u03b2. Given \u03b2 = 0.12, the power of the test is: Power = 1 \u2212 0.12 = 0.88. This means there is an 88% probability that the test will detect the true process shift of 8 grams if it exists. The significance level \u03b1 = 0.05 controls the Type I error (false positive) but does not directly determine power. Power depends on sample size, effect size, significance level, and the probability of Type II error (\u03b2).",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "IASSC LSSBB",
+      "phase": "Analyse Phase",
+      "topic": "Hypothesis Testing",
+      "sub_topic": "Hypothesis Framework \u2013 H0 vs H1, Type I & Type II Errors, Alpha & Beta",
+      "difficulty_level": 2,
+      "key_concepts": [
+        "Type II Error (Beta)",
+        "Statistical Power",
+        "Power = 1 \u2212 Beta",
+        "Significance Level (Alpha)"
+      ],
+      "formula_used": "Power = 1 \u2212 \u03b2"
+    }
+  },
+  {
+    "id": "LSSBB_HYPOTHESIS_3_1_39d33c",
+    "text": "A Black Belt is investigating whether a chemical filling process has drifted above its target mean fill volume of 500 mL. A random sample of 25 bottles is collected, yielding a sample mean of 504.8 mL and a sample standard deviation of 9.0 mL. A one-tailed hypothesis test is conducted at $\\alpha = 0.05$.\n\n**Given:**\n- $H_0$: $\\mu = 500$ mL\n- $H_1$: $\\mu > 500$ mL\n- $n = 25$, $\\bar{x} = 504.8$ mL, $s = 9.0$ mL, $\\alpha = 0.05$\n- Critical $t$-value (one-tailed, df = 24, $\\alpha = 0.05$) $= +1.711$\n\n**Calculate the test statistic and select the statement that is most statistically accurate.**",
+    "options": {
+      "A": "$t = 2.667$; reject $H_0$. There is sufficient evidence the mean exceeds 500 mL. Setting $\\alpha = 0.05$ means the probability of a Type II error is 0.05.",
+      "B": "$t = 2.667$; reject $H_0$. There is sufficient evidence the mean exceeds 500 mL. $\\alpha = 0.05$ is the pre-set probability of committing a Type I error.",
+      "C": "$t = 2.667$; fail to reject $H_0$ because the test statistic does not exceed the critical value of 1.711.",
+      "D": "$t = 2.133$; reject $H_0$. There is sufficient evidence the mean exceeds 500 mL. $\\alpha = 0.05$ controls the Type I error rate."
+    },
+    "correct_answer": "B",
+    "explanation": "**Step 1: Calculate the test statistic.**\n\n$$t = \\frac{\\bar{x} - \\mu_0}{s / \\sqrt{n}} = \\frac{504.8 - 500}{9.0 / \\sqrt{25}} = \\frac{4.8}{9.0 / 5} = \\frac{4.8}{1.8} = 2.667$$\n\n**Step 2: Compare to the critical value.**\n\nCritical value (upper one-tailed, df = 24, $\\alpha = 0.05$): $t_c = +1.711$\n\nSince $t = 2.667 > 1.711$, the test statistic falls in the rejection region.\n\n**Step 3: Decision.**\n\nReject $H_0$. There is sufficient evidence at $\\alpha = 0.05$ to conclude the mean fill volume exceeds 500 mL.\n\n**Step 4: Error framework.**\n\n- **Type I error ($\\alpha$)**: Probability of rejecting $H_0$ when it is actually true. The researcher sets $\\alpha$ prior to the test \u2014 here $\\alpha = 0.05$.\n- **Type II error ($\\beta$)**: Probability of failing to reject $H_0$ when it is actually false. $\\beta$ is NOT set by choosing $\\alpha$; it depends on the true effect size, sample size, and variability.\n- **Power** $= 1 - \\beta$: Probability of correctly detecting a true departure from $H_0$.\n\n**Why the other options are wrong:**\n- **Option A**: Correctly computes $t$ and rejects $H_0$, but falsely claims $\\alpha = 0.05$ controls the Type II error. $\\alpha$ governs Type I error only.\n- **Option C**: Correctly computes $t = 2.667$ but incorrectly concludes fail to reject $H_0$; $2.667 > 1.711$ clearly falls in the rejection region.\n- **Option D**: Uses an incorrect test statistic. $t = (504.8 - 500)/(9.0/\\sqrt{25}) = 2.667$, not $2.133$.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "IASSC LSSBB",
+      "phase": "Analyse Phase",
+      "topic": "Hypothesis Testing",
+      "sub_topic": "Hypothesis Framework \u2013 H0 vs H1, Type I & Type II Errors, Alpha & Beta",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "LSSBB_HYPOTHESIS_3_2_8c34ac",
+    "text": "A Black Belt is conducting a hypothesis test to determine whether a process improvement has reduced the mean defect rate. The null hypothesis is $H_0: \\mu = 0.18$ defects per unit, and the alternative hypothesis is $H_1: \\mu < 0.18$ defects per unit (left-tailed test).\n\nThe Black Belt sets the significance level at $\\alpha = 0.03$ and determines that the Type II error rate should not exceed $\\beta = 0.11$. Before conducting the test, the team estimates that if the true mean defect rate is actually $\\mu = 0.15$ defects per unit, they need sufficient power to detect this shift.\n\nBased on this framework, which of the following statements correctly describes the relationship between the Black Belt's error tolerances and the test's ability to detect a meaningful process improvement?",
+    "options": {
+      "A": "The power of the test is 0.89, meaning there is an 89% probability of correctly rejecting $H_0$ when the true mean is 0.15 defects per unit. With $\\alpha = 0.03$, the Type I error risk is 3%, so the combined risk of making either error is 14%.",
+      "B": "The power of the test is 0.11, meaning there is only an 11% probability of correctly rejecting $H_0$ when the true mean is 0.15 defects per unit. This indicates the test has insufficient sensitivity to detect the improvement.",
+      "C": "The $\\alpha = 0.03$ threshold controls the risk of rejecting a true $H_0$, while $\\beta = 0.11$ controls the risk of failing to reject a false $H_0$. Power = 1 \u2212 $\\beta$ = 0.89 means a 89% chance of detecting the improvement if it truly exists at 0.15 defects per unit.",
+      "D": "Since $\\alpha = 0.03$ is very small, the power will automatically be high regardless of sample size. The $\\beta = 0.11$ is irrelevant because it only applies to two-tailed tests, and this is a one-tailed left-tailed test."
+    },
+    "correct_answer": "C",
+    "explanation": "This question tests the candidate's understanding of the hypothesis testing framework, specifically the relationship between Type I error (\u03b1), Type II error (\u03b2), and statistical power (1 \u2212 \u03b2).\n\nKEY CONCEPTS FROM IASSC BOK:\n\u2022 Type I Error (\u03b1): Probability of rejecting H\u2080 when H\u2080 is true (false positive).\n\u2022 Type II Error (\u03b2): Probability of failing to reject H\u2080 when H\u2080 is false (false negative).\n\u2022 Power = 1 \u2212 \u03b2: Probability of correctly rejecting H\u2080 when H\u2081 is true.\n\nSTEP-BY-STEP ANALYSIS:\n\n1. **Identify \u03b1 and \u03b2:**\n   - \u03b1 = 0.03 (significance level; risk of Type I error)\n   - \u03b2 = 0.11 (risk of Type II error)\n   - Power = 1 \u2212 \u03b2 = 1 \u2212 0.11 = 0.89\n\n2. **Interpret \u03b1 = 0.03:**\n   - If the true process mean is 0.18 defects per unit (H\u2080 true), there is a 3% risk of incorrectly concluding the process has improved (rejecting a true H\u2080).\n\n3. **Interpret \u03b2 = 0.11:**\n   - If the true process mean is 0.15 defects per unit (H\u2081 true), there is an 11% risk of failing to detect this improvement (failing to reject a false H\u2080).\n\n4. **Interpret Power = 0.89:**\n   - If the true process mean is 0.15 defects per unit, there is an 89% probability the test will correctly reject H\u2080 and identify the improvement.\n\nEVALUATION OF OPTIONS:\n\n**Option A:** Partially correct on power (0.89) and \u03b1 = 0.03, but the statement \"combined risk of either error is 14%\" is conceptually flawed. These errors apply under different scenarios (H\u2080 true vs. H\u2081 true), not simultaneously.\n\n**Option B:** Completely incorrect. Power is NOT 0.11; power is 1 \u2212 \u03b2 = 0.89. This confuses \u03b2 with power, inverting the relationship.\n\n**Option C:** \u2713 CORRECT. This accurately states:\n   - \u03b1 controls rejection risk when H\u2080 is true (Type I error = 3%)\n   - \u03b2 controls failure-to-reject risk when H\u2080 is false (Type II error = 11%)\n   - Power = 1 \u2212 \u03b2 = 0.89 = 89% probability of detecting the 0.15 mean if it is true.\n   - The logic applies equally to one-tailed and two-tailed tests.\n\n**Option D:** Incorrect. Confuses the relationship between \u03b1 and power (they are independent and both depend on sample size). Also falsely claims \u03b2 applies only to two-tailed tests\u2014it applies to all hypothesis tests. The test design (one-tailed) does not render \u03b2 irrelevant.\n\nCORRECT ANSWER: **C**\n\nThis reinforces that Black Belts must understand the complementary roles of \u03b1, \u03b2, and power when designing hypothesis tests and evaluating their sensitivity to detect real process improvements.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "IASSC LSSBB",
+      "phase": "Analyse",
+      "topic": "Hypothesis Testing",
+      "sub_topic": "Hypothesis Framework \u2013 H\u2080 vs H\u2081, Type I & Type II Errors, Alpha & Beta",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "LSSBB_HYPOTHESIS_4_1_f9e374",
+    "text": "A Black Belt is investigating whether a new injection-molding machine has changed the average wall thickness of a polymer component from the historical target of 3.50 mm. The process standard deviation is known to be stable at 0.18 mm. The team collects a sample of 36 components with mean $\\bar{x} = 3.38$ mm.\n\nThe Black Belt establishes:\n- $H_0: \\mu = 3.50$ mm (no change in machine performance)\n- $H_1: \\mu \\neq 3.50$ mm (machine has changed)\n- Significance level $\\alpha = 0.04$\n- Acceptable Type II error rate $\\beta = 0.09$\n\nThe computed z-statistic is $z = -4.00$, and the corresponding two-tailed p-value is 0.00006.\n\n**Which of the following statements correctly describes the statistical decision and the specific risk incurred by that decision?**",
+    "options": {
+      "A": "Reject $H_0$; this decision risks a Type II error of 9%, meaning we may fail to detect a genuine change in wall thickness even though it actually occurred.",
+      "B": "Fail to reject $H_0$; this decision risks a Type I error of 4%, meaning we incorrectly claim the machine has not changed when it actually has.",
+      "C": "Reject $H_0$; this decision risks a Type I error of 4%, meaning we might conclude the machine has changed when in fact no real change has occurred.",
+      "D": "Reject $H_0$; this decision risks a Type II error of 4%, meaning the machine performance has changed but our test failed to detect it."
+    },
+    "correct_answer": "C",
+    "explanation": "**Step 1: Verify the test decision using the p-value.**\n\nGiven:\n- Two-tailed p-value = 0.00006\n- Significance level $\\alpha = 0.04$\n\nDecision rule: If p-value $< \\alpha$, reject $H_0$.\n\nSince 0.00006 $< 0.04$, we **reject $H_0$**.\n\n**Step 2: Identify the error type associated with rejection.**\n\nWhen we reject $H_0$, we are asserting that a difference exists. The risk we incur by making this assertion is **Type I error**.\n\n**Definition of Type I error (\u03b1):** Rejecting the null hypothesis $H_0$ when $H_0$ is actually true. This is a \"false positive\" \u2014 we claim an effect or change exists when in fact none does.\n\n**Step 3: Determine the probability of Type I error.**\n\nThe probability of committing a Type I error is exactly $\\alpha = 0.04$ (or 4%).\n\n**Step 4: Interpret the error in context.**\n\nIn this scenario:\n- If we reject $H_0$ and the null is actually true, we conclude the machine has changed wall thickness when it has NOT actually changed.\n- This is precisely a Type I error: a false claim of change.\n- The risk probability is $\\alpha = 0.04$ (4%).\n\n**Step 5: Evaluate each option.**\n\n- **Option A**: Rejects the decision rule (should reject, not fail to reject) AND incorrectly identifies the error as Type II. Type II error ($\\beta$) occurs when we fail to reject $H_0$, not when we reject it. **Incorrect.**\n\n- **Option B**: Incorrectly states \"fail to reject $H_0$\" when the data clearly calls for rejection (p-value 0.00006 $< \\alpha = 0.04$). **Incorrect.**\n\n- **Option C**: Correctly states we reject $H_0$. Correctly identifies the error type as Type I. Correctly assigns the probability as 4% (equal to $\\alpha$). Correctly interprets the error in context: falsely claiming the machine has changed. **Correct.**\n\n- **Option D**: Correctly states we reject $H_0$, but incorrectly assigns the probability of Type II error as 4% and reverses the interpretation. Type II error rate is $\\beta = 0.09$ (9%), not 4%; moreover, Type II error does not apply when rejecting. **Incorrect.**\n\n**Step 6: Verify error definitions.**\n\n- **Type I error**: Reject $H_0$ when $H_0$ is true \u2192 Probability = $\\alpha$ \u2192 False positive\n- **Type II error**: Fail to reject $H_0$ when $H_0$ is false \u2192 Probability = $\\beta$ \u2192 False negative\n\nSince our decision is to **reject**, the applicable error is **Type I**, with probability $\\alpha = 0.04$.\n\n**The correct answer is C**: Reject $H_0$; this decision risks a Type I error of 4%, meaning we might conclude the machine has changed when in fact no real change has occurred.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "IASSC LSSBB",
+      "phase": "Analyse",
+      "topic": "Hypothesis Testing",
+      "sub_topic": "Hypothesis Framework \u2013 H0 vs H1, Type I & Type II Errors, Alpha & Beta",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "LSSBB_HYPOTHESIS_4_2_388d4c",
+    "text": "A manufacturing process produces fasteners with a target mean tensile strength of 850 MPa. The process engineer suspects the mean has drifted below the target due to a recent machine calibration change. A random sample of $n = 32$ fasteners yields $\\bar{x} = 843.5$ MPa with sample standard deviation $s = 18.2$ MPa.\n\nThe engineer sets up a hypothesis test with $\\alpha = 0.02$ (two-tailed). Before collecting data, she specifies that if the true mean is actually $\\mu = 840$ MPa, she wants the probability of correctly rejecting $H_0$ to be at least 0.88 (i.e., $\\text{Power} \\geq 0.88$).\n\n**Which of the following best describes the relationship between the engineer's choice of $\\alpha = 0.02$ and her power requirement of 0.88 in the context of decision risk?**\n\nA) By lowering $\\alpha$ to 0.02, she reduces Type I error risk, but this simultaneously reduces Power to below 0.88 unless the true effect size is very large; her power requirement of 0.88 indicates she is willing to tolerate a higher Type II error ($\\beta \\approx 0.12$) to maintain strict control over false positives.\n\nB) By setting $\\alpha = 0.02$, she ensures that Power will always equal $1 - \\alpha = 0.98$, making her power specification of 0.88 automatically satisfied regardless of the true mean or sample size.\n\nC) The $\\alpha = 0.02$ and Power = 0.88 specifications are independent design choices. Lowering $\\alpha$ increases the critical value threshold, requiring a larger observed difference to reject $H_0$. Her power of 0.88 means $\\beta = 0.12$, reflecting a deliberate trade-off: she prioritizes protecting against false alarms (low Type I error) over maximizing her ability to detect a small shift to 840 MPa.\n\nD) Setting $\\alpha = 0.02$ directly causes $\\beta$ to equal 0.02 as well, so Power = 0.98. The power requirement of 0.88 is therefore redundant and indicates a design error in the test specification.\n\nE) The engineer's power of 0.88 means she is willing to accept a 12% probability of a Type I error. Combined with $\\alpha = 0.02$, the total decision error (Type I + Type II) is capped at 0.14, which is the industry standard for process control.",
+    "options": {
+      "A": "By lowering $\\alpha$ to 0.02, she reduces Type I error risk, but this simultaneously reduces Power to below 0.88 unless the true effect size is very large; her power requirement of 0.88 indicates she is willing to tolerate a higher Type II error ($\\beta \\approx 0.12$) to maintain strict control over false positives.",
+      "B": "By setting $\\alpha = 0.02$, she ensures that Power will always equal $1 - \\alpha = 0.98$, making her power specification of 0.88 automatically satisfied regardless of the true mean or sample size.",
+      "C": "The $\\alpha = 0.02$ and Power = 0.88 specifications are independent design choices. Lowering $\\alpha$ increases the critical value threshold, requiring a larger observed difference to reject $H_0$. Her power of 0.88 means $\\beta = 0.12$, reflecting a deliberate trade-off: she prioritizes protecting against false alarms (low Type I error) over maximizing her ability to detect a small shift to 840 MPa.",
+      "D": "Setting $\\alpha = 0.02$ directly causes $\\beta$ to equal 0.02 as well, so Power = 0.98. The power requirement of 0.88 is therefore redundant and indicates a design error in the test specification.",
+      "E": "The engineer's power of 0.88 means she is willing to accept a 12% probability of a Type I error. Combined with $\\alpha = 0.02$, the total decision error (Type I + Type II) is capped at 0.14, which is the industry standard for process control."
+    },
+    "correct_answer": "C",
+    "explanation": "This question tests deep conceptual understanding of the inverse relationship between Type I and Type II errors, and the strategic trade-offs in hypothesis test design.\n\n**Key IASSC Concepts:**\n\n1. **Type I Error (\u03b1):** Probability of rejecting $H_0$ when it is actually true (false positive). Here, $\\alpha = 0.02$ means a 2% risk of concluding the mean has drifted when it actually hasn't.\n\n2. **Type II Error (\u03b2) and Power:** Power = $1 - \\beta$. If Power = 0.88, then $\\beta = 0.12$ (12% risk of failing to detect a true shift to 840 MPa).\n\n3. **Inverse Relationship:** $\\alpha$ and $\\beta$ are inversely related for a fixed sample size and effect size. Lowering $\\alpha$ (e.g., from 0.05 to 0.02) requires a higher critical value, making it harder to reject $H_0$. This increases $\\beta$ unless sample size or effect size increases.\n\n4. **Strategic Trade-off:** The engineer's choices reflect a deliberate risk management decision:\n   - Low $\\alpha = 0.02$: Conservative\u2014minimize false alarms (Type I errors).\n   - Power = 0.88 (so $\\beta = 0.12$): Moderate\u2014accept a 12% miss rate to maintain strict Type I control.\n\n**Why the correct answer is C:**\n- It correctly identifies $\\alpha$ and Power (hence $\\beta$) as independent specification parameters.\n- It explains the mechanism: lowering $\\alpha$ raises the critical threshold, increasing $\\beta$.\n- It correctly computes $\\beta = 1 - 0.88 = 0.12$.\n- It frames the choice as a deliberate trade-off reflecting business priorities: the engineer cares more about avoiding false positives (process instability alarms when the process is stable) than about detecting every small shift.\n\n**Why the other options are incorrect:**\n\n- **A:** Contains truth but incorrectly emphasizes that the power will \"fall below 0.88\" unless the effect is large. In fact, the engineer has already accepted $\\beta = 0.12$ as part of her design. The phrasing is confusing.\n  \n- **B:** Fundamentally false. Power \u2260 $1 - \\alpha$. Power depends on sample size, effect size, $\\alpha$, and the test type. It is not automatically 0.98.\n  \n- **D:** Completely incorrect. $\\beta$ is not equal to $\\alpha$. They are independent error rates. This confuses orthogonal concepts.\n  \n- **E:** Misdefines power. Power (0.88) is not the same as Type I error rate. Also, \"total decision error\" being capped at 0.14 is not an established principle\u2014$\\alpha$ and $\\beta$ are managed independently according to business context.\n\n**Conclusion:**\nOption C is the only response that correctly articulates the relationship between $\\alpha$, $\\beta$, and Power as specified in the IASSC BoK, acknowledges the inverse trade-off, and frames the engineer's specification as a rational design choice reflecting her priorities.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "IASSC LSSBB",
+      "phase": "Analyse Phase",
+      "topic": "Hypothesis Testing",
+      "sub_topic": "Hypothesis Framework \u2013 H0 vs H1, Type I & Type II Errors, Alpha & Beta",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "LSSBB_HYPOTHESIS_5_1_962b91",
+    "text": "A Black Belt designs a one-sided upper-tail hypothesis test to determine whether a new supplier's mean delivery lead time exceeds the contractual target of 8.0 days. The test is configured with $\\alpha = 0.04$ and a sample size calculated to achieve $\\beta = 0.08$ at a practically significant shift of 1.2 days. After data collection and analysis, the Black Belt fails to reject $H_0$. A subsequent full census of all deliveries during the study period conclusively shows the supplier's true mean was 9.3 days \u2014 1.3 days above target.\n\nThe quality director now challenges the study on two grounds: (i) the test produced an error of unknown type that must be identified, and (ii) a proposal is made to re-run the test with $\\alpha$ reduced to 0.01 while keeping the sample size identical.\n\nWhich of the following statements **completely and correctly** characterizes both the error that occurred and the full consequence of reducing $\\alpha$ to 0.01 at fixed sample size?",
+    "options": {
+      "A": "A Type II error occurred with probability $\\beta = 0.08$. Reducing $\\alpha$ from 0.04 to 0.01 at fixed sample size moves the critical value further from $\\mu_0$, shrinking the rejection region. This makes it harder to reject $H_0$ when $H_1$ is true, so $\\beta$ increases (above 0.08) and power falls below 0.92. The re-run would therefore be even more likely to miss the same shift.",
+      "B": "A Type II error occurred with probability $\\beta = 0.08$. Reducing $\\alpha$ at fixed sample size has no effect on $\\beta$ because $\\alpha$ and $\\beta$ are controlled by independent parameters. Power remains at 0.92 regardless of the $\\alpha$ chosen, so the re-run is equally capable of detecting the 1.3-day shift.",
+      "C": "A Type I error occurred with probability $\\alpha = 0.04$, because the test incorrectly rejected a true $H_0$. Reducing $\\alpha$ to 0.01 would further reduce the probability of this same error occurring on re-test, making the re-run more conservative and reliable.",
+      "D": "A Type II error occurred with probability $\\beta = 0.08$. Reducing $\\alpha$ from 0.04 to 0.01 at fixed sample size narrows the rejection region, which simultaneously reduces both $\\alpha$ and $\\beta$, improving overall test accuracy. Power increases to above 0.92, making the re-run superior on all error metrics."
+    },
+    "correct_answer": "A",
+    "explanation": "**Step 1 \u2013 Identify the error type.**\n$H_0$: mean lead time $\\leq 8.0$ days. The true mean was 9.3 days, so $H_1$ is true. The test failed to reject $H_0$ when $H_0$ was false. This is the definition of a **Type II error**.\n\n**Step 2 \u2013 Determine the probability of the error.**\nThe test was designed with $\\beta = 0.08$ at a shift of 1.2 days. The actual shift (1.3 days) is slightly larger than the design shift, so the true $\\beta$ for this specific instance is at most 0.08. The stated design value $\\beta = 0.08$ is the probability directly associated with the Type II error at the design shift. Thus the probability of this error is **0.08** (8%).\n\n**Step 3 \u2013 Assess the consequence of reducing $\\alpha$ at fixed sample size.**\nFor a one-sided test, the critical value $c$ satisfies $P(\\bar{X} > c \\mid H_0) = \\alpha$. Reducing $\\alpha$ from 0.04 to 0.01 shifts $c$ **further right** (further from $\\mu_0$, deeper into the $H_0$ acceptance region). Under the true distribution centred at $\\mu_1$, a larger portion of that distribution now falls **below** $c$ \u2014 i.e., in the non-rejection region:\n$$\\beta_{\\text{new}} = P(\\bar{X} \\leq c_{\\text{new}} \\mid H_1) > P(\\bar{X} \\leq c_{\\text{old}} \\mid H_1) = \\beta_{\\text{old}} = 0.08$$\nConsequently, Power $= 1 - \\beta$ **decreases** below $0.92$.\n\nThis is the fundamental **inverse $\\alpha$\u2013$\\beta$ trade-off** at fixed $n$:\n$$\\alpha \\downarrow \\;\\Rightarrow\\; \\beta \\uparrow \\;\\Rightarrow\\; \\text{Power} \\downarrow$$\n\n**Step 4 \u2013 Evaluate options.**\n- **A (Correct):** Correctly identifies Type II error ($\\beta = 0.08$), correctly explains the mechanism (critical value shifts right, larger $\\beta$, lower power). Re-run at $\\alpha = 0.01$ would be more likely to miss the shift.\n- **B:** Incorrectly claims $\\alpha$ and $\\beta$ are independent at fixed $n$ \u2014 they are inversely linked.\n- **C:** Misidentifies the error; failing to reject does not constitute a Type I error (which requires an incorrect rejection).\n- **D:** Incorrectly asserts that reducing $\\alpha$ also reduces $\\beta$ \u2014 this contradicts the inverse relationship.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "IASSC LSSBB",
+      "phase": "Analyse",
+      "topic": "Hypothesis Testing",
+      "sub_topic": "Hypothesis Framework \u2013 H0 vs H1, Type I & Type II Errors, Alpha & Beta",
+      "difficulty_level": 5
+    }
+  },
+  {
+    "id": "LSSBB_HYPOTHESIS_5_2_b46d69",
+    "text": "A Black Belt is designing a hypothesis test to determine whether a new supplier's defect rate differs from the current supplier's known defect rate of 4.0%. She sets $\\alpha = 0.05$ and wants 90% power ($1 - \\beta = 0.90$) to detect a true defect rate of 6.5%. After running the test, she fails to reject $H_0$ even though the new supplier's true defect rate is actually 6.5%. Which of the following statements BEST describes what has occurred, and what is the precise probability of this outcome having occurred by chance under this test design?",
+    "options": {
+      "A": "A Type I error has occurred; the probability of this error is $\\alpha = 0.05$.",
+      "B": "A Type II error has occurred; the probability of this error is $\\beta = 0.10$.",
+      "C": "A Type II error has occurred; the probability of this error is $\\beta = 0.90$.",
+      "D": "A Type I error has occurred; the probability of this error is $1 - \\alpha = 0.95$."
+    },
+    "correct_answer": "B",
+    "explanation": "Step 1 \u2014 Identify the error type. The null hypothesis $H_0$ states the new supplier's defect rate equals 4.0%. The alternative $H_1$ states it differs from 4.0%. The true state of nature is that $H_1$ is correct (true defect rate = 6.5%). The test failed to reject $H_0$. Failing to reject a FALSE null hypothesis is the definition of a Type II error (also called a 'false negative' or 'miss'). This eliminates Options A and D.\n\nStep 2 \u2014 Identify the probability of a Type II error. The symbol $\\beta$ represents the probability of committing a Type II error. Power is defined as $1 - \\beta$. The Black Belt designed the test with 90% power, meaning $1 - \\beta = 0.90$, so $\\beta = 1 - 0.90 = 0.10$. This is the probability of failing to detect the true difference of 2.5 percentage points.\n\nStep 3 \u2014 Evaluate all options. Option A is incorrect: a Type I error (false positive) would mean rejecting a TRUE $H_0$, and its probability is $\\alpha$, not applicable here. Option B is correct: Type II error with $\\beta = 0.10$. Option C is incorrect: $\\beta = 0.90$ confuses power with $\\beta$. Option D is incorrect on both the error type and probability cited.\n\nConclusion: A Type II error ($\\beta$-error) has occurred with probability $\\beta = 0.10$. The relationship Power $= 1 - \\beta$ is a cornerstone of the IASSC hypothesis testing framework.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "IASSC LSSBB",
+      "phase": "Analyse Phase",
+      "topic": "Hypothesis Testing",
+      "sub_topic": "Hypothesis Framework \u2013 H0 vs H1, Type I & Type II Errors, Alpha & Beta",
+      "difficulty_level": 5
+    }
+  }
+]

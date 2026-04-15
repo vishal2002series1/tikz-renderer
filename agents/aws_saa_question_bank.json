@@ -1,0 +1,773 @@
+[
+  {
+    "id": "AWSSOL_IAMUSERSGR_1_1_1_7c36b6",
+    "text": "A solutions architect is designing a security model for a new AWS account. The architect needs to grant a developer temporary access to an \\textbf{Amazon S3} bucket without storing long-term AWS credentials. Which approach follows the \\textbf{AWS Well-Architected Framework's principle of least privilege} and eliminates the need for credential rotation?",
+    "options": {
+      "A": "Create an \\textbf{IAM User} for the developer with an access key and secret key stored in a password manager",
+      "B": "Create an \\textbf{IAM Role} with an S3 bucket policy granting read-only access, and have the developer assume the role using \\textbf{AWS STS}",
+      "C": "Attach an \\textbf{IAM Policy} directly to an \\textbf{IAM User} that grants full S3 permissions",
+      "D": "Create an \\textbf{IAM Group}, add the developer as a member, and assign \\textbf{Administrator Access} managed policy"
+    },
+    "correct_answer": "B",
+    "explanation": "\\textbf{B is correct:} \\textbf{IAM Roles} are the recommended approach for temporary access in AWS. When a developer assumes a role via \\textbf{AWS Security Token Service (STS)}, they receive temporary security credentials (access key, secret key, and session token) that expire automatically. This eliminates the need to store or rotate long-term credentials. A role-based approach combined with a resource-based \\textbf{S3 bucket policy} enforces \\textit{least privilege} \u2014 access is granted only for the duration needed and only to the specific S3 bucket.\n\n\\textbf{A is incorrect:} \\textbf{IAM Users} with long-term access keys require credential rotation and introduce security risk if credentials are compromised. Storing credentials in a password manager does not align with AWS best practices for temporary or programmatic access.\n\n\\textbf{C is incorrect:} Attaching an \\textbf{IAM Policy} directly to an \\textbf{IAM User} grants persistent credentials and full S3 permissions (not limited to a single bucket), violating the principle of \\textit{least privilege}.\n\n\\textbf{D is incorrect:} Assigning \\textbf{Administrator Access} grants excessive permissions far beyond what is needed for a single S3 bucket, directly violating \\textit{least privilege}. Group membership also provides persistent credentials, not temporary access.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "AWS Solutions Architect Associate (SAA-C03)",
+      "subject": "Domain 1 \u2013 Design Secure Architectures",
+      "topic": "Secure Access to AWS Resources",
+      "sub_topic": "IAM \u2013 Users, Groups, Roles, Policies (Identity-based & Resource-based)",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "AWSSOL_IAMUSERSGR_1_1_1_c909f4",
+    "text": "A solutions architect is designing access control for a company's AWS environment. Several employees need to assume a role that grants permissions to manage resources in a specific \textbf{Amazon S3} bucket. The architect wants to follow the principle of \textit{least privilege} and ensure that employees cannot accidentally or intentionally escalate their permissions beyond what is required.\n\nWhich combination of IAM identity and policy type BEST achieves this objective?",
+    "options": {
+      "A": "Create individual \textbf{IAM Users} for each employee with \textbf{inline policies} granting full S3 access to the bucket",
+      "B": "Create an \textbf{IAM Role} with a \textbf{trust policy} limiting who can assume it, and attach a \textbf{permissions policy} granting only the specific S3 actions required for the bucket",
+      "C": "Create an \textbf{IAM Group} containing all employees and assign a \textbf{managed policy} granting S3 full access to all buckets in the account",
+      "D": "Create individual \textbf{IAM Users} with \textbf{access keys} and embed permissions directly in application configuration files"
+    },
+    "correct_answer": "B",
+    "explanation": "\textbf{B is correct:} An \textbf{IAM Role} is the appropriate identity for temporary credentials and delegation. The \textbf{trust policy} (a \textit{resource-based policy}) controls \textit{who} can assume the role\u2014limiting it to specific employees. The \textbf{permissions policy} (an \textit{identity-based policy}) specifies \textit{exactly which actions} are permitted on \textit{which resources}\u2014the specific bucket. This dual-policy approach enforces least privilege: employees can only assume the role if authorised, and only perform the exact actions needed.\n\n\textbf{A is incorrect:} \textbf{IAM Users} represent long-term credentials, not temporary access delegation. Inline policies are harder to audit and reuse across multiple users, violating separation of concerns and increasing management overhead.\n\n\textbf{C is incorrect:} Granting full S3 access to \textit{all} buckets violates least privilege\u2014employees would have permissions far beyond what they need for a single bucket. A \textbf{Group} with overly broad permissions cannot restrict access to a single resource.\n\n\textbf{D is incorrect:} Embedding access keys in application code is a security anti-pattern (credentials in plain text), and it does not implement least privilege. Roles with temporary credentials via the \textbf{AWS Security Token Service (STS)} are the secure alternative.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "AWS Solutions Architect Associate (SAA-C03)",
+      "subject": "Domain 1 \u2013 Design Secure Architectures",
+      "topic": "Secure Access to AWS Resources",
+      "sub_topic": "IAM \u2013 Users, Groups, Roles, Policies (Identity-based & Resource-based)",
+      "difficulty_level": 1,
+      "question_type": "Best-practice",
+      "key_concepts": [
+        "IAM Roles vs. Users",
+        "Trust policies (resource-based)",
+        "Permissions policies (identity-based)",
+        "Least privilege principle",
+        "Temporary credentials"
+      ]
+    }
+  },
+  {
+    "id": "AWSSOL_IAMUSERSGR_1_1_2_9ae104",
+    "text": "A solutions architect is designing a secure access model for an AWS environment. The company has multiple departments, each requiring different permissions to \textbf{Amazon S3}, \textbf{Amazon RDS}, and \textbf{AWS Lambda}. Individual developers need to assume temporary credentials to perform their daily tasks. Which approach BEST implements the \textit{principle of least privilege} while minimizing operational overhead?",
+    "options": {
+      "A": "Create individual \textbf{IAM Users} for each developer and attach granular inline policies directly to each user. Share long-term access keys with each developer.",
+      "B": "Create \textbf{IAM Groups} by department, attach managed policies to each group, and add developers as members. Developers use temporary credentials obtained by assuming \textbf{IAM Roles}.",
+      "C": "Create a single \textbf{IAM User} with broad permissions and share the access key with all developers in the company. Implement network restrictions at the \textbf{Security Group} level.",
+      "D": "Use \textbf{Root Account} credentials for administrative tasks and create separate \textbf{IAM Users} with \textit{Administrator} managed policies for developer access."
+    },
+    "correct_answer": "B",
+    "explanation": "\textbf{B is correct:} This approach combines multiple best practices: (1) \textbf{IAM Groups} organize developers by department and simplify policy management at scale, (2) \textbf{Managed policies} are AWS-maintained and regularly updated, reducing operational overhead, (3) \textbf{IAM Roles} provide temporary credentials via \textit{Security Token Service (STS)}, eliminating the need to store and rotate long-term access keys, and (4) role assumption enforces \textit{least privilege} by restricting permissions to only what each department requires.\n\n\textbf{A is incorrect:} Inline policies are harder to manage across multiple users, and sharing long-term access keys violates security best practices. There is no automatic credential rotation, increasing the risk of credential exposure.\n\n\textbf{C is incorrect:} A single shared user violates \textit{least privilege}, prevents audit trails from tracking individual developer actions, and creates a security risk if credentials are compromised. \textbf{Security Groups} are network-level controls and cannot enforce identity-based permissions.\n\n\textbf{D is incorrect:} Using \textbf{Root Account} credentials for any purpose violates AWS best practices. Granting \textit{Administrator} access to all developers violates \textit{least privilege} \u2014 developers should have only the permissions necessary for their specific tasks.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "AWS Solutions Architect Associate (SAA-C03)",
+      "subject": "Domain 1 \u2013 Design Secure Architectures",
+      "topic": "Secure Access to AWS Resources",
+      "sub_topic": "IAM \u2013 Users, Groups, Roles, Policies (Identity-based & Resource-based)",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "AWSSOL_IAMUSERSGR_2_1_1_024468",
+    "text": "A solutions architect is designing a secure multi-tier application on AWS. The application has frontend servers running on \\textbf{Amazon EC2} instances that need to read objects from \\textbf{Amazon S3} and write logs to \\textbf{Amazon CloudWatch}. The architect must ensure that the EC2 instances can access only these two services and no others. Which combination of AWS security mechanisms best implements this requirement with the \\textbf{LEAST operational overhead}?",
+    "options": {
+      "A": "Create an \\textbf{IAM user} with programmatic access keys, attach an inline policy granting \\textbf{S3:GetObject} and \\textbf{logs:CreateLogStream} permissions, and configure the EC2 instances to use these access keys via environment variables.",
+      "B": "Create an \\textbf{IAM role} with a policy granting \\textbf{S3:GetObject} and \\textbf{logs:PutLogEvents} permissions, attach the role to the EC2 instances via an \\textbf{instance profile}, and rely on \\textbf{AWS STS} temporary credentials.",
+      "C": "Create an \\textbf{IAM group} containing all frontend EC2 instances, attach a policy with S3 and CloudWatch permissions, and configure each instance to authenticate using the group credentials.",
+      "D": "Create a \\textbf{resource-based policy} on the S3 bucket and CloudWatch log group that explicitly allows the EC2 instance IP addresses to perform the required actions, and configure \\textbf{VPC endpoint security groups} to restrict outbound traffic."
+    },
+    "correct_answer": "B",
+    "explanation": "\\textbf{B is correct:} This is the \\textbf{AWS best practice} for EC2 instances accessing AWS services. \\textbf{IAM roles} with \\textbf{instance profiles} provide the most secure and operationally efficient approach:\n\n\u2022 \\textbf{Automatic credential rotation:} \\textbf{AWS STS} automatically rotates temporary credentials every hour\u2014no manual key management required.\n\u2022 \\textbf{No credential exposure:} Credentials are never stored on the instance or in code; they are retrieved via the \\textbf{instance metadata service}.\n\u2022 \\textbf{Least privilege:} The policy grants only the required permissions (\\textbf{S3:GetObject} and \\textbf{logs:PutLogEvents}).\n\u2022 \\textbf{Operational simplicity:} Once the role is attached, credential management is automatic.\n\n\\textbf{A is incorrect:} \\textbf{IAM users} with programmatic access keys should not be used for EC2 instances. Long-lived access keys stored on the instance create security risks and operational overhead for key rotation. This violates \\textit{least privilege} and introduces management burden.\n\n\\textbf{C is incorrect:} \\textbf{IAM groups} are for managing permissions for \\textbf{IAM users}, not for granting permissions to EC2 instances. Groups cannot be attached to EC2 instances via instance profiles.\n\n\\textbf{D is incorrect:} \\textbf{Resource-based policies} alone cannot authenticate EC2 instances; they only define who can perform actions on resources. Relying on IP addresses is not a scalable identity-based security mechanism and does not prevent lateral movement within the VPC. Additionally, resource-based policies on CloudWatch log groups do not support IP-based restrictions in the same way.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "AWS Solutions Architect Associate (SAA-C03)",
+      "subject": "Domain 1 \u2013 Design Secure Architectures",
+      "topic": "Secure Access to AWS Resources",
+      "sub_topic": "IAM \u2013 Users, Groups, Roles, Policies (Identity-based & Resource-based)",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "AWSSOL_IAMUSERSGR_1_1_1_3914db",
+    "text": "A solutions architect is designing a secure access model for a company's AWS environment. The organization has multiple teams that need different permissions to various AWS resources. The architect must ensure that access is granted following the principle of \\textit{least privilege} and that permission management is scalable.\n\nWhich combination of \\textbf{AWS IAM} constructs BEST achieves this objective?",
+    "options": {
+      "A": "Create individual \\textbf{IAM Users} for each employee and attach \\textbf{AWS managed policies} directly to each user",
+      "B": "Create \\textbf{IAM Groups} for each team, attach \\textbf{customer managed policies} to the groups, and add \\textbf{IAM Users} as members",
+      "C": "Create a single \\textbf{IAM Role} with full administrative permissions and share the role credentials across all teams",
+      "D": "Create \\textbf{IAM Users} for each service and manage all permissions through \\textbf{resource-based policies} on individual AWS resources"
+    },
+    "correct_answer": "B",
+    "explanation": "\\textbf{B is correct:} Creating \\textbf{IAM Groups} by team and attaching carefully scoped \\textbf{customer managed policies} provides scalable, maintainable access control that follows \\textit{least privilege}. When a new team member joins, they are simply added to the appropriate group, and all team members inherit consistent permissions. This approach separates identity management (users) from permission management (policies and groups), reducing administrative overhead and security risk.\n\n\\textbf{A is incorrect:} Attaching policies directly to individual \\textbf{IAM Users} creates management overhead and makes it difficult to apply consistent permissions across teams. If permissions need to change, each user must be updated individually rather than updating a single policy.\n\n\\textbf{C is incorrect:} A single \\textbf{IAM Role} with full administrative permissions violates the principle of \\textit{least privilege} entirely. All teams would have access to all resources, and sharing credentials across teams undermines accountability and audit trails.\n\n\\textbf{D is incorrect:} While \\textbf{resource-based policies} have a role in AWS security (e.g., for cross-account access), managing all permissions this way is inefficient and does not scale well. \\textbf{IAM Users} without group membership make centralized policy management impossible.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "AWS Solutions Architect Associate (SAA-C03)",
+      "subject": "Domain 1 \u2013 Design Secure Architectures",
+      "topic": "Secure Access to AWS Resources",
+      "sub_topic": "IAM \u2013 Users, Groups, Roles, Policies (Identity-based & Resource-based)",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "AWSSOL_IAMUSERSGR_1_1_2_64db21",
+    "text": "A solutions architect is designing access control for a company's AWS environment. The company has multiple departments, and each department requires different permissions to AWS resources. A junior engineer suggests creating individual \textbf{IAM Users} for each employee and attaching policies directly to each user. Which approach represents a \textbf{BEST PRACTICE} alternative?",
+    "options": {
+      "A": "Create \textbf{IAM Users} for each employee and attach individual policies directly to each user for maximum control and auditability.",
+      "B": "Create \textbf{IAM Groups} for each department, add employees to the appropriate groups, and attach policies to the groups instead of individual users.",
+      "C": "Create a single \textbf{IAM Role} with broad permissions and configure a trust relationship allowing all employees to assume that role.",
+      "D": "Bypass \textbf{IAM} entirely and use \textbf{AWS Resource-based Policies} on each service to grant permissions directly to employee email addresses."
+    },
+    "correct_answer": "B",
+    "explanation": "\\textbf{B is correct:} Creating \textbf{IAM Groups} and organizing employees by department is a \textbf{best-practice} approach to access management. Groups simplify policy administration by allowing a single policy attachment to multiple users, reduce the risk of misconfiguration, and make it easier to manage access when employees change roles or departments. Removing a user from a group immediately revokes all associated permissions without requiring individual policy updates.\n\n\\textbf{A is incorrect:} While attaching policies directly to individual \textbf{IAM Users} works, it is operationally inefficient and difficult to scale. It violates the principle of \textit{least privilege} at the organizational level and creates maintenance overhead when multiple employees need identical permissions.\n\n\\textbf{C is incorrect:} Using a single \textbf{IAM Role} with broad permissions violates the principle of \textit{least privilege}. Roles should grant only the minimum permissions required for a specific function. Additionally, a broad role would grant excessive permissions to all employees regardless of department.\n\n\\textbf{D is incorrect:} \textbf{Resource-based policies} cannot be attached to employee email addresses \u2014 only to \textbf{AWS Principals} (IAM Users, Roles, or AWS accounts). Additionally, this approach bypasses centralized access management through \textbf{IAM} and would be impractical for large-scale environments.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "AWS Solutions Architect Associate (SAA-C03)",
+      "subject": "Domain 1 \u2013 Design Secure Architectures",
+      "topic": "Secure Access to AWS Resources",
+      "sub_topic": "IAM \u2013 Users, Groups, Roles, Policies (Identity-based & Resource-based)",
+      "difficulty_level": 1,
+      "question_type": "Best-practice",
+      "key_concepts": [
+        "IAM Groups",
+        "IAM Users",
+        "IAM Roles",
+        "principle of least privilege",
+        "policy management",
+        "organizational scalability"
+      ],
+      "related_services": [
+        "AWS IAM"
+      ]
+    }
+  },
+  {
+    "id": "AWSSOL_IAMUSERSGR_2_1_1_ead1bf",
+    "text": "A solutions architect is designing an authentication and authorization strategy for a company with multiple AWS accounts. The company has different teams (engineering, finance, operations) that need access to different AWS resources across accounts. The architect must enable secure, fine-grained access control while minimizing the number of credentials managed by each team member. The company does not currently have an external identity provider and wants to use only native AWS IAM mechanisms.\n\nWhich combination of \\textbf{AWS IAM} mechanisms BEST meets these requirements?",
+    "options": {
+      "A": "Create \\textbf{IAM Users} with long-term access keys in each AWS account, granting the required \\textbf{permissions} through \\textbf{inline policies} attached directly to each user",
+      "B": "Use \\textbf{IAM Roles} in each account with \\textbf{trust relationships} that allow team members to assume roles across accounts, combined with \\textbf{identity-based policies} and \\textbf{resource-based policies} for fine-grained access control",
+      "C": "Create \\textbf{IAM Groups} in the primary account and attach \\textbf{managed policies} to grant permissions; use \\textbf{cross-account access} by embedding AWS account IDs directly in all \\textbf{resource policies}",
+      "D": "Provision separate \\textbf{IAM Users} in each AWS account for each team member and manage long-term \\textbf{access keys} through a centralized credential vault with automated key rotation every 30 days"
+    },
+    "correct_answer": "B",
+    "explanation": "\\textbf{B is correct:} \\textbf{IAM Roles} with \\textbf{trust relationships} (cross-account \\textbf{AssumeRole} permissions) enable team members to assume roles in other accounts without managing long-term credentials per account. This approach:\n\n\u2022 \\textbf{Reduces credential sprawl} \u2014 one set of credentials per person, not one per account\n\u2022 \\textbf{Enables fine-grained access} \u2014 \\textbf{identity-based policies} on roles grant specific permissions; \\textbf{resource-based policies} provide additional controls\n\u2022 \\textbf{Follows AWS security best practices} \u2014 uses temporary, time-limited credentials via \\textbf{STS} (Security Token Service) when assuming a role, with default 1-hour validity\n\u2022 \\textbf{Scales across multiple accounts} \u2014 trust relationships explicitly define which accounts can assume which roles\n\u2022 \\textbf{Native to AWS IAM} \u2014 no external identity provider required\n\n\\textbf{A is incorrect:} \\textbf{IAM Users} with long-term \\textbf{access keys} do not scale across accounts and create significant credential management overhead. Each team member would need separate users in each account, multiplying the credential lifecycle burden. \\textbf{Inline policies} are harder to reuse and maintain compared to managed policies on roles. This approach violates the principle of using temporary credentials and creates security risk through credential sprawl.\n\n\\textbf{C is incorrect:} While \\textbf{IAM Groups} and \\textbf{managed policies} are good practices within a single account, they are not designed for cross-account access patterns. \\textbf{Groups} cannot assume roles across accounts. Cross-account access via \\textbf{resource policies} alone requires embedding account IDs directly, which is not a recommended delegation pattern and lacks the scalability and auditability of role-based trust relationships.\n\n\\textbf{D is incorrect:} Managing separate \\textbf{IAM Users} with long-term \\textbf{access keys} across multiple accounts introduces substantial operational overhead and security risk. Even with automated key rotation, this approach requires maintaining and rotating multiple credentials per team member across accounts. It violates the principle of minimizing credentials and does not leverage temporary credentials. A centralized credential vault adds operational complexity compared to native role assumption.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "AWS Solutions Architect Associate (SAA-C03)",
+      "subject": "Domain 1 \u2013 Design Secure Architectures",
+      "topic": "Secure Access to AWS Resources",
+      "sub_topic": "IAM \u2013 Users, Groups, Roles, Policies (Identity-based & Resource-based)",
+      "difficulty_level": 2,
+      "question_type": "Best-practice",
+      "key_concepts": [
+        "IAM Roles",
+        "Cross-account access",
+        "AssumeRole",
+        "Trust relationships",
+        "Identity-based policies",
+        "Resource-based policies",
+        "Temporary credentials",
+        "STS",
+        "Credential lifecycle"
+      ],
+      "related_services": [
+        "AWS IAM",
+        "AWS STS"
+      ]
+    }
+  },
+  {
+    "id": "AWSSOL_IAMUSERSGR_2_1_2_6f470f",
+    "text": "A solutions architect is designing a multi-account AWS organization for a company with three separate teams: Engineering, Finance, and Operations. Each team requires access only to their own resources and must assume roles in their respective accounts. The architect wants to implement a solution that enforces the \textit{principle of least privilege} while minimizing the overhead of managing individual \textbf{IAM Users} across all accounts.\n\nWhich approach \textbf{BEST meets these requirements}?",
+    "options": {
+      "A": "Create an \textbf{IAM User} in each team's account and attach team-specific \textbf{IAM Policies} directly to each user",
+      "B": "Create \textbf{IAM Roles} in each team account with appropriate policies, and use \textbf{AWS IAM Identity Center} to federate user access across accounts",
+      "C": "Create a centralized \textbf{IAM Group} in the master account containing all users and attach a policy that grants access to all resources across all accounts",
+      "D": "Create \textbf{IAM Users} in a central account and configure cross-account \textbf{AssumeRole} permissions for each team's resources"
+    },
+    "correct_answer": "B",
+    "explanation": "\textbf{B is correct:} \textbf{AWS IAM Identity Center} (formerly AWS Single Sign-On) provides federated access management across multiple AWS accounts. This approach:\n\n\u2022 Eliminates the need to create and manage individual \textbf{IAM Users} in each account\n\u2022 Enforces centralized authentication and authorization\n\u2022 Enables \textit{least privilege} through role-based access control scoped to specific accounts\n\u2022 Reduces operational overhead by consolidating user management in a single location\n\u2022 Scales efficiently for multi-account organizations\n\n\textbf{A is incorrect:} Creating individual \textbf{IAM Users} in each account violates the principle of avoiding proliferated user identities and increases management overhead across multiple accounts.\n\n\textbf{C is incorrect:} Centralizing all users in a group and granting broad cross-account permissions violates \textit{least privilege}; users would have unnecessary access to resources outside their team's scope.\n\n\textbf{D is incorrect:} While cross-account \textbf{AssumeRole} is valid for federation, creating centralized \textbf{IAM Users} still introduces identity management complexity and fails to leverage a modern identity federation service designed for this use case.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "AWS Solutions Architect Associate (SAA-C03)",
+      "subject": "Domain 1 \u2013 Design Secure Architectures",
+      "topic": "Secure Access to AWS Resources",
+      "sub_topic": "IAM \u2013 Users, Groups, Roles, Policies (Identity-based & Resource-based)",
+      "difficulty_level": 2,
+      "question_type": "Best-practice",
+      "key_concepts": [
+        "IAM Identity Center",
+        "IAM Roles",
+        "Cross-account access",
+        "Principle of least privilege",
+        "Identity federation",
+        "Multi-account architecture"
+      ],
+      "aws_services": [
+        "AWS IAM",
+        "AWS IAM Identity Center",
+        "AWS Organizations"
+      ]
+    }
+  },
+  {
+    "id": "AWSSOL_IAMUSERSGR_3_1_1_6d9dfc",
+    "text": "A company has a development team that uses a single \\textbf{AWS account}. Multiple developers need temporary access to production \\textbf{Amazon S3} buckets to deploy application updates, but the security team requires that access be time-limited, auditable, and not dependent on long-lived access keys. The developers currently use \\textbf{IAM Users} with static credentials stored in password managers. Which approach provides the \\textbf{MOST secure and operationally efficient} solution while meeting all requirements?",
+    "options": {
+      "A": "Create \\textbf{IAM Users} for each developer with policies granting \\textbf{S3:GetObject} and \\textbf{S3:PutObject} permissions. Enable \\textbf{MFA} and rotate access keys every 30 days manually.",
+      "B": "Use \\textbf{AWS Identity and Access Management (IAM) Roles} with a trust policy allowing developers to assume the role via \\textbf{AWS Security Token Service (STS)}. Attach inline policies scoped to production \\textbf{S3} buckets and set session duration limits.",
+      "C": "Implement \\textbf{AWS Cognito} to federate developer identities from an external identity provider. Use \\textbf{Cognito Identity Pools} to provide temporary credentials with \\textbf{STS} session tokens.",
+      "D": "Create \\textbf{Cross-Account Roles} in the production account and grant developer \\textbf{IAM Users} in the development account \\textbf{sts:AssumeRole} permissions to assume those roles, with a maximum session duration of 1 hour."
+    },
+    "correct_answer": "B",
+    "explanation": "\\textbf{B is correct:} \\textbf{IAM Roles} with \\textbf{STS} session credentials are the native AWS pattern for temporary access within a single account. Role assumption generates short-lived session tokens (default 1 hour, configurable), eliminating the need for long-lived credentials. This satisfies all requirements: (1) \\textit{time-limited} \u2014 session tokens expire automatically, (2) \\textit{auditable} \u2014 \\textbf{AWS CloudTrail} logs all assume-role calls and session usage, (3) \\textit{operationally efficient} \u2014 no manual key rotation required. Developers assume the role through an identity provider, console, or CLI without storing static credentials.\n\n\\textbf{A is incorrect:} \\textbf{IAM Users} with static access keys are long-lived credentials that do not expire. Although rotation every 30 days reduces risk, this imposes significant operational overhead and remains less secure than temporary session-based access. Static credentials are inherently more vulnerable to theft and misuse.\n\n\\textbf{C is incorrect:} \\textbf{AWS Cognito} is designed for external user authentication (customer identity management) and is not the appropriate tool for internal enterprise developer access. It adds unnecessary complexity and is not aligned with the single-account use case. \\textbf{Cognito} is typically used for mobile/web applications, not workforce access.\n\n\\textbf{D is incorrect:} \\textbf{Cross-account roles} are appropriate when developers are in a separate \\textbf{AWS account}, but the scenario explicitly states a single account. Cross-account role assumption adds architectural complexity and trust relationship management without solving the stated problem. Additionally, session duration limits are enforced at the role level regardless of architecture, so this provides no advantage over option B.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "AWS Solutions Architect Associate (SAA-C03)",
+      "subject": "Domain 1 \u2013 Design Secure Architectures",
+      "topic": "Secure Access to AWS Resources",
+      "sub_topic": "IAM \u2013 Users, Groups, Roles, Policies (Identity-based & Resource-based)",
+      "difficulty_level": 3,
+      "question_type": "Scenario-based architect trade-off",
+      "key_concepts": [
+        "IAM Roles vs. IAM Users",
+        "AWS STS (Security Token Service)",
+        "Temporary Security Credentials",
+        "Session Duration",
+        "CloudTrail Auditing",
+        "Least Privilege",
+        "Single vs. Cross-Account Access"
+      ],
+      "related_services": [
+        "AWS IAM",
+        "AWS STS",
+        "Amazon S3",
+        "AWS CloudTrail",
+        "AWS Cognito"
+      ]
+    }
+  },
+  {
+    "id": "AWSSOL_IAMUSERSGR_3_1_2_b3e1d9",
+    "text": "A financial services company is migrating their legacy application to \\textbf{Amazon EC2} instances running on \\textbf{AWS}. The application requires read and write access to sensitive data stored in \\textbf{Amazon S3} and must retrieve database credentials from \\textbf{AWS Secrets Manager}. The company has strict security policies:\n\n\\begin{itemize}\n\\item Credentials must never be stored on EC2 instances\n\\item Access permissions must follow the \\textit{principle of least privilege}\n\\item A developer who previously left the company retained an \\textbf{IAM User} access key; the security team needs to guarantee this key can no longer be used\n\\item The solution must support temporary credentials with automatic rotation\n\\end{itemize}\n\nWhich combination of approaches \\textbf{BEST} meets all these requirements?",
+    "options": {
+      "A": "Create an \\textbf{IAM Role} with inline policies granting \\textbf{S3} and \\textbf{Secrets Manager} permissions; attach the role to EC2 instances. Attach an \\textbf{IAM User} to the instance for the developer and deactivate the access key.",
+      "B": "Create an \\textbf{IAM Role} with a managed policy granting \\textbf{S3} and \\textbf{Secrets Manager} read-write permissions; attach to EC2 instances. Deactivate all legacy \\textbf{IAM User} access keys in \\textbf{IAM} console.",
+      "C": "Configure \\textbf{EC2 Instance Metadata Service (IMDSv2)} with an \\textbf{IAM Role} that has a resource-based policy limiting access to \\textbf{S3} and \\textbf{Secrets Manager}; delete the legacy \\textbf{IAM User} account entirely.",
+      "D": "Store database credentials in an encrypted \\textbf{EC2} user data script; create an \\textbf{IAM Role} with inline policies for \\textbf{S3} access. Revoke all permissions from the legacy \\textbf{IAM User} via a \\textbf{Deny Policy}."
+    },
+    "correct_answer": "B",
+    "explanation": "\\textbf{B is correct:}\n\n\\begin{itemize}\n\\item \\textbf{IAM Roles} attached to \\textbf{EC2 instances} provide temporary security credentials via the instance metadata service \u2014 credentials are never stored on the instance and are automatically rotated by \\textbf{AWS}\n\\item Managed policies enable modular, version-controlled permission management aligned with \\textit{least privilege}; custom managed policies can be refined with conditions to grant only the minimum required permissions\n\\item Deactivating the legacy \\textbf{IAM User} access key immediately revokes that user's ability to authenticate \u2014 the security requirement is met\n\\item This approach uses temporary credentials (via \\textbf{AWS STS}) rather than long-lived keys\n\\end{itemize}\n\n\\textbf{A is incorrect:} Attaching an \\textbf{IAM User} to an \\textbf{EC2 instance} is not valid; \\textbf{Users} are for people and applications with long-lived credentials, not for compute resources. Inline policies reduce auditability and reusability compared to managed policies.\n\n\\textbf{C is incorrect:} While deleting the user is a valid approach, \\textbf{IMDSv2} is a metadata service security enhancement \u2014 it does not grant permissions itself. Resource-based policies are not attached to \\textbf{IAM Roles}; they are attached to resources like \\textbf{S3 buckets} or \\textbf{SQS queues}.\n\n\\textbf{D is incorrect:} Storing credentials in \\textbf{EC2 user data} directly violates the stated requirement that credentials must never be stored on instances. Additionally, a \\textbf{Deny Policy} on the \\textbf{IAM User} does not remove or revoke existing access keys \u2014 the legacy key could still be used for other authenticated actions unless explicitly deactivated or deleted.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "AWS Solutions Architect Associate (SAA-C03)",
+      "subject": "Domain 1 \u2013 Design Secure Architectures",
+      "topic": "Secure Access to AWS Resources",
+      "sub_topic": "IAM \u2013 Users, Groups, Roles, Policies (Identity-based & Resource-based)",
+      "difficulty_level": 3,
+      "question_type": "Scenario-based Architect Trade-off"
+    }
+  },
+  {
+    "id": "AWSSOL_IAMUSERSGR_4_1_1_a1bf57",
+    "text": "A financial services company runs a multi-account \textbf{AWS Organizations} setup with a production account and a shared-services account. An application in the production account must read objects from an \textbf{Amazon S3} bucket owned by the shared-services account. The security team requires that access be granted without creating long-term \textbf{IAM} credentials, and that only the specific application's compute workload \u2014 running on \textbf{Amazon EC2} \u2014 can access the bucket. No other principals in the production account should have access. Which combination of configurations satisfies these requirements?",
+    "options": {
+      "A": "Attach an \textbf{IAM role} with an \textit{identity-based policy} granting \texttt{s3:GetObject} to the \textbf{EC2} instance profile. Add a \textbf{resource-based policy} (bucket policy) on the S3 bucket in the shared-services account that allows \texttt{s3:GetObject} only for the \textbf{ARN} of that specific \textbf{IAM role} in the production account.",
+      "B": "Create an \textbf{IAM user} in the shared-services account with \texttt{s3:GetObject} permission on the bucket. Store the access keys in \textbf{AWS Secrets Manager} in the production account and retrieve them at runtime on the \textbf{EC2} instance.",
+      "C": "Enable \textbf{S3 Cross-Account Replication} from the shared-services bucket to a new bucket in the production account, then grant the \textbf{EC2} instance profile read access to the replicated bucket using an \textit{identity-based policy}.",
+      "D": "Use \textbf{AWS Organizations Service Control Policies (SCPs)} to allow \texttt{s3:GetObject} for the shared-services bucket at the production account level, then attach an \textit{identity-based policy} granting \texttt{s3:GetObject} to all \textbf{IAM} principals in the production account."
+    },
+    "correct_answer": "A",
+    "explanation": "\\textbf{A is correct:} For cross-account \textbf{S3} access, both an \\textit{identity-based policy} on the requester side AND a \\textit{resource-based policy} (bucket policy) on the resource side are required when the resource is in a different account. Attaching an \\textbf{IAM role} to the \\textbf{EC2} instance profile provides temporary, automatically rotated credentials (no long-term keys). The bucket policy in the shared-services account scoped to the specific role \\textbf{ARN} ensures that only that role \u2014 and therefore only that EC2 workload \u2014 can access the bucket, satisfying the least-privilege requirement.\n\n\\textbf{B is incorrect:} Using an \\textbf{IAM user} with static access keys violates the requirement to avoid long-term credentials. Even storing them in \\textbf{AWS Secrets Manager} does not eliminate the existence of long-term keys; it only protects storage.\n\n\\textbf{C is incorrect:} \\textbf{S3 Cross-Account Replication} copies data into a new bucket, which introduces data duplication, added cost, and replication lag. It does not address the access control requirement and adds unnecessary operational overhead.\n\n\\textbf{D is incorrect:} \\textbf{SCPs} act as guardrails \u2014 they define the maximum permissions available to accounts in an organization but do not grant permissions by themselves. An SCP allowing an action still requires an explicit \\textit{identity-based} or \\textit{resource-based} policy to grant it. Furthermore, granting access to \\textit{all} IAM principals in the production account violates the requirement that only the specific EC2 workload can access the bucket.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "AWS Solutions Architect Associate",
+      "subject": "Domain 1 \u2013 Design Secure Architectures",
+      "topic": "Secure Access to AWS Resources",
+      "sub_topic": "IAM \u2013 Users, Groups, Roles, Policies (Identity-based & Resource-based)",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "AWSSOL_IAMUSERSGR_4_1_2_0df664",
+    "text": "A fintech company operates a multi-account AWS environment across three AWS accounts: \\textbf{Production}, \\textbf{Development}, and \\textbf{Audit}. The company needs to grant developers temporary access to production resources only during scheduled maintenance windows. Access must be auditable, revocable within minutes, and must NOT require standing IAM user creation in the production account. The solution must also enforce an approval workflow so developers cannot assume roles without explicit authorization. Which architecture BEST meets these requirements?",
+    "options": {
+      "A": "Create IAM users in the Development account and attach policies allowing cross-account assume role to a production role. Use \\textbf{AWS STS} with a 900-second session duration. Developers request access via email; a team lead manually updates the role's trust policy to allow assumption.",
+      "B": "Configure \\textbf{AWS Identity Center} with a permission set in the Production account. Link it to a centralized identity provider (e.g., corporate directory). Integrate \\textbf{AWS Systems Manager Change Manager} to require approval before temporary role assumption. All access is logged in \\textbf{AWS CloudTrail}.",
+      "C": "Create a \\textbf{SAML identity provider} in the Production account. Configure an \\textbf{IAM role} in Production with a trust relationship to the SAML provider. Developers authenticate via the corporate SAML provider, then assume the production role via \\textbf{AWS STS AssumeRoleWithSAML}. Implement an approval workflow external to AWS before developers initiate the assume-role call.",
+      "D": "Create IAM users directly in the Production account with inline policies. Use \\textbf{AWS CloudTrail} to audit all access. Require developers to request access through \\textbf{AWS Service Catalog}. Disable the users when maintenance is complete."
+    },
+    "correct_answer": "B",
+    "explanation": "\\textbf{B is correct:} This option satisfies all requirements:\\n\\n1. \\textit{No standing IAM users in Production:} \\textbf{AWS Identity Center} manages temporary federated access; developers authenticate against a centralized identity provider without persistent Production account users.\\n\\n2. \\textit{Approval enforcement:} \\textbf{AWS Systems Manager Change Manager} gates role assumption\u2014developers cannot self-assume roles without explicit approval and recorded change requests. Approvers review and authorize each access session.\\n\\n3. \\textit{Auditability:} All assume-role calls, approvals, and session activity are logged in \\textbf{CloudTrail}, enabling full audit trails.\\n\\n4. \\textit{Revocability within minutes:} Revoking permission sets in Identity Center or disabling the identity provider link immediately revokes access. No standing credentials to clean up.\\n\\n5. \\textit{Temporary credentials:} \\textbf{STS} automatically issues short-lived credentials (typically 3600s); no manual credential rotation required.\\n\\n---\\n\\n\\textbf{A is incorrect:} While it uses \\textbf{STS} for temporary credentials, it relies on persistent IAM users in the Development account. More critically, the manual trust policy update is error-prone, slow (not revocable within minutes), and creates no audit trail of who approved access. The approval workflow is entirely external to AWS and not enforceable.\\n\\n\\textbf{C is incorrect:} \\textbf{SAML identity providers are account-local resources.} A SAML provider can only be referenced in trust policies within the same AWS account where it is registered. This option correctly places the SAML provider in Production (fixing the architectural flaw in the previous version), but it still lacks a native AWS approval mechanism. The external approval workflow is not enforced by AWS\u2014developers could initiate assume-role calls before approval is recorded. \\textbf{Systems Manager Change Manager} (as in Option B) is the proper AWS-native gate for approval workflows.\\n\\n\\textbf{D is incorrect:} Creating standing IAM users in Production violates the requirement. \\textbf{AWS Service Catalog} is designed for provisioning and managing infrastructure resources, not for gating IAM role assumption. Users would have standing permissions once created; Service Catalog cannot be used to enforce per-session approval. Manually disabling users post-maintenance is error-prone and lacks automation.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "AWS Solutions Architect Associate",
+      "subject": "Domain 1 \u2013 Design Secure Architectures",
+      "topic": "Secure Access to AWS Resources",
+      "sub_topic": "IAM \u2013 Users, Groups, Roles, Policies (Identity-based & Resource-based)",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "AWSSOL_IAMUSERSGR_5_1_1_c33bfe",
+    "text": "A large enterprise operates a multi-account \textbf{AWS Organizations} structure with a management account and dozens of member accounts. A central security team in a dedicated \\textbf{Security} account needs to perform read-only auditing of \\textbf{Amazon S3} bucket policies, \\textbf{IAM} configurations, and \\textbf{AWS CloudTrail} logs across ALL member accounts. The solution must enforce the \\textit{principle of least privilege}, must NOT require storing long-term credentials anywhere, and must allow the security team to scale access to newly added member accounts automatically without manual configuration changes per account. Which combination of actions meets ALL requirements? (Select the architecture that BEST satisfies every constraint.)",
+    "options": {
+      "A": "Create an \\textbf{IAM user} in the management account with a cross-account \\textbf{IAM policy} granting read-only access to all member accounts. Store the access keys in \\textbf{AWS Secrets Manager} in the Security account and rotate them automatically every 90 days.",
+      "B": "Create a read-only \\textbf{IAM Role} in each member account with a \\textit{trust policy} allowing the Security account to assume it. Use an \\textbf{AWS Organizations Service Control Policy (SCP)} to automatically attach this role to new member accounts via a CloudFormation StackSet. Security team members assume the role using \\textbf{AWS STS AssumeRole} from the Security account.",
+      "C": "Enable \\textbf{AWS IAM Identity Center} and assign a permission set with read-only access to the management account only. Configure \\textbf{AWS Config} aggregation in the management account to collect data from all member accounts, eliminating the need for direct cross-account role assumption.",
+      "D": "Attach a \\textbf{resource-based policy} on each member account's root principal granting the Security account's \\textbf{IAM Role} read-only access. Use \\textbf{AWS Lambda} in the management account to periodically refresh these resource-based policies when new accounts are added."
+    },
+    "correct_answer": "B",
+    "explanation": "\\textbf{B is correct:} This architecture satisfies all stated constraints simultaneously:\\n\\n1. \\textbf{No long-term credentials:} \\textbf{AWS STS AssumeRole} issues temporary credentials \u2014 no stored access keys anywhere.\\n\\n2. \\textbf{Least privilege:} Each \\textbf{IAM Role} in member accounts grants only read-only permissions and the \\textit{trust policy} explicitly restricts assumption to the Security account's principal only.\\n\\n3. \\textbf{Automatic scaling to new accounts:} A \\textbf{CloudFormation StackSet} deployed via \\textbf{AWS Organizations} automatically provisions the IAM Role in every new member account upon creation \u2014 zero manual per-account configuration.\\n\\n4. \\textbf{SCP enforcement} ensures governance guardrails prevent the roles from being deleted or modified by member account administrators.\\n\\n\\textbf{A is incorrect:} \\textbf{IAM users} with access keys are long-term credentials \u2014 this directly violates the no-stored-credentials constraint. Secrets Manager rotation reduces risk but does not eliminate long-term credentials.\\n\\n\\textbf{C is incorrect:} Granting access only to the management account does not give the security team direct cross-account access to member accounts' \\textbf{IAM} configurations and \\textbf{S3} bucket policies. \\textbf{AWS Config} aggregation helps with configuration data but does not provide the direct IAM and S3 read-only access required, and this option does not address cross-account role assumption at scale.\\n\\n\\textbf{D is incorrect:} AWS accounts do not support \\textbf{resource-based policies} on the root principal in the way described \u2014 this is not a valid IAM construct. Additionally, relying on a Lambda function to refresh policies introduces operational overhead and a potential gap window for new accounts, violating the automatic scaling requirement.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "AWS Solutions Architect Associate",
+      "subject": "Domain 1 \u2013 Design Secure Architectures",
+      "topic": "Secure Access to AWS Resources",
+      "sub_topic": "IAM \u2013 Users, Groups, Roles, Policies (Identity-based & Resource-based)",
+      "difficulty_level": 5
+    }
+  },
+  {
+    "id": "AWSSOL_IAMUSERSGR_5_1_2_e4dca9",
+    "text": "A financial services company runs a multi-account \textbf{AWS Organizations} setup with three accounts: a central \textbf{Security} account, a \textbf{Production} account, and a \textbf{Development} account. A security engineer must design a solution with the following requirements:\n\n\\begin{itemize}\n\\item Analysts in the \textbf{Security} account must be able to read \textbf{Amazon S3} audit logs stored in the \textbf{Production} account.\n\\item The \textbf{Production} account must retain full control over who can access its S3 bucket.\n\\item No long-term credentials (access keys) may be used for cross-account access.\n\\item The \textbf{Development} account must be explicitly denied read access to the same Production S3 bucket, even if a Development IAM principal attempts to assume a role.\n\\end{itemize}\n\nWhich combination of configurations satisfies ALL requirements with the \textbf{LEAST operational overhead}?",
+    "options": {
+      "A": "Create an \textbf{IAM Role} in the \textbf{Production} account with a trust policy allowing the \textbf{Security} account's IAM principals to assume it. Attach an identity-based policy granting \texttt{s3:GetObject} on the audit bucket. Add an \textbf{S3 bucket policy} on the Production bucket that explicitly denies access to principals from the \textbf{Development} account.",
+      "B": "Create an \textbf{IAM Role} in the \textbf{Security} account with an identity-based policy granting \texttt{s3:GetObject}. Add an \textbf{S3 bucket policy} in the \textbf{Production} account granting access to the Security account's IAM role ARN and explicitly denying the Development account's root ARN. Enable \textbf{S3 Block Public Access} on the Production bucket.",
+      "C": "Use an \textbf{AWS Organizations Service Control Policy (SCP)} attached to the \textbf{Development} OU to deny \texttt{s3:GetObject} on the Production bucket ARN. Create an \textbf{S3 bucket policy} in the \textbf{Production} account granting the Security account's IAM principals direct access. Disable role assumption entirely.",
+      "D": "Create \textbf{IAM users} in the \textbf{Security} account with inline policies permitting \texttt{s3:GetObject} and generate long-term access keys. Store the keys in \textbf{AWS Secrets Manager}. Add an \textbf{S3 bucket policy} in the Production account granting access to those IAM user ARNs and explicitly denying the Development account."
+    },
+    "correct_answer": "A",
+    "explanation": "\\textbf{A is correct:} This design satisfies every requirement optimally.\n\n\\begin{itemize}\n\\item \\textbf{No long-term credentials:} An \\textbf{IAM Role} in the Production account is assumed via \\texttt{sts:AssumeRole} \u2014 temporary credentials only.\n\\item \\textbf{Production retains control:} The role and its trust policy live in the Production account; the Production team controls who may assume it.\n\\item \\textbf{Deny Development access:} The \\textbf{S3 bucket policy} (a resource-based policy) adds an explicit \\texttt{Deny} for Development account principals. Because an explicit Deny always overrides any Allow, this blocks Development even if a Development principal somehow obtained a role elsewhere.\n\\item \\textbf{Least operational overhead:} A single cross-account role assumption plus one bucket policy Deny is the minimum configuration needed.\n\\end{itemize}\n\n\\textbf{B is incorrect:} An IAM Role created in the \\textit{Security} account cannot directly grant access to a resource in another account unless the resource-based policy (bucket policy) also grants it. While a bucket policy granting a Security-account role ARN would work, placing the role in the Security account means the Production account loses sole control over granting access \u2014 violating the second requirement. Additionally, denying only the Development root ARN leaves IAM principals under that account unblocked.\n\n\\textbf{C is incorrect:} An \\textbf{SCP} can restrict what principals in the Development account are \\textit{allowed} to do, but it does not act as a substitute for identity federation or role-based access. The option also suggests disabling role assumption entirely, which contradicts the requirement to allow Security account access without long-term credentials. SCPs alone cannot grant cross-account access.\n\n\\textbf{D is incorrect:} Long-term access keys are explicitly prohibited by the requirements. Storing keys in \\textbf{AWS Secrets Manager} mitigates some risk but does not eliminate the existence of long-term credentials, directly violating a stated constraint.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "AWS Solutions Architect Associate",
+      "subject": "Domain 1 \u2013 Design Secure Architectures",
+      "topic": "Secure Access to AWS Resources",
+      "sub_topic": "IAM \u2013 Users, Groups, Roles, Policies (Identity-based & Resource-based)",
+      "difficulty_level": 5
+    }
+  },
+  {
+    "id": "AWSSOL_IAMPOLICYE_1_1_1_4b4975",
+    "text": "A solutions architect is designing an access control strategy for a large organization using \\textbf{AWS IAM}. The security team requires that individual teams can manage their own \\textbf{IAM policies} and roles, but the organization must ensure no team can grant permissions beyond a defined boundary \u2014 even if they add explicit \\textbf{Allow} statements in their policies. Which IAM mechanism \\textbf{BEST} enforces this organizational requirement?",
+    "options": {
+      "A": "Use \\textbf{IAM Policy Conditions} with \\textit{aws:SourceIp} to restrict team access based on office location",
+      "B": "Use \\textbf{Permission Boundaries} on team \\textbf{IAM Roles} to define the maximum permissions each team can delegate",
+      "C": "Use \\textbf{Service Control Policies (SCPs)} attached to individual \\textbf{IAM users} to control their permission ceiling",
+      "D": "Use \\textbf{Resource-based Policies} on all organization resources to explicitly deny team access beyond approved services"
+    },
+    "correct_answer": "B",
+    "explanation": "\\textbf{B is correct:} \\textbf{Permission Boundaries} define the \\textit{maximum} set of permissions an \\textbf{IAM Principal} (user or role) can have. Even if a team member creates an \\textbf{IAM policy} with an explicit \\textbf{Allow} for any action, the effective permissions are the intersection of the identity-based policy and the permission boundary. This prevents teams from escalating privileges beyond the organization's defined threshold.\n\n\\textbf{A is incorrect:} \\textbf{IAM Policy Conditions} (such as \\textit{aws:SourceIp}) restrict \\textit{when} a permission can be used, not the \\textit{maximum scope} of permissions. They do not act as an upper permission limit.\n\n\\textbf{C is incorrect:} \\textbf{SCPs} are organization-level controls attached to \\textbf{AWS Accounts} and \\textbf{Organization Units (OUs)}, not individual \\textbf{IAM users}. Additionally, SCPs define what services can be used account-wide; they are not designed for per-role permission ceilings.\n\n\\textbf{D is incorrect:} \\textbf{Resource-based Policies} grant or deny access to specific resources, but they require explicit configuration on every resource and do not provide a centralized \\textit{organizational} permission boundary. This approach is also operationally complex and does not scale.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "AWS Solutions Architect Associate (SAA-C03)",
+      "subject": "Domain 1 \u2013 Design Secure Architectures",
+      "topic": "Secure Access to AWS Resources",
+      "sub_topic": "IAM Policy Evaluation Logic \u2013 Allow/Deny, Permission Boundaries, SCPs",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "AWSSOL_IAMPOLICYE_1_1_2_365c19",
+    "text": "A solutions architect is designing access controls for a development team in an AWS Organization. The architect wants to ensure that even if an IAM user is granted full access via an IAM policy, they cannot create any resources outside the \\textbf{us-east-1} region. Which of the following \\textbf{MOST effectively} enforces this restriction across the entire AWS account?",
+    "options": {
+      "A": "Apply a \\textbf{permission boundary} to each user that denies all actions outside \\textbf{us-east-1}, and attach individual inline \\textbf{IAM policies} granting full permissions within the region",
+      "B": "Use an \\textbf{AWS Organizations Service Control Policy (SCP)} at the account level to deny all actions outside \\textbf{us-east-1}, independent of IAM policies",
+      "C": "Create an \\textbf{IAM role} with a trust relationship that restricts sessions to \\textbf{us-east-1} and assign it only to users in that region",
+      "D": "Attach a resource-based policy to each AWS resource that explicitly denies creation requests from outside \\textbf{us-east-1}"
+    },
+    "correct_answer": "B",
+    "explanation": "\\textbf{B is correct:} \\textbf{Service Control Policies (SCPs)} are organization-level controls that act as a \\textit{maximum permission boundary} for all IAM policies in an account. An SCP denying actions with a condition on region will block those actions \\textbf{regardless of what individual IAM policies grant}. SCPs apply uniformly to all IAM users, roles, and principals in the account without requiring per-principal configuration, providing enterprise-wide enforcement that is the \\textbf{MOST effective} for organization-wide constraints.\n\n\\textbf{A is incorrect:} While \\textbf{permission boundaries} do set a maximum permission scope for an individual user or role, they must be applied to \\textit{each principal separately}. This approach requires manual configuration per user, making it operationally burdensome and prone to gaps if new users are added. Permission boundaries also do not provide uniform enforcement across the entire account\u2014individual administrators could potentially attach different boundaries to different users, creating inconsistency. SCPs eliminate this scalability problem by enforcing a single policy uniformly across all principals.\n\n\\textbf{C is incorrect:} IAM roles cannot be restricted to specific regions via trust relationships. Trust relationships control \\textit{who} can assume a role (principal restrictions), not \\textit{where} or \\textit{when} they can assume it. Regional restrictions cannot be enforced through session conditions or role assignment.\n\n\\textbf{D is incorrect:} Resource-based policies control access to \\textit{individual resources}, not region-level restrictions globally. This approach would require modifying every resource policy across all services (EC2, S3, RDS, etc.) and would be operationally unsustainable and error-prone. Additionally, resource policies are not a scalable mechanism for organization-wide constraints.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "AWS Solutions Architect Associate (SAA-C03)",
+      "subject": "Domain 1 \u2013 Design Secure Architectures",
+      "topic": "Secure Access to AWS Resources",
+      "sub_topic": "IAM Policy Evaluation Logic \u2013 Allow/Deny, Permission Boundaries, SCPs",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "AWSSOL_IAMPOLICYE_2_1_1_69e4db",
+    "text": "A solutions architect is designing an access control strategy for a multi-team organization. The company wants to ensure that no IAM user can create or modify resources outside of a specific \\textbf{AWS Region} (us-east-1), regardless of what permissions are attached to their individual \\textbf{IAM Role}. Additionally, individual teams need flexibility to grant permissions to their users as needed. Which combination of IAM policy mechanisms \\textbf{BEST} achieves this requirement?",
+    "options": {
+      "A": "Use \\textbf{AWS Service Control Policies (SCPs)} attached to the \\textbf{Organization Unit (OU)} to deny all actions outside us-east-1, and allow individual \\textbf{IAM Roles} to grant granular permissions within that region",
+      "B": "Use \\textbf{IAM Permission Boundaries} on each user to restrict actions to us-east-1 only, and attach individual \\textbf{IAM Policies} for team-specific permissions",
+      "C": "Use \\textbf{IAM Resource-based Policies} on all resources to permit access only from the us-east-1 region",
+      "D": "Create separate \\textbf{AWS Accounts} per team, each restricted to us-east-1 via \\textbf{IAM Policies} on the root account"
+    },
+    "correct_answer": "A",
+    "explanation": "\\textbf{A is correct:} \\textbf{Service Control Policies (SCPs)} are the appropriate mechanism for enforcing organization-wide restrictions that cannot be overridden by individual \\textbf{IAM Policies}. An SCP attached to an \\textbf{OU} acts as a guardrail, applying a hard ceiling of permissions regardless of what \\textbf{IAM Roles} or policies grant. This allows teams to manage their own granular permissions (within the SCP boundary) while the organization enforces the region constraint at the \\textbf{AWS Organizations} level.\n\n\\textbf{B is incorrect:} \\textbf{Permission Boundaries} set a maximum limit on individual user permissions, but they are evaluated per user. This approach does not scale well across the organization and requires configuration on every user, creating operational overhead. Permission Boundaries are best for delegating permission administration within a team, not for organization-wide guardrails.\n\n\\textbf{C is incorrect:} \\textbf{Resource-based Policies} are attached to individual resources (e.g., \\textbf{S3 buckets}, \\textbf{SQS queues}). Applying region restrictions via resource policies would require policy updates on every resource in the organization \u2014 operationally infeasible and error-prone.\n\n\\textbf{D is incorrect:} Creating separate accounts per team and restricting each to a single region via \\textbf{IAM Policies} is inefficient. \\textbf{IAM Policies} attached to the root account still allow privilege escalation within that account. Additionally, separate accounts increase operational complexity and do not scale well for shared infrastructure or cross-team collaboration.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "AWS Solutions Architect Associate (SAA-C03)",
+      "subject": "Domain 1 \u2013 Design Secure Architectures",
+      "topic": "Secure Access to AWS Resources",
+      "sub_topic": "IAM Policy Evaluation Logic \u2013 Allow/Deny, Permission Boundaries, SCPs",
+      "difficulty_level": 2,
+      "question_type": "Best-Practice",
+      "key_concepts": [
+        "Service Control Policies (SCPs)",
+        "IAM Permission Boundaries",
+        "Organization-wide guardrails",
+        "IAM Policy evaluation logic",
+        "Least privilege principle"
+      ]
+    }
+  },
+  {
+    "id": "AWSSOL_IAMPOLICYE_2_1_2_2142e3",
+    "text": "A solutions architect is designing an access control strategy for a multi-team AWS organization. A developer in the platform team has been granted an \\textbf{IAM policy} that allows \\texttt{s3:GetObject}, \\texttt{s3:PutObject}, and \\texttt{s3:DeleteObject} on all \\textbf{Amazon S3} buckets. However, the security team has applied a \\textbf{permission boundary} that allows only \\texttt{s3:GetObject} and \\texttt{s3:ListBucket}. Additionally, an \\textbf{AWS Organizations Service Control Policy (SCP)} allows \\texttt{s3:*} actions. Which statement accurately describes what permissions the developer effectively has?",
+    "options": {
+      "A": "The developer can perform \\texttt{s3:GetObject}, \\texttt{s3:PutObject}, and \\texttt{s3:DeleteObject} because the \\textbf{IAM policy} grants these permissions and the \\textbf{SCP} does not restrict them.",
+      "B": "The developer can only perform \\texttt{s3:GetObject} and \\texttt{s3:ListBucket} because the effective permissions are the intersection of the \\textbf{SCP}, \\textbf{permission boundary}, and \\textbf{identity-based policy}, and only these actions appear in all three.",
+      "C": "The developer cannot perform any S3 actions because the \\textbf{permission boundary} is more restrictive than the \\textbf{IAM policy}, which prevents all access.",
+      "D": "The developer can perform \\texttt{s3:GetObject}, \\texttt{s3:PutObject}, and \\texttt{s3:DeleteObject} because the \\textbf{SCP} grants \\texttt{s3:*}, which overrides the \\textbf{permission boundary}."
+    },
+    "correct_answer": "B",
+    "explanation": "\\textbf{B is correct:} AWS policy evaluation follows a \\textit{deny-by-default} model where an action is allowed only if it is permitted by \\textbf{all} applicable policy layers. The effective permissions are the intersection of three independent layers: (1) \\textbf{SCP} = \\texttt{s3:*}, (2) \\textbf{permission boundary} = \\{\\texttt{s3:GetObject}, \\texttt{s3:ListBucket}\\}, and (3) \\textbf{identity-based policy} = \\{\\texttt{s3:GetObject}, \\texttt{s3:PutObject}, \\texttt{s3:DeleteObject}\\}. The intersection of these three sets is \\{\\texttt{s3:GetObject}, \\texttt{s3:ListBucket}\\}. Although \\texttt{s3:PutObject} and \\texttt{s3:DeleteObject} are granted by the \\textbf{identity-based policy} and permitted by the \\textbf{SCP}, they fall outside the \\textbf{permission boundary's} maximum permission ceiling and are therefore denied.\\n\\n\\textbf{A is incorrect:} Although both the \\textbf{identity-based policy} and \\textbf{SCP} grant all three actions, the \\textbf{permission boundary} explicitly restricts the developer's maximum permissions to only \\texttt{s3:GetObject} and \\texttt{s3:ListBucket}. Since all three policy layers must permit an action, and the boundary does not allow \\texttt{s3:PutObject} or \\texttt{s3:DeleteObject}, these actions remain denied.\\n\\n\\textbf{C is incorrect:} The \\textbf{permission boundary} allows both \\texttt{s3:GetObject} and \\texttt{s3:ListBucket}, and these actions are also granted in the \\textbf{identity-based policy} and permitted by the \\textbf{SCP}. Therefore, the developer retains access to these two actions. A permission boundary never grants permissions \u2014 it only restricts the maximum permissions available.\\n\\n\\textbf{D is incorrect:} \\textbf{Service Control Policies (SCPs)} and \\textbf{permission boundaries} do not override one another; instead, they are independently intersected in the evaluation logic. An \\textbf{SCP} that permits \\texttt{s3:*} cannot override a \\textbf{permission boundary} that restricts actions to \\texttt{s3:GetObject} and \\texttt{s3:ListBucket}. All applicable policy layers must independently permit an action for it to be effective.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "AWS Solutions Architect Associate (SAA-C03)",
+      "subject": "Domain 1 \u2013 Design Secure Architectures",
+      "topic": "Secure Access to AWS Resources",
+      "sub_topic": "IAM Policy Evaluation Logic \u2013 Allow/Deny, Permission Boundaries, SCPs",
+      "difficulty_level": 2,
+      "question_type": "Conceptual",
+      "key_concepts": [
+        "IAM policy evaluation logic",
+        "Three-layer intersection (SCP \u2229 Boundary \u2229 Identity-based policy)",
+        "Permission boundaries as maximum permission ceilings",
+        "Service Control Policies (SCPs)",
+        "Deny-by-default evaluation model",
+        "Policy independence \u2014 no layer overrides another"
+      ]
+    }
+  },
+  {
+    "id": "AWSSOL_IAMPOLICYE_3_1_1_3a817c",
+    "text": "A financial services company has a large AWS organization with 50 AWS accounts. The security team must enforce a policy that prevents any \\textbf{IAM user} or \\textbf{IAM role} in any member account from creating \\textbf{Amazon S3} buckets or modifying bucket policies, regardless of any explicit allow permissions. However, the security team's own dedicated account must retain full control over \\textbf{Amazon S3} operations for auditing purposes. Additionally, individual development teams must be able to manage \\textbf{Amazon EC2} instances freely within their own accounts. Which combination of AWS identity and access control mechanisms should the solutions architect implement to meet these requirements with the \\textbf{LEAST operational overhead}?",
+    "options": {
+      "A": "Apply a \\textbf{Service Control Policy (SCP)} to the organization root that explicitly denies all \\textbf{s3:CreateBucket} and \\textbf{s3:PutBucketPolicy} actions. Exclude the security team account from this \\textbf{SCP} by placing it in a separate \\textbf{organizational unit (OU)}. Attach development team \\textbf{IAM policies} for \\textbf{EC2} full access to \\textbf{IAM roles} in member accounts.",
+      "B": "Create an \\textbf{IAM permission boundary} on every \\textbf{IAM user} and \\textbf{IAM role} across all member accounts that denies \\textbf{Amazon S3} operations. Attach \\textbf{EC2} policies directly to users. Manually audit each account quarterly.",
+      "C": "Configure \\textbf{resource-based policies} on all \\textbf{Amazon S3} buckets organization-wide that deny bucket creation and policy modifications from non-security accounts. Attach \\textbf{EC2} policies to development team \\textbf{IAM roles}.",
+      "D": "Use \\textbf{AWS CloudTrail} with \\textbf{Amazon EventBridge} to detect and automatically block \\textbf{Amazon S3} bucket creation API calls from member accounts. Attach \\textbf{EC2} policies to development team roles in member accounts."
+    },
+    "correct_answer": "A",
+    "explanation": "\\textbf{A is correct:} \\textbf{Service Control Policies (SCPs)} are the only mechanism that can enforce an organization-wide explicit deny that supersedes all \\textbf{IAM policies} and \\textbf{permission boundaries}. Applying an \\textbf{SCP} to the organization root denies \\textbf{s3:CreateBucket} and \\textbf{s3:PutBucketPolicy} for all accounts. By placing the security team account in a separate \\textbf{OU}, the organization architect can apply a different or exempting \\textbf{SCP} to that \\textbf{OU}, retaining \\textbf{Amazon S3} control where needed. \\textbf{EC2} policies attached to roles in member accounts then permit the required development operations. This scales across 50 accounts with minimal ongoing maintenance \u2014 no per-account boundary updates required.\n\n\\textbf{B is incorrect:} \\textbf{Permission boundaries} define the \\textbf{maximum} permissions for an \\textbf{IAM principal}, but they cannot override explicit allows elsewhere (e.g., from account-level \\textbf{IAM policies}). More critically, manually applying \\textbf{permission boundaries} to every \\textbf{IAM user} and \\textbf{IAM role} across 50 accounts is operationally intensive and error-prone. The security team account would still need boundary exceptions, increasing complexity. Quarterly audits also provide no real-time enforcement.\n\n\\textbf{C is incorrect:} \\textbf{Resource-based policies} (bucket policies) can only deny access to specific resources (buckets), not prevent the \\textbf{CreateBucket} API call itself. Attackers could create new buckets not yet protected by a policy. Additionally, manually managing bucket policies across potentially hundreds of buckets is not scalable or maintainable.\n\n\\textbf{D is incorrect:} \\textbf{CloudTrail} and \\textbf{EventBridge} are detective and remedial controls, not preventive. By the time an event triggers, the \\textbf{Amazon S3} bucket may already exist. This approach also introduces operational overhead (managing Lambda functions, event routing, rollback logic) and does not guarantee the security team account retains \\textbf{S3} privileges.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "AWS Solutions Architect Associate (SAA-C03)",
+      "subject": "Domain 1 \u2013 Design Secure Architectures",
+      "topic": "Secure Access to AWS Resources",
+      "sub_topic": "IAM Policy Evaluation Logic \u2013 Allow/Deny, Permission Boundaries, SCPs",
+      "difficulty_level": 3,
+      "question_type": "Scenario \u2013 Multi-Constraint Trade-off",
+      "key_concepts": [
+        "Service Control Policies (SCPs)",
+        "IAM Permission Boundaries",
+        "Resource-Based Policies",
+        "Organizational Units (OUs)",
+        "IAM Policy Evaluation Logic",
+        "Explicit Deny",
+        "Scalability & Operational Overhead",
+        "AWS Organizations"
+      ],
+      "incorrect_option_failure_modes": {
+        "B": "Permission boundaries cannot enforce organization-wide explicit deny; per-account management is operationally heavy.",
+        "C": "Resource-based policies protect existing resources; cannot prevent CreateBucket API.",
+        "D": "Detective/reactive control, not preventive; introduces operational complexity without real-time enforcement."
+      }
+    }
+  },
+  {
+    "id": "AWSSOL_IAMPOLICYE_3_1_2_76bcd7",
+    "text": "A company uses \textbf{AWS Organizations} with multiple \textbf{Organizational Units (OUs)}. A developer in the \textbf{Production OU} has an \textbf{IAM} identity-based policy that grants \texttt{s3:DeleteObject} on all \textbf{Amazon S3} buckets. The security team has attached a \textbf{Service Control Policy (SCP)} to the Production OU that explicitly \textit{denies} \texttt{s3:DeleteObject}. Additionally, the developer's \textbf{IAM} user has a \textbf{permission boundary} that \textit{allows} \texttt{s3:DeleteObject}. A solutions architect must determine the effective permissions for this developer. Which outcome \textbf{BEST} describes the developer's ability to perform \texttt{s3:DeleteObject}?",
+    "options": {
+      "A": "The developer \textbf{can} perform \texttt{s3:DeleteObject} because the \textbf{permission boundary} explicitly allows it, overriding all other policies.",
+      "B": "The developer \textbf{cannot} perform \texttt{s3:DeleteObject} because the \textbf{SCP} explicit deny takes precedence in the policy evaluation order, regardless of the identity-based policy or permission boundary.",
+      "C": "The developer \textbf{can} perform \texttt{s3:DeleteObject} because the identity-based policy grants the action and the \textbf{permission boundary} also allows it, satisfying both required conditions.",
+      "D": "The developer \textbf{cannot} perform \texttt{s3:DeleteObject} because the \textbf{permission boundary} does not explicitly grant \texttt{s3:PutObject}, which is a prerequisite evaluated by \textbf{IAM} before delete operations."
+    },
+    "correct_answer": "B",
+    "explanation": "\\textbf{B is correct:} \\textbf{AWS IAM} policy evaluation follows a strict order. An explicit \\textbf{deny} in any policy \u2014 including an \\textbf{SCP} \u2014 immediately overrides any \\texttt{Allow} anywhere else. \\textbf{SCPs} act as guardrails at the organization or OU level; even if an identity-based policy and a permission boundary both allow an action, an SCP explicit deny makes the effective permission \\textit{denied}. The evaluation logic is: (1) explicit denies evaluated first across all applicable policies, (2) if no explicit deny, check for explicit allow across identity-based policies \\textit{intersected} with the permission boundary, (3) implicit deny if no explicit allow is found. Since the SCP explicitly denies \\texttt{s3:DeleteObject}, the request is denied at step (1).\n\n\\textbf{A is incorrect:} \\textbf{Permission boundaries} do not override SCP explicit denies. Permission boundaries only limit the \\textit{maximum} permissions an identity-based policy can grant \u2014 they do not grant permissions themselves and cannot circumvent an SCP deny.\n\n\\textbf{C is incorrect:} Even though both the identity-based policy and the permission boundary allow the action, the SCP explicit deny is evaluated before these policies. An explicit deny in an SCP cannot be overridden by any combination of allow statements in identity-based policies or permission boundaries.\n\n\\textbf{D is incorrect:} This is a fabricated prerequisite. \\textbf{IAM} does not require \\texttt{s3:PutObject} as a condition before evaluating \\texttt{s3:DeleteObject}. Each API action is evaluated independently based on the applicable policies.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "AWS Solutions Architect Associate",
+      "subject": "Domain 1 \u2013 Design Secure Architectures",
+      "topic": "Secure Access to AWS Resources",
+      "sub_topic": "IAM Policy Evaluation Logic \u2013 Allow/Deny, Permission Boundaries, SCPs",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "AWSSOL_IAMPOLICYE_4_1_1_992549",
+    "text": "A multinational financial services company uses \\textbf{AWS Organizations} with a multi-account strategy. The security team has three requirements:\n\n1. Developers in the development account can create and modify \\textbf{Amazon EC2} instances but \\textbf{must never} be able to terminate them \u2014 even if a future \\textbf{IAM policy} is inadvertently attached that grants termination, \\textbf{provided the permission boundary itself remains in place}.\n2. No principal in the finance (production) account \u2014 regardless of their \\textbf{IAM policies} \u2014 may invoke any \\textbf{Amazon RDS} action.\n3. The CISO must retain the ability to perform all actions including those blocked by \\textbf{SCPs} across all member accounts.\n\nThe solutions architect proposes the following design:\n\n\\begin{itemize}\n  \\item Attach a \\textbf{permission boundary} to the developer \\textbf{IAM Role} that permits EC2 actions but explicitly omits \\texttt{ec2:TerminateInstances}.\n  \\item Apply an \\textbf{SCP} on the finance account OU denying all \\texttt{rds:*} actions.\n  \\item Place the CISO \\textbf{IAM Role} in the \\textbf{AWS Organizations management account}.\n\\end{itemize}\n\nWhich statement \\textbf{BEST} describes how this design satisfies all three requirements?",
+    "options": {
+      "A": "The design satisfies requirements 1 and 2 but fails requirement 3, because the management account is still subject to \\textbf{SCPs} applied at the root OU level.",
+      "B": "The design satisfies all three requirements: the \\textbf{permission boundary} acts as a maximum permissions cap (the effective permission is the \\textit{intersection} of identity-based policy and boundary) preventing termination when the boundary omits that action; the \\textbf{SCP} enforces a cross-account deny on \\textbf{RDS} that overrides any \\textbf{IAM Allow}; and the management account is \\textit{exempt from SCPs by design}, so the CISO retains full access.",
+      "C": "The design satisfies requirement 1 and 3 but fails requirement 2, because \\textbf{SCPs} only restrict \\textbf{IAM Users} and do not apply to \\textbf{IAM Roles} in the finance account.",
+      "D": "The design fails requirement 1, because a \\textbf{permission boundary} defines a minimum permissions set and an explicit \\textbf{Allow} statement in the developer's \\textbf{IAM policy} would override it."
+    },
+    "correct_answer": "B",
+    "explanation": "\\textbf{B is correct:}\n\n\\textbf{Requirement 1 \u2014 Permission Boundary Logic:} A \\textbf{permission boundary} establishes the \\textit{maximum} permissions an \\textbf{IAM entity} can receive. The effective permission for any action is the \\textit{intersection} of the identity-based \\textbf{IAM policy} and the \\textbf{permission boundary}. When a boundary omits \\texttt{ec2:TerminateInstances}, even if a subsequent identity-based policy is attached that grants this action, the intersection yields no effective permission \u2014 termination is prevented. This approach is effective provided the boundary itself remains in place (i.e., the developer role lacks permissions to modify its own boundary). At the SAA-C03 level, permission boundary placement is assumed controlled by the security team.\n\n\\textbf{Requirement 2 \u2014 SCP Enforcement:} \\textbf{SCPs} apply to all \\textbf{IAM principals} \u2014 users, roles, and federated identities \u2014 within the target account or OU. They function as a guardrail: a \\textbf{SCP} explicitly denying \\texttt{rds:*} means no \\textbf{IAM principal} in that account can invoke RDS actions, \\textit{regardless} of whether their \\textbf{IAM policy} contains an \\textbf{Allow}. The effective permission is the \\textit{intersection} of \\textbf{IAM permissions} and \\textbf{SCP permissions}. A denied action in an \\textbf{SCP} cannot be overridden by identity-based policy.\n\n\\textbf{Requirement 3 \u2014 Management Account SCP Exemption:} By AWS design, \\textbf{SCPs} do \\textit{not} apply to principals in the \\textbf{management account} (formerly master account). Any \\textbf{IAM Role} or user in the management account is not constrained by \\textbf{SCPs} applied to member accounts or organizational units. Placing the CISO role in the management account therefore grants an unconditional override capability for \\textbf{SCP}-level restrictions.\n\n\\textbf{A is incorrect:} The \\textbf{management account} is explicitly exempt from \\textbf{SCPs} \u2014 SCPs applied at the root OU level do \\textit{not} affect principals in the management account.\n\n\\textbf{C is incorrect:} \\textbf{SCPs} apply to all principals without exception \u2014 \\textbf{IAM Users}, \\textbf{IAM Roles}, and federated identities in member accounts are all subject to \\textbf{SCP} evaluation. The finance account RDS restriction would be enforced across all principals.\n\n\\textbf{D is incorrect:} \\textbf{Permission boundaries} define a \\textit{maximum}, not a minimum. They restrict permissions rather than expand them. When a boundary omits an action, that action cannot be performed, even if an \\textbf{IAM policy} explicitly allows it.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "AWS Solutions Architect Associate (SAA-C03)",
+      "subject": "Domain 1 \u2013 Design Secure Architectures",
+      "topic": "Secure Access to AWS Resources",
+      "sub_topic": "IAM Policy Evaluation Logic \u2013 Allow/Deny, Permission Boundaries, SCPs",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "AWSSOL_IAMPOLICYE_4_1_2_f8aa64",
+    "text": "A solutions architect is designing a multi-account AWS organization for a financial services company. The company must enforce the following security requirements:\n\n1. Developer teams in the \\textbf{Development} account must NOT be able to modify \\textbf{Amazon RDS} database configurations, even if granted explicit IAM permissions.\n2. The \\textbf{Finance} account must prevent all \\textbf{AWS CloudTrail} operations regardless of individual user permissions.\n3. Development team members should be able to launch and manage \\textbf{Amazon EC2} instances within a restricted scope.\n4. All enforcement must remain effective even if an account administrator grants broad permissions to individual users.\n5. External auditors require automated, centralized compliance reporting showing which services are accessible by role in each account \u2014 this cannot depend on manual log review.\n\nThe company has already configured an \\textbf{AWS Organizations} structure with \\textbf{Service Control Policies (SCPs)} at the organizational unit (OU) level. Individual developers have \\textbf{IAM Role}s with inline policies granting broad access to AWS services.\n\nWhich combination of mechanisms should the architect implement to meet all five requirements with the \\textbf{LEAST operational overhead}?",
+    "options": {
+      "A": "Apply \\textbf{SCPs} to deny RDS and CloudTrail actions at the OU level, and use \\textbf{IAM Permission Boundaries} on each developer role to restrict EC2 operations to specific instance types and tags.",
+      "B": "Configure explicit \\textbf{Deny} policies in each developer's \\textbf{IAM Role} to block RDS and CloudTrail, and attach \\textbf{IAM Permission Boundaries} to enforce EC2 instance type restrictions.",
+      "C": "Implement \\textbf{SCPs} denying RDS and CloudTrail at the OU level, attach \\textbf{IAM Permission Boundaries} to developer roles to scope EC2 permissions, and deploy \\textbf{AWS Config Rules} to generate automated compliance reports for auditors.",
+      "D": "Use \\textbf{IAM Permission Boundaries} exclusively to deny RDS, CloudTrail, and unrestricted EC2 operations across all developer roles, and configure \\textbf{CloudTrail} logging to provide compliance evidence."
+    },
+    "correct_answer": "C",
+    "explanation": "\\textbf{C is correct:}\n\n\\textbf{Service Control Policies (SCPs)} act as \\textit{guardrails} at the \\textbf{AWS Organizations} level \u2014 they establish a maximum permission boundary for the entire account and \\textbf{CANNOT be overridden} by account administrators or individual \\textbf{IAM} policies. This satisfies requirement 4: RDS and CloudTrail denials remain effective even if an admin grants broad permissions. This also satisfies requirements 1 and 2 directly.\n\n\\textbf{IAM Permission Boundaries} on developer roles create a second layer of control, scoping EC2 permissions to specific instance types, regions, or tags without requiring explicit Deny statements in each user's policy. This satisfies requirement 3 and reduces operational overhead versus managing individual Deny policies across multiple roles.\n\n\\textbf{AWS Config Rules} provide automated, centralized compliance reporting showing which services are accessible by role in each account. This directly satisfies requirement 5: auditors receive continuous, machine-readable compliance data without manual log review. \\textbf{CloudTrail} logs *what happened*, but \\textbf{Config Rules} *verify the current state of permissions* against compliance baselines.\n\n---\n\n\\textbf{A is incorrect:} This option correctly implements the enforcement mechanisms (SCPs and Permission Boundaries) to satisfy requirements 1\u20134, but it provides no automated compliance reporting mechanism. Requirement 5 explicitly mandates centralized, automated compliance reporting for external auditors \u2014 a gap that makes this solution incomplete. Manual audits or log analysis would be required, increasing operational overhead and audit risk.\n\n\\textbf{B is incorrect:} Relying on explicit Deny statements in individual \\textbf{IAM Role}s creates significant operational overhead \u2014 each role must be manually updated, and policy drift is difficult to prevent. More critically, individual Deny policies cannot enforce account-wide guardrails that bypass administrator override. An account administrator with sufficient privileges could modify or remove these individual Deny statements, violating requirement 4. Additionally, this option includes no compliance reporting mechanism for requirement 5.\n\n\\textbf{D is incorrect:} \\textbf{Permission Boundaries} alone cannot prevent RDS or CloudTrail operations at the account level if an administrator modifies the boundary itself or creates new roles without them. \\textbf{SCPs} are \\textit{mandatory} to enforce account-wide restrictions that bypass administrator override (requirement 4). Furthermore, \\textbf{CloudTrail} logs API calls but cannot generate compliance reports showing *which services are accessible by role* \u2014 this is a reporting and state-verification function, not a logging function. \\textbf{AWS Config Rules} are the correct mechanism for requirement 5.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "AWS Solutions Architect Associate (SAA-C03)",
+      "subject": "Domain 1 \u2013 Design Secure Architectures",
+      "topic": "Secure Access to AWS Resources",
+      "sub_topic": "IAM Policy Evaluation Logic \u2013 Allow/Deny, Permission Boundaries, SCPs",
+      "difficulty_level": 4,
+      "question_type": "Architect Trade-off / Multi-constraint Scenario",
+      "key_concepts": [
+        "Service Control Policies (SCPs)",
+        "IAM Permission Boundaries",
+        "IAM Policy Evaluation Logic",
+        "AWS Organizations",
+        "Deny Precedence",
+        "AWS Config Rules",
+        "Compliance Reporting vs. Audit Logging",
+        "Regulatory Requirements Design"
+      ],
+      "skills_tested": [
+        "Multi-layer security controls",
+        "Operational overhead minimisation",
+        "Regulatory compliance design",
+        "Understanding policy evaluation order",
+        "Distinguishing SCP vs. Permission Boundary vs. Config use cases",
+        "Differentiating CloudTrail (audit logging) from Config Rules (compliance state verification)"
+      ]
+    }
+  },
+  {
+    "id": "AWSSOL_IAMPOLICYE_5_1_1_7a01e1",
+    "text": "A large enterprise uses \textbf{AWS Organizations} with a root management account and two \textbf{Organizational Units (OUs)}: \\texttt{Production} and \\texttt{Development}. An \textbf{SCP} attached to the \\texttt{Production} OU explicitly denies the action \\texttt{iam:CreateRole}. A \textbf{Permission Boundary} is attached to a developer's \textbf{IAM User} in an account under the \\texttt{Production} OU; this boundary allows \\texttt{iam:CreateRole}. The developer's \textbf{IAM Identity Policy} also explicitly allows \\texttt{iam:CreateRole}. The developer attempts to create a new \textbf{IAM Role} in their \textbf{AWS account}. What is the outcome, and which policy layer is the definitive reason?",
+    "options": {
+      "A": "The action is \\textbf{denied} because the \textbf{SCP} attached to the \\texttt{Production} OU contains an explicit deny, and SCPs act as a ceiling that cannot be overridden by any \textbf{Permission Boundary} or \textbf{Identity Policy}.",
+      "B": "The action is \\textbf{allowed} because the \textbf{Permission Boundary} explicitly permits \\texttt{iam:CreateRole}, and Permission Boundaries take precedence over \textbf{SCPs} when attached directly to a principal.",
+      "C": "The action is \\textbf{denied} because the \textbf{Permission Boundary} does not grant permissions by itself \u2014 it only limits them \u2014 so without a resource-based policy also allowing the action, the effective permission is denied.",
+      "D": "The action is \\textbf{allowed} because the developer's \textbf{IAM Identity Policy} contains an explicit allow and there is no explicit deny within the same account-level policy evaluation chain; SCPs are only evaluated at the management account boundary."
+    },
+    "correct_answer": "A",
+    "explanation": "\\textbf{A is correct:} \textbf{AWS IAM Policy Evaluation Logic} follows a strict order. \\textbf{SCPs} applied via \textbf{AWS Organizations} are evaluated \\textit{before} any account-level policies. An explicit \\textbf{deny} in an SCP is absolute \u2014 it cannot be overridden by a \textbf{Permission Boundary}, an \textbf{Identity Policy}, or a \textbf{Resource-Based Policy} within the affected account. Because the \\texttt{Production} OU's SCP explicitly denies \\texttt{iam:CreateRole}, every principal in every account under that OU is denied this action regardless of any other policy granting it. SCPs define the \\textit{maximum permissions} available to accounts in an OU; they do not grant permissions themselves but \\textit{constrain} what can be allowed.\n\n\\textbf{B is incorrect:} \textbf{Permission Boundaries} do not override SCPs. A Permission Boundary defines the maximum permissions an \\textit{IAM principal} can use, but it still operates within the constraints set by SCPs. Even if a Permission Boundary allows an action, an SCP deny at the OU level blocks it.\n\n\\textbf{C is incorrect:} While it is true that Permission Boundaries do not grant permissions on their own (effective permissions require both the boundary and the identity policy to allow the action), this is not the \\textit{definitive reason} for the denial in this scenario. The SCP explicit deny is the controlling factor and would block the action even if C's reasoning were resolved.\n\n\\textbf{D is incorrect:} SCPs are evaluated for \\textit{all member accounts} in an OU, not just at the management account level. The management account itself is the only account that is not restricted by SCPs applied to the root or OUs it is a member of. The developer's account is a member account under the \\texttt{Production} OU and is fully subject to that OU's SCP.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "AWS Solutions Architect Associate",
+      "subject": "Domain 1 \u2013 Design Secure Architectures",
+      "topic": "Secure Access to AWS Resources",
+      "sub_topic": "IAM Policy Evaluation Logic \u2013 Allow/Deny, Permission Boundaries, SCPs",
+      "difficulty_level": 5
+    }
+  },
+  {
+    "id": "AWSSOL_IAMPOLICYE_5_1_2_69acb7",
+    "text": "A healthcare company operates a multi-account \\textbf{AWS Organization}. An engineer in the \\textit{Clinical} Organizational Unit (OU) attempts to call \\textbf{kms:ScheduleKeyDeletion} on a \\textbf{AWS KMS} customer-managed key. The following policies are in effect:\\n\n\\begin{itemize}\n\\item An \\textbf{SCP} attached to the \\textit{Clinical} OU contains: \\texttt{Effect: Deny, Action: kms:ScheduleKeyDeletion, Resource: *} with \\textbf{no conditions}.\n\\item The engineer's \\textbf{IAM Role} has an identity-based policy with \\texttt{Effect: Allow, Action: kms:*, Resource: *}.\n\\item The engineer's \\textbf{IAM Role} has a \\textbf{Permission Boundary} that explicitly allows \\textbf{kms:ScheduleKeyDeletion}.\n\\item The \\textbf{KMS key policy} (a resource-based policy) grants the engineer's role \\texttt{Effect: Allow, Action: kms:*, Resource: *}.\n\\end{itemize}\n\nThe engineer is acting from within the same AWS account that owns the KMS key. According to \\textit{AWS IAM policy evaluation logic}, what is the outcome and the \\textbf{PRIMARY} reason?",
+    "options": {
+      "A": "The action is \\textbf{ALLOWED} because both the \\textbf{Permission Boundary} and the \\textbf{KMS key policy} explicitly permit \\textbf{kms:ScheduleKeyDeletion}, and together they override the \\textbf{SCP} Deny under the \\textit{dual-allow} reconciliation rule.",
+      "B": "The action is \\textbf{DENIED} because the \\textbf{Permission Boundary} is evaluated before the \\textbf{KMS key policy}, and the boundary's intersection with the identity-based policy produces the effective permission set \u2014 the \\textbf{SCP} is only consulted afterwards.",
+      "C": "The action is \\textbf{DENIED} because the \\textbf{SCP} on the \\textit{Clinical} OU contains an \\textit{explicit Deny} for \\textbf{kms:ScheduleKeyDeletion} with no conditions. An explicit Deny in any policy \u2014 evaluated simultaneously across all policy types \u2014 overrides all explicit Allows in identity-based, resource-based, and \\textbf{Permission Boundary} policies, regardless of their contents.",
+      "D": "The action is \\textbf{ALLOWED} because the \\textbf{KMS key policy} is a resource-based policy on a same-account resource, and same-account resource-based policy Allows are not subject to \\textbf{SCP} restrictions \u2014 only cross-account access requires SCP authorization."
+    },
+    "correct_answer": "C",
+    "explanation": "\\textbf{C is correct:} Under AWS IAM policy evaluation logic, \\textbf{all policy types are evaluated together for explicit denies} \u2014 AWS does not sequentially gate on SCPs before examining other policies. The rule is: an \\textit{explicit Deny in any policy always overrides any explicit Allow, regardless of which policy type contains either statement}. The \\textbf{SCP} on the \\textit{Clinical} OU contains an unconditional explicit Deny for \\textbf{kms:ScheduleKeyDeletion}. Because an explicit Deny is present, the final result is \\textbf{DENY}. The SCP wins not because it is evaluated first in a strict sequence, but because \\textit{explicit Deny beats explicit Allow} \u2014 a fundamental, non-negotiable principle of AWS policy evaluation. The Permission Boundary allowing the action, the identity-based \\textbf{Allow kms:*}, and the KMS key policy \\textbf{Allow kms:*} are all irrelevant once an explicit Deny exists in any evaluated policy.\\n\\n\\textbf{A is incorrect:} No \\textit{dual-allow} reconciliation rule exists in AWS IAM. A Permission Boundary and a resource-based policy both allowing an action cannot together override an explicit Deny in an \\textbf{SCP}. Explicit Deny always wins, regardless of how many or which policy types contain Allows.\\n\\n\\textbf{B is incorrect:} This option incorrectly describes a strict sequential evaluation order where the \\textbf{Permission Boundary} is evaluated before the \\textbf{KMS key policy} and the SCP is consulted last. AWS does not process policy types in a fixed sequential gate order for the purpose of explicit deny checks. All policy types are evaluated together for explicit denies. The SCP explicit Deny produces the final outcome because explicit Deny overrides explicit Allow \u2014 not because of positional precedence.\\n\\n\\textbf{D is incorrect:} \\textbf{SCPs apply to all API calls made by principals in the affected account or OU, including calls to same-account resources.} There is no exception for same-account resource-based policies. SCPs constrain what principals within the OU are permitted to do; they do not distinguish between same-account and cross-account resource access. A same-account \\textbf{KMS key policy} granting an Allow does not exempt the principal from SCP restrictions.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "AWS Solutions Architect Associate (SAA-C03)",
+      "subject": "Domain 1 \u2013 Design Secure Architectures",
+      "topic": "Secure Access to AWS Resources",
+      "sub_topic": "IAM Policy Evaluation Logic \u2013 Allow/Deny, Permission Boundaries, SCPs",
+      "difficulty_level": 5
+    }
+  },
+  {
+    "id": "AWSSOL_AWSORGANIZ_1_1_1_8eaaa8",
+    "text": "A company is implementing \\textbf{AWS Organizations} to manage 18 AWS accounts across multiple business units. The security team requires that all accounts prevent the deletion of \\textbf{Amazon CloudTrail} logs and restrict the creation of public \\textbf{Amazon S3} buckets. Which approach uses \\textbf{Service Control Policies (SCPs)} most effectively to enforce these controls across the organization?",
+    "options": {
+      "A": "Apply an SCP at the \\textbf{Organization Root} that denies \\texttt{cloudtrail:DeleteTrail} and \\texttt{s3:PutBucketAcl} actions for all principals",
+      "B": "Apply separate SCPs at the \\textbf{Organizational Unit (OU)} level that deny \\texttt{cloudtrail:DeleteTrail} and require \\textbf{Block Public Access} settings before bucket creation",
+      "C": "Apply an SCP at the \\textbf{Organization Root} that allows only \\texttt{cloudtrail:PutTrail} and restricts \\textbf{S3} bucket listing to prevent public access",
+      "D": "Create individual \\textbf{IAM policies} in each of the 18 accounts that deny deletion of CloudTrail logs and public \\textbf{S3} bucket configuration"
+    },
+    "correct_answer": "A",
+    "explanation": "\\textbf{A is correct:} Service Control Policies (SCPs) are permission boundaries that restrict what actions are allowed across all accounts in an organization. Applying an SCP at the \\textbf{Organization Root} with a \\texttt{Deny} effect ensures universal enforcement across all 18 accounts. Denying \\texttt{cloudtrail:DeleteTrail} prevents CloudTrail log deletion organization-wide. Denying \\texttt{s3:PutBucketAcl} prevents granting public access via bucket ACLs, which is a primary mechanism for making \\textbf{S3} buckets public. This is the most effective approach because: (1) SCPs operate at the account level and cannot be overridden by \\textbf{IAM policies}, (2) root-level application ensures all accounts are protected regardless of OU structure, and (3) a single policy covers both requirements with clear, enforceable actions.\n\n\\textbf{B is incorrect:} Applying SCPs at the OU level rather than the \\textbf{Organization Root} leaves other OUs potentially unprotected if they are not assigned the policy. Additionally, SCPs do not have a \\textit{require} mechanism \u2014 they use \\texttt{Deny} and \\texttt{Allow} statements. An SCP cannot enforce that \\textbf{Block Public Access} settings must be configured before bucket creation; it can only prevent or permit actions.\n\n\\textbf{C is incorrect:} Allowing only \\texttt{cloudtrail:PutTrail} while denying deletion works in principle, but the S3 portion is flawed. Restricting bucket listing does not prevent public bucket creation \u2014 the \\texttt{s3:ListBucket} action is for reading bucket contents, not controlling access permissions. An attacker with \\texttt{s3:PutBucketAcl} or \\texttt{s3:PutBucketPolicy} permissions could still make buckets public regardless of listing restrictions.\n\n\\textbf{D is incorrect:} \\textbf{IAM policies} are account-specific and do not provide organization-wide governance. Individual policies would require deployment and maintenance across all 18 accounts and are difficult to enforce consistently. SCPs are the correct mechanism for cross-account, organization-wide enforcement at the boundary level.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "AWS Solutions Architect Associate (SAA-C03)",
+      "subject": "Domain 1 \u2013 Design Secure Architectures",
+      "topic": "Secure Access to AWS Resources",
+      "sub_topic": "AWS Organizations \u2013 SCPs, OU Structure, Account Management",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "AWSSOL_AWSORGANIZ_1_1_2_92480c",
+    "text": "A company is implementing a multi-account strategy using \\textbf{AWS Organizations}. The security team needs to ensure that all member accounts cannot use certain AWS services (such as \\textbf{Amazon EC2} in unauthorized regions) and cannot disable \\textbf{AWS CloudTrail} logging. Which approach BEST meets this requirement?",
+    "options": {
+      "A": "Apply an \\textbf{IAM policy} to each individual user account to block unauthorized actions across all member accounts",
+      "B": "Use \\textbf{Service Control Policies (SCPs)} at the \\textbf{Organization Root} or on specific \\textbf{Organizational Units (OUs)} to enforce restrictions across all member accounts",
+      "C": "Configure \\textbf{AWS Config rules} on each member account to detect policy violations and send alerts to the security team",
+      "D": "Deploy \\textbf{AWS Systems Manager} to remotely disable restricted services on each member account instance"
+    },
+    "correct_answer": "B",
+    "explanation": "\\textbf{B is correct:} \\textbf{Service Control Policies (SCPs)} are permission boundaries that apply to all \\textbf{IAM principals} (users, roles) in member accounts. SCPs attached at the \\textbf{Organization Root} or OU level act as a centralized governance layer, preventing member accounts from performing actions\u2014regardless of their local \\textbf{IAM permissions}. This is the standard AWS approach for enforcing organization-wide compliance controls like restricting regional access and preventing service disablement.\n\n\\textbf{A is incorrect:} \\textbf{IAM policies} within individual accounts do not prevent a determined administrator from modifying those policies locally. \\textbf{IAM} lacks cross-account enforcement by design.\n\n\\textbf{C is incorrect:} \\textbf{AWS Config rules} are detective controls (they identify violations after the fact) rather than preventive controls. Config rules cannot block actions; they only monitor compliance.\n\n\\textbf{D is incorrect:} \\textbf{AWS Systems Manager} is an operational tool for patch management and configuration management on instances\u2014not a service-level governance mechanism. It cannot prevent account administrators from enabling restricted services.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "AWS Solutions Architect Associate (SAA-C03)",
+      "subject": "Domain 1 \u2013 Design Secure Architectures",
+      "topic": "Secure Access to AWS Resources",
+      "sub_topic": "AWS Organizations \u2013 SCPs, OU Structure, Account Management",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "AWSSOL_AWSORGANIZ_2_1_1_9dd608",
+    "text": "A solutions architect is designing a governance framework for a multi-account AWS organization with 34 development and production accounts. The organization requires that no \\textbf{Amazon RDS} database can be launched without encryption enabled, and that developers in non-production accounts must be restricted from launching \\textbf{EC2} instances larger than \\textbf{t3.large}. Additionally, all AWS API calls must be logged for audit compliance. Which combination of AWS Organizations features and strategies would \\textbf{BEST} enforce these policies with the \\textbf{LEAST operational overhead}?",
+    "options": {
+      "A": "Create separate \\textbf{Organizational Units (OUs)} for development and production accounts. Attach \\textbf{Service Control Policies (SCPs)} to deny \\textbf{RDS} launch without encryption and to deny \\textbf{EC2} instance types larger than \\textbf{t3.large} in the development OU. Enable \\textbf{AWS CloudTrail} at the organization level.",
+      "B": "Deploy individual \\textbf{IAM policies} to each of the 34 accounts to restrict resource launches. Use \\textbf{AWS Config} rules in each account to monitor compliance and trigger remediation \\textbf{Lambda} functions.",
+      "C": "Attach permissive \\textbf{SCPs} to all accounts and rely on \\textbf{AWS CloudTrail} logging combined with manual quarterly audits to identify and manually remediate non-compliant resource launches.",
+      "D": "Implement \\textbf{AWS Resource Access Manager (RAM)} to share a centralized template library across all accounts, then use \\textbf{AWS CloudFormation StackSets} to deploy only approved resources."
+    },
+    "correct_answer": "A",
+    "explanation": "\\textbf{A is correct:} \\textbf{Service Control Policies (SCPs)} are the foundational preventive governance tool for enforcing organization-wide policies across multiple accounts in \\textbf{AWS Organizations}. By organizing accounts into \\textbf{OUs} and attaching SCPs at the appropriate level, the architect can:\n\n\\textbullet{} Attach an SCP to the root or parent OU denying \\textbf{rds:CreateDBInstance} actions where the \\textit{StorageEncrypted} condition is not set to \\textit{true}. This uses a valid condition key on the CreateDBInstance API action to enforce encryption at launch time.\n\n\\textbullet{} Attach a separate SCP to the development OU denying \\textbf{ec2:RunInstances} for instance types larger than \\textbf{t3.large} using the \\textit{ec2:InstanceType} condition key.\n\n\\textbullet{} Enable \\textbf{AWS CloudTrail} at the organization level to audit all API calls across all accounts\u2014satisfying the logging requirement with centralized, automated collection.\n\nThis approach is \\textit{preventive} (stops non-compliant actions before they occur), scales automatically to all 34 accounts, and requires minimal ongoing operational overhead once policies are deployed.\n\n\\textbf{B is incorrect:} Managing 34 separate \\textbf{IAM policies} across individual accounts creates significant operational overhead, version control complexity, and inconsistency. Policies can be modified locally by account administrators, undermining organization-wide control. \\textbf{AWS Config} remediation adds complexity and is reactive rather than preventive.\n\n\\textbf{C is incorrect:} Relying on \\textbf{CloudTrail} logging alone without preventive SCPs is detective (reactive), not preventive. Quarterly manual audits are not real-time enforcement and allow non-compliant resources to be provisioned, incur costs, and create compliance gaps before detection occurs.\n\n\\textbf{D is incorrect:} \\textbf{Resource Access Manager (RAM)} shares resources, not policies. \\textbf{CloudFormation StackSets} deploy templates but do not prevent direct API calls to launch resources outside templates. Developers can still bypass approved templates and call AWS APIs directly, rendering this approach ineffective as a governance control.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "AWS Solutions Architect Associate (SAA-C03)",
+      "subject": "Domain 1 \u2013 Design Secure Architectures",
+      "topic": "Secure Access to AWS Resources",
+      "sub_topic": "AWS Organizations \u2013 SCPs, OU Structure, Account Management",
+      "difficulty_level": 2,
+      "question_type": "Best-practice"
+    }
+  },
+  {
+    "id": "AWSSOL_AWSORGANIZ_2_1_2_347776",
+    "text": "A company with 62 AWS accounts organized into three \\textbf{Organizational Units (OUs)} is implementing security policies using \\textbf{AWS Organizations}. The security team needs to prevent all accounts in the Development OU from launching instances larger than \\texttt{t3.medium} and from modifying \\textbf{Amazon S3} bucket policies. However, the Production OU must have unrestricted access to all instance types and full \\textbf{S3} permissions. Which approach implements these requirements with the \\textbf{LEAST operational overhead} and maintains the principle of \\textit{least privilege}?",
+    "options": {
+      "A": "Create two \\textbf{Service Control Policies (SCPs)} that explicitly allow only \\texttt{t3.medium} instances and deny \\textbf{S3} policy modifications, then attach them to individual Development accounts.",
+      "B": "Create a single \\textbf{SCP} that denies \\texttt{EC2:RunInstances} with instance types larger than \\texttt{t3.medium} and denies \\textbf{s3:PutBucketPolicy}, attach it to the Development OU. The Production OU remains unaffected because no deny \\textbf{SCP} is attached to it, and the default \\textbf{FullAWSAccess SCP} continues to apply.",
+      "C": "Attach \\textbf{IAM permission boundaries} to all Development OU accounts to restrict instance types and \\textbf{S3} bucket policy modifications, while applying no restrictions to Production accounts.",
+      "D": "Use \\textbf{AWS Config} rules to monitor and automatically remediate non-compliant \\textbf{EC2} instances and \\textbf{S3} bucket policy changes in the Development OU."
+    },
+    "correct_answer": "B",
+    "explanation": "\\textbf{B is correct:} \\textbf{Service Control Policies (SCPs)} are the appropriate mechanism at the \\textbf{AWS Organizations} level to enforce guardrails across multiple accounts within an OU. By attaching a deny-based \\textbf{SCP} to the Development OU that denies \\texttt{EC2:RunInstances} with oversized instance types and denies \\textbf{s3:PutBucketPolicy}, all accounts in that OU are restricted. The Production OU remains unaffected because no deny \\textbf{SCP} is attached to it, and the default \\textbf{FullAWSAccess SCP} continues to apply. This approach provides centralized, scalable governance without modifying individual account policies and aligns with \\textit{least privilege} by explicitly restricting unauthorized actions at the organizational boundary.\n\n\\textbf{A is incorrect:} Attaching policies to individual accounts (62 in this case) bypasses the OU structure and introduces significant operational overhead. OU-level governance is far more efficient and maintainable than managing policies on each account separately. Additionally, \\textbf{SCPs} work on a deny-based model; explicit allow statements in an \\textbf{SCP} do not constrain permissions the way the question requires.\n\n\\textbf{C is incorrect:} \\textbf{IAM permission boundaries} are applied per user or role within an account, not at the OU level. This would require configuration on every Development account and every user/role \u2014 far more overhead than OU-level \\textbf{SCPs}. Additionally, \\textbf{SCPs} are the standard \\textbf{AWS Organizations} mechanism for cross-account restrictions and enforce controls that cannot be bypassed by any \\textbf{IAM} policy.\n\n\\textbf{D is incorrect:} \\textbf{AWS Config} is a compliance monitoring and remediation tool, not an enforcement mechanism. It detects non-compliance but does not prevent actions proactively. \\textbf{SCPs} prevent violations before they occur, making them superior for security governance.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "AWS Solutions Architect Associate (SAA-C03)",
+      "subject": "Domain 1 \u2013 Design Secure Architectures",
+      "topic": "Secure Access to AWS Resources",
+      "sub_topic": "AWS Organizations \u2013 SCPs, OU Structure, Account Management",
+      "difficulty_level": 2,
+      "question_type": "Best-practice",
+      "key_services": [
+        "AWS Organizations",
+        "Service Control Policies",
+        "IAM",
+        "EC2",
+        "S3"
+      ],
+      "learning_objective": "Understand OU-level governance using SCPs vs. account-level and user-level policies; understand SCP evaluation logic and default FullAWSAccess SCP"
+    }
+  },
+  {
+    "id": "AWSSOL_AWSORGANIZ_3_1_1_c34a57",
+    "text": "A large enterprise has a multi-account \textbf{AWS Organizations} structure with the following \textbf{Organizational Unit (OU)} hierarchy: a Root, a \textbf{Sandbox OU} for developer experimentation, a \textbf{Production OU} for live workloads, and a \textbf{Security OU} for centralized security tooling accounts. The security team wants to enforce the following rules simultaneously: (1) prevent any account in the \textbf{Sandbox OU} from launching resources in any AWS Region outside \texttt{us-east-1} and \texttt{eu-west-1}; (2) ensure that the central \textbf{Security OU} accounts are completely exempt from Region restrictions so they can operate globally; and (3) ensure the policy cannot be overridden by account-level administrators. Which combination of actions meets all three requirements?",
+    "options": {
+      "A": "Attach a \textbf{Service Control Policy (SCP)} that denies all actions outside \texttt{us-east-1} and \texttt{eu-west-1} to the \textbf{Root}. Use a \textbf{resource-based policy} on the \textbf{Security OU} accounts to allow global access. Disable the SCP inheritance for the \textbf{Security OU}.",
+      "B": "Attach a \textbf{Service Control Policy (SCP)} that denies actions outside \texttt{us-east-1} and \texttt{eu-west-1} directly to the \textbf{Sandbox OU} only. Attach no Region-restricting \textbf{SCP} to the \textbf{Security OU} or \textbf{Production OU}. Ensure \textbf{FullAWSAccess SCP} remains attached to the \textbf{Root}.",
+      "C": "Attach a \textbf{Service Control Policy (SCP)} that denies actions outside \texttt{us-east-1} and \texttt{eu-west-1} to the \textbf{Root}. Add a second \textbf{SCP} to the \textbf{Security OU} that explicitly allows all Regions to override the Root SCP.",
+      "D": "Create an \textbf{IAM permission boundary} that restricts Regions to \texttt{us-east-1} and \texttt{eu-west-1} and attach it to all \textbf{IAM roles} in every \textbf{Sandbox OU} account. Grant \textbf{Security OU} accounts \texttt{AdministratorAccess} to bypass the boundary."
+    },
+    "correct_answer": "B",
+    "explanation": "\textbf{B is correct:} \textbf{SCPs} follow an \textit{implicit deny} model \u2014 they restrict the maximum permissions available to accounts within the scope where they are attached. By attaching the Region-restricting \textbf{SCP} \textit{only} to the \textbf{Sandbox OU}, the restriction applies exclusively to accounts within that OU. The \textbf{Security OU} and \textbf{Production OU} are unaffected because they do not inherit this SCP. The \textbf{FullAWSAccess SCP} at the Root ensures all accounts retain their base permissions. Account-level administrators cannot override SCPs because SCPs are a management-plane guardrail enforced above the account level.\n\n\textbf{A is incorrect:} \textbf{SCPs} do not support 'disabling inheritance' for child OUs. There is no mechanism to disable SCP inheritance from the Root for a specific OU \u2014 an SCP attached to the Root applies to all accounts in the organization, including those in the \textbf{Security OU}. \textbf{Resource-based policies} cannot override SCPs.\n\n\textbf{C is incorrect:} \textbf{SCPs use a deny-overrides model} \u2014 an explicit \texttt{Allow} in an SCP attached to a child OU cannot override an explicit \texttt{Deny} in an SCP attached to the Root. The Security OU SCP would have no effect in overriding the Root-level deny.\n\n\textbf{D is incorrect:} \textbf{IAM permission boundaries} apply to individual \textbf{IAM identities} (users and roles), not to entire accounts. They do not provide organization-wide guardrails, and granting \texttt{AdministratorAccess} does not bypass a permission boundary \u2014 the boundary and the identity policy both apply using an intersection logic.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "AWS Solutions Architect Associate",
+      "subject": "Domain 1 \u2013 Design Secure Architectures",
+      "topic": "Secure Access to AWS Resources",
+      "sub_topic": "AWS Organizations \u2013 SCPs, OU Structure, Account Management",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "AWSSOL_AWSORGANIZ_3_1_2_295de3",
+    "text": "A multinational financial services company is consolidating 12 AWS accounts across three business units into a single \\textbf{AWS Organization}. The Chief Security Officer mandates that:\n\n(1) Development accounts must never provision \\textbf{Amazon RDS} instances outside the eu-west-1 region.\n(2) Production accounts must restrict all EC2 instance types to graviton-based instances (t4g, c7g, m7g) for cost optimisation.\n(3) Finance team members must be unable to delete \\textbf{AWS CloudTrail} logs, even if they have full administrative permissions.\n(4) Each business unit should manage its own \\textbf{IAM} policies and user provisioning independently within its accounts.\n\nThe solutions architect is designing the \\textbf{Organizational Unit (OU)} structure and control policies. Which combination of strategies BEST addresses all four requirements while minimising administrative overhead?",
+    "options": {
+      "A": "Create three separate OUs (one per business unit), apply \\textbf{Service Control Policies (SCPs)} to the root OU to enforce region and instance type restrictions, assign an \\textbf{IAM policy} in each OU to prevent CloudTrail deletion, and ensure each OU has separate delegated account management.",
+      "B": "Create three business unit OUs and one shared services OU. Use \\textbf{SCPs} to deny RDS provisioning outside eu-west-1 and restrict EC2 instance types. Create a separate \\textquotedblleft Security\\textquotedblright{} OU with an \\textbf{AWS Config} rule to audit CloudTrail deletion attempts. Enable \\textbf{IAM Identity Center} permission sets for each business unit.",
+      "C": "Create three business unit OUs and one shared services OU. Apply \\textbf{SCPs} denying RDS provisioning outside eu-west-1 and restricting non-graviton EC2 instances. Attach an \\textbf{SCP} that denies \\textbf{cloudtrail:DeleteTrail} and related actions to all accounts. Within each business unit OU, allow accounts to manage \\textbf{IAM} independently by not restricting \\textbf{IAM} actions via \\textbf{SCP}.",
+      "D": "Flatten the structure into individual accounts with no OUs. Use \\textbf{IAM} permission boundaries in each account to enforce all four restrictions. Provision a centralised \\textbf{AWS CloudFormation} template to distribute policies across all 12 accounts monthly."
+    },
+    "correct_answer": "C",
+    "explanation": "\\textbf{C is correct:}\n\n\\textbf{SCPs} are the correct preventive mechanism for organisation-wide restrictions:\n\u2022 \\textbf{SCP} denying \\textbf{ec2:RunInstances} with conditions restricting instance types to graviton-based instances enforces requirement (2).\n\u2022 \\textbf{SCP} denying \\textbf{rds:CreateDBInstance} outside eu-west-1 enforces requirement (1).\n\u2022 \\textbf{SCP} denying \\textbf{cloudtrail:DeleteTrail}, \\textbf{cloudtrail:StopLogging}, and related actions applies across all accounts regardless of \\textbf{IAM} permissions, satisfying requirement (3) \u2014 \\textit{preventive controls cannot be overridden by account-level IAM policies}.\n\u2022 Requirement (4) is satisfied by not applying \\textbf{SCPs} that restrict \\textbf{IAM} actions within business unit OUs, allowing each account to manage its own \\textbf{IAM} users and roles independently.\n\u2022 This approach scales with minimal ongoing overhead \u2014 \\textbf{SCPs} are defined once and inherited by all child OUs and accounts.\n\n\\textbf{A is incorrect:}\n\u2022 \\textbf{IAM policies} cannot be attached to \\textbf{Organizational Units}. Only \\textbf{SCPs} and tag policies can be attached at the Organization level.\n\u2022 While \\textbf{SCPs} at the root OU would enforce restrictions, attempting to assign \\textbf{IAM} policies to OUs is not valid AWS architecture.\n\u2022 Does not properly prevent CloudTrail deletion across all accounts via a preventive control.\n\n\\textbf{B is incorrect:}\n\u2022 \\textbf{AWS Config} rules are \\textit{detective controls} that audit and report compliance violations but do not prevent actions from occurring.\n\u2022 Requirement (3) explicitly requires prevention (\\textquotedblleft must be unable to\\textquotedblright), not detection \u2014 CloudTrail deletion could succeed before \\textbf{Config} detects it.\n\u2022 \\textbf{IAM Identity Center} permission sets are designed for federated user access and workforce identity management, not for segregating account-level \\textbf{IAM} administration by business unit.\n\u2022 Does not satisfy the preventive requirement for CloudTrail protection.\n\n\\textbf{D is incorrect:}\n\u2022 Flat structure with no OUs eliminates the hierarchical governance model and scalability benefits of \\textbf{AWS Organizations}.\n\u2022 \\textbf{IAM} permission boundaries operate only within a single account and cannot enforce organisation-wide restrictions; they would require manual distribution to all 12 accounts.\n\u2022 Monthly \\textbf{CloudFormation} updates introduce operational overhead and configuration drift risk.\n\u2022 \\textbf{IAM} permission boundaries cannot deny cross-account principals \u2014 they cannot satisfy requirement (3) for finance team members across multiple accounts.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "AWS Solutions Architect Associate (SAA-C03)",
+      "subject": "Domain 1 \u2013 Design Secure Architectures",
+      "topic": "Secure Access to AWS Resources",
+      "sub_topic": "AWS Organizations \u2013 SCPs, Organizational Unit Structure, Account Management",
+      "difficulty_level": 3,
+      "question_type": "Scenario / Architect Trade-off",
+      "keywords": [
+        "AWS Organizations",
+        "Service Control Policies (SCPs)",
+        "Organizational Units (OUs)",
+        "Multi-account governance",
+        "Preventive controls vs. detective controls",
+        "Permission boundaries",
+        "IAM delegated management",
+        "AWS Config"
+      ]
+    }
+  }
+]

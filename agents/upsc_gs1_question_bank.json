@@ -1,0 +1,325 @@
+[
+  {
+    "id": "UPSC_FUNDAMENTA_1_1_7ad715",
+    "text": "With reference to the Fundamental Rights enshrined in the Indian Constitution, which of the following pairs is/are correctly matched?\n\n1. Article 12 \u2014 Definition of the State\n2. Article 19 \u2014 Right to Equality\n3. Article 21 \u2014 Right to Life and Personal Liberty\n4. Article 32 \u2014 Right to Constitutional Remedies\n\nSelect the correct answer using the code below:\n(a) 1 and 3 only\n(b) 1, 3 and 4 only\n(c) 2 and 4 only\n(d) 1, 2, 3 and 4",
+    "options": {
+      "A": "1 and 3 only",
+      "B": "1, 3 and 4 only",
+      "C": "2 and 4 only",
+      "D": "1, 2, 3 and 4"
+    },
+    "correct_answer": "B",
+    "explanation": "Analyzing each pair:\n\n1. Article 12 \u2014 Definition of the State: CORRECT. Article 12 defines 'the State' for the purpose of Part III (Fundamental Rights), including the Union, State Governments, and other authorities and bodies exercising powers derived from the Constitution.\n\n2. Article 19 \u2014 Right to Equality: INCORRECT. Article 19 deals with the 'Right to Freedom' (including freedom of speech, assembly, association, movement, residence, and profession). The Right to Equality is guaranteed under Article 14, not Article 19.\n\n3. Article 21 \u2014 Right to Life and Personal Liberty: CORRECT. Article 21 explicitly provides 'No person shall be deprived of his life or personal liberty except according to procedure established by law.' This has been interpreted expansively by courts to include numerous rights.\n\n4. Article 32 \u2014 Right to Constitutional Remedies: CORRECT. Article 32 provides the right to move the Supreme Court by appropriate proceedings for the enforcement of rights conferred by Part III. This is often called the 'Right to Constitutional Remedies' and is the enforcement mechanism for Fundamental Rights.\n\nTherefore, pairs 1, 3, and 4 are correctly matched, while pair 2 is incorrect. The answer is (b) 1, 3 and 4 only.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "UPSC CSE Prelims GS-1",
+      "subject": "Indian Polity",
+      "topic": "Fundamental Rights",
+      "sub_topic": "Fundamental Rights (Articles 12\u201335)",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "UPSC_FUNDAMENTA_1_2_0f4e42",
+    "text": "Which of the following pairs of Fundamental Rights and their provisions is/are correctly matched?\n\n1. Article 14 \u2014 Right to Equality before the law and equal protection of the laws\n2. Article 16 \u2014 Right to freedom of conscience and free profession, practice and propagation of religion\n3. Article 19 \u2014 Right to freedom of speech, expression, assembly, association, movement and residence\n4. Article 29 \u2014 Right to education\n\nWhich of the above pairs is/are correctly matched?",
+    "options": {
+      "A": "1 and 3 only",
+      "B": "1, 2 and 3 only",
+      "C": "2, 3 and 4 only",
+      "D": "1, 2, 3 and 4"
+    },
+    "correct_answer": "A",
+    "explanation": "Article 14 guarantees the Right to Equality before the law and equal protection of the laws \u2014 this is correctly matched in statement 1.\n\nArticle 16 specifically deals with equality of opportunity in matters of public employment, NOT freedom of religion. Article 15 (with Article 25-28) addresses freedom of religion. Statement 2 is INCORRECT.\n\nArticle 19 guarantees the Right to Freedom (of speech, expression, assembly, association, movement, and residence) \u2014 this is correctly matched in statement 3.\n\nArticle 29 provides for the Right of minorities to conserve their distinct language, script or culture, NOT the right to education. Article 21A (inserted by the 86th Amendment) deals with the Right to Free and Compulsory Education. Statement 4 is INCORRECT.\n\nTherefore, only statements 1 and 3 are correctly matched, making the answer **(A) 1 and 3 only**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "UPSC CSE Prelims GS-1",
+      "subject": "Indian Polity",
+      "topic": "Fundamental Rights",
+      "sub_topic": "Fundamental Rights (Articles 12\u201335)",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "UPSC_FUNDAMENTA_2_1_777892",
+    "text": "Consider the following statements regarding Fundamental Rights under Part III of the Indian Constitution:\n\n1. Article 15 prohibits discrimination by the State on grounds of religion, race, caste, sex, or place of birth, but the State may make special provisions for women and children.\n2. Article 20 protects persons from conviction for acts which were not offences at the time of commission, and this protection applies both retrospectively and prospectively.\n3. Article 28 guarantees freedom from compulsory religious instruction or worship in educational institutions wholly maintained by the State.\n\nWhich of the above statements is/are correct?",
+    "options": {
+      "A": "1 and 3 only",
+      "B": "2 and 3 only",
+      "C": "1 only",
+      "D": "1, 2 and 3"
+    },
+    "correct_answer": "A",
+    "explanation": "Statement 1 is CORRECT: Article 15(1) prohibits discrimination by the State on grounds of religion, race, caste, sex, or place of birth. Article 15(3) expressly permits the State to make special provisions for women and children. This statement accurately reflects the constitutional framework.\n\nStatement 2 is INCORRECT: Article 20(1) states that no person shall be convicted for an offence which was not an offence at the time of its commission\u2014this applies retrospectively (protects against retroactive criminal laws). However, Article 20 does NOT provide prospective protection. The statement's claim that protection \"applies both retrospectively and prospectively\" is misleading. The protection is specifically against retroactive application of criminal law, not prospective application. Statement 2 is therefore incorrect.\n\nStatement 3 is CORRECT: Article 28 guarantees freedom from compulsory religious instruction or worship in any educational institution. Article 28(1) specifically provides this guarantee in institutions wholly maintained by the State out of State funds. This statement accurately captures the constitutional provision.\n\nTherefore, statements 1 and 3 are correct, making the answer (A).",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "UPSC CSE Prelims GS-1",
+      "subject": "Indian Polity",
+      "topic": "Fundamental Rights",
+      "sub_topic": "Fundamental Rights (Articles 12\u201335)",
+      "difficulty_level": 2,
+      "question_type": "Statement-based (Multiple Statements)"
+    }
+  },
+  {
+    "id": "UPSC_FUNDAMENTA_2_2_b4c609",
+    "text": "With reference to Fundamental Rights under Part III of the Indian Constitution, consider the following statements:\n\n1. Article 13 provides that any law inconsistent with or in derogation of the Fundamental Rights shall be void to the extent of such inconsistency.\n\n2. Article 17 abolishes untouchability and makes its practice in any form punishable by law.\n\n3. Article 24 permits the employment of children in hazardous occupations if they are above 12 years of age.\n\n4. Article 25 grants the right to freely propagate religion, subject to public order, morality, and health.\n\nWhich of the above statements is/are correct?",
+    "options": {
+      "A": "1 and 2 only",
+      "B": "1, 2 and 4 only",
+      "C": "2, 3 and 4 only",
+      "D": "1, 2, 3 and 4"
+    },
+    "correct_answer": "B",
+    "explanation": "Statement 1 is CORRECT: Article 13(1) declares that any law which is inconsistent with or in derogation of the Fundamental Rights shall be void to the extent of such inconsistency. This is the foundational provision ensuring the supremacy of Fundamental Rights over ordinary legislation.\n\nStatement 2 is CORRECT: Article 17 explicitly abolishes untouchability and declares that its practice in any form shall be an offence punishable by law. This was a historic provision targeting caste-based discrimination.\n\nStatement 3 is INCORRECT: Article 24 provides an absolute prohibition on the employment of children in factories, mines, or other hazardous occupations. There is NO age exception like 12 years mentioned in Article 24. The article uses the word 'children' without defining a specific age threshold in the Constitution itself, though child labor laws define the protection more precisely.\n\nStatement 4 is CORRECT: Article 25(1) guarantees the right to freely profess, practise and propagate religion, subject to public order, morality, and health, as well as to the other provisions of Part III (Fundamental Rights). This is a qualified right, not absolute.\n\nTherefore, statements 1, 2, and 4 are correct. The answer is (B).",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "UPSC CSE Prelims GS-1",
+      "subject": "Indian Polity",
+      "topic": "Fundamental Rights",
+      "sub_topic": "Fundamental Rights (Articles 12\u201335)",
+      "difficulty_level": 2,
+      "question_type": "Statement Evaluation",
+      "key_articles": [
+        "Article 13",
+        "Article 17",
+        "Article 24",
+        "Article 25"
+      ],
+      "concept_tested": "Scope and limitations of Fundamental Rights under Part III"
+    }
+  },
+  {
+    "id": "UPSC_FUNDAMENTA_3_1_de7873",
+    "text": "Consider the following statements regarding Fundamental Rights under the Indian Constitution:\n\n1. Article 14 guarantees equality before the law to all persons, while Article 15 extends this protection specifically by prohibiting the State from discriminating on grounds of religion, race, caste, sex, or place of birth.\n2. Article 18 abolishes titles, but the State may confer titles in recognition of military service or academic distinction without violating this article.\n3. Article 13 declares that any law in force in the territory of India that is inconsistent with the Fundamental Rights shall, to the extent of inconsistency, be void, and this applies to both pre-Constitution and post-Constitution laws.\n\nWhich of the above statements is/are correct?",
+    "options": {
+      "A": "1 and 2 only",
+      "B": "1 and 3 only",
+      "C": "2 and 3 only",
+      "D": "1, 2 and 3"
+    },
+    "correct_answer": "B",
+    "explanation": "Statement 1 is CORRECT: Article 14 guarantees equality before the law to all persons within the territory of India. Article 15(1) prohibits the State from discriminating against any citizen on grounds solely of religion, race, caste, sex, or place of birth. Article 15 operationalizes the principle of equality by specifically addressing State discrimination. However, Article 15(4) permits special provisions for advancement of socially and educationally backward classes.\n\nStatement 2 is INCORRECT: Article 18 abolishes titles absolutely. It states that the State shall not confer any title. The only exception permissible is that the President may confer titles as honors (like Bharat Ratna), but the Constitution itself does not carve out exceptions for military service or academic distinction in the text of Article 18. The article is unambiguous in its prohibition. Therefore, the statement as framed is misleading because it suggests exceptions are constitutionally permitted, which they are not.\n\nStatement 3 is CORRECT: Article 13(1) declares that all laws in force in the territory of India immediately before the commencement of the Constitution, insofar as they are inconsistent with the provisions of Part III (Fundamental Rights), shall, to the extent of such inconsistency, be void. Article 13(2) similarly applies to laws made after the commencement of the Constitution. This dual application to both pre- and post-Constitution laws was confirmed in Shankari Prasad v. Union of India (1951) and subsequent cases. The doctrine of judicial review is anchored in Article 13.\n\nTherefore, statements 1 and 3 are correct, making option (B) the right answer.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "UPSC CSE Prelims GS-1",
+      "subject": "Indian Polity",
+      "topic": "Fundamental Rights",
+      "sub_topic": "Articles 12\u201335 (Fundamental Rights)",
+      "difficulty_level": 3,
+      "question_type": "Statement-based",
+      "constitutional_articles": [
+        "Article 13",
+        "Article 14",
+        "Article 15",
+        "Article 18"
+      ],
+      "key_concepts": [
+        "Equality before law",
+        "Non-discrimination",
+        "Abolition of titles",
+        "Judicial review",
+        "Void laws"
+      ],
+      "landmark_cases": [
+        "Shankari Prasad v. Union of India (1951)"
+      ]
+    }
+  },
+  {
+    "id": "UPSC_FUNDAMENTA_3_2_3c039f",
+    "text": "Consider the following statements regarding Fundamental Rights under the Indian Constitution:\n\n1. The right to move the Supreme Court for enforcement of Fundamental Rights is itself a Fundamental Right under Article 32.\n2. Article 33 empowers Parliament to restrict or abrogate Fundamental Rights of members of the armed forces and paramilitary forces.\n3. Fundamental Rights are available only to citizens of India and cannot be claimed by corporations or foreign nationals under any circumstance.\n4. Article 34 provides for restrictions on Fundamental Rights while martial law is in force in any area within the territory of India.\n\nWhich of the above statements is/are correct?",
+    "options": {
+      "A": "1 and 2 only",
+      "B": "1, 2 and 4 only",
+      "C": "2 and 3 only",
+      "D": "1, 2, 3 and 4"
+    },
+    "correct_answer": "B",
+    "explanation": "Statement 1 is correct: Article 32 guarantees the right to move the Supreme Court for the enforcement of Fundamental Rights, and Dr. B.R. Ambedkar described it as 'the heart and soul of the Constitution'. Article 32 itself is a Fundamental Right.\n\nStatement 2 is correct: Article 33 empowers Parliament to determine to what extent any of the rights conferred by Part III shall, in their application to the members of the Armed Forces, Forces charged with the maintenance of public order (paramilitary forces), persons employed in intelligence organisations, etc., be restricted or abrogated.\n\nStatement 3 is incorrect: Not all Fundamental Rights are available exclusively to citizens. Some rights (like Articles 14, 20, 21, 22, 25, 27, 28) are available to all persons \u2014 citizens as well as non-citizens, including corporations. Only certain rights like those under Articles 15, 16, 19, 29, and 30 are reserved exclusively for citizens.\n\nStatement 4 is correct: Article 34 provides for restrictions on Fundamental Rights while martial law is in force in any area within the territory of India. It indemnifies any person in service of the Union or a State for any act done during martial law in connection with the maintenance or restoration of order.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "UPSC CSE Prelims GS-1",
+      "subject": "Indian Polity",
+      "topic": "Fundamental Rights",
+      "sub_topic": "Fundamental Rights (Articles 12\u201335)",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "UPSC_FUNDAMENTA_4_1_228b6d",
+    "text": "Consider the following statements regarding Fundamental Rights under the Indian Constitution:\n\n1. Article 16 guarantees equality of opportunity in matters of public employment and prohibits discrimination on grounds of religion, race, caste, sex, descent, place of birth, or residence.\n2. The right to move the Supreme Court for enforcement of Fundamental Rights under Article 32 is itself a Fundamental Right and cannot be suspended even during a national emergency.\n3. Article 22 provides protection against arbitrary arrest and detention and applies equally to both citizens and non-citizens.\n4. Article 31C, as upheld in Kesavananda Bharati case, gives blanket protection to all laws implementing Directive Principles from challenge under Articles 14 and 19.\n\nWhich of the above statements is/are correct?",
+    "options": {
+      "A": "1 and 3 only",
+      "B": "1, 2 and 3 only",
+      "C": "2 and 4 only",
+      "D": "1 and 2 only"
+    },
+    "correct_answer": "A",
+    "explanation": "Statement 1 is CORRECT: Article 16 guarantees equality of opportunity in matters of public employment and prohibits discrimination on the grounds of religion, race, caste, sex, descent, place of birth, or residence. It also permits reservation for backward classes and scheduled castes/tribes.\n\nStatement 2 is INCORRECT: Article 32 is indeed a Fundamental Right, but it CAN be suspended during a national emergency under Article 359. The President can by order suspend the right to move any court for enforcement of Fundamental Rights (except Articles 20 and 21). Article 21 (right to life) and Article 20 (protection against conviction for offences) cannot be suspended even during an emergency, but Article 32 itself can be suspended.\n\nStatement 3 is CORRECT: Article 22 provides protection against arbitrary arrest and detention and applies to both citizens and non-citizens in matters of ordinary law. It guarantees the right to be informed of grounds of arrest, the right to consult and be defended by a legal practitioner, and the right to be produced before a magistrate within 24 hours. However, protections against preventive detention under Article 22(4)-(7) have certain exceptions.\n\nStatement 4 is INCORRECT: This is a common misconception. In the Kesavananda Bharati case (1973), the Supreme Court upheld Article 31C but struck down the part that excluded judicial review. The Court held that Article 31C, to the extent it excluded challenge under Articles 14 and 19 for laws implementing Articles 39(b) and 39(c), was valid. However, in the Minerva Mills case (1980), the extension of Article 31C to ALL Directive Principles (as amended in 1976) was struck down as unconstitutional. Therefore, Article 31C only protects laws implementing Articles 39(b) and 39(c), not all Directive Principles.\n\nThus, only statements 1 and 3 are correct, making option (a) the right answer.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "UPSC CSE Prelims GS-1",
+      "subject": "Indian Polity",
+      "topic": "Fundamental Rights",
+      "sub_topic": "Fundamental Rights (Articles 12\u201335)",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "UPSC_FUNDAMENTA_4_2_461b02",
+    "text": "Consider the following statements regarding Fundamental Rights under the Indian Constitution:\n\n1. Article 17 abolishes untouchability and makes its practice a punishable offence, but the word 'untouchability' has not been defined in the Constitution.\n2. Article 23 prohibits traffic in human beings and forced labour, and also applies to private individuals, not just the State.\n3. Article 26 guarantees the right to every religious denomination to manage its own affairs in matters of religion, but this right can be regulated by the State on grounds of public order, morality, and health.\n4. Article 30 grants minorities the right to establish and administer educational institutions, and the State cannot impose any conditions while granting aid to such institutions.\n\nWhich of the above statements is/are correct?",
+    "options": {
+      "A": "1 and 2 only",
+      "B": "1, 2 and 3 only",
+      "C": "2, 3 and 4 only",
+      "D": "1, 2, 3 and 4"
+    },
+    "correct_answer": "B",
+    "explanation": "Statement 1 is CORRECT: Article 17 abolishes untouchability and forbids its practice in any form. The Enforcement of Civil Rights Act, 1955 provides for punishment, but the Constitution itself does not define 'untouchability'. This has been left to judicial interpretation.\n\nStatement 2 is CORRECT: Article 23 prohibits traffic in human beings, begar, and other similar forms of forced labour. Crucially, this right is enforceable against both the State and private individuals. The Supreme Court in People's Union for Democratic Rights v. Union of India (1982) affirmed that Article 23 is a right available against private persons as well.\n\nStatement 3 is CORRECT: Article 26 gives every religious denomination the right to manage its own affairs in matters of religion, establish institutions, and administer property. However, under Article 26(b), these rights are subject to public order, morality, and health, allowing the State to regulate (but not destroy) these rights. Landmark cases like Shirur Mutt (1954) and Durgah Committee (1961) reinforce this distinction.\n\nStatement 4 is INCORRECT: While Article 30(1) grants minorities the right to establish and administer educational institutions of their choice, Article 30(2) only states that the State shall not discriminate against minority institutions while granting aid. However, the State CAN impose reasonable regulatory conditions (such as academic standards, service conditions of teachers) while granting aid, as long as these do not abrogate the minority character of the institution. The Supreme Court in T.M.A. Pai Foundation v. State of Karnataka (2002) and P.A. Inamdar v. State of Maharashtra (2005) held that the State can impose some conditions; it cannot impose conditions that take away the essential minority character. Thus, the blanket claim that the State 'cannot impose any conditions' is incorrect.\n\nTherefore, statements 1, 2, and 3 are correct, making option (b) the right answer.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "UPSC CSE Prelims GS-1",
+      "subject": "Indian Polity",
+      "topic": "Fundamental Rights",
+      "sub_topic": "Fundamental Rights (Articles 12\u201335)",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "UPSC_FUNDAMENTA_5_1_805cfa",
+    "text": "Consider the following statements regarding the doctrine of 'eclipse' and the doctrine of 'severability' under Fundamental Rights:\n\n1. Under the doctrine of eclipse, a pre-constitutional law inconsistent with a Fundamental Right becomes void ab initio and cannot be revived even if the relevant Fundamental Right is amended or repealed.\n2. Under the doctrine of severability, only the offending part of a statute that violates a Fundamental Right is declared void, while the rest remains operative.\n3. The doctrine of eclipse applies to post-constitutional laws as well as pre-constitutional laws.\n4. In Keshavan Madhava Menon v. State of Bombay (1951), the Supreme Court held that a pre-constitutional law inconsistent with Part III is merely eclipsed and not wiped out of existence.\n\nWhich of the above statements is/are correct?",
+    "options": {
+      "A": "2 and 4 only",
+      "B": "1 and 2 only",
+      "C": "2, 3 and 4 only",
+      "D": "1, 2 and 4 only"
+    },
+    "correct_answer": "A",
+    "explanation": "Statement 1 is incorrect: Under the doctrine of eclipse, a pre-constitutional law that is inconsistent with a Fundamental Right does NOT become void ab initio. It is merely dormant or eclipsed (not dead). If the relevant Fundamental Right is subsequently amended or removed (e.g., by a constitutional amendment), the law is automatically revived \u2014 it comes back to life because it was never wiped out, only overshadowed. This is the very essence of the doctrine.\n\nStatement 2 is correct: The doctrine of severability (also called the doctrine of separability) holds that if a part of a statute is unconstitutional and that part can be severed from the rest without affecting the remainder, only the offending part is declared void. The rest of the statute remains valid and operative. This is consistently upheld in cases like R.M.D. Chamarbaugwala v. Union of India (1957).\n\nStatement 3 is incorrect: The doctrine of eclipse applies ONLY to pre-constitutional laws (laws made before the Constitution came into force on 26 January 1950). Post-constitutional laws that violate Fundamental Rights are void ab initio under Article 13(2) \u2014 they are stillborn and cannot be revived. The eclipse doctrine was specifically developed for pre-constitutional laws because Article 13(1) uses the expression 'shall be void to the extent of inconsistency,' which the Supreme Court interpreted as rendering them merely dormant.\n\nStatement 4 is correct: In Keshavan Madhava Menon v. State of Bombay (1951), the Supreme Court enunciated the doctrine of eclipse. The Court held that a pre-constitutional law which is inconsistent with a Fundamental Right does not become void for all purposes \u2014 it is only unenforceable to the extent of the inconsistency. The law remains valid against non-citizens and is merely eclipsed, not extinguished.\n\nTherefore, only statements 2 and 4 are correct, making option A the right answer.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "UPSC CSE Prelims GS-1",
+      "subject": "Indian Polity",
+      "topic": "Fundamental Rights",
+      "sub_topic": "Doctrine of Eclipse and Severability under Article 13",
+      "difficulty_level": 5
+    }
+  },
+  {
+    "id": "UPSC_FUNDAMENTA_5_2_5abf61",
+    "text": "Consider the following statements regarding the doctrine of 'eclipse' and 'severability' under Fundamental Rights:\n\n1. Under the doctrine of eclipse, a pre-constitutional law inconsistent with a Fundamental Right becomes dormant but revives automatically if the Fundamental Right is subsequently amended or abrogated.\n2. The doctrine of eclipse applies equally to post-constitutional laws as held by the Supreme Court in Deepchand v. State of Uttar Pradesh (1959).\n3. Under the doctrine of severability, if an offending part of a statute is inseparable from the rest, the entire statute is declared void.\n4. Article 13(1) deals with pre-constitutional laws while Article 13(2) prohibits the State from making laws that abridge Fundamental Rights after the commencement of the Constitution.\n\nWhich of the above statements is/are correct?",
+    "options": {
+      "A": "1 and 3 only",
+      "B": "1, 3 and 4 only",
+      "C": "2 and 4 only",
+      "D": "1, 2, 3 and 4"
+    },
+    "correct_answer": "B",
+    "explanation": "Statement 1 is CORRECT. The doctrine of eclipse (established in Bhikaji Narain Dhakras v. State of Madhya Pradesh, 1955) holds that a pre-constitutional law that violates a Fundamental Right is not void ab initio but merely becomes eclipsed (dormant). If the relevant Fundamental Right is subsequently amended or removed by a constitutional amendment, the law is automatically revived and becomes enforceable again.\n\nStatement 2 is INCORRECT. In Deepchand v. State of Uttar Pradesh (1959), the Supreme Court held that the doctrine of eclipse does NOT apply to post-constitutional laws. A post-constitutional law that violates a Fundamental Right is void ab initio (stillborn) and cannot be revived even if the Fundamental Right is later amended. Thus, the eclipse doctrine is confined to pre-constitutional laws only.\n\nStatement 3 is CORRECT. The doctrine of severability (also called doctrine of separability) holds that if the unconstitutional/offending part of a law is separable from the rest, only that part is struck down. However, if the offending part is so interwoven with the rest that it cannot be separated without affecting the whole, the entire statute is declared void. This principle was affirmed in R.M.D. Chamarbaugwala v. Union of India (1957).\n\nStatement 4 is CORRECT. Article 13(1) makes all pre-constitutional laws (laws in force immediately before the commencement of the Constitution) void to the extent they are inconsistent with Fundamental Rights. Article 13(2) provides that the State shall not make any law which takes away or abridges Fundamental Rights, and any law made in contravention thereof shall be void \u2014 this applies to post-constitutional laws.\n\nTherefore, statements 1, 3, and 4 are correct, making option B the correct answer.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "UPSC CSE Prelims GS-1",
+      "subject": "Indian Polity",
+      "topic": "Fundamental Rights",
+      "sub_topic": "Fundamental Rights (Articles 12\u201335)",
+      "difficulty_level": 5
+    }
+  },
+  {
+    "id": "UPSC_BIODIVERSI_1_1_a0010b",
+    "text": "Consider the following statements regarding IUCN Red List categories and their conservation status classifications:\n\n1. The 'Critically Endangered' category is applied to species with an extremely high risk of extinction in the wild, while 'Endangered' species face a very high risk but with relatively better population viability.\n2. Species classified as 'Vulnerable' have a smaller population size and restricted range compared to Endangered species, making them more susceptible to environmental stochasticity.\n3. The 'Near Threatened' category includes species that do not currently qualify for threatened status but are close to qualifying or likely to qualify in the near future.\n\nWhich of the above statements is/are correct?",
+    "options": {
+      "A": "1 only",
+      "B": "1 and 3 only",
+      "C": "2 and 3 only",
+      "D": "1, 2 and 3"
+    },
+    "correct_answer": "B",
+    "explanation": "Statement 1 is CORRECT: The IUCN Red List defines 'Critically Endangered' (CR) as species facing an extremely high risk of extinction in the wild, while 'Endangered' (EN) denotes species with a very high risk of extinction but comparatively better survival prospects than CR species. This hierarchical distinction is fundamental to IUCN classification.\n\nStatement 2 is INCORRECT: This reverses the actual relationship. 'Vulnerable' (VU) species typically have a larger geographic range and higher population numbers than 'Endangered' species. Endangered species face MORE severe threats and population constraints than Vulnerable species. The sequence from lowest to highest extinction risk is: VU \u2192 EN \u2192 CR.\n\nStatement 3 is CORRECT: 'Near Threatened' (NT) is a legitimate IUCN category for species that do not currently meet threatened status criteria (VU, EN, or CR) but are approaching the thresholds or will likely do so soon without continued conservation efforts. This serves as an early warning category.\n\nTherefore, statements 1 and 3 are correct, making option (B) the answer.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "UPSC CSE Prelims GS-1",
+      "subject": "Environment & Ecology",
+      "topic": "Biodiversity",
+      "sub_topic": "IUCN Red List Categories and Conservation Status",
+      "difficulty_level": 2,
+      "question_type": "Statement-based Conceptual",
+      "previous_attempts_failed": 1,
+      "variation_angle": "IUCN classification hierarchy and comparative extinction risk assessment"
+    }
+  },
+  {
+    "id": "UPSC_BIODIVERSI_1_2_5e775b",
+    "text": "With reference to the three levels of biodiversity, which of the following statements is/are correct?\n\n1. Genetic diversity refers to the variation in genes within a single species population\n2. Species diversity is the number of different species in a given area or ecosystem\n3. Ecosystem diversity refers to the variety of habitats, communities, and ecological processes in a region\n\nWhich of the above statements is/are correct?",
+    "options": {
+      "A": "1 only",
+      "B": "2 only",
+      "C": "1 and 2 only",
+      "D": "1, 2 and 3"
+    },
+    "correct_answer": "D",
+    "explanation": "Analysis of the three hierarchical levels of biodiversity:\n\n**Statement 1 \u2014 CORRECT:** Genetic diversity is the variation in genes within individuals of a single species population. This is the most basic level of biodiversity and includes variations in alleles, traits, and genetic makeup. Examples include different varieties of rice or cattle within a population. This is a fundamental UPSC-level concept in conservation biology.\n\n**Statement 2 \u2014 CORRECT:** Species diversity refers to the number and relative abundance of different species in a given area or ecosystem. It measures richness (total number of species) and evenness (relative proportions). This is a standard ecological measure used in biodiversity assessments across India's Western Ghats, Sundarbans, and other hotspots.\n\n**Statement 3 \u2014 CORRECT:** Ecosystem diversity encompasses the variety of different habitats, communities, biological communities, and ecological processes within a region. It includes variation between ecosystems (e.g., forests, wetlands, grasslands) and within ecosystems. This level reflects the complexity of environmental interactions and is critical for conservation planning.\n\nAll three statements accurately describe the well-established hierarchical framework of biodiversity levels taught in Indian ecology and environmental science curricula. This framework forms the conceptual basis for biodiversity assessment, conservation strategies, and India's National Biodiversity Action Plan.\n\nTherefore, the correct answer is **(D) 1, 2 and 3**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "UPSC CSE Prelims GS-1",
+      "subject": "Environment & Ecology",
+      "topic": "Biodiversity",
+      "sub_topic": "Biodiversity \u2013 Levels, Hotspots, IUCN Categories",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "UPSC_BIODIVERSI_2_1_ef7cd2",
+    "text": "With reference to IUCN Red List Categories, which of the following pairs is correctly matched?\n\nIUCN Category \u2014 Definition\n\n1. Critically Endangered \u2014 Population reduction of at least 50% over the last 10 years or three generations\n2. Vulnerable \u2014 Very high risk of extinction in the wild\n3. Near Threatened \u2014 Does not qualify for threatened categories but is close to qualifying\n4. Data Deficient \u2014 Adequate information available to assess risk of extinction\n\nSelect the correct answer using the code given below:",
+    "options": {
+      "A": "3 only",
+      "B": "1 and 3 only",
+      "C": "2 and 4 only",
+      "D": "1, 2 and 3 only"
+    },
+    "correct_answer": "A",
+    "explanation": "Only Pair 3 is correctly matched. Let us examine each:\n\n1. INCORRECT \u2014 'Critically Endangered' is defined as facing an extremely high risk of extinction. A population reduction of at least 80% (not 50%) over the last 10 years or three generations is one criterion for Critically Endangered. A 50% reduction over 10 years/3 generations is a criterion for 'Endangered' category.\n\n2. INCORRECT \u2014 'Vulnerable' is defined as facing a high risk (not 'very high risk') of extinction in the wild. 'Very high risk' corresponds to the 'Endangered' category. 'Extremely high risk' corresponds to 'Critically Endangered'.\n\n3. CORRECT \u2014 'Near Threatened' is correctly defined as a taxon that does not qualify for Critically Endangered, Endangered or Vulnerable now, but is close to qualifying or is likely to qualify for a threatened category in the near future.\n\n4. INCORRECT \u2014 'Data Deficient' means there is inadequate information to make a direct or indirect assessment of the risk of extinction based on the species' distribution and/or population status. This is the opposite of what is stated. A Data Deficient species is NOT necessarily threatened; it simply lacks sufficient data for proper assessment.\n\nThus, only statement 3 is correctly matched.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "UPSC CSE Prelims GS-1",
+      "subject": "Environment & Ecology",
+      "topic": "Biodiversity",
+      "sub_topic": "Biodiversity \u2013 Levels, Hotspots, IUCN Categories",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "UPSC_BIODIVERSI_2_2_52fe97",
+    "text": "With reference to IUCN Red List Categories and the classification of threatened species, consider the following statements:\n\n1. A species classified as 'Critically Endangered' has an extremely high risk of extinction in the wild within a very short period, typically defined as fewer than 50 individuals remaining in the wild.\n\n2. The category 'Vulnerable' represents species that face a higher risk of extinction than 'Endangered' species according to IUCN criteria.\n\n3. 'Data Deficient' is a formal threat category that indicates a species is likely to become extinct unless conservation measures are implemented.\n\nWhich of the above statements is/are correct?",
+    "options": {
+      "A": "1 only",
+      "B": "3 only",
+      "C": "1 and 2 only",
+      "D": "None of the above"
+    },
+    "correct_answer": "D",
+    "explanation": "Analysis of each statement:\n\n**Statement 1 \u2013 INCORRECT:** While 'Critically Endangered' (CR) does indicate an extremely high risk of extinction, the IUCN criterion is NOT simply \"fewer than 50 individuals.\" The IUCN uses multiple quantitative criteria including population size, rate of decline, geographic range, and probability of extinction within specific timeframes. A population of fewer than 50 individuals is one possible indicator, but Critically Endangered species are defined by meeting specific IUCN criteria A\u2013E, not by a single numerical threshold.\n\n**Statement 2 \u2013 INCORRECT:** This reverses the IUCN threat hierarchy. The correct ascending order of threat is: Vulnerable (VU) \u2192 Endangered (EN) \u2192 Critically Endangered (CR). Vulnerable species face LOWER risk of extinction than Endangered species, not higher. Therefore, this statement is factually wrong.\n\n**Statement 3 \u2013 INCORRECT:** 'Data Deficient' (DD) is NOT a threat category. It is an informational category indicating insufficient data to assess the species' conservation status. The DD category does not imply that a species is threatened or that conservation measures are urgently needed. It simply means more research is required before a proper threat assessment can be made.\n\nSince all three statements are incorrect, the answer is **(D) None of the above**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "UPSC CSE Prelims GS-1",
+      "subject": "Environment & Ecology",
+      "topic": "Biodiversity",
+      "sub_topic": "Biodiversity \u2013 Levels, Hotspots, IUCN Categories",
+      "difficulty_level": 2
+    }
+  }
+]

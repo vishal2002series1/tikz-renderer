@@ -1,0 +1,967 @@
+[
+  {
+    "id": "MICROS_POWERQUERY_1_1_1_92c15b",
+    "text": "In **Power Query M Language**, what is the purpose of the `let` expression when writing a multi-step query?",
+    "options": {
+      "A": "It defines a sequence of named variables and transformation steps, with the final result returned by the `in` clause.",
+      "B": "It creates a new column in the output table by applying a formula to each row.",
+      "C": "It filters rows from a table based on a specified condition before loading data.",
+      "D": "It establishes a connection to an external data source using provided credentials."
+    },
+    "correct_answer": "A",
+    "explanation": "**Option A \u2014 Correct:** In **Power Query M Language**, the *let\u2026in* structure is the fundamental building block of a query. The `let` keyword introduces a block where you define named steps (variables), each representing an intermediate transformation. The `in` keyword specifies which named step to return as the final output. For example:\n\n```\nlet\n    Source = Excel.Workbook(...),\n    FilteredRows = Table.SelectRows(Source, each [Region] = \"North\")\nin\n    FilteredRows\n```\n\nEach line in the `let` block is a named expression that can reference previous steps, making queries readable and maintainable.\n\n**Option B \u2014 FALSE:** Defining new columns per row is the role of `Table.AddColumn` or a **Custom Column** formula, not the `let` expression itself.\n\n**Option C \u2014 FALSE:** Row filtering is performed by `Table.SelectRows`, not the `let` keyword.\n\n**Option D \u2014 FALSE:** Data source connections are established using **connector functions** such as `Sql.Database` or `Excel.Workbook`, not the `let` expression.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Power Query M Language \u2013 Formulas, Let\u2026In Structure, Custom Columns",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "MICROS_POWERQUERY_1_1_2_41fde8",
+    "text": "You are building a **Power Query** transformation in Power BI Desktop. You need to create a custom column that multiplies the 'Quantity' column by the 'UnitPrice' column to calculate total sales. Which M formula syntax is the **standard and recommended** approach for this custom column?",
+    "options": {
+      "A": "= [Quantity] * [UnitPrice]",
+      "B": "= Quantity * UnitPrice",
+      "C": "= [Quantity] * [UnitPrice] in",
+      "D": "= let x = [Quantity] * [UnitPrice] in x"
+    },
+    "correct_answer": "A",
+    "explanation": "**Statement 1 \u2014 TRUE:** In **Power Query M language**, column references in custom column formulas must be enclosed in square brackets. The syntax $[\\text{ColumnName}]$ is the standard way to reference an existing column from the current table context.\n\n**Statement 2 \u2014 TRUE:** Option A uses the **standard and recommended syntax**: `= [Quantity] * [UnitPrice]`. This directly multiplies two column values and is the idiomatic pattern for a **custom column** in Power Query.\n\n**Why other options are incorrect or non-standard:**\n\n**Option B \u2014 FALSE:** Using unbracketed column names (`Quantity * UnitPrice`) is invalid M syntax in the custom column context. Column identifiers must be bracketed.\n\n**Option C \u2014 FALSE:** The `in` keyword belongs to the **let...in structure**, not to a simple custom column formula. Including `in` here without a complete `let...in` expression creates a syntax error.\n\n**Option D \u2014 NOT STANDARD PRACTICE:** While `let x = [Quantity] * [UnitPrice] in x` is technically **valid M syntax** (the **let...in structure** is a legitimate M expression that can be used anywhere a single expression is expected), it is **unnecessarily verbose and non-idiomatic** for a basic custom column. The `let...in` pattern introduces intermediate variables and is typically reserved for advanced scenarios in the **Advanced Editor** where you need to define multiple transformations or reuse calculated values across multiple steps. For simple column arithmetic, Option A is the clear best practice and standard approach.\n\n**Key concept:** Power Query **custom columns** use direct, concise column references with square bracket notation. While `let...in` is a valid M construct, it should be reserved for complex multi-step logic, not simple arithmetic operations.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Power Query M Language \u2013 Formulas, Let\u2026In Structure, Custom Columns",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "MICROS_POWERQUERY_2_1_1_050f3e",
+    "text": "In **Power Query M language**, you are writing a custom query and need to store an intermediate calculation result in a named variable before using it in a final expression. Which structure allows you to define one or more named variables and then return a single final expression based on those variables?",
+    "options": {
+      "A": "The *let\u2026in* expression, where variables are defined in the `let` block and the final output is specified after the `in` keyword",
+      "B": "The *each\u2026in* expression, where a lambda function is applied to each row and the result is returned after `in`",
+      "C": "The *if\u2026then\u2026else* expression, where conditions are evaluated and intermediate values are stored before the final return",
+      "D": "The *try\u2026otherwise* expression, where named steps are attempted and the result is captured in a variable block"
+    },
+    "correct_answer": "A",
+    "explanation": "**Statement A \u2014 TRUE:** The *let\u2026in* structure is the fundamental building block of **Power Query M** queries. The `let` block defines a sequence of named steps or variables (e.g., `Source = ...`, `FilteredRows = ...`), and the `in` keyword specifies which named step or expression to return as the final output. This allows intermediate results to be referenced by name within the same query, making the logic readable and modular.\n\n**Statement B \u2014 FALSE:** The `each` keyword in **M language** is shorthand for a lambda function (equivalent to `(_) => ...`) used for row-level operations. It does not define named variables and is not a query structuring construct like *let\u2026in*.\n\n**Statement C \u2014 FALSE:** The *if\u2026then\u2026else* expression in **M language** is a conditional branching expression. It evaluates a Boolean condition and returns one of two values, but it does not store intermediate named variables.\n\n**Statement D \u2014 FALSE:** The *try\u2026otherwise* expression is used for **error handling** in **M language** \u2014 it attempts an expression and returns a fallback value if an error occurs. It does not function as a variable-storing structure.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Power Query M Language \u2013 Formulas, Let\u2026In Structure, Custom Columns",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "MICROS_POWERQUERY_2_1_2_d525a1",
+    "text": "You are working with the **Power Query** editor in Power BI Desktop. You need to create a custom column that calculates the **total revenue** for each product by multiplying **Quantity** by **UnitPrice**. You want to use the **Let...In** structure to make the formula readable and maintainable.\n\nWhich of the following M language formulas correctly implements this requirement?",
+    "options": {
+      "A": "let Qty = [Quantity], Price = [UnitPrice], Total = Qty * Price in Total",
+      "B": "let [Quantity] * [UnitPrice] in Total",
+      "C": "if [Quantity] > 0 then [Quantity] * [UnitPrice] else 0",
+      "D": "[Quantity] * [UnitPrice]"
+    },
+    "correct_answer": "A",
+    "explanation": "**Why Option A is correct:** The **Let...In** structure in M language follows the syntax: `let variable1 = expression1, variable2 = expression2, ... in final_expression`. Option A correctly demonstrates this pattern by defining intermediate variables (`Qty` and `Price`) for readability, then defining `Total` as the product, and finally returning `Total` in the `in` clause. This approach enhances code maintainability and clarity in complex transformations.\n\n**Why Option B fails:** Option B is syntactically invalid because it omits proper variable assignments before the `in` keyword. The `let` clause must define at least one variable with an assignment (using `=`) before the `in` statement can be invoked.\n\n**Why Option C fails:** Option C uses an `if...then...else` conditional statement, which is valid M syntax but does not use the **Let...In** structure as required by the scenario. While this formula would calculate revenue correctly, it does not satisfy the explicit requirement to use **Let...In** for structural clarity and maintainability.\n\n**Why Option D fails:** Option D is a direct formula expression without the **Let...In** wrapper. Although `[Quantity] * [UnitPrice]` is valid M syntax for a custom column, it lacks the **Let...In** structure that the scenario explicitly requires. This simple formula misses the opportunity for intermediate variable definition and reduced complexity in more elaborate transformations.\n\n**Best practice:** The **Let...In** structure improves code readability by breaking down complex expressions into named intermediate steps, making formulas easier to debug, maintain, and reuse across multiple queries.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Power Query M Language \u2013 Formulas, Let\u2026In Structure, Custom Columns",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "MICROS_POWERQUERY_3_1_1_2e8c1c",
+    "text": "You are working in **Power Query Advanced Editor** and loading a customer transaction dataset from a CSV file. The data contains a **RawAmount** column with text values formatted as currency strings (e.g., \"$1,250.99\"). You need to create a new query step that:\n\n1. Removes the dollar sign and commas from each row\n2. Converts the cleaned text to a decimal number\n3. Calculates a **ServiceCharge** as 5% of the cleaned amount\n4. Returns a record with both the **CleanAmount** and **ServiceCharge** fields\n\nYou decide to use a **let...in** structure applied to each row in the table. Which M formula correctly implements this requirement as a custom transformation step?",
+    "options": {
+      "A": "let\n  CleanAmount = Number.FromText(Text.Replace(Text.Replace([RawAmount], \"$\", \"\"), \",\", \"\")),\n  ServiceCharge = CleanAmount * 0.05\nin\n  [CleanAmount = CleanAmount, ServiceCharge = ServiceCharge]",
+      "B": "let\n  CleanAmount = Number.FromText([RawAmount]),\n  ServiceCharge = CleanAmount * 0.05\nin\n  [CleanAmount = CleanAmount, ServiceCharge = ServiceCharge]",
+      "C": "let\n  Cleaned = Text.Replace([RawAmount], \"$\", \"\"),\n  CleanAmount = Number.FromText(Cleaned),\n  ServiceCharge = CleanAmount * 1.05\nin\n  [CleanAmount = CleanAmount, ServiceCharge = ServiceCharge]",
+      "D": "let\n  CleanAmount = [RawAmount] - Text.Length(\"$\"),\n  ServiceCharge = CleanAmount / 20\nin\n  {CleanAmount, ServiceCharge}"
+    },
+    "correct_answer": "A",
+    "explanation": "**Statement 1 \u2014 Option A: Correct let...in Structure \u2014 TRUE:** Option A uses the **let...in** block properly as a row-level transformation. Each variable is defined sequentially and the **in** clause returns a record `[CleanAmount = ..., ServiceCharge = ...]`, which allows the formula to output multiple fields per row.\n\n**Statement 2 \u2014 Option A: Correct Data Transformation \u2014 TRUE:** The formula correctly:\n- Nests two `Text.Replace()` calls to remove both \"$\" and \",\" from the raw text\n- Applies `Number.FromText()` to the cleaned string, converting it to a decimal type\n- Calculates **ServiceCharge** as exactly 5% of the cleaned amount (multiplication by 0.05)\n- Returns both values in a record structure that can be expanded into new columns in the table\n\n**Statement 3 \u2014 Option B: Missing Currency Cleaning \u2014 TRUE:** Option B attempts `Number.FromText([RawAmount])` without first removing the \"$\" and \",\" characters. This will cause a **type conversion error** because the function cannot parse currency formatting. The rest of the logic is sound, but the missing cleaning step is fatal.\n\n**Statement 4 \u2014 Option C: Incorrect Service Charge Calculation \u2014 TRUE:** Option C cleans the data and creates the correct structure, but the service charge calculation is wrong. `ServiceCharge = CleanAmount * 1.05` computes 105% of the cleaned amount (the amount plus a 5% markup), not a separate 5% service charge. The correct formula should be `CleanAmount * 0.05`.\n\n**Statement 5 \u2014 Option D: Invalid Data Type Operations \u2014 TRUE:** This option contains multiple errors:\n- `[RawAmount] - Text.Length(\"$\")` attempts arithmetic subtraction on a text value and an integer, causing a **type mismatch error**\n- The final **in** clause returns a list `{CleanAmount, ServiceCharge}` instead of a record, which cannot be properly expanded into named columns in the Power Query table UI\n- The formula does not clean the currency formatting at all\n\n**Key Concept \u2014 M Let...In for Row-Level Transformations:** When using **let...in** in Power Query as a custom column or transformation formula, each variable represents an intermediate calculation step. The **in** clause must return a properly typed result (record, list, scalar, or table). For multi-field row transformations, returning a **record** `[FieldName = value, ...]` is the standard pattern.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Power Query M Language \u2013 Formulas, Let\u2026In Structure, Custom Columns",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "MICROS_POWERQUERY_3_1_2_d30809",
+    "text": "You are building a data transformation in **Power Query** using the **M language**. A table called `Orders` has two columns: `UnitPrice` (decimal) and `Quantity` (whole number). You write the following **M** expression:\n\n```\nlet\n    Source = Orders,\n    AddedColumn = Table.AddColumn(Source, \"LineTotal\", each [UnitPrice] * [Quantity], type number),\n    FilteredRows = Table.SelectRows(AddedColumn, each [LineTotal] >= 500),\n    RenamedCol = Table.RenameColumns(FilteredRows, {{\"LineTotal\", \"TotalSale\"}})\nin\n    RenamedCol\n```\n\nWhat does this **M** query return?",
+    "options": {
+      "A": "All rows from `Orders` with a new column named **TotalSale** showing `UnitPrice * Quantity`, filtered to only include rows where `TotalSale` is greater than or equal to 500",
+      "B": "All rows from `Orders` with a new column named **LineTotal** showing `UnitPrice * Quantity`, with no filtering applied",
+      "C": "Only rows where `UnitPrice` is greater than or equal to 500, with a renamed column called **TotalSale**",
+      "D": "An error, because `Table.RenameColumns` cannot reference a column that was created in a previous **let** step"
+    },
+    "correct_answer": "A",
+    "explanation": "**Option A \u2014 CORRECT:** The **let\u2026in** structure in **M language** evaluates each named step sequentially. First, `Source` loads the `Orders` table. Then `AddedColumn` uses **Table.AddColumn** to create a column `LineTotal` as `UnitPrice * Quantity`. Next, `FilteredRows` uses **Table.SelectRows** to retain only rows where `LineTotal >= 500`. Finally, `RenamedCol` uses **Table.RenameColumns** to rename `LineTotal` to `TotalSale`. The `in` clause returns `RenamedCol`, so the output is the filtered table with the column named **TotalSale**.\n\n**Option B \u2014 FALSE:** The `FilteredRows` step does apply a filter, so all rows are NOT returned. Filtering is explicitly part of the query.\n\n**Option C \u2014 FALSE:** The filter condition applies to **LineTotal** (i.e., `UnitPrice * Quantity`), not to `UnitPrice` alone. Rows where the *product* of price and quantity is \u2265 500 are retained, regardless of `UnitPrice` individually.\n\n**Option D \u2014 FALSE:** In a **let\u2026in** block, each step can reference any previously defined step by name. `Table.RenameColumns` referencing `FilteredRows` (which itself references `AddedColumn`) is perfectly valid **M** syntax and causes no error.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Power Query M Language \u2013 Formulas, Let\u2026In Structure, Custom Columns",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "MICROS_POWERQUERY_4_1_1_b74ba5",
+    "text": "You are building a data transformation in **Power Query** for a retail dataset. A colleague has written the following **M** expression and asks you to identify what the query will return:\n\n```\nlet\n    Source = Table.FromRecords({\n        [Product = \"Alpha\", UnitPrice = 120, Quantity = 5],\n        [Product = \"Beta\",  UnitPrice = 45,  Quantity = 0],\n        [Product = \"Gamma\", UnitPrice = 80,  Quantity = 3]\n    }),\n    AddRevenue = Table.AddColumn(Source, \"Revenue\",\n        each if [Quantity] = 0 then null else [UnitPrice] * [Quantity]),\n    FilterRows = Table.SelectRows(AddRevenue,\n        each [Revenue] <> null),\n    FinalStep = Table.TransformColumnTypes(FilterRows,\n        {{\"Revenue\", type number}})\nin\n    FinalStep\n```\n\nWhat does the **FinalStep** step return?",
+    "options": {
+      "A": "A table with three rows containing columns **Product**, **UnitPrice**, **Quantity**, and **Revenue**, where the Revenue for Beta is 0",
+      "B": "A table with two rows \u2014 Alpha with Revenue 600 and Gamma with Revenue 240 \u2014 after the row where Quantity equals 0 is removed",
+      "C": "An error, because **Table.TransformColumnTypes** cannot be applied after **Table.SelectRows** in the same *let\u2026in* expression",
+      "D": "A table with three rows where the Revenue column contains 600, null, and 240 respectively, because **Table.TransformColumnTypes** restores the null row"
+    },
+    "correct_answer": "B",
+    "explanation": "**Step-by-step analysis of the M expression:**\n\n**Step 1 \u2014 Source:** Creates a three-row table with columns Product, UnitPrice, Quantity.\n\n**Step 2 \u2014 AddRevenue:** Uses **Table.AddColumn** with a custom column formula. The `each if [Quantity] = 0 then null else [UnitPrice] * [Quantity]` expression assigns:\n- Alpha: $120 \\times 5 = 600$\n- Beta: null (because Quantity = 0)\n- Gamma: $80 \\times 3 = 240$\n\n**Step 3 \u2014 FilterRows:** **Table.SelectRows** keeps only rows where Revenue is not null. This removes the Beta row entirely, leaving Alpha (600) and Gamma (240).\n\n**Step 4 \u2014 FinalStep:** **Table.TransformColumnTypes** simply enforces the data type of the Revenue column as `type number`. It does **not** restore removed rows or change values \u2014 it only sets the column type metadata.\n\n**Why the distractors are wrong:**\n- **Option A** is incorrect because Beta's Revenue is null, not 0, and it gets filtered out by FilterRows.\n- **Option C** is incorrect because chaining **Table.TransformColumnTypes** after **Table.SelectRows** in a *let\u2026in* block is perfectly valid M syntax.\n- **Option D** is incorrect because **Table.TransformColumnTypes** does not restore null rows; those rows were already removed in the FilterRows step.\n\nThe *let\u2026in* structure in **Power Query M** evaluates each named step sequentially, and each step receives the output of the previous one as its input.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Power Query M Language \u2013 Formulas, Let\u2026In Structure, Custom Columns",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "MICROS_POWERQUERY_4_1_2_74731e",
+    "text": "You are working with a sales dataset in Power Query that contains columns: **ProductName**, **Quantity**, **UnitPrice**, and **DiscountPercent**. You need to create a custom column that calculates the final sale price using the following business logic:\n\n1. Calculate the base amount: $Quantity \\times UnitPrice$\n2. Apply discount: subtract the discount percentage from the base amount\n3. Apply a 8% sales tax to the discounted amount\n4. If the final price exceeds $10,000, apply an additional 5% loyalty discount to the post-tax price; otherwise, apply no loyalty discount\n\nYou want to write a clean, maintainable **M formula** using the **let\u2026in** structure to break down this multi-step calculation. Which of the following M expressions correctly implements this logic?",
+    "options": {
+      "A": "let\\n  BaseAmount = [Quantity] * [UnitPrice],\\n  DiscountedAmount = BaseAmount * (1 - [DiscountPercent] / 100),\\n  AfterTax = DiscountedAmount * 1.08,\\n  FinalPrice = if AfterTax > 10000 then AfterTax * 0.95 else AfterTax\\nin\\n  FinalPrice",
+      "B": "let\\n  BaseAmount = [Quantity] + [UnitPrice],\\n  DiscountedAmount = BaseAmount - [DiscountPercent],\\n  AfterTax = DiscountedAmount + (DiscountedAmount * 0.08),\\n  FinalPrice = if AfterTax > 10000 then AfterTax - 500 else AfterTax\\nin\\n  FinalPrice",
+      "C": "let\\n  BaseAmount = [Quantity] * [UnitPrice],\\n  DiscountedAmount = BaseAmount - [DiscountPercent],\\n  AfterTax = DiscountedAmount * 0.08,\\n  FinalPrice = if AfterTax > 10000 then AfterTax * 1.05 else AfterTax\\nin\\n  FinalPrice",
+      "D": "let\\n  BaseAmount = [Quantity] * [UnitPrice],\\n  DiscountedAmount = BaseAmount * (1 - [DiscountPercent]),\\n  AfterTax = DiscountedAmount * 1.08,\\n  FinalPrice = if AfterTax > 10000 then AfterTax * 0.95 else AfterTax\\nin\\n  FinalPrice"
+    },
+    "correct_answer": "A",
+    "explanation": "**Statement 1 \u2014 Correct let\u2026in Structure: TRUE** \u2014 Option A uses the proper **let\u2026in** syntax with sequential variable binding, where each step builds logically on the previous one.\n\n**Statement 2 \u2014 Base Amount Calculation: TRUE** \u2014 Option A correctly multiplies $Quantity \\times UnitPrice$ to obtain the base sale amount. Options B and C use addition or incorrect operators.\n\n**Statement 3 \u2014 Discount Application: TRUE** \u2014 Option A applies the discount percentage correctly: $BaseAmount \\times (1 - \\frac{DiscountPercent}{100})$. This subtracts the percentage portion from 1, then multiplies. Option B subtracts the raw percentage value (treating 10% as $10 instead of $0.10), and Option C also fails to normalize the percentage.\n\n**Statement 4 \u2014 Sales Tax Calculation: TRUE** \u2014 Option A correctly multiplies the discounted amount by 1.08 (adding 8% tax). Options B and C either add or multiply incorrectly. Option C multiplies by 0.08 only, losing the original amount.\n\n**Statement 5 \u2014 Loyalty Discount Logic: TRUE** \u2014 Option A correctly applies the 5% loyalty discount (multiply by 0.95) when the post-tax price exceeds $10,000. Option D incorrectly divides the discount percentage by 100 in the wrong place ($1 - [DiscountPercent]$ instead of $1 - [DiscountPercent] / 100$), which would produce negative or incorrect values when discount values are whole numbers like 10 or 15.\n\n**Why other options fail:**\n- **Option B:** Uses addition instead of multiplication for base amount; treats discount as absolute value; applies arbitrary $500 loyalty adjustment rather than percentage-based logic.\n- **Option C:** Subtracts raw percentage instead of applying percentage reduction; multiplies 0.08 only (ignoring the principal amount).\n- **Option D:** Fails to divide **DiscountPercent** by 100, causing incorrect discount calculations (e.g., if DiscountPercent = 15, then $1 - 15 = -14$, yielding a negative multiplier).\n\nOption **A** is the only formula that correctly implements all business logic steps within a clean, readable **let\u2026in** structure.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Power Query M Language \u2013 Formulas, Let\u2026In Structure, Custom Columns",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "MICROS_POWERQUERY_5_1_1_1d959d",
+    "text": "You are building a **Power Query M** transformation for a sales dataset. A colleague has written the following M expression and asks you to identify what the query returns:\n\n```\nlet\n    Source = Table.FromRecords({\n        [Product = \"Alpha\", Revenue = 4200, Cost = 3100],\n        [Product = \"Beta\",  Revenue = 7800, Cost = 4900],\n        [Product = \"Gamma\", Revenue = 3300, Cost = 3600]\n    }),\n    AddMargin = Table.AddColumn(Source, \"Margin\", each [Revenue] - [Cost], type number),\n    FilterPositive = Table.SelectRows(AddMargin, each [Margin] > 0),\n    Result = Table.TransformColumnTypes(\n        Table.SelectColumns(FilterPositive, {\"Product\", \"Margin\"}),\n        {{\"Margin\", type text}}\n    )\nin\n    Result\n```\n\nWhat does the final **Result** step return?",
+    "options": {
+      "A": "A two-column table with **Product** and **Margin** (as *number* type) for all three products, including Gamma with a negative margin of -300.",
+      "B": "A two-column table with **Product** and **Margin** (as *text* type) containing only \"Alpha\" with \"1100\" and \"Beta\" with \"2900\".",
+      "C": "A three-column table with **Product**, **Revenue**, and **Cost** for Alpha and Beta only, with Gamma excluded because its margin is negative.",
+      "D": "An error, because **Table.TransformColumnTypes** cannot convert a *number* column to *text* type within a **let\u2026in** expression."
+    },
+    "correct_answer": "B",
+    "explanation": "**Walking through the let\u2026in steps:**\n\n**Step 1 \u2014 Source:** Creates a three-row table with columns Product, Revenue, and Cost.\n\n**Step 2 \u2014 AddMargin:** Uses **Table.AddColumn** with `each [Revenue] - [Cost]` to add a *number* column called \"Margin\". The computed values are: Alpha \u2192 $4200 - 3100 = 1100$, Beta \u2192 $7800 - 4900 = 2900$, Gamma \u2192 $3300 - 3600 = -300$.\n\n**Step 3 \u2014 FilterPositive:** Uses **Table.SelectRows** with `each [Margin] > 0` to keep only rows where Margin is positive. Gamma (Margin = $-300$) is excluded. The result is a two-row table: Alpha (1100) and Beta (2900).\n\n**Step 4 \u2014 Result:** First, **Table.SelectColumns** keeps only \"Product\" and \"Margin\". Then **Table.TransformColumnTypes** converts the \"Margin\" column from *number* to *text* type. This is a perfectly valid M operation \u2014 type conversions between number and text are fully supported. The final table has two rows and two columns: Product (*text*) and Margin (*text*), with values \"Alpha\"/\"1100\" and \"Beta\"/\"2900\".\n\n**Why the other options are wrong:**\n- **Option A** is wrong because it claims all three rows are returned and Margin remains a *number*; FilterPositive removes Gamma and TransformColumnTypes changes the type to *text*.\n- **Option C** is wrong because SelectColumns removes Revenue and Cost \u2014 only Product and Margin appear in the final output.\n- **Option D** is wrong because **Table.TransformColumnTypes** absolutely supports converting *number* to *text* \u2014 this is a common M operation and raises no error.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Power Query M Language \u2013 Formulas, Let\u2026In Structure, Custom Columns",
+      "difficulty_level": 5
+    }
+  },
+  {
+    "id": "MICROS_POWERQUERY_5_1_2_754174",
+    "text": "You are designing a **Power Query M** transformation for a sales dataset containing transaction records. The source data includes columns: `OrderID`, `CustomerName`, `Amount`, `Quantity`, and `DiscountPercent`. Your business requirement specifies that you must:\n\n1. Create a custom column named `NetAmount` that calculates: (Amount \u2212 (Amount \u00d7 DiscountPercent \u00f7 100)) \u00f7 Quantity\n2. Flag any records where `NetAmount` is less than $7.50 or greater than $287.60 as outliers using a new column `IsOutlier`\n3. Ensure all intermediate calculations preserve numeric precision without rounding\n4. Apply these transformations only after filtering out cancelled orders (where OrderID contains \"VOID\")\n\nYou write the following **M formula** within a `let\u2026in` structure:\n\n```\nlet\n    Source = Excel.Workbook(File.Contents(\"C:\\\\Sales.xlsx\"), true),\n    SalesData = Source{[Item=\"Sales\"]}[Data],\n    FilteredData = Table.SelectRows(SalesData, each not Text.Contains([OrderID], \"VOID\")),\n    AddNetAmount = Table.AddColumn(FilteredData, \"NetAmount\",\n        each ([Amount] - ([Amount] * [DiscountPercent] / 100)) / [Quantity],\n        type number),\n    AddIsOutlier = Table.AddColumn(AddNetAmount, \"IsOutlier\",\n        each ([NetAmount] < 7.50) or ([NetAmount] > 287.60),\n        type logical)\nin\n    AddIsOutlier\n```\n\nWhich statement regarding this transformation is **NOT correct**?",
+    "options": {
+      "A": "The `each` keyword within `Table.AddColumn()` creates a lambda function that references current row context, allowing column-by-column evaluation without explicit iteration syntax.",
+      "B": "The `Text.Contains([OrderID], \"VOID\")` predicate correctly identifies rows for removal; using `not` inverts the logic to retain only non-cancelled orders.",
+      "C": "Division by `[Quantity]` in the NetAmount calculation will silently return null if `Quantity` contains zero, preventing data loss and allowing downstream transformations to handle missing values gracefully.",
+      "D": "The `type number` and `type logical` parameters in `Table.AddColumn()` annotate the column's expected type in table metadata and provide hints to the query engine for optimization, but do not enforce or validate that returned values actually match the declared type."
+    },
+    "correct_answer": "C",
+    "explanation": "**Statement C \u2014 FALSE:**\n\nIn Power Query M, division by zero does **not** silently return null. The actual behavior depends on the operand types:\n\n- When both operands are `number` type (decimal/floating-point), dividing by zero returns **`#infinity`** or **`-#infinity`** (IEEE 754 infinity), not null and not an error.\n- When operands are integer types (`Int64.Type`), dividing by zero raises an explicit `Expression.Error: Division by zero`.\n\nSince `Amount`, `DiscountPercent`, and `Quantity` are typically represented as `number` type in Power Query M after source import, the division `[Amount] / [Quantity]` would return `#infinity` when `Quantity` is zero\u2014not null. This infinity value propagates through subsequent calculations and will render as `#Infinity` in the UI, which may cause downstream analytics to fail or produce unexpected results. To handle zero division safely, you must use explicit error-handling logic (e.g., `try...otherwise`, conditional checks) rather than relying on null coercion.\n\n**Why the other statements are correct:**\n\n**Statement A \u2014 TRUE:**\nThe `each` keyword is syntactic sugar for an anonymous function. The expression `each [NetAmount] < 7.50` is equivalent to `(_) => [NetAmount] < 7.50`, where the implicit parameter represents the current row context. Column references evaluate against that row without explicit `_[NetAmount]` syntax, enabling clean, readable row-by-row transformations.\n\n**Statement B \u2014 TRUE:**\nThe `Table.SelectRows()` function accepts a logical predicate. `Text.Contains([OrderID], \"VOID\")` returns true when OrderID contains \"VOID\". The `not` operator inverts this boolean, so rows are retained only when the predicate evaluates to false\u2014meaning OrderID does *not* contain \"VOID\". This correctly filters out cancelled orders while preserving valid records.\n\n**Statement D \u2014 TRUE:**\nThe optional `type` parameter in `Table.AddColumn()` serves as a **metadata annotation** that declares the intended column type in the table's schema. This annotation aids query folding decisions and provides schema hints to downstream transformations, but it does **not** enforce runtime type checking or automatically coerce mismatched values. Values inconsistent with the declared type pass through unchanged; the parameter is a declarative hint, not a validation mechanism.\n\n**Why this is a Level 5 (Complex Judgment) question:**\n- Requires deep understanding of Power Query M's IEEE 754 floating-point semantics versus integer division behavior.\n- Distinguishes between infinity propagation (silent data corruption) and explicit error handling\u2014critical for production data quality.\n- Tests awareness of a common misconception: that division by zero always raises an error or returns null, rather than returning infinity for decimal types.\n- Reflects real debugging and production ETL scenarios where silent infinity values cause downstream failures or incorrect analytics.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Power Query M Language \u2013 Formulas, Let\u2026In Structure, Custom Columns",
+      "difficulty_level": 5
+    }
+  },
+  {
+    "id": "MICROS_DATATYPECO_1_1_1_58b282",
+    "text": "You are preparing data in **Power Query Editor** for a sales dataset. The **OrderDate** column contains values stored as text in the format \"2024-01-15\", but Power BI is treating them as text strings rather than dates. You need to ensure these values are recognized as proper date values for time-based analysis and filtering. Which action should you take?",
+    "options": {
+      "A": "Select the **OrderDate** column, click **Data Type** in the Home ribbon, and change it from Text to **Date**",
+      "B": "Right-click the column header and select **Replace Values** to convert all entries to date format",
+      "C": "Create a new custom column using the **Date.From()** function and delete the original column",
+      "D": "Apply a **Remove Duplicates** filter and then manually edit each cell to the date data type"
+    },
+    "correct_answer": "A",
+    "explanation": "**Statement 1 \u2014 TRUE:** Changing the **data type** directly in **Power Query Editor** is the standard and most efficient method for data type conversion. In the **Home** ribbon, the **Data Type** dropdown allows you to convert a column from one type (e.g., Text) to another (e.g., Date) with a single action.\n\n**Statement 2 \u2014 FALSE:** **Replace Values** is used to substitute specific cell values within a column, not to change the underlying data type of the entire column.\n\n**Statement 3 \u2014 FALSE:** While using **Date.From()** is a valid approach, it requires creating a new column and is unnecessarily complex for a straightforward type conversion when the direct **Data Type** change is available and appropriate.\n\n**Statement 4 \u2014 FALSE:** **Remove Duplicates** is used to eliminate duplicate rows, not to perform data type conversion. Manual cell editing is neither scalable nor the recommended approach for bulk data type changes.\n\n**Best Practice:** Always use the **Data Type** button in **Power Query Editor** for direct and efficient column-level data type conversions during the data preparation phase.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Data Type Conversion, Replace Values, Remove Duplicates & Errors",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "MICROS_DATATYPECO_1_1_2_97c6f4",
+    "text": "You are working with a dataset in **Power Query** that contains a column named 'OrderQuantity' with mixed data types. Some cells contain text values (e.g., \"12 units\", \"5 items\"), while others contain numeric values (e.g., 8, 15, 22). You need to standardize this column so that all values are numeric integers for calculation purposes. Which approach is the most direct way to handle this transformation in Power Query?",
+    "options": {
+      "A": "Use the **Data Type** button in the **Transform** ribbon and select **Whole Number** to convert all values at once.",
+      "B": "Use **Replace Values** (or text transformation functions) to remove all non-numeric characters first, then change the data type to **Whole Number**.",
+      "C": "Create a new custom column using a formula such as `Int32.From()`, then delete the original column.",
+      "D": "Select the column and use **Remove Errors** from the **Transform** ribbon to eliminate rows with conversion failures."
+    },
+    "correct_answer": "B",
+    "explanation": "**Statement 1 \u2014 TRUE:** For columns with mixed text and numeric content (e.g., \"12 units\", \"5 items\"), the most practical and direct workflow in Power Query is to first use **Replace Values**, **Replace Errors**, or text transformation functions (such as `Text.Select()` or `Text.Remove()`) to strip non-numeric characters. This ensures a clean conversion path. **Statement 2 \u2014 TRUE:** After removing the text suffixes, changing the data type to **Whole Number** succeeds without errors. This two-step approach is the standard, reusable pattern for this scenario. **Statement 3 \u2014 FALSE (Option A):** While the **Data Type** button exists, attempting to convert a column containing text values like \"12 units\" directly to **Whole Number** will generate conversion errors. Power Query cannot parse \"12 units\" as an integer natively, so this step alone is incomplete. **Statement 4 \u2014 FALSE (Option C):** Creating a custom column with `Int32.From()` requires explicit formula construction and is less efficient than using built-in transform functions. Additionally, it requires extra steps to replace the original column. **Statement 5 \u2014 FALSE (Option D):** **Remove Errors** deletes entire rows where errors occur; it does not convert data types. This approach results in significant data loss and is not the correct solution. The best practice is to clean the text content first via **Replace Values** or text functions, then apply the type conversion, as described in Option B.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Data Type Conversion, Replace Values, Remove Duplicates & Errors",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "MICROS_DATATYPECO_2_1_1_56dafb",
+    "text": "You are preparing a dataset in **Power Query Editor** for a sales analysis report. A column named *UnitPrice* contains mixed data types: some values are stored as text (e.g., \"$24.75\", \"$51.20\"), while others are already numeric decimals (e.g., 18.50, 32.40). Additionally, the column includes several error values (#VALUE!) resulting from failed conversions. You need to ensure all values are converted to numeric type for aggregations while **preserving the currency-formatted entries as numeric data**.\n\nWhich combination of actions should you perform in the correct sequence to prepare this column for analysis?",
+    "options": {
+      "A": "Replace all error values with 0, then convert the entire column to Decimal Number type using the Data Type dropdown.",
+      "B": "Replace error values with null using **Replace Errors**, then use **Find & Replace** to remove the \"$\" symbol, then convert the column to Decimal Number type.",
+      "C": "Convert the column to Decimal Number type first, then remove any rows that still contain errors after conversion.",
+      "D": "Replace all error values with null, convert to Text type, then manually edit each remaining text entry before converting to Decimal Number."
+    },
+    "correct_answer": "B",
+    "explanation": "**Statement 1 \u2014 Why B is correct: TRUE**\nThe proper sequence for handling this mixed data type scenario while preserving currency-formatted values is:\n1. **Replace error values with null** \u2014 Using **Replace Errors** in Power Query, substitute #VALUE! errors with null (blank). This approach handles error cells non-destructively before subsequent transformation steps, preventing error values from persisting after type conversion.\n2. **Replace the \"$\" symbol** \u2014 Text values like \"$24.75\" contain non-numeric characters that block decimal conversion. Using **Find & Replace**, remove the currency symbol to make text values numeric-compatible. This step *salvages* the currency-formatted entries as numeric data.\n3. **Convert to Decimal Number** \u2014 Once the column contains only numeric text, null values, and existing decimals, the **Data Type** dropdown will successfully convert all non-null values to a true numeric type.\n\nThis sequence preserves the originally currency-formatted entries, which is critical when data preservation is required.\n\n**Statement 2 \u2014 Why A is incorrect: FALSE**\nReplacing errors with 0 is a value manipulation that masks data quality issues. More critically, the \"$\" symbol in text entries like \"$24.75\" is a non-numeric character that prevents conversion to Decimal Number type. Even after replacing errors with 0, the text values with \"$\" symbols will fail to convert or will generate new errors during the conversion step. The missing essential step is the removal of the \"$\" character itself using **Find & Replace** before type conversion.\n\n**Statement 3 \u2014 Why C is incorrect: FALSE**\nAttempting to convert a column containing mixed text (with \"$\" symbols) and #VALUE! errors directly to Decimal Number type causes partial conversion. Power Query successfully converts existing numeric values and numeric-formatted decimals, but text values like \"$24.75\" cannot be coerced and **generate new error rows during conversion**. This forces a subsequent step to remove those newly-created errors, resulting in data loss of the currency-formatted entries \u2014 the opposite of the requirement to preserve them. Option B avoids this data loss by cleaning the text format before conversion.\n\n**Statement 4 \u2014 Why D is incorrect: FALSE**\nConverting to Text type is a step backward \u2014 the objective is to achieve Decimal Number type for numeric operations. Manual editing defeats the purpose of automated transformation in Power Query and does not scale. Replacing errors with null before conversion is correct, but converting to Text type then back to Decimal Number is inefficient and unnecessary.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Data Type Conversion, Replace Values, Remove Duplicates & Errors",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "MICROS_DATATYPECO_2_1_2_524f82",
+    "text": "You are importing sales data into Power BI Desktop from a CSV file. The **OrderDate** column contains date values in text format as 'DD/MM/YYYY' (e.g., '25/03/2024'), but Power BI is interpreting them as text strings rather than dates. Additionally, the **ProductID** column contains some values stored as decimals (e.g., '1047.0', '1052.0') that should be whole numbers. You need to prepare this data in the **Power Query Editor** before loading it into the data model. Which sequence of transformations should you apply?",
+    "options": {
+      "A": "Change the data type of **OrderDate** to **Date** using the locale setting for DD/MM/YYYY format, then change **ProductID** to **Whole Number** data type.",
+      "B": "Use **Replace Values** to remove the decimal points from **ProductID**, then manually convert each date string in **OrderDate** using a custom column.",
+      "C": "Apply **Remove Duplicates** on both columns first to clean the data, then change data types in the **Column From Examples** feature.",
+      "D": "Convert **OrderDate** to **Text** to preserve the format, then use **Replace Values** to swap '1047.0' and '1052.0' with their integer equivalents throughout the column."
+    },
+    "correct_answer": "A",
+    "explanation": "**Statement 1 \u2014 Correct Approach:**\n\nWhen transforming data in **Power Query Editor**, the most direct and efficient method is to use the **Change Type** operation on each column with the appropriate data type setting:\n\n\u2022 For **OrderDate**: Changing to **Date** type allows you to specify the locale/format (DD/MM/YYYY). Power Query will automatically parse the text values using the correct date format.\n\u2022 For **ProductID**: Changing to **Whole Number** removes the decimal component and converts the column to the correct numeric type for product identifiers.\n\nThis approach uses native **Power Query transformations** designed specifically for data type conversion, ensuring compatibility with the data model and avoiding manual workarounds.\n\n**Statement 2 \u2014 Why B is incorrect:**\n\nUsing **Replace Values** to remove decimals is a text manipulation approach that bypasses proper data type conversion. While it might visually remove the '.0', the column remains in a problematic state. **Column From Examples** is designed for pattern inference, not bulk type conversion, and is inefficient for this task.\n\n**Statement 3 \u2014 Why C is incorrect:**\n\n**Remove Duplicates** is used to eliminate record-level redundancy, not to fix data type issues. Running it before type conversion adds unnecessary processing and does not address the core problem of incorrect column types.\n\n**Statement 4 \u2014 Why D is incorrect:**\n\nConverting **OrderDate** to **Text** moves in the wrong direction\u2014it prevents date-based calculations and filtering in Power BI. **Replace Values** on **ProductID** is an anti-pattern for systematic type conversion; it only targets specific values rather than transforming the entire column type.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Data Type Conversion, Replace Values, Remove Duplicates & Errors",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "MICROS_DATATYPECO_3_1_1_b34756",
+    "text": "You are preparing a **Power Query** transformation for a sales dataset loaded from a CSV file. The **OrderDate** column was imported as **Text** data type and contains mixed formats including valid dates like `\"2023-07-14\"`, blank strings `\"\"`, and entries like `\"N/A\"`. You need to: (1) convert **OrderDate** to a **Date** data type, (2) replace any conversion errors with `null`, and (3) remove duplicate rows based on a composite key of **OrderID** and **OrderDate**. Which sequence of **Power Query** steps correctly achieves all three requirements?",
+    "options": {
+      "A": "Remove Duplicates on **OrderID** and **OrderDate** \u2192 Change Type to **Date** \u2192 Replace Errors with `null`",
+      "B": "Change Type to **Date** \u2192 Replace Errors with `null` \u2192 Remove Duplicates on **OrderID** and **OrderDate**",
+      "C": "Replace Values (`\"N/A\"` \u2192 `null`) \u2192 Remove Duplicates on **OrderID** and **OrderDate** \u2192 Change Type to **Date**",
+      "D": "Change Type to **Date** \u2192 Remove Duplicates on **OrderID** and **OrderDate** \u2192 Replace Errors with `null`"
+    },
+    "correct_answer": "B",
+    "explanation": "**The correct sequence is: Change Type \u2192 Replace Errors \u2192 Remove Duplicates.**\n\n**Option B \u2014 CORRECT:** First, **Change Type to Date** attempts to parse every text value into a date. Entries like `\"N/A\"` and blank strings `\"\"` that cannot be parsed become **errors** in the column. Next, **Replace Errors with `null`** converts all those errors into `null` values, giving the column a clean, uniform state. Finally, **Remove Duplicates** on the composite key **OrderID** + **OrderDate** operates on the fully cleaned column, ensuring that `null` values are treated consistently and duplicate rows are correctly identified and removed.\n\n**Option A \u2014 INCORRECT:** Attempting to remove duplicates *before* the type conversion means the **OrderDate** column still holds mixed text strings. Duplicates cannot be reliably matched across different text representations of the same date (e.g., whitespace differences), and subsequent type conversion will still produce errors that are never handled.\n\n**Option C \u2014 INCORRECT:** Replacing only the literal string `\"N/A\"` with `null` does not handle all non-parseable values (e.g., blank strings or other malformed entries). Removing duplicates before converting the type is also problematic for the same reasons as Option A.\n\n**Option D \u2014 INCORRECT:** Performing **Remove Duplicates** after type conversion but *before* **Replace Errors** means rows containing error values in **OrderDate** may be inconsistently deduplicated, because **Power Query** treats error cells differently from valid date or `null` cells during row comparison. The Replace Errors step must precede Remove Duplicates to ensure a clean, error-free column for reliable deduplication.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Data Type Conversion, Replace Values, Remove Duplicates & Errors",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "MICROS_DATATYPECO_3_1_2_7cf43f",
+    "text": "You are preparing a sales dataset in **Power Query Editor** for a retail analysis report. The dataset contains 52,400 rows with the following issues:\n\n\u2022 A **ProductID** column contains values formatted as text (e.g., \"PRD-00789\") mixed with numeric-only entries (e.g., \"1024\"), and some ProductID values appear in multiple rows with inconsistent formatting (e.g., \"PRD-00456\" and \"00456\" referring to the same product).\n\u2022 A **SalesAmount** column has 247 null values and 156 rows where the text value \"Error\" appears instead of actual numbers.\n\u2022 A **TransactionDate** column uses mixed date formats: some rows show \"2024-05-22\", others show \"22/05/2024\", and 34 rows contain completely invalid date strings.\n\u2022 A **RegionCode** column has 89 rows with leading/trailing spaces and inconsistent case (\"North \", \" SOUTH\", \"east\").\n\nYour goal is to produce a clean, analysis-ready dataset. Which transformation approach is most effective?",
+    "options": {
+      "A": "Remove all rows with any null, error, or invalid values first to ensure data consistency, then convert data types and standardize formats on the remaining rows.",
+      "B": "Convert data types, standardize text formatting (ProductID, dates, RegionCode), and trim whitespace **first** to establish a consistent data structure, then identify and handle duplicates and invalid values on the normalized dataset.",
+      "C": "Standardize the RegionCode column formatting first (trim and case normalization) because it has the fewest errors, then handle date conversion, then resolve ProductID formatting, then remove errors from SalesAmount.",
+      "D": "Replace all \"Error\" and null values in SalesAmount with a placeholder before any type conversion to avoid losing rows, then standardize formats, then remove any remaining invalid entries."
+    },
+    "correct_answer": "B",
+    "explanation": "**Statement 1 \u2014 Standardization before validation enables accurate error detection \u2014 TRUE:** Converting data types and standardizing formats first establishes a **consistent data structure** upon which subsequent operations (duplicate identification, null handling, error classification) can operate reliably. This approach ensures:\n\n\u2022 Near-duplicates obscured by inconsistent formatting (e.g., \"PRD-00456\" vs. \"00456\") become detectable after normalization.\n\u2022 Date format unification prevents invalid-date misclassification due to regional format confusion.\n\u2022 Type conversion allows numeric and date operations to function correctly on the cleaned data.\n\u2022 Invalid values become clearly distinguishable from format issues.\n\n**Why Option B is correct:**\nNormalization (type conversion, whitespace trimming, case standardization) **must precede** duplicate detection and error handling because:\n\n\u2014 ProductID standardization reveals which values are true duplicates masked by formatting.\n\u2014 RegionCode trimming and case normalization prevent artificial row-count inflation.\n\u2014 TransactionDate format unification clarifies which dates are genuinely invalid vs. format-confused.\n\u2014 SalesAmount type alignment ensures that null vs. \"Error\" distinctions are meaningful.\n\nAfter normalization, you can accurately identify remaining duplicates, null values, and irreversible errors.\n\n**Why Option A is incorrect:**\nRemoving rows with errors prematurely **before format standardization** risks unnecessary data loss. For example, a date in \"22/05/2024\" format might appear invalid if the system expects \"YYYY-MM-DD\", but it is recoverable through format conversion. Discarding it before attempting standardization violates data-preservation principles.\n\n**Why Option C is incorrect:**\nApplying transformations in random sequence (RegionCode first, then dates, then ProductID) lacks principled structure. There is no logical reason to prioritize RegionCode (which has the fewest errors) over comprehensive structural standardization. This ad-hoc approach is inefficient and error-prone.\n\n**Why Option D is incorrect:**\nReplacing values before type conversion creates inconsistencies. If SalesAmount is stored as text and you replace \"Error\" with a placeholder before converting to numeric type, the placeholder may not convert correctly, or the replacement logic may conflict with subsequent type operations. Standard practice is to resolve structure (types/formats) before resolving content (values).\n\n**Key principle:** In Power Query and data preparation workflows, **structural standardization (type, format, whitespace) precedes content validation and error handling**. This ensures that duplicate detection, null identification, and error classification operate on comparable, consistently-formatted data.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Data Type Conversion, Replace Values, Remove Duplicates & Errors",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "MICROS_DATATYPECO_4_1_1_e92145",
+    "text": "You are preparing a sales dataset in **Power Query Editor**. The dataset contains a column named **OrderStatus** with values imported from a legacy CSV file. After profiling the column, you discover the following issues:\n\n- Some rows contain the text `\"cancelled\"` (lowercase) instead of `\"Cancelled\"` (title case)\n- Some rows contain the value `\"N/A\"` which should be treated as null\n- Several duplicate **OrderID** rows exist where all other column values are identical\n- The **UnitPrice** column is currently typed as *Text* but must be used in numeric aggregations\n\nA junior analyst suggests handling these issues in the following order inside a single **Power Query** transformation sequence:\n\n1. Remove duplicate rows based on **OrderID**\n2. Replace `\"N/A\"` with `null` in **OrderStatus**\n3. Replace `\"cancelled\"` with `\"Cancelled\"` in **OrderStatus**\n4. Change the data type of **UnitPrice** from *Text* to *Decimal Number*\n\nThe source data contains rows where **UnitPrice** holds the value `\"N/A\"`. After all four steps are applied, what is the **most likely outcome** regarding the **UnitPrice** column?",
+    "options": {
+      "A": "All rows load successfully because **Power Query** automatically converts `\"N/A\"` text values to null before changing the data type.",
+      "B": "The data type change on **UnitPrice** will produce **errors** on rows where `\"N/A\"` exists, because the Replace Values step in Step 2 only targets the **OrderStatus** column, leaving `\"N/A\"` in **UnitPrice** unconverted.",
+      "C": "The Remove Duplicates step in Step 1 will eliminate all rows containing `\"N/A\"` in **UnitPrice** before the data type change occurs, so no errors will appear.",
+      "D": "Changing the data type of **UnitPrice** to *Decimal Number* will silently coerce any non-numeric text to `0`, so no errors will be visible in the query output."
+    },
+    "correct_answer": "B",
+    "explanation": "**Option B \u2014 CORRECT:** In **Power Query**, each transformation step targets specific columns or conditions as explicitly defined. The **Replace Values** step in Step 2 is scoped only to the **OrderStatus** column \u2014 it does not affect **UnitPrice**. Therefore, when Step 4 changes the **UnitPrice** column's data type from *Text* to *Decimal Number*, any rows still containing the text `\"N/A\"` in **UnitPrice** cannot be converted to a numeric value, resulting in **Error** values in that column. These errors will propagate into any downstream measures or calculated columns that reference **UnitPrice**. The correct remediation is to add a separate **Replace Values** step targeting the **UnitPrice** column \u2014 replacing `\"N/A\"` with `null` \u2014 *before* the data type change.\n\n**Option A \u2014 INCORRECT:** **Power Query** does NOT automatically convert non-numeric text strings like `\"N/A\"` to null during a data type change. Instead, it generates explicit **Error** values for rows it cannot convert.\n\n**Option C \u2014 INCORRECT:** **Remove Duplicates** removes rows where *all* selected column values are identical. It is not a filter that targets rows based on specific cell values like `\"N/A\"` in a given column; rows with `\"N/A\"` in **UnitPrice** that are not exact full-row duplicates will remain in the dataset.\n\n**Option D \u2014 INCORRECT:** **Power Query** does NOT silently coerce unconvertible text to `0`. This behavior might occur in some other tools (e.g., certain database CAST functions with error handling), but in Power Query, unconvertible values produce visible **Error** entries, which must be explicitly handled using **Remove Errors** or **Replace Errors**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Data Type Conversion, Replace Values, Remove Duplicates & Errors",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "MICROS_POWERQUERY_1_1_1_382f52",
+    "text": "You are creating a custom column in **Power Query** to calculate the net revenue after applying a discount. The original column is named **SalesAmount**, and you need to apply a 15% discount. Which **M formula** correctly implements this calculation in a custom column?",
+    "options": {
+      "A": "[SalesAmount] * 0.85",
+      "B": "SalesAmount * 0.85",
+      "C": "[SalesAmount] - 15%",
+      "D": "= [SalesAmount] * 0.85"
+    },
+    "correct_answer": "A",
+    "explanation": "**Statement 1 \u2014 TRUE:** In **Power Query M language**, when referencing an existing column within a custom column formula, the column name must be enclosed in square brackets: **[SalesAmount]**. The formula **[SalesAmount] * 0.85** correctly multiplies the sales amount by 0.85 (which represents the 85% retained after a 15% discount).\n\n**Statement 2 \u2014 FALSE:** Option B is incorrect because the column reference lacks square brackets. Without them, **M** interprets 'SalesAmount' as a function or variable name rather than a column reference, causing a formula error.\n\n**Statement 3 \u2014 FALSE:** Option C uses invalid percentage syntax. **M** does not recognize '15%' as a valid mathematical operator in this context. Percentages must be expressed as decimal values (0.15 for 15%).\n\n**Statement 4 \u2014 FALSE:** Option D includes an equals sign at the beginning. In **Power Query**, custom column formulas do not require a leading '=' character\u2014this is a **Microsoft Excel** convention, not a **Power Query M** convention.\n\n**Key Concept:** The **let...in structure** and custom column formulas in **Power Query** require proper **M syntax**, including square brackets for column references and decimal notation for percentage-based calculations.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Power Query M Language \u2013 Formulas, Let\u2026In Structure, Custom Columns",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "MICROS_POWERQUERY_1_1_2_663f0f",
+    "text": "You are working in **Power Query** to transform a dataset containing employee salary information. You need to create a custom column that calculates the annual bonus as 12% of the monthly salary. Which of the following M language formulas is the correct syntax to add this custom column?",
+    "options": {
+      "A": "[MonthlyS] * 0.12",
+      "B": "= [MonthlySalary] * 0.12",
+      "C": "[MonthlySalary] * 0.12",
+      "D": "let Bonus = [MonthlySalary] * 0.12 in Bonus"
+    },
+    "correct_answer": "C",
+    "explanation": "**Statement 1 \u2014 TRUE:** In **Power Query Editor**, when creating a custom column, the M formula expression does NOT require the equals sign (=) prefix. The equals sign is only used in **DAX** formulas or at the top level of the query editor.\n\n**Statement 2 \u2014 TRUE:** Option A uses an incomplete column name `[MonthlyS]` which would cause an error if the actual column is named `[MonthlySalary]`.\n\n**Statement 3 \u2014 TRUE:** Option B incorrectly includes the equals sign before the bracket notation, which is not valid syntax for a **custom column** in Power Query.\n\n**Statement 4 \u2014 TRUE:** Option D demonstrates the **let...in** structure, which is used for defining variables and multiple steps in the M language, but is unnecessary and incorrect for a simple custom column calculation.\n\n**Correct Answer Reasoning:** Option C uses the proper syntax for a **custom column** formula in Power Query. The column reference `[MonthlySalary]` is enclosed in brackets, and the multiplication operator multiplies by 0.12 (equivalent to 12%). This formula will be evaluated for each row automatically.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Power Query M Language \u2013 Formulas, Let\u2026In Structure, Custom Columns",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "MICROS_POWERQUERY_2_1_1_77eb80",
+    "text": "You are transforming a dataset in **Power Query** that contains a column named `SalesAmount` with values in decimal format. You need to create a custom column called `CommissionRate` that applies a conditional formula: if `SalesAmount` is greater than $45,000, the commission rate should be 8%, otherwise 5%. You decide to use the **Let\u2026In** structure for clarity and reusability.\n\nWhich M formula correctly implements this logic?",
+    "options": {
+      "A": "let SalesThreshold = 45000, Rate_High = 0.08, Rate_Low = 0.05 in if [SalesAmount] > SalesThreshold then Rate_High else Rate_Low",
+      "B": "let SalesThreshold = 45000, Rate_High = 0.08, Rate_Low = 0.05 in if SalesAmount > SalesThreshold then Rate_High else Rate_Low",
+      "C": "if [SalesAmount] > 45000 then 0.08 else 0.05",
+      "D": "let Rate_High = 0.08, Rate_Low = 0.05 in if [SalesAmount] >= 45000 then Rate_High else Rate_Low"
+    },
+    "correct_answer": "A",
+    "explanation": "**Statement 1 \u2014 TRUE:** Option A correctly uses the **Let\u2026In** structure to define reusable variables (`SalesThreshold`, `Rate_High`, `Rate_Low`) in the **let** clause, then applies the conditional logic in the **in** clause.\n\n**Statement 2 \u2014 TRUE:** Within a custom column context, column references in M must be enclosed in square brackets\u2014`[SalesAmount]` is the correct syntax, not bare `SalesAmount`.\n\n**Statement 3 \u2014 TRUE:** The comparison operator `>` (strictly greater than) correctly matches the requirement \"greater than $45,000\" (not \"greater than or equal to\").\n\n**Why B is incorrect:** Uses bare `SalesAmount` instead of `[SalesAmount]`, which causes a runtime error in Power Query.\n\n**Why C is incorrect:** While syntactically valid, it does not use the **Let\u2026In** structure as specified in the requirement, making it less maintainable and reusable.\n\n**Why D is incorrect:** Uses `>=` (greater than or equal to) instead of `>`, which violates the stated business logic that the threshold is strictly greater than $45,000.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Power Query M Language \u2013 Formulas, Let\u2026In Structure, Custom Columns",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "MICROS_POWERQUERY_2_1_2_ac025c",
+    "text": "You are working with a **Power Query** transformation in Power BI Desktop. You need to create a custom column that calculates the total revenue for each transaction by multiplying the **UnitPrice** column by the **Quantity** column. The resulting values should be rounded to two decimal places.\n\nWhich **M formula** should you use in the **Add Custom Column** dialog to achieve this?",
+    "options": {
+      "A": "[UnitPrice] * [Quantity]",
+      "B": "round([UnitPrice] * [Quantity], 2)",
+      "C": "Number.Round([UnitPrice] * [Quantity], 2)",
+      "D": "let Revenue = [UnitPrice] * [Quantity] in round(Revenue, 2)"
+    },
+    "correct_answer": "C",
+    "explanation": "**Statement 1 \u2014 Why A is incorrect:** [UnitPrice] * [Quantity] performs multiplication but does not round the result to two decimal places. The question explicitly requires rounding to two decimal places, so this answer is incomplete.\n\n**Statement 2 \u2014 Why B is incorrect:** round() is not a standard **M language** function in Power Query. This syntax would result in a formula error. Power Query uses the **Number.Round()** function instead, which is part of the Power Query function library.\n\n**Statement 3 \u2014 Why C is CORRECT:** **Number.Round([UnitPrice] * [Quantity], 2)** is the correct **M formula** for this task. It uses the proper **Power Query M function** **Number.Round()** with two parameters: the calculation to round and the number of decimal places (2). This directly multiplies the two columns and rounds to exactly two decimal places, meeting all requirements.\n\n**Statement 4 \u2014 Why D is incorrect:** While the **let\u2026in** structure is valid in M language for defining intermediate values, it is unnecessarily complex for a simple custom column. The **Add Custom Column** feature in Power Query's UI does not require the **let\u2026in** syntax for basic operations. Additionally, the syntax uses lowercase `round()` which is incorrect; it should be **Number.Round()** if using this pattern.\n\n**Key concept:** In **Power Query M language**, rounding is performed using **Number.Round()** function, not the Excel-style **round()** function. Custom columns in the Power Query editor accept M expressions directly.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Power Query M Language \u2013 Formulas, Let\u2026In Structure, Custom Columns",
+      "difficulty_level": 2,
+      "question_type": "Direct Application",
+      "skill_tested": "Ability to write correct M language formulas for custom column calculations in Power Query"
+    }
+  },
+  {
+    "id": "MICROS_POWERQUERY_3_1_1_a622e2",
+    "text": "You are preparing sales data in **Power Query** for a retail company. Your source table contains a column named `UnitPrice` (decimal values) and a column named `Quantity` (integers). You need to create a custom column called `LineTotal` that calculates the product of these two columns, rounded to two decimal places. Additionally, you must filter out any rows where the calculated `LineTotal` is less than $10.00. You decide to use **M language** with a **let\u2026in structure** to handle both the custom column creation and the filtering in a single query step. Which of the following M expressions correctly implements this requirement?",
+    "options": {
+      "A": "let Source = Table.FromRecords({[UnitPrice=6.25, Quantity=2], [UnitPrice=9.40, Quantity=1], [UnitPrice=11.50, Quantity=3]}), AddLineTotal = Table.AddColumn(Source, \"LineTotal\", each Number.Round([UnitPrice] * [Quantity], 2)), FilteredTable = Table.SelectRows(AddLineTotal, each [LineTotal] >= 10) in FilteredTable",
+      "B": "let Source = Table.FromRecords({[UnitPrice=6.25, Quantity=2], [UnitPrice=9.40, Quantity=1], [UnitPrice=11.50, Quantity=3]}), AddLineTotal = Table.AddColumn(Source, \"LineTotal\", each [UnitPrice] * [Quantity]), FilteredTable = Table.SelectRows(AddLineTotal, each Number.Round([LineTotal], 2) >= 10) in FilteredTable",
+      "C": "let Source = Table.FromRecords({[UnitPrice=6.25, Quantity=2], [UnitPrice=9.40, Quantity=1], [UnitPrice=11.50, Quantity=3]}), AddLineTotal = Table.AddColumn(Source, \"LineTotal\", each Number.RoundUp([UnitPrice] * [Quantity], 2)), FilteredTable = Table.SelectRows(AddLineTotal, each [LineTotal] < 10) in FilteredTable",
+      "D": "let Source = Table.FromRecords({[UnitPrice=6.25, Quantity=2], [UnitPrice=9.40, Quantity=1], [UnitPrice=11.50, Quantity=3]}), AddLineTotal = each Number.Round([UnitPrice] * [Quantity], 2), FilteredTable = Table.SelectRows(Source, each [LineTotal] >= 10) in FilteredTable"
+    },
+    "correct_answer": "A",
+    "explanation": "**Statement 1 \u2014 Correct Structure: Option A uses the proper let\u2026in pattern** \u2014 TRUE. The **let\u2026in structure** in M language allows you to define multiple intermediate steps (bindings) and return a final result. Option A correctly:\n\n1. Defines `Source` as the input table\n2. Uses **Table.AddColumn()** with an **each expression** to create `LineTotal` by multiplying `[UnitPrice]` and `[Quantity]`\n3. Applies **Number.Round()** within the custom column expression to round to two decimal places\n4. Uses **Table.SelectRows()** with a filter condition `[LineTotal] >= 10` to exclude rows below $10.00\n5. Returns `FilteredTable` as the final result\n\n**Statement 2 \u2014 Why Option B is incorrect** \u2014 TRUE. Option B creates the custom column without rounding the stored value\u2014it only rounds during the filter condition evaluation. The `LineTotal` column in the output table contains unrounded decimal values, which violates the requirement to round values to two decimal places during column creation. The filter would still operate correctly on the unrounded values, but the core requirement (rounded column values) is not met.\n\n**Statement 3 \u2014 Why Option C is incorrect** \u2014 TRUE. Option C uses **Number.RoundUp()** instead of **Number.Round()**, which artificially inflates values and does not comply with standard rounding rules. Additionally, it filters using `each [LineTotal] < 10`, which reverses the requirement and retains only rows *below* $10.00 instead of filtering them out.\n\n**Statement 4 \u2014 Why Option D is incorrect** \u2014 TRUE. Option D breaks the let\u2026in pattern fundamentally. The line `AddLineTotal = each Number.Round(...)` assigns a lambda expression rather than executing **Table.AddColumn()** to add a column to the table. No column is actually created, and the subsequent filter step references `[LineTotal]`, which does not exist in `Source`, causing a runtime error.\n\n**Key concepts**: *let\u2026in binding structure*, **Table.AddColumn()** with **each expressions**, **Number.Round()** function, **Table.SelectRows()** for filtering, proper column definition and transformation sequencing in M.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Power Query M Language \u2013 Formulas, Let\u2026In Structure, Custom Columns",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "MICROS_POWERQUERY_3_1_2_8c239b",
+    "text": "A **Power Query** developer writes the following **M** expression in a custom column:\n\n```\nlet\n    basePrice = [UnitPrice],\n    discountRate = if [CustomerTier] = \"Gold\" then 0.20 else if [CustomerTier] = \"Silver\" then 0.10 else 0.05,\n    discountedPrice = basePrice * (1 - discountRate)\nin\n    discountedPrice\n```\n\nA row has **UnitPrice = 250** and **CustomerTier = \"Bronze\"**. What value does this custom column return for that row?",
+    "options": {
+      "A": "200.00",
+      "B": "225.00",
+      "C": "237.50",
+      "D": "212.50"
+    },
+    "correct_answer": "C",
+    "explanation": "**Tracing the let\u2026in structure step by step:**\n\n**Step 1 \u2014 basePrice:** Bound to `[UnitPrice]` = **250**.\n\n**Step 2 \u2014 discountRate:** The expression evaluates the nested `if` chain:\n- `[CustomerTier] = \"Gold\"` \u2192 FALSE\n- `[CustomerTier] = \"Silver\"` \u2192 FALSE\n- Falls to the final `else` branch \u2192 **0.05**\n\n\"Bronze\" is not \"Gold\" or \"Silver\", so it receives the default rate of **5%**.\n\n**Step 3 \u2014 discountedPrice:** $250 \\times (1 - 0.05) = 250 \\times 0.95 = \\mathbf{237.50}$\n\n**Step 4 \u2014 in clause:** Returns `discountedPrice` = **237.50**.\n\n**Why the distractors are wrong:**\n- **A (200.00):** Would result from a 20% Gold discount \u2014 $250 \\times 0.80$.\n- **B (225.00):** Would result from a 10% Silver discount \u2014 $250 \\times 0.90$.\n- **D (212.50):** Would result from a 15% discount \u2014 $250 \\times 0.85$ \u2014 which is not a defined tier rate in this expression.\n\nThe *let\u2026in* structure in **Power Query M language** allows sequential binding of named variables. Each variable is available to subsequent steps, and the `in` clause specifies the final return value. In a **custom column** formula, `[ColumnName]` references values from the current row of the table.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Power Query M Language \u2013 Formulas, Let\u2026In Structure, Custom Columns",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "MICROS_POWERQUERY_4_1_1_68f573",
+    "text": "You are developing a **Power Query** transformation in Power BI Desktop. Your source data contains a **SalesData** table with columns: **OrderID**, **CustomerName**, **Amount**, and **TransactionDate**. You need to create a custom column that calculates a **tiered discount** based on the following business rules:\n\n\u2022 If Amount < 500, discount = 0%\n\u2022 If Amount \u2265 500 AND Amount < 1500, discount = 5%\n\u2022 If Amount \u2265 1500, discount = 12%\n\nYou must then filter the result to include only rows where the final discounted amount (Amount minus discount) exceeds 600.\n\nWhich **M formula** correctly implements this logic using a **let\u2026in** structure?",
+    "options": {
+      "A": "let\n  Source = SalesData,\n  DiscountedAmount = Table.AddColumn(Source, \"FinalAmount\", each if [Amount] < 500 then [Amount] else if [Amount] < 1000 then [Amount] * 0.95 else [Amount] * 0.88),\n  FilteredData = Table.SelectRows(DiscountedAmount, each [FinalAmount] > 600)\nin\n  FilteredData",
+      "B": "let\n  Source = SalesData,\n  DiscountedAmount = Table.AddColumn(Source, \"FinalAmount\", each if [Amount] < 500 then [Amount] * 0 else if [Amount] < 1500 then [Amount] - 75 else [Amount] - 180),\n  FilteredData = Table.SelectRows(DiscountedAmount, each [FinalAmount] > 600)\nin\n  FilteredData",
+      "C": "let\n  Source = SalesData,\n  AddDiscount = Table.AddColumn(Source, \"Discount\", each if [Amount] < 500 then 0 else if [Amount] < 1500 then 0.05 else 0.12),\n  DiscountedAmount = Table.AddColumn(AddDiscount, \"FinalAmount\", each [Amount] * (1 - [Discount])),\n  FilteredData = Table.SelectRows(DiscountedAmount, each [FinalAmount] > 600)\nin\n  FilteredData",
+      "D": "let\n  Source = SalesData,\n  DiscountedAmount = Table.AddColumn(Source, \"FinalAmount\", each if [Amount] < 500 then [Amount] else if [Amount] < 1500 then [Amount] - 0.05 else [Amount] - 0.12),\n  FilteredData = Table.SelectRows(DiscountedAmount, each [FinalAmount] > 600)\nin\n  FilteredData"
+    },
+    "correct_answer": "C",
+    "explanation": "**Why Option C is correct:**\n\nOption **C** correctly implements the **let\u2026in** structure with proper **tiered discount logic** and follows best-practice M language patterns:\n\n1. **Creates an intermediate column** (**Discount**) using nested **if** statements to calculate the discount percentage:\n   - Amount < 500 \u2192 0% discount (0)\n   - Amount \u2265 500 AND < 1500 \u2192 5% discount (0.05)\n   - Amount \u2265 1500 \u2192 12% discount (0.12)\n\n2. **Applies the discount** in a second **Table.AddColumn** call: `[Amount] * (1 - [Discount])` correctly computes the final amount by subtracting the percentage discount from the original amount.\n\n3. **Filters correctly** using `Table.SelectRows()` with the condition `[FinalAmount] > 600`.\n\n4. **Separates concerns** by explicitly creating a Discount column before calculating FinalAmount, improving readability and maintainability in production transformations.\n\n5. **Uses proper M syntax** for referencing column values with square brackets and the **each** keyword for row-level operations.\n\n---\n\n**Why Option A is incorrect:**\n\nOption A contains a **boundary error** in the second condition:\n- Uses `if [Amount] < 1000` instead of `if [Amount] < 1500`\n- This means amounts between 1000 and 1500 would incorrectly receive a 5% discount (0.95 multiplier) instead of the correct 12% discount (0.88 multiplier)\n- Example: An amount of $1,200 would calculate as $1,200 \u00d7 0.95 = $1,140 (5% discount) instead of $1,200 \u00d7 0.88 = $1,056 (12% discount)\n- This violates the stated business rule threshold of $1,500\n\n---\n\n**Why Option B is incorrect:**\n\nOption B uses **hardcoded subtraction values** instead of percentage-based calculations:\n- For the 0% tier: `[Amount] * 0` returns 0 (not the original amount), making FinalAmount = 0 for all rows with Amount < 500. This is fundamentally wrong.\n- For the 5% tier: Uses `-75` instead of applying 5% percentage discount\n- For the 12% tier: Uses `-180` instead of applying 12% percentage discount\n- This assumes all transactions in each tier have identical discount amounts (impossible without knowing exact business context)\n- Violates the requirement for **percentage-based tiered discounts**\n\n---\n\n**Why Option D is incorrect:**\n\nOption D's conditional formula is fundamentally broken:\n- For the 5% tier: `[Amount] - 0.05` subtracts the literal value 0.05 from Amount (not 5%)\n- For the 12% tier: `[Amount] - 0.12` subtracts the literal value 0.12 from Amount (not 12%)\n- Example: An amount of $1,000 would result in $1,000 - 0.05 = $999.95, not $950 (which is the correct 5% discount)\n- This represents **arithmetic nonsense** in the discount calculation context\n\n---\n\n**Key Concept: Multi-step Let\u2026In Structure**\n\nThe **let\u2026in** structure in Power Query M allows intermediate variable assignment for improved clarity and debugging. Option C demonstrates best practice by separating discount calculation from final amount computation, making transformations more auditable and maintainable \u2014 critical for production Power BI solutions.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Power Query M Language \u2013 Formulas, Let\u2026In Structure, Custom Columns",
+      "difficulty_level": 4,
+      "keywords": [
+        "Power Query M",
+        "let...in structure",
+        "Table.AddColumn",
+        "conditional logic",
+        "custom columns",
+        "data transformation",
+        "filtering",
+        "nested if statements",
+        "boundary conditions",
+        "percentage calculations"
+      ]
+    }
+  },
+  {
+    "id": "MICROS_POWERQUERY_4_1_2_572ddf",
+    "text": "A **Power Query** analyst is building a query to process an employee dataset. The analyst writes the following **M** expression:\n\n```\nlet\n    Source = Excel.Workbook(File.Contents(\"HR_Data.xlsx\"), null, true),\n    RawTable = Source{[Item=\"Employees\",Kind=\"Sheet\"]}[Data],\n    PromotedHeaders = Table.PromoteHeaders(RawTable, [PromoteAllScalars=true]),\n    TypedTable = Table.TransformColumnTypes(PromotedHeaders,{{\"HireDate\", type date},{\"Salary\", type number}}),\n    AddedTenure = Table.AddColumn(TypedTable, \"TenureYears\", each Number.RoundDown(Duration.TotalDays(Date.From(DateTime.LocalNow()) - [HireDate]) / 365), type number),\n    FilteredTable = Table.SelectRows(AddedTenure, each [TenureYears] >= 7 and [Salary] > 55000)\nin\n    FilteredTable\n```\n\nA new business rule requires that **only employees hired in Q1 (January, February, or March) of any year** should be included in the **FilteredTable** result, in addition to the existing conditions.\n\nWhich modification to the `FilteredTable` step correctly implements this additional rule?",
+    "options": {
+      "A": "```FilteredTable = Table.SelectRows(AddedTenure, each [TenureYears] >= 7 and [Salary] > 55000 and Date.Month([HireDate]) <= 3)```",
+      "B": "```FilteredTable = Table.SelectRows(AddedTenure, each [TenureYears] >= 7 and [Salary] > 55000 and Date.QuarterOfYear([HireDate]) = 1)```",
+      "C": "```FilteredTable = Table.SelectRows(AddedTenure, each [TenureYears] >= 7 and [Salary] > 55000 and Date.Month([HireDate]) = {1,2,3})```",
+      "D": "```FilteredTable = Table.SelectRows(AddedTenure, each [TenureYears] >= 7 and [Salary] > 55000 and List.Contains({1,2,3}, Date.Month([HireDate])))```"
+    },
+    "correct_answer": "D",
+    "explanation": "**Option D \u2014 CORRECT:** `List.Contains({1,2,3}, Date.Month([HireDate]))` is the idiomatic and correct **M language** approach to check whether a scalar value belongs to a list. `Date.Month([HireDate])` returns an integer (1\u201312), and `List.Contains` checks membership in the list `{1,2,3}`. This correctly isolates January, February, and March.\n\n**Option A \u2014 Partially Correct but Fragile:** `Date.Month([HireDate]) <= 3` would technically work for filtering months 1, 2, and 3, but it is non-idiomatic and semantically ambiguous \u2014 it does not communicate *Q1 membership* clearly. More importantly, this approach breaks if the intent later includes non-contiguous months, making it a poor practice choice in a scenario-based exam context. However, it would yield the same result here, making D the **best** answer due to idiomatic correctness.\n\n**Option B \u2014 INCORRECT:** `Date.QuarterOfYear` is **not a built-in M function**. The correct function is `Date.QuarterOfYear` does not exist in the standard **Power Query M** library. There is no native `Date.QuarterOfYear` function \u2014 this is a common distractor confusing M with **DAX** (`QUARTER()`) or **Excel** functions.\n\n**Option C \u2014 INCORRECT:** `Date.Month([HireDate]) = {1,2,3}` is a type mismatch error. `Date.Month` returns a `number`, and comparing a scalar `number` to a `list` using `=` in M will either return `false` or raise an error \u2014 it does not perform a membership test.\n\n**Key concepts tested:** **M language** `List.Contains` for set membership, `Date.Month` function, the `let\u2026in` structure for sequential step dependencies, and correct modification of a **Table.SelectRows** predicate in **Power Query**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Power Query M Language \u2013 Formulas, Let\u2026In Structure, Custom Columns",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "MICROS_POWERQUERY_5_1_1_ce71dd",
+    "text": "A Power BI developer is building a query in **Power Query Editor**. The source table contains a column named **RawDate** with values stored as text in the format `'YYYYWWW'` \u2014 for example, `'2024W03'` means the **3rd ISO week of 2024**. The developer needs to create a custom column called **WeekStartDate** that returns the Monday of that ISO week as a proper **date** value.\n\nThe developer writes the following **M** expression inside a `let\u2026in` block:\n\n```\nlet\n    YearPart = Number.From(Text.Start([RawDate], 4)),\n    WeekPart = Number.From(Text.End([RawDate], 2)),\n    Jan4     = #date(YearPart, 1, 4),\n    Jan4DOW  = Date.DayOfWeek(Jan4, Day.Monday),\n    ISOMonday = Date.AddDays(Jan4, -Jan4DOW + (WeekPart - 1) * 7)\nin\n    ISOMonday\n```\n\nA colleague reviews the code and raises **three concerns**:\n\n**Concern 1:** `Text.End([RawDate], 2)` will extract the last 2 characters of `'2024W03'`, yielding `'03'` \u2014 this is **incorrect** and will cause an error when passed to `Number.From`.\n\n**Concern 2:** Using `Jan4` (January 4th) as the anchor date is a recognised technique for *ISO 8601* week calculation because January 4th is **always** in ISO Week 1.\n\n**Concern 3:** The `let\u2026in` expression shown cannot be used directly inside **Add Custom Column** in Power Query Editor; it must be wrapped inside a dedicated query function with a `(row) =>` parameter.",
+    "options": {
+      "A": "Only Concern 1 is correct \u2014 `Text.End([RawDate], 2)` returns `'03'` which **cannot** be parsed by `Number.From` without error.",
+      "B": "Only Concern 2 is correct \u2014 the January 4th anchor is a valid *ISO 8601* technique; Concerns 1 and 3 are both false.",
+      "C": "Concerns 1 and 3 are both correct; Concern 2 is false.",
+      "D": "Only Concern 3 is correct \u2014 `let\u2026in` blocks cannot be used inside **Add Custom Column**; Concerns 1 and 2 are both false."
+    },
+    "correct_answer": "B",
+    "explanation": "**Concern 1 \u2014 FALSE:** `Text.End('2024W03', 2)` extracts the last **2** characters, returning `'03'`. `Number.From('03')` in **M** successfully converts the text `'03'` to the number `3` \u2014 M's `Number.From` handles leading-zero numeric strings without error. So Concern 1 is incorrect.\n\n**Concern 2 \u2014 TRUE:** The *ISO 8601* standard guarantees that **January 4th** always falls within ISO Week 1 of its year. Using `#date(YearPart, 1, 4)`, subtracting its day-of-week offset (with Monday = 0 via `Day.Monday`), and then adding `(WeekPart - 1) * 7` days is a well-established algorithm for deriving the Monday of any ISO week. This concern is entirely correct.\n\n**Concern 3 \u2014 FALSE:** **Power Query M** fully supports `let\u2026in` expressions inside **Add Custom Column**. The formula bar in the *Add Custom Column* dialog accepts any valid M expression \u2014 including multi-step `let\u2026in` blocks \u2014 as the column formula. There is no requirement to wrap the logic in a separate query function. The colleague's concern is mistaken.\n\nTherefore, **only Concern 2 is correct**, making **B** the right answer.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Power Query M Language \u2013 Formulas, Let\u2026In Structure, Custom Columns",
+      "difficulty_level": 5
+    }
+  },
+  {
+    "id": "MICROS_POWERQUERY_5_1_2_9e3410",
+    "text": "A **Power BI** developer is building a data transformation pipeline in **Power Query**. The source table contains a column named **RawDate** with values stored as text in the format `'YYYYMMDD'` (e.g., `'20230914'`). The developer needs to create a **Custom Column** that returns the number of complete months between each **RawDate** value and a fixed reference date of `'20220101'`, using only **M language** without calling any external functions beyond the standard library.\n\nThe developer writes the following **M** expression for the custom column:\n\n```\nlet\n    parsed = Date.FromText(\n        Text.Start([RawDate], 4) & \"-\" &\n        Text.Middle([RawDate], 4, 2) & \"-\" &\n        Text.End([RawDate], 2)\n    ),\n    refDate = #date(2022, 1, 1),\n    monthDiff = (Date.Year(parsed) - Date.Year(refDate)) * 12\n                + (Date.Month(parsed) - Date.Month(refDate))\nin\n    monthDiff\n```\n\nFor a **RawDate** value of `'20231103'`, which result will this expression return, and what is the correct assessment of the expression's logic?",
+    "options": {
+      "A": "Returns **21**; the expression is fully correct and will accurately compute complete months for all valid input values.",
+      "B": "Returns **22**; the expression overcounts by one because `Date.FromText` adds an offset when reconstructing the date from text parts.",
+      "C": "Returns **21**; however, the expression does not account for partial months \u2014 it measures calendar-month boundaries, not elapsed 30-day periods \u2014 which may be intentional or a logic gap depending on requirements.",
+      "D": "The expression throws a runtime error because `Text.End([RawDate], 2)` extracts the year suffix rather than the day, producing an invalid date string passed to `Date.FromText`."
+    },
+    "correct_answer": "C",
+    "explanation": "**Step-by-step evaluation for RawDate = '20231103':**\n\n**Parsing the date:**\n- `Text.Start([RawDate], 4)` \u2192 `'2023'`\n- `Text.Middle([RawDate], 4, 2)` \u2192 `'11'`\n- `Text.End([RawDate], 2)` \u2192 `'03'`\n- Concatenated: `'2023-11-03'` \u2192 `Date.FromText` correctly yields `#date(2023, 11, 3)` \u2713\n\n**`Text.End` clarification (Option D is wrong):** `Text.End(text, count)` returns the **last** *count* characters. For `'20231103'`, the last 2 characters are `'03'` (the day), not the year. The constructed string `'2023-11-03'` is valid, so no runtime error occurs.\n\n**Month difference calculation:**\n- `(Date.Year(parsed) - Date.Year(refDate)) * 12` = `(2023 - 2022) * 12` = **12**\n- `Date.Month(parsed) - Date.Month(refDate)` = `11 - 1` = **10**\n- Total = `12 + 10` = **21** \u2713\n\n**Option B is wrong:** `Date.FromText` does not add any offset; it faithfully parses the ISO-format string.\n\n**Option A vs. Option C:** The expression correctly returns **21** for this input. However, the *critical nuance* is that `monthDiff` is computed purely from **calendar-month boundaries** (year/month components), not from counting 30-day intervals. For example, `'20220131'` and `'20220201'` would yield a month difference of **1** even though only 1 day has elapsed. This is a well-known **M language** gotcha: the formula counts month-number differences, meaning 'complete months' is only true in a calendar-boundary sense. Depending on business requirements, this may be intentional or a logic gap. **Option C** is the most precise and complete answer because it correctly states the return value **and** accurately characterises the limitation of the logic, which is what a complex PL-300 scenario requires the analyst to assess.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Power Query M Language \u2013 Formulas, Let\u2026In Structure, Custom Columns",
+      "difficulty_level": 5
+    }
+  },
+  {
+    "id": "MICROS_DATATYPECO_1_1_1_2ff08f",
+    "text": "You are working with a **Power Query** dataset containing a column named `UnitPrice` with values stored as text (e.g., '19.99', '45.50', '8.75'). You need to perform calculations on these prices in a **Power BI** report. Which transformation step should you perform first in the **Query Editor** to enable arithmetic operations?",
+    "options": {
+      "A": "Change the data type of the `UnitPrice` column from **Text** to **Decimal Number**",
+      "B": "Replace all text values with empty strings and then set the column type to **Whole Number**",
+      "C": "Remove duplicate price entries and then create a new calculated column",
+      "D": "Use the **Find & Replace** function to remove the decimal points, then set type to **Text**"
+    },
+    "correct_answer": "A",
+    "explanation": "**Statement 1 \u2014 TRUE:** When data is stored as **text**, Power BI and DAX cannot perform arithmetic operations directly on those values. **Statement 2 \u2014 TRUE:** The correct approach is to convert the data type from **Text** to **Decimal Number** (or **Fixed Decimal Number**) in **Power Query's Query Editor**. This is a foundational data transformation step performed during the **Prepare the Data** phase. **Statement 3 \u2014 FALSE:** Option B is incorrect because removing values and converting to **Whole Number** would lose decimal precision and is not the standard approach. **Statement 4 \u2014 FALSE:** Option C (removing duplicates first) is premature and does not solve the type conversion problem. **Statement 5 \u2014 FALSE:** Option D removes critical decimal information and leaves the data as text, preventing calculations. The **Change Type** command in the **Query Editor** ribbon (or right-click menu) is the direct, efficient solution for this core data preparation task.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Data Type Conversion, Replace Values, Remove Duplicates & Errors",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "MICROS_DATATYPECO_1_1_2_3df24f",
+    "text": "You are preparing data in **Power Query Editor** for a sales dataset. A column named `SalesAmount` contains values such as `275.30`, `150.95`, `null`, and `ERROR`. You need to convert this column to a **Decimal Number data type** and then remove all rows where `SalesAmount` is invalid, null, or contains errors. Which sequence of transformations should you apply?",
+    "options": {
+      "A": "Use **Replace Values** to replace `ERROR` and null with 0, then use **Change Type** to set the column to Decimal Number.",
+      "B": "Use **Change Type** to convert to Decimal Number (which converts `ERROR` to error rows), then use **Remove Errors**, then use **Remove Blank Rows** to remove null values.",
+      "C": "Use **Remove Duplicates** on the column, then change type to Decimal Number, then manually filter out errors in the report layer.",
+      "D": "Use **Change Type** to convert to Decimal Number, then use **Remove Blank Rows** only to remove all problematic rows."
+    },
+    "correct_answer": "B",
+    "explanation": "**Statement 1 \u2014 Why B is correct:** This option applies the correct three-step sequence to handle all data quality issues: (1) **Change Type** to Decimal Number converts unparseable `ERROR` text values into error rows, while null values remain null; (2) **Remove Errors** eliminates the error rows generated from the `ERROR` text; (3) **Remove Blank Rows** removes the null/blank rows. This complete sequence satisfies both requirements: handling invalid data types and removing null values.\n\n**Statement 2 \u2014 Why A is incorrect:** Replacing `ERROR` and null with 0 before type conversion masks data quality issues and distorts business metrics. The analysis would incorrectly treat 0 as a legitimate sales amount. This violates the *prepare-first, clean-first* principle and contaminates downstream analysis.\n\n**Statement 3 \u2014 Why C is incorrect:** **Remove Duplicates** is irrelevant; the issue is invalid data types and null values, not duplicate rows. Deferring error handling to the report layer instead of the data preparation layer allows corrupted data to propagate through models and visualizations, violating best practices for data governance.\n\n**Statement 4 \u2014 Why D is incorrect:** **Remove Blank Rows** alone cannot handle the `ERROR` text values. When **Change Type** is applied, `ERROR` becomes an error row that **Remove Blank Rows** does not remove (it only removes null/empty rows). After applying only **Remove Blank Rows**, the error rows remain in the dataset unresolved.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Data Type Conversion, Replace Values, Remove Duplicates & Errors",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "MICROS_DATATYPECO_2_1_1_c0f48a",
+    "text": "You are preparing data in **Power Query Editor** for a sales analysis report. A column named `UnitPrice` contains values imported as text (e.g., '29.95', '47.50', '12.99'). You need to convert these values to a decimal data type so you can perform arithmetic calculations and create accurate visualizations. After converting the data type, you notice one row contains the text value 'N/A' instead of a numeric value. What **will** happen when you attempt to change the data type of the `UnitPrice` column to **Decimal Number** with the 'N/A' value present?",
+    "options": {
+      "A": "The conversion will succeed without error; Power Query will automatically replace 'N/A' with 0.",
+      "B": "The conversion will fail completely, and you must replace or remove the 'N/A' value before the data type change can be applied.",
+      "C": "The conversion will succeed, but the row containing 'N/A' will be marked as an **Error** value. You can then use **Replace Errors** or **Remove Errors** to handle it.",
+      "D": "The conversion will succeed partially; only rows with valid numeric text will be converted, while 'N/A' remains as text in the column."
+    },
+    "correct_answer": "C",
+    "explanation": "**Statement 1 \u2014 Power Query Data Type Conversion with Invalid Values: TRUE.** When you change a column's data type in **Power Query Editor**, any value that cannot be converted to the target data type (in this case, **Decimal Number**) becomes an **Error** value. This is distinct from **null**; the cell is marked with an error indicator (typically a yellow warning icon or error symbol in the cell).\n\n**Statement 2 \u2014 Automatic Replacement with Zero: FALSE.** Power Query does not automatically replace invalid values with 0 (option A). This would cause silent data loss and is not the default behavior.\n\n**Statement 3 \u2014 Complete Conversion Failure: FALSE.** The conversion does not fail completely (option B). Power Query is permissive\u2014it converts what it can and flags problematic rows as **Error** values. You can then handle these errors using **Replace Errors** (to replace them with a value or null) or **Remove Errors** (to delete those rows).\n\n**Statement 4 \u2014 Partial Conversion with Mixed Types: FALSE.** Option D is incorrect. Once a data type change is applied, the entire column becomes that type; individual rows do not remain as mixed types. Invalid conversions become **Error** values, not retained as text.\n\n**Key Distinction:** In Power Query, **Error** and **null** are different states. An **Error** indicates a failed conversion; a **null** represents the absence of a value. When 'N/A' cannot be converted to **Decimal Number**, the cell becomes an **Error**, not a null.\n\n**Best Practice:** Before changing data types, use **Replace Values** to handle known non-numeric values like 'N/A', 'Unknown', or 'n/a' by replacing them with null or a numeric placeholder, or use **Remove Rows** if those records are not needed.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Data Type Conversion, Replace Values, Remove Duplicates & Errors",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "MICROS_DATATYPECO_2_1_2_3f09f4",
+    "text": "You are working with a dataset in **Power Query Editor** that contains a column named **\"SalesAmount\"** with mixed data types. Some values are stored as **text** (e.g., \"$1,234.56\"), while others are stored as **numbers** (e.g., 2847.19). You need to standardize this column for calculations and aggregations in your report.\n\nWhich sequence of steps should you perform to resolve this issue?",
+    "options": {
+      "A": "Select the **SalesAmount** column, click **Data Type** in the ribbon, choose **Decimal Number**, then use **Replace Values** to remove currency symbols and commas.",
+      "B": "Select the **SalesAmount** column, click **Data Type** in the ribbon, choose **Decimal Number**, then remove any null values from the column.",
+      "C": "Use **Replace Values** to remove currency symbols and commas first, then select the column and change the **Data Type** to **Decimal Number**.",
+      "D": "Remove duplicate rows from the dataset, then select the **SalesAmount** column and click **Data Type** > **Decimal Number**."
+    },
+    "correct_answer": "C",
+    "explanation": "**Statement 1 \u2014 TRUE:** In Power Query, **text-formatted currency values containing special characters (symbols, commas) must be cleaned before type conversion**. Attempting to convert directly to **Decimal Number** will fail or produce errors if special characters remain.\n\n**Statement 2 \u2014 TRUE:** The correct order is **clean first, then convert**. Step-by-step:\n1. Use **Replace Values** to strip currency symbols (\"$\") and thousands separators (\",\") from the text values.\n2. After cleaning, select the column and apply **Data Type** \u2192 **Decimal Number** conversion.\n\n**Why A is incorrect:** Selecting the data type *before* removing currency symbols will either cause an error or result in null/error values in those text cells. Power Query cannot automatically parse formatted currency strings during type conversion.\n\n**Why B is incorrect:** Removing nulls does not address the mixed data types or currency formatting problem. Type conversion will still fail on cells containing \"$\" and commas.\n\n**Why D is incorrect:** Removing duplicates is a separate data quality operation unrelated to type standardization. It does not resolve the currency formatting or mixed-type issue.\n\n**Best Practice:** When standardizing mixed-format numeric data in Power Query, always **clean and normalize the format first** (using **Replace Values**, **Extract**, or custom functions), then apply type conversion. This ensures Power Query can successfully interpret and convert all values.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Data Type Conversion, Replace Values, Remove Duplicates & Errors",
+      "difficulty_level": 2,
+      "question_type": "Direct Application",
+      "key_concepts": [
+        "Power Query Editor",
+        "Data Type Conversion",
+        "Replace Values",
+        "Text-to-Number Conversion",
+        "Currency Formatting Cleanup"
+      ]
+    }
+  },
+  {
+    "id": "MICROS_DATATYPECO_3_1_1_b1ac84",
+    "text": "You are transforming a sales dataset in **Power Query Editor**. The **UnitPrice** column was imported as **Text** data type and contains values such as `\"$45\"`, `\"$120\"`, `\"N/A\"`, and `\"$88\"`. You need to convert this column to a **Decimal Number** type so it can be used in calculations, while ensuring rows with `\"N/A\"` do not cause the entire query to fail.\n\nWhich sequence of steps in **Power Query Editor** should you perform?",
+    "options": {
+      "A": "Change the data type of **UnitPrice** to **Decimal Number**, then use **Replace Errors** to substitute errors with `null`.",
+      "B": "Use **Replace Values** to replace `\"N/A\"` with `null`, then use **Replace Values** to remove the `\"$\"` prefix, and finally change the data type to **Decimal Number**.",
+      "C": "Use **Remove Errors** on the **UnitPrice** column first, then change the data type to **Decimal Number**.",
+      "D": "Change the data type to **Decimal Number** first, then apply **Remove Duplicates** to eliminate any conversion errors."
+    },
+    "correct_answer": "B",
+    "explanation": "**Option B \u2014 CORRECT:** To successfully convert the **UnitPrice** column from **Text** to **Decimal Number**, the data must first be cleaned at the text level. The steps are: (1) Use **Replace Values** to replace `\"N/A\"` with `null` so those cells are treated as empty rather than invalid text; (2) Use **Replace Values** again to remove the `\"$\"` character (replacing `\"$\"` with an empty string `\"\"`), leaving numeric strings like `\"45\"`, `\"120\"`, `\"88\"`; (3) Finally, change the data type to **Decimal Number**. After cleaning, the conversion succeeds cleanly with `null` propagating for originally `\"N/A\"` rows.\n\n**Option A \u2014 INCORRECT:** Changing the data type *before* cleaning the text values will cause conversion errors for both `\"N/A\"` and `\"$45\"`-style values (because `\"$45\"` is not a valid decimal). Using **Replace Errors** afterward would silently discard valid price data as well.\n\n**Option C \u2014 INCORRECT:** **Remove Errors** *removes entire rows* that have errors. This would delete all rows that fail conversion \u2014 including rows with legitimate prices containing `\"$\"` \u2014 resulting in data loss rather than a clean transformation.\n\n**Option D \u2014 INCORRECT:** **Remove Duplicates** removes rows with duplicate values and has no relationship to handling data type conversion errors. It would not resolve the issue caused by `\"N/A\"` or the `\"$\"` prefix.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Data Type Conversion, Replace Values, Remove Duplicates & Errors",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "MICROS_DATATYPECO_3_1_2_4e32e5",
+    "text": "You are preparing a sales dataset in **Power Query Editor**. The **OrderID** column is currently typed as *Whole Number* but contains some entries with leading zeros (e.g., `00342`, `00891`) that were imported from a legacy system. The **UnitPrice** column contains the text `\"N/A\"` in rows where pricing data was unavailable, and the **CustomerID** column has several duplicate rows that must be removed before loading.\n\nYou need to apply transformations in the correct sequence to avoid errors. Which of the following sequences correctly handles all three issues?",
+    "options": {
+      "A": "1. Change **OrderID** data type to *Text* to preserve leading zeros. 2. Use **Replace Values** on **UnitPrice** to replace `\"N/A\"` with `null`. 3. Use **Remove Duplicates** on **CustomerID** to eliminate duplicate rows.",
+      "B": "1. Use **Remove Duplicates** on **CustomerID** first. 2. Change **OrderID** data type to *Whole Number* to strip leading zeros. 3. Use **Remove Errors** on **UnitPrice** to eliminate rows with `\"N/A\"`.",
+      "C": "1. Change **OrderID** data type to *Decimal Number* to preserve leading zeros. 2. Use **Replace Values** on **UnitPrice** to replace `\"N/A\"` with `0`. 3. Use **Remove Duplicates** on the entire table.",
+      "D": "1. Use **Replace Values** on **UnitPrice** to replace `\"N/A\"` with `null`. 2. Change **OrderID** data type to *Whole Number* to preserve leading zeros. 3. Use **Remove Duplicates** on **CustomerID** to eliminate duplicate rows."
+    },
+    "correct_answer": "A",
+    "explanation": "**Option A is correct.** Each transformation is handled appropriately:\n\n**Issue 1 \u2014 OrderID with leading zeros:** Changing the data type to *Text* is the only way to **preserve leading zeros** in **Power Query Editor**. Converting to *Whole Number* or *Decimal Number* will strip leading zeros because numeric types do not store non-significant digits.\n\n**Issue 2 \u2014 UnitPrice containing `\"N/A\"`:** Using **Replace Values** to substitute `\"N/A\"` with `null` is the correct approach. Replacing with `null` allows Power BI to treat those cells as blank/missing, which is appropriate for a numeric price column. Replacing with `0` (Option C) would introduce misleading data, and **Remove Errors** (Option B) only targets cells that have generated a transformation *error*, not text values like `\"N/A\"` that exist as-is.\n\n**Issue 3 \u2014 Duplicate CustomerID rows:** **Remove Duplicates** applied to the **CustomerID** column correctly eliminates rows where the CustomerID value repeats. Applying it to the entire table (Option C) would only remove rows that are completely identical across all columns, which may miss partial duplicates.\n\n**Option B** is incorrect because changing **OrderID** to *Whole Number* destroys leading zeros, and **Remove Errors** does not address a literal `\"N/A\"` text string.\n\n**Option C** is incorrect because *Decimal Number* also strips leading zeros, and replacing `\"N/A\"` with `0` is semantically incorrect for missing price data.\n\n**Option D** is incorrect because changing **OrderID** to *Whole Number* would still strip leading zeros, regardless of the order of operations.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Data Type Conversion, Replace Values, Remove Duplicates & Errors",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "MICROS_DATATYPECO_4_1_1_20be2f",
+    "text": "You are preparing a **Power Query** transformation in **Power BI Desktop**. You have imported a sales dataset from a legacy CSV file. The dataset contains a column called **UnitPrice** that was imported as **Text** data type. Upon inspection, you notice the following issues:\n\n- Some rows contain the value `'N/A'` (representing missing prices)\n- Some rows contain values formatted with a currency symbol, e.g., `'$55.00'`\n- Some rows contain exact duplicate entries across all columns\n- Some rows have blank cells\n\nYou need to produce a clean **Decimal Number** column for **UnitPrice** that can be used in calculations, while preserving as many valid rows as possible.\n\nWhich sequence of **Power Query** transformation steps should you apply, in the correct order, to achieve this goal?",
+    "options": {
+      "A": "1. Remove duplicates on the full table \u2192 2. Replace `'N/A'` and blank values with `null` \u2192 3. Use **Replace Values** to remove the `'$'` character \u2192 4. Change the data type to **Decimal Number** \u2192 5. Remove errors",
+      "B": "1. Change the data type to **Decimal Number** \u2192 2. Remove errors \u2192 3. Replace `'N/A'` with `null` \u2192 4. Use **Replace Values** to remove the `'$'` character \u2192 5. Remove duplicates on the full table",
+      "C": "1. Use **Replace Values** to remove the `'$'` character \u2192 2. Replace `'N/A'` and blank values with `null` \u2192 3. Change the data type to **Decimal Number** \u2192 4. Remove errors \u2192 5. Remove duplicates on the full table",
+      "D": "1. Remove duplicates on the full table \u2192 2. Change the data type to **Decimal Number** \u2192 3. Replace `'N/A'` and blank values with `null` \u2192 4. Remove errors \u2192 5. Use **Replace Values** to remove the `'$'` character"
+    },
+    "correct_answer": "C",
+    "explanation": "The correct sequence is **Option C**, which follows the logical order required to clean and convert the **UnitPrice** column effectively:\n\n**Step 1 \u2014 Replace Values (remove `'$'`):** Before any type conversion, the currency symbol must be stripped from values like `'$55.00'`. If you attempt a type conversion first (as in Option B), Power Query will immediately throw conversion errors on these values, making recovery harder.\n\n**Step 2 \u2014 Replace `'N/A'` and blanks with `null`:** Replacing non-numeric placeholders with `null` before the type conversion ensures Power Query treats them as missing values rather than generating conversion errors. `null` is Power Query's native representation of a missing value and will not cause errors when changing to **Decimal Number**.\n\n**Step 3 \u2014 Change data type to Decimal Number:** With the currency symbol removed and non-numeric text replaced by `null`, the conversion to **Decimal Number** will succeed for all valid numeric strings. Any remaining unexpected values will generate conversion errors.\n\n**Step 4 \u2014 Remove Errors:** Any rows that still produce a conversion error (due to unforeseen bad data) are removed at this point, preserving all valid rows.\n\n**Step 5 \u2014 Remove Duplicates:** Deduplication is best performed last on the cleaned, typed column so that duplicate detection is based on normalized, comparable **Decimal Number** values rather than raw text strings (which may differ subtly in formatting).\n\n**Why the other options fail:**\n- **Option A** removes duplicates on raw text data before cleaning, risking keeping the wrong copy of a duplicate and missing formatting differences.\n- **Option B** converts the data type first, which immediately errors on `'$55.00'` and `'N/A'` values, discarding potentially valid rows prematurely.\n- **Option D** converts the data type before removing `'$'` characters, causing avoidable conversion errors on currency-formatted values.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Data Type Conversion, Replace Values, Remove Duplicates & Errors",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "MICROS_DATATYPECO_4_1_2_35e73c",
+    "text": "You are cleaning a **Power Query** dataset imported from a legacy CRM system. The dataset contains a **CustomerID** column (text) with values like `\"C-00101\"`, `\"C-00102\"`, and occasional `null` entries. A **JoinDate** column contains mixed formats: some rows have proper dates (e.g., `\"2021-06-15\"`), while others contain the literal string `\"N/A\"` or are blank. A **Revenue** column (text) contains numeric values with a currency symbol prefix (e.g., `\"$3400.00\"`) and a few rows containing `\"ERROR\"`. You need to produce a clean dataset ready for a star schema load. Which sequence of **Power Query** transformation steps is the most complete and correct approach?",
+    "options": {
+      "A": "1) Replace `\"N/A\"` with `null` in **JoinDate**, then change **JoinDate** type to Date \u2014 2) Replace `\"ERROR\"` with `null` in **Revenue**, then use *Replace Values* to remove `\"$\"`, then change **Revenue** type to Decimal Number \u2014 3) Filter out rows where **CustomerID** is `null` \u2014 4) Remove duplicates on **CustomerID**",
+      "B": "1) Change **JoinDate** type directly to Date (Power Query will auto-convert `\"N/A\"`) \u2014 2) Change **Revenue** type to Decimal Number (Power Query will auto-strip `\"$\"`) \u2014 3) Remove duplicates on **CustomerID** \u2014 4) Remove rows with errors on all columns",
+      "C": "1) Replace `\"N/A\"` with `null` in **JoinDate**, then change **JoinDate** type to Date \u2014 2) Change **Revenue** type to Decimal Number without replacing `\"ERROR\"` or the `\"$\"` prefix, relying on *Remove Errors* afterward \u2014 3) Remove duplicates on **CustomerID** before filtering nulls",
+      "D": "1) Use *Fill Down* on **JoinDate** to replace blanks and `\"N/A\"` \u2014 2) Use *Extract > Text After Delimiter* on **Revenue** to strip `\"$\"`, then change type to Decimal Number without handling `\"ERROR\"` rows \u2014 3) Remove duplicates on **CustomerID** \u2014 4) Filter out nulls in **CustomerID**"
+    },
+    "correct_answer": "A",
+    "explanation": "**Option A \u2014 CORRECT:** This option applies a structured, dependency-aware sequence of transformations.\n\n**Step 1 (JoinDate):** Replacing `\"N/A\"` with `null` *before* changing the type to Date is essential. If you attempt to cast a column containing the literal string `\"N/A\"` directly to Date, **Power Query** will generate errors on those rows rather than converting them gracefully. Replacing with `null` first allows the type conversion to succeed, treating missing dates as `null`.\n\n**Step 2 (Revenue):** The `\"$\"` symbol prevents direct type conversion to Decimal Number \u2014 it must be removed first using *Replace Values* (`\"$\"` \u2192 `\"\"`). Similarly, `\"ERROR\"` strings must be replaced with `null` before the type change; otherwise those rows become type-conversion errors. Handling both *before* the type change is cleaner than relying on post-hoc error removal, which could silently discard valid-looking rows.\n\n**Step 3 & 4 (CustomerID):** Filtering nulls and then removing duplicates ensures referential integrity for a star schema foreign key.\n\n**Option B \u2014 INCORRECT:** **Power Query** does *not* automatically convert the literal string `\"N/A\"` to `null` during a type change, nor does it strip currency symbols. Both cause errors at load time.\n\n**Option C \u2014 INCORRECT:** Relying solely on *Remove Errors* after a type change on **Revenue** (without first removing `\"$\"`) will fail because the entire column cast fails for rows with a `\"$\"` prefix. Additionally, the order of duplicate removal before null filtering is suboptimal \u2014 null **CustomerID** rows could themselves be duplicates that survive the duplicate-removal step.\n\n**Option D \u2014 INCORRECT:** *Fill Down* is inappropriate for `\"N/A\"` or blank join dates \u2014 it would propagate a previous row's date value forward, fabricating data. *Extract > Text After Delimiter* on `\"$\"` would work for well-formed revenue values but still fails to handle `\"ERROR\"` rows before the type conversion.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Data Type Conversion, Replace Values, Remove Duplicates & Errors",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "MICROS_DATATYPECO_5_1_1_00027d",
+    "text": "You are preparing a **Power Query** transformation for a retail dataset imported from a legacy CSV file. The **OrderDate** column contains mixed values: some rows have valid dates formatted as `MM/DD/YYYY`, some rows contain the text string `'N/A'`, and some rows are completely empty (null). A business rule requires that:\n\n1. Rows where **OrderDate** is `'N/A'` must have that value **replaced with null**.\n2. The column must then be **converted to a Date data type**.\n3. Any rows that still contain **errors** after the type conversion must be **removed**.\n4. Finally, **duplicate rows** (based on a composite of **OrderID** and **OrderDate**) must be eliminated.\n\nA junior analyst applies the following steps in **Power Query Editor** in this exact order:\n\n- **Step 1:** Change the data type of **OrderDate** to *Date*.\n- **Step 2:** Replace `'N/A'` with `null` in **OrderDate**.\n- **Step 3:** Remove errors from **OrderDate**.\n- **Step 4:** Remove duplicate rows based on **OrderID** and **OrderDate**.\n\nWhat is the **primary problem** with this sequence, and what is the **correct fix**?",
+    "options": {
+      "A": "Step 4 should be performed before Step 3, because removing errors before deduplication causes valid duplicate rows to be retained incorrectly.",
+      "B": "Step 1 is applied before Step 2, so rows containing `'N/A'` will generate **conversion errors** during the type change instead of becoming null first; Step 2 must be moved before Step 1.",
+      "C": "Step 3 is unnecessary because changing the data type to *Date* automatically removes all non-conforming values from the column without producing errors.",
+      "D": "Step 2 should replace `'N/A'` with an empty string rather than null before the type conversion, otherwise the Date conversion will fail for all rows."
+    },
+    "correct_answer": "B",
+    "explanation": "**Option B \u2014 CORRECT:** In **Power Query**, when you attempt to convert a column containing the literal text `'N/A'` to a *Date* data type, Power Query cannot parse `'N/A'` as a date and marks those cells as **errors** (not null). The replacement of `'N/A'` with `null` must happen **before** the data type conversion. `null` values are handled gracefully by a Date type conversion \u2014 they remain null rather than producing an error. The corrected order should be: **Replace `'N/A'` \u2192 null** (Step 1), **Change type to Date** (Step 2), **Remove errors** (Step 3), **Remove duplicates** (Step 4). This ensures `'N/A'` values become null before the type change, minimizing the rows that end up as errors.\n\n**Option A \u2014 FALSE:** The ordering of Step 3 (remove errors) and Step 4 (remove duplicates) is not the root cause. Removing errors before deduplication is appropriate and does not cause valid duplicates to be retained \u2014 errors themselves would be distinct rows until removed.\n\n**Option C \u2014 FALSE:** Changing a data type to *Date* does **not** silently discard non-conforming values; instead, **Power Query marks them as errors**, which is a distinct state that must be explicitly handled with the *Remove Errors* transformation.\n\n**Option D \u2014 FALSE:** Replacing `'N/A'` with an **empty string** (`\"\"`) before a Date conversion would still produce an error, because an empty string is equally unparseable as a date. The correct replacement value is `null`, not an empty string.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Data Type Conversion, Replace Values, Remove Duplicates & Errors",
+      "difficulty_level": 5
+    }
+  },
+  {
+    "id": "MICROS_DATATYPECO_5_1_2_39f2e6",
+    "text": "A Power BI developer is building a sales report connected to an Excel workbook. The **OrderDate** column contains mixed data: some rows have valid dates (e.g., *\"March 5, 2023\"*), some have the text *\"TBD\"*, and some cells are completely blank. After importing into **Power Query Editor**, the developer applies the following steps in sequence:\n\n1. **Replace Values**: Replace *\"TBD\"* with *null*\n2. **Change Type**: Set the column type to **Date**\n3. **Remove Errors**: Remove any rows that still produce errors\n4. **Fill Down**: Fill down to replace nulls with the preceding valid date\n\nA colleague reviews the M code and raises a concern: *\"Blank cells from Excel are already imported as null, so Step 1 is redundant \u2014 removing it would produce the same final result.\"*\n\nWhich statement **best** describes whether the colleague's concern is valid?",
+    "options": {
+      "A": "The concern is valid. Excel blank cells and *\"TBD\"* text are both imported as **null** in Power Query, so Step 1 has no effect and can be safely removed without changing the output.",
+      "B": "The concern is invalid. Excel blank cells are imported as **null**, but *\"TBD\"* is imported as a text string. Without Step 1, Step 2 would convert *\"TBD\"* to an **error** rather than **null**, and Step 3 would then **remove those rows entirely** instead of allowing Step 4 to fill them down.",
+      "C": "The concern is partially valid. Step 1 is redundant only if the **Fill Down** step is removed; otherwise, keeping Step 1 ensures *\"TBD\"* rows are retained with a filled date value.",
+      "D": "The concern is invalid. Power Query imports all non-numeric Excel cell values \u2014 including blank cells and *\"TBD\"* \u2014 as errors rather than nulls, so Step 1 converts those errors to null before the type change."
+    },
+    "correct_answer": "B",
+    "explanation": "**Option B \u2014 CORRECT:**\n\nIn **Power Query**, blank cells from Excel are imported as **null** values, while text strings like *\"TBD\"* are imported as actual text. When **Change Type to Date** (Step 2) is applied:\n- **null** values remain **null** (no error is raised)\n- The text *\"TBD\"* cannot be parsed as a date, so Power Query raises a **conversion error** on that cell\n\nIf Step 1 (**Replace Values**: *\"TBD\"* \u2192 *null*) is removed, those *\"TBD\"* rows will hit an error in Step 2. Step 3 (**Remove Errors**) will then **delete those rows entirely**, meaning they will never reach Step 4 (**Fill Down**). The final table will be missing rows that the developer intended to fill with the preceding valid date.\n\nBy keeping Step 1, *\"TBD\"* is first converted to **null** before the type change, so Step 2 leaves those cells as **null** (no error), Step 3 removes nothing extra, and Step 4 correctly fills those nulls down.\n\n**Option A \u2014 INCORRECT:** It incorrectly assumes *\"TBD\"* is also imported as null. Only blank/empty cells are null; *\"TBD\"* is a text string.\n\n**Option C \u2014 INCORRECT:** The interaction described is inaccurate. Step 1's necessity is tied to Step 3 (Remove Errors), not to whether Fill Down is present.\n\n**Option D \u2014 INCORRECT:** Blank Excel cells are **not** imported as errors \u2014 they are imported as **null** in Power Query. Errors only arise when a transformation (like type conversion) fails on an existing value.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Data Type Conversion, Replace Values, Remove Duplicates & Errors",
+      "difficulty_level": 5
+    }
+  },
+  {
+    "id": "MICROS_UNPIVOTPIV_1_1_1_c6b284",
+    "text": "You are importing a sales dataset into Power BI Desktop using Power Query. The data is structured with product names in the first column, and sales figures for each quarter (Q1, Q2, Q3, Q4) spread across four separate columns. You need to restructure this data so that each row represents a single product\u2013quarter combination, with one column for the quarter label and another for the sales amount.\n\nWhich **Power Query transformation** should you apply to achieve this normalized structure?",
+    "options": {
+      "A": "Unpivot Columns \u2014 to convert quarter column headers into row values",
+      "B": "Pivot Columns \u2014 to aggregate sales data by product and quarter",
+      "C": "Group By \u2014 to summarize sales totals across all quarters",
+      "D": "Merge Queries \u2014 to combine multiple quarter tables into a single source"
+    },
+    "correct_answer": "A",
+    "explanation": "**Statement 1 \u2014 TRUE:** The **Unpivot Columns** transformation is the correct operation for normalizing wide-format data (where attributes are spread across multiple columns) into long-format data (where each row represents a single observation).\n\n**Statement 2 \u2014 TRUE:** In this scenario, Q1, Q2, Q3, and Q4 are currently column headers that represent a categorical attribute (the quarter). Unpivoting these columns converts them from column headers into row values in a new **Attribute** column, with their corresponding sales figures appearing in a **Value** column. This creates a one-row-per-product-per-quarter structure, which is the standard normalized format for analytical data models.\n\n**Why other options are incorrect:**\n\n- **Option B (Pivot Columns)** does the opposite: it converts row values into column headers, which would further widen the data rather than normalize it.\n\n- **Option C (Group By)** aggregates data by grouping on specified columns, but it does not reshape the structure from wide to long format.\n\n- **Option D (Merge Queries)** combines data from two separate queries on a common key, which is not applicable when restructuring a single table.\n\n**Key Concept:** *Data Normalization* in Power Query uses **Unpivot** to convert attribute columns into attribute rows, enabling proper dimensional modeling and avoiding redundant column proliferation.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Unpivot & Pivot Columns \u2013 Normalising Data",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "MICROS_UNPIVOTPIV_1_1_2_e82f38",
+    "text": "You are working with a **Power Query** table containing monthly sales data where each month (January, February, March) is stored as a separate column. The table currently looks like this:\n\n| Product | January | February | March |\n|---------|---------|----------|-------|\n| Widget A | 8,750.25 | 9,120.50 | 8,995.75 |\n| Widget B | 6,340.00 | 7,215.80 | 7,580.40 |\n\nYou need to transform this into a normalized format where each row represents a single product-month-sales combination. Which **Power Query** operation should you use to accomplish this transformation?",
+    "options": {
+      "A": "**Unpivot Columns** \u2014 select the month columns and convert them into rows",
+      "B": "**Pivot Columns** \u2014 select the Product column and aggregate by month",
+      "C": "**Group By** \u2014 group by Product and aggregate the month columns",
+      "D": "**Merge Queries** \u2014 join the month columns into a single table"
+    },
+    "correct_answer": "A",
+    "explanation": "**Statement 1 \u2014 TRUE:** The **Unpivot Columns** operation is the correct choice for normalizing wide-format data (columns representing categories) into long-format data (rows representing category values).\n\n**Statement 2 \u2014 TRUE:** When you unpivot the month columns (January, February, March), Power Query creates two new columns: one containing the month names (Attribute) and another containing the sales values (Value), resulting in a normalized structure where Product, Month, and Sales appear in separate columns.\n\n**Why other options are incorrect:**\n\n- **Option B (Pivot)**: Pivot performs the *opposite* operation \u2014 it converts rows into columns, which would worsen the denormalization.\n- **Option C (Group By)**: Group By is used for aggregation and summarization, not structural transformation. It would not reshape the data as required.\n- **Option D (Merge Queries)**: Merge Queries combines two separate tables based on a join key; it does not reshape a single table's column structure.\n\n**Key Concept:** Unpivot is essential for *dimensional normalization* in data preparation, converting attribute-based columns into dimension rows for analytical processing.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Unpivot & Pivot Columns \u2013 Normalising Data",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "MICROS_UNPIVOTPIV_2_1_1_74f3eb",
+    "text": "You are preparing data in **Power Query** for a sales analysis report. You have a table with the following structure:\n\n| Product | Q1_2024 | Q2_2024 | Q3_2024 | Q4_2024 |\n|---------|---------|---------|---------|----------|\n| Widget A | 18500 | 22400 | 19800 | 26700 |\n| Widget B | 14200 | 16900 | 15300 | 18600 |\n| Widget C | 9800 | 11200 | 10900 | 12300 |\n\nYour data model requires a normalized structure with separate rows for each quarter rather than separate columns. Which **Power Query** transformation should you apply to convert this wide format into a long format?",
+    "options": {
+      "A": "Apply **Unpivot Columns** on Q1_2024, Q2_2024, Q3_2024, and Q4_2024 to create Attribute and Value columns",
+      "B": "Apply **Pivot Columns** on the Product column to aggregate sales by quarter",
+      "C": "Apply **Group By** aggregation on the Quarter column to sum sales values",
+      "D": "Apply **Merge Columns** to combine all quarter columns into a single column"
+    },
+    "correct_answer": "A",
+    "explanation": "**Statement 1 \u2014 Unpivot is the correct transformation \u2014 TRUE:**\nThe scenario describes converting from wide format (multiple quarter columns) to long format (one row per product-quarter combination). **Unpivot Columns** is the Power Query function specifically designed for this normalization task.\n\n**Statement 2 \u2014 The result structure \u2014 TRUE:**\nApplying **Unpivot Columns** on Q1_2024, Q2_2024, Q3_2024, and Q4_2024 creates two new columns:\n- **Attribute column** (containing \"Q1_2024\", \"Q2_2024\", etc.)\n- **Value column** (containing the sales amounts)\n\nThis produces a normalized table where each product-quarter combination occupies one row, suitable for relational data models and analysis.\n\n**Why other options are incorrect:**\n- **Option B (Pivot Columns)** performs the opposite transformation\u2014it creates wider tables, not longer ones.\n- **Option C (Group By)** aggregates data; it does not reshape the table structure from wide to long format.\n- **Option D (Merge Columns)** combines column content horizontally; it does not transpose structure.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Unpivot & Pivot Columns \u2013 Normalising Data",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "MICROS_UNPIVOTPIV_2_1_2_b8e566",
+    "text": "You are preparing sales data in **Power Query** for analysis. The source data contains monthly sales figures organized in columns: ProductID, Q1_2024, Q2_2024, Q3_2024, and Q4_2024. Each row represents a product with its quarterly revenue in separate columns. You need to normalize this data structure so that each quarter-revenue pair appears as a separate row, enabling time-series analysis and aggregations by period.\n\nWhich **Power Query transformation** should you apply, and what will be the resulting structure?",
+    "options": {
+      "A": "Apply **Pivot Columns** to combine all quarterly columns into a single Revenue column; the result will have ProductID, Quarter, and Revenue columns with one row per product-quarter combination.",
+      "B": "Apply **Unpivot Columns** on Q1_2024, Q2_2024, Q3_2024, and Q4_2024; the result will have ProductID, Attribute (containing quarter names), and Value (containing revenue amounts) columns.",
+      "C": "Apply **Group By** on the quarter columns; the result will aggregate all revenues into a single summary row per product.",
+      "D": "Apply **Transpose** to flip rows and columns; the result will have quarters as rows and products as columns, maintaining the same data structure."
+    },
+    "correct_answer": "B",
+    "explanation": "**Statement 1 \u2014 Pivot vs. Unpivot \u2014 TRUE:** The question describes a **denormalized** (wide) format where attributes (quarters) are spread across multiple columns. To normalize this into a **long** format suitable for time-series analysis, you must use **Unpivot Columns**, not Pivot.\n\n**Statement 2 \u2014 Unpivot Output Structure \u2014 TRUE:** When you unpivot Q1_2024, Q2_2024, Q3_2024, and Q4_2024 in **Power Query**, it creates:\n- A new **Attribute** column containing the original column headers (e.g., \"Q1_2024\", \"Q2_2024\", etc.)\n- A new **Value** column containing the corresponding revenue amounts\n- Retained columns (ProductID) are preserved\n- Result: Multiple rows per product (one for each quarter), enabling aggregations and time-based filtering.\n\n**Why other options are incorrect:**\n- **Option A (Pivot):** Pivot does the *opposite*\u2014it transforms long data to wide. Using Pivot here would further denormalize already-denormalized data.\n- **Option C (Group By):** Group By aggregates data; it does not restructure columns into rows. This would lose the quarter granularity.\n- **Option D (Transpose):** Transpose flips the entire table structure (rows \u2194 columns) without normalizing; quarters would become row headers, not separate records, and is not a standard normalization approach in Power Query.\n\n**Key Principle:** Unpivoting is the *inverse* of pivoting and is essential for converting **wide** (many attribute columns) format into **long** (many rows, fewer columns) format\u2014the cornerstone of data normalization for analytical tools like Power BI.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Unpivot & Pivot Columns \u2013 Normalising Data",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "MICROS_UNPIVOTPIV_3_1_1_118fb7",
+    "text": "You are working with a **Sales Performance** dataset in **Power BI Desktop**. The source data contains monthly sales figures organized as columns: ProductID, Region, Jan_Sales, Feb_Sales, Mar_Sales, Apr_Sales, May_Sales, Jun_Sales. Each row represents a product-region combination.\n\nYour stakeholders require analysis by month to identify seasonal trends and compare performance across time periods. However, the current column-oriented structure prevents effective time-series analysis and aggregation.\n\nWhich transformation approach will most effectively normalize this data structure, and what is the PRIMARY advantage of this approach in the context of the downstream analytics requirement?",
+    "options": {
+      "A": "Use the **Unpivot Columns** feature on Jan_Sales through Jun_Sales, converting month columns into a single **Attribute** column and creating a **Value** column for sales amounts. This normalizes the data into a long format, enabling month-to-month comparisons and time-based visualizations without formula complexity.",
+      "B": "Create a new calculated column using **CONCATENATE** to merge all monthly sales into a single text field, then use **Split Column by Delimiter** to separate values. This preserves the original structure while allowing dynamic month filtering.",
+      "C": "Pivot the Region column to create separate columns for each region's sales, then apply conditional logic in DAX to isolate monthly trends. This maintains dimensional integrity while reducing row count.",
+      "D": "Leave the data in its current wide format and create multiple measures in the data model using **SUMX** and **COLUMN** functions to extract each month's total. This avoids data transformation overhead and preserves source structure fidelity."
+    },
+    "correct_answer": "A",
+    "explanation": "**Statement 1 \u2014 Unpivoting is the appropriate normalization technique \u2014 TRUE:**\n\nThe dataset is in *denormalized wide format* (each time period as a separate column). To enable time-series analysis, comparative aggregations, and month-based filtering, the data must be transformed to *normalized long format* using **Unpivot Columns**. This converts Jan_Sales, Feb_Sales, etc., into two columns: one for the month attribute and one for the corresponding sales value.\n\n**Statement 2 \u2014 This enables analytical flexibility \u2014 TRUE:**\n\nOnce unpivoted, slicers and filters on the month attribute work seamlessly, time-series visuals become trivial to construct, and aggregations across months require no complex DAX logic. The dimensional structure aligns with **star schema** best practices.\n\n**Why other options fail:**\n\n**Option B (CONCATENATE + Split):** This does not normalize data and makes month-level filtering cumbersome. Splitting a concatenated string is brittle.\n\n**Option C (Pivot Region):** Pivoting widens the structure further rather than normalizing into long format. It does not solve the time-period analysis problem.\n\n**Option D (DAX measures only):** While DAX can extract monthly totals, it does not address the underlying structural problem. **Power BI transformations should normalize structure; DAX should perform calculations.**\n\n**Best Practice \u2014 *Separate concerns:* Structure your data in Power Query Editor, calculate metrics in DAX.**",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Unpivot & Pivot Columns \u2013 Normalising Data",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "MICROS_UNPIVOTPIV_3_1_2_288bc5",
+    "text": "You are working with a **Power Query** dataset containing monthly sales data in wide format. The table has columns: ProductID, Region, Jan2024, Feb2024, Mar2024, Apr2024, May2024. Each row represents a product-region combination, and the month columns contain revenue values. You need to normalize this data into a long format for time-series analysis and reporting.\n\nWhich **Power Query transformation sequence** would most efficiently convert this structure while preserving data integrity and ensuring the resulting table can be used directly in a **star schema** fact table?",
+    "options": {
+      "A": "Select all month columns, unpivot them into an Attribute column named 'Month' and a Value column named 'Revenue', then add a custom column to extract the month number using text functions for sorting.",
+      "B": "Use the Pivot Columns function on the month columns to aggregate by ProductID and Region, then manually append the aggregated results into a single Revenue column.",
+      "C": "Delete the month columns entirely, create new calculated columns for each month using conditional logic, then transpose the entire table.",
+      "D": "Export the data to Excel, manually reorganize into long format, then reload it into Power Query as a new source."
+    },
+    "correct_answer": "A",
+    "explanation": "**Statement 1 \u2014 Unpivot is the Correct Transformation: TRUE**\nThe scenario describes a classic **denormalized, wide-format table** that must be converted to long format (normalized). **Unpivot Columns** in Power Query is the standard operation for this transformation, not Pivot. Unpivot rotates month column headers into row values, creating one attribute-value pair per record.\n\n**Statement 2 \u2014 Why Option A Works: TRUE**\nOption A correctly selects all month columns (Jan2024\u2013May2024) as the unpivot source, creates two new columns: 'Month' (containing the original column headers) and 'Revenue' (containing the values), and adds a helper column to extract the numeric month for proper temporal sorting. The result is a normalized table: (ProductID, Region, Month, Revenue) \u2014 a proper **fact table structure** suitable for dimensional modeling.\n\n**Statement 3 \u2014 Why Option B Fails: TRUE**\nPivot Columns performs the *opposite* operation \u2014 it converts long format to wide format. Selecting Pivot here would further denormalize the already-wide data, which is a backward step.\n\n**Statement 4 \u2014 Why Option C Fails: TRUE**\nCreating individual calculated columns for each month is inefficient and unmaintainable. If new months are added, columns must be recreated \u2014 violating ETL best practices.\n\n**Statement 5 \u2014 Why Option D Fails: TRUE**\nExporting to Excel and manually reorganizing violates **repeatable, automated ETL design**. This approach is fragile, error-prone, and breaks Power BI's data refresh pipeline.\n\n**Key Concept:** Unpivot is the foundational transformation for converting denormalized reporting tables into normalized dimensional structures ready for star schema design.",
+    "Requires_Diagram": true,
+    "TikZ_Code": "\\documentclass[varwidth=21cm, border=5mm]{standalone}\n\\usepackage{tikz}\n\\usetikzlibrary{arrows.meta}\n\\begin{document}\n\\begin{tikzpicture}[every node/.style={font=\\sffamily\\small}]\n  \\node[draw, thick, fill=gray!15, rounded corners=2pt, minimum width=5cm, minimum height=2.5cm, align=center, inner sep=6pt] (before) at (-5, 0) {\\textbf{Wide Format}\\\\[6pt] ProdID ~|~ Region ~|~ Jan ~|~ Feb\\\\[2pt] P001 ~|~ EU ~|~ A ~|~ B\\\\[2pt] P002 ~|~ APAC ~|~ D ~|~ E};\n  \\node[draw, thick, fill=blue!10, rounded corners=2pt, minimum width=5cm, minimum height=2.5cm, align=center, inner sep=6pt] (after) at (5, 0) {\\textbf{Long Format}\\\\[6pt] ProdID ~|~ Region ~|~ Month ~|~ Rev\\\\[2pt] P001 ~|~ EU ~|~ Jan ~|~ A\\\\[2pt] P001 ~|~ EU ~|~ Feb ~|~ B\\\\[2pt] P002 ~|~ APAC ~|~ Jan ~|~ D};\n  \\draw[-{Latex[length=3mm,width=2mm]}, thick, blue] (before.east) -- (after.west) node[midway, above=4pt, fill=white, inner sep=2pt, font=\\sffamily\\bfseries] {Unpivot};\n\\end{tikzpicture}\n\\end{document}",
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Unpivot & Pivot Columns \u2013 Normalising Data",
+      "difficulty_level": 3,
+      "question_type": "Scenario / Application",
+      "cognitive_domain": "Apply, Analyze",
+      "key_concepts": [
+        "Unpivot Columns",
+        "Data Normalization",
+        "Wide vs. Long Format",
+        "Star Schema",
+        "Power Query",
+        "Dimensional Modeling",
+        "ETL Best Practices"
+      ],
+      "common_distractors": [
+        "Confusing Pivot with Unpivot",
+        "Manual Excel workarounds",
+        "Calculated column anti-patterns",
+        "Ignoring temporal sort requirements"
+      ]
+    },
+    "local_image_path": "local_images/MICROS_UNPIVOTPIV_3_1_2_288bc5.svg"
+  },
+  {
+    "id": "MICROS_UNPIVOTPIV_4_1_1_66141a",
+    "text": "You are preparing a dataset for a sales analysis report in **Power BI Desktop**. The source data from your organisation's legacy system arrives in the following structure:\n\n| SalesRep | Q1-2025 | Q2-2025 | Q3-2025 | Q4-2025 |\n|----------|---------|---------|---------|----------|\n| Diana    | 31400   | 28600   | 33700   | 39200    |\n| Edward   | 24500   | 27800   | 26300   | 29100    |\n| Fiona    | 41200   | 44600   | 47800   | 52300    |\n\nYour business requirement is to create a report showing sales trends over time by individual representative. However, the current structure makes it impossible to create meaningful time-series visualisations or apply time-based filtering.\n\nWhich transformation approach should you apply in the **Power Query Editor**, and what will be the result of this operation?",
+    "options": {
+      "A": "Use **Pivot Columns** on the SalesRep column to consolidate all quarters into a single row, then apply filters to individual quarter columns for trend analysis.",
+      "B": "Use **Unpivot Columns** on Q1-2025, Q2-2025, Q3-2025, and Q4-2025 to create a normalised table with three columns: SalesRep, Attribute (quarter), and Value (sales amount). This enables time-based filtering and trend visualisation.",
+      "C": "Use **Group By** on the SalesRep column to aggregate quarterly sales into a single total per representative, which simplifies the data model and enables faster report rendering.",
+      "D": "Use **Transpose** to convert rows to columns and columns to rows, then manually rename the resulting column headers to match your reporting requirements."
+    },
+    "correct_answer": "B",
+    "explanation": "**Statement 1 \u2014 TRUE:** The current data structure is in **denormalised** or **wide format**, where each quarter occupies a separate column. This prevents time-series analysis and dynamic filtering.\n\n**Statement 2 \u2014 TRUE:** **Unpivot Columns** is the correct **Power Query** transformation that converts wide format to long format (normalised data). It takes multiple attribute columns (Q1-2025, Q2-2025, Q3-2025, Q4-2025) and converts them into two new columns:\n  \u2022 **Attribute** column \u2014 contains the quarter labels\n  \u2022 **Value** column \u2014 contains the sales amounts\n\nThis results in a table with three columns (SalesRep, Attribute, Value) and 12 rows (3 reps \u00d7 4 quarters), enabling:\n  \u2022 **Time-based filtering** \u2014 users can filter or slicer by quarter\n  \u2022 **Trend visualisation** \u2014 line charts and area charts now work correctly\n  \u2022 **Dimensional analysis** \u2014 quarter becomes a proper dimension\n\n**Why other options are incorrect:**\n\n**Option A \u2014 FALSE:** **Pivot Columns** performs the **reverse** operation \u2014 it converts long format to wide format. This would worsen the problem, not solve it.\n\n**Option C \u2014 FALSE:** **Group By** would aggregate sales per representative into a single total, losing the temporal dimension entirely. This destroys the quarter-level detail needed for trend analysis.\n\n**Option D \u2014 FALSE:** **Transpose** is rarely used in modern **Power BI** workflows. While it technically switches rows and columns, it does not create the proper dimensional structure required for reporting.\n\n**Best Practice:** Normalising data through **unpivoting** is a core principle of *dimensional data modelling* and **star schema** design, enabling flexible filtering, aggregation, and time-based analysis.",
+    "Requires_Diagram": true,
+    "TikZ_Code": "\\documentclass[varwidth=21cm, border=5mm]{standalone}\n\\usepackage{tikz}\n\\usetikzlibrary{arrows.meta, positioning}\n\\begin{document}\n\\begin{tikzpicture}[\n  every node/.style={font=\\small},\n  box/.style={draw, rectangle, fill=white, inner sep=6pt}\n]\n\n% --- LEFT SIDE: Wide Format label ---\n\\node[font=\\bfseries\\small] (leftlabel) at (0, 3.2) {Wide Format (Denormalised)};\n\n% Wide format table header row\n\\node[box, minimum width=2.0cm, minimum height=0.55cm] (h0) at (-3.2, 2.5) {SalesRep};\n\\node[box, minimum width=1.5cm, minimum height=0.55cm, right=0cm of h0] (h1) {Q1-2025};\n\\node[box, minimum width=1.5cm, minimum height=0.55cm, right=0cm of h1] (h2) {Q2-2025};\n\\node[box, minimum width=1.5cm, minimum height=0.55cm, right=0cm of h2] (h3) {Q3-2025};\n\\node[box, minimum width=1.5cm, minimum height=0.55cm, right=0cm of h3] (h4) {Q4-2025};\n\n% Row 1\n\\node[box, minimum width=2.0cm, minimum height=0.55cm] (r1c0) at (-3.2, 1.9) {Diana};\n\\node[box, minimum width=1.5cm, minimum height=0.55cm, right=0cm of r1c0] (r1c1) {31400};\n\\node[box, minimum width=1.5cm, minimum height=0.55cm, right=0cm of r1c1] (r1c2) {28600};\n\\node[box, minimum width=1.5cm, minimum height=0.55cm, right=0cm of r1c2] (r1c3) {33700};\n\\node[box, minimum width=1.5cm, minimum height=0.55cm, right=0cm of r1c3] (r1c4) {39200};\n\n% Row 2\n\\node[box, minimum width=2.0cm, minimum height=0.55cm] (r2c0) at (-3.2, 1.3) {Edward};\n\\node[box, minimum width=1.5cm, minimum height=0.55cm, right=0cm of r2c0] (r2c1) {24500};\n\\node[box, minimum width=1.5cm, minimum height=0.55cm, right=0cm of r2c1] (r2c2) {27800};\n\\node[box, minimum width=1.5cm, minimum height=0.55cm, right=0cm of r2c2] (r2c3) {26300};\n\\node[box, minimum width=1.5cm, minimum height=0.55cm, right=0cm of r2c3] (r2c4) {29100};\n\n% Issues note\n\\node[font=\\small, text width=6.5cm, align=left] at (0.4, 0.4) {-- Fixed columns, no time dimension};\n\\node[font=\\small, text width=6.5cm, align=left] at (0.4, -0.1) {-- Cannot filter or trend by period};\n\n% --- ARROW ---\n\\draw[-{Latex[width=3mm]}, line width=1pt] (3.5, 1.6) -- (5.0, 1.6) node[midway, above, font=\\bfseries\\small] {Unpivot};\n\n% --- RIGHT SIDE: Long Format label ---\n\\node[font=\\bfseries\\small] at (8.5, 3.2) {Long Format (Normalised)};\n\n% Long format table header\n\\node[box, minimum width=2.0cm, minimum height=0.55cm] (lh0) at (6.5, 2.5) {SalesRep};\n\\node[box, minimum width=2.0cm, minimum height=0.55cm, right=0cm of lh0] (lh1) {Attribute};\n\\node[box, minimum width=2.0cm, minimum height=0.55cm, right=0cm of lh1] (lh2) {Value};\n\n% Long format rows\n\\node[box, minimum width=2.0cm, minimum height=0.55cm] (lr1c0) at (6.5, 1.9) {Diana};\n\\node[box, minimum width=2.0cm, minimum height=0.55cm, right=0cm of lr1c0] (lr1c1) {Q1-2025};\n\\node[box, minimum width=2.0cm, minimum height=0.55cm, right=0cm of lr1c1] (lr1c2) {31400};\n\n\\node[box, minimum width=2.0cm, minimum height=0.55cm] (lr2c0) at (6.5, 1.3) {Diana};\n\\node[box, minimum width=2.0cm, minimum height=0.55cm, right=0cm of lr2c0] (lr2c1) {Q2-2025};\n\\node[box, minimum width=2.0cm, minimum height=0.55cm, right=0cm of lr2c1] (lr2c2) {28600};\n\n\\node[box, minimum width=2.0cm, minimum height=0.55cm] (lr3c0) at (6.5, 0.7) {Diana};\n\\node[box, minimum width=2.0cm, minimum height=0.55cm, right=0cm of lr3c0] (lr3c1) {Q3-2025};\n\\node[box, minimum width=2.0cm, minimum height=0.55cm, right=0cm of lr3c1] (lr3c2) {33700};\n\n\\node[font=\\small] at (8.5, 0.1) {... (12 rows total)};\n\n% Benefits note\n\\node[font=\\small, text width=5.5cm, align=left] at (8.5, -0.5) {+ Time dimension enabled};\n\\node[font=\\small, text width=5.5cm, align=left] at (8.5, -1.0) {+ Filter and trend by quarter};\n\n\\end{tikzpicture}\n\\end{document}",
+    "metadata": {
+      "exam": "Microsoft Power BI Data Analyst (PL-300)",
+      "subject": "Prepare the Data",
+      "topic": "Transform & Clean Data",
+      "sub_topic": "Unpivot & Pivot Columns \u2013 Normalising Data",
+      "difficulty_level": 4
+    },
+    "local_image_path": "local_images/MICROS_UNPIVOTPIV_4_1_1_66141a.svg"
+  }
+]

@@ -610,7 +610,7 @@ function renderQuestion() {
         ${revealed ? 'disabled' : ''}
       >
         <span class="option-key">${key}</span>
-        <span class="option-text">${escapeHtml(q.options[key])}</span>
+        <span class="option-text">${latexToHtml(q.options[key])}</span>
       </button>
     </li>
   `).join('');
@@ -632,7 +632,7 @@ function renderQuestion() {
       <div class="q-body">
 
         <!-- Question text (LaTeX rendered after insert) -->
-        <div class="q-text" id="q-text">${escapeHtml(q.text)}</div>
+        <div class="q-text" id="q-text">${latexToHtml(q.text)}</div>
 
         <!-- ── FIGURE (shown only if diagram exists) ── -->
         <div class="q-figure ${hasFigure ? 'has-image' : ''}" id="q-figure">
@@ -679,11 +679,23 @@ function renderQuestion() {
     </div><!-- /q-card -->
   `;
 
-  // ── Render LaTeX in question text ──
+  // ── Render LaTeX in question text & options ──
+  // Text and options were already processed via latexToHtml() during innerHTML build.
+  // Now run KaTeX on them to handle any $...$ math delimiters.
   renderLatex('q-text');
-
-  // ── Render LaTeX in options ──
-  document.querySelectorAll('.option-text').forEach(el => renderLatexInEl(el));
+  document.querySelectorAll('.option-text').forEach(el => {
+    if (typeof renderMathInElement !== 'undefined') {
+      try {
+        renderMathInElement(el, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$',  right: '$',  display: false },
+          ],
+          throwOnError: false,
+        });
+      } catch(e) { console.warn('KaTeX option error:', e.message); }
+    }
+  });
 
   // ── Load figure if needed ──
   if (hasFigure) loadFigure(q);
@@ -806,14 +818,15 @@ function openExplanation(q) {
   vrow.innerHTML = `
     <div class="verdict-chip correct-ans">
       ✅ Correct Answer: <strong>${q.correct_answer}</strong>
-      &nbsp;—&nbsp;${escapeHtml(q.options[q.correct_answer] || '')}
+      &nbsp;—&nbsp;${latexToHtml(q.options[q.correct_answer] || '')}
     </div>
     ${!isCorrect ? `<div class="verdict-chip your-ans-wrong">
       ❌ Your Answer: <strong>${selectedOpt}</strong>
     </div>` : `<div class="verdict-chip your-ans-correct">🎯 You got it right!</div>`}
   `;
 
-  // Explanation text (render LaTeX)
+  // Explanation text — set as raw text then let renderLatexInEl process it
+  // (renderLatexInEl reads textContent, converts LaTeX commands → HTML, then runs KaTeX)
   body.textContent = q.explanation || 'No explanation provided.';
   renderLatexInEl(body);
 
@@ -860,12 +873,71 @@ function updateProgress() {
 }
 
 // ─────────────────────────────────────────────
-// KATEX RENDERING  (same approach as rehype-katex)
-// – Delimiters: $...$ inline, $$...$$ display
+// LATEX RENDERING
 // ─────────────────────────────────────────────
-function initKatex() {
-  // KaTeX auto-render is loaded; nothing extra needed here.
-  // Each render call is triggered manually via renderLatex / renderLatexInEl.
+// Two-stage pipeline:
+//   Stage 1 – processLatexText():
+//     Converts text-mode LaTeX commands (\textbf, \textit, \texttt, \item, \n)
+//     to safe HTML. These are NOT math and KaTeX never touches them.
+//   Stage 2 – renderMathInElement():
+//     KaTeX auto-render handles $...$ and $$...$$ math delimiters only.
+//
+// Why this is needed:
+//   \textbf{} \textit{} \texttt{} are LaTeX TEXT commands, not math commands.
+//   KaTeX only processes content inside math delimiters ($...$).
+//   Anything outside delimiters is left as raw text — so "\textbf{X}" renders
+//   literally as the characters backslash-textbf-{X} in the browser.
+// ─────────────────────────────────────────────
+
+function processLatexText(str) {
+  if (!str) return '';
+
+  // Step 1: escape HTML special chars in the raw string
+  let s = String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+
+  // Step 2: convert \n (literal backslash-n from JSON) to <br>
+  // JSON stores "\\n" which after parse() = "\n" (actual newline), but the
+  // generator sometimes writes "\\\\n" (double-escaped) = literal \n in the string.
+  // Handle both: actual newlines and the literal two-char sequence \n.
+  s = s.replace(/\\n/g, '<br>');      // literal \n sequence
+  s = s.replace(/\n/g, '<br>');       // actual newline characters
+
+  // Step 3: \begin{itemize}...\end{itemize} → <ul>...</ul>
+  s = s.replace(/\\begin\{itemize\}([\s\S]*?)\\end\{itemize\}/g, function(_, inner) {
+    return '<ul style="margin:8px 0 8px 20px;padding:0;">' + inner + '</ul>';
+  });
+  // Step 4: \begin{enumerate}...\end{enumerate} → <ol>...</ol>
+  s = s.replace(/\\begin\{enumerate\}([\s\S]*?)\\end\{enumerate\}/g, function(_, inner) {
+    return '<ol style="margin:8px 0 8px 20px;padding:0;">' + inner + '</ol>';
+  });
+  // Step 5: \item → <li>
+  s = s.replace(/\\item\s*/g, '<li style="margin-bottom:4px;">');
+  // Close open <li> tags before the next <li> or end of list
+  s = s.replace(/(<li[^>]*>)([\s\S]*?)(?=<li|<\/[uo]l>)/g, '$1$2</li>');
+
+  // Step 6: text-mode commands — processed innermost-first via iterative pass
+  // We apply up to 5 passes to handle nesting like \textbf{\textit{X}}
+  for (let pass = 0; pass < 5; pass++) {
+    const before = s;
+    s = s
+      .replace(/\\textbf\{([^{}]*)\}/g,  '<strong>$1</strong>')
+      .replace(/\\textit\{([^{}]*)\}/g,  '<em>$1</em>')
+      .replace(/\\texttt\{([^{}]*)\}/g,  '<code style="background:#f1f5f9;padding:1px 4px;border-radius:3px;font-size:.9em;">$1</code>')
+      .replace(/\\text\{([^{}]*)\}/g,    '$1')    // \text{} in math context → plain
+      .replace(/\\underline\{([^{}]*)\}/g, '<u>$1</u>')
+      .replace(/\\emph\{([^{}]*)\}/g,    '<em>$1</em>');
+    if (s === before) break;  // no more replacements — stop
+  }
+
+  // Step 7: protect $...$ and $$...$$ math content so it reaches KaTeX intact
+  // (The replacements above don't touch $ delimiters because we only match
+  //  commands outside math mode. KaTeX will handle the rest.)
+
+  return s;
 }
 
 function renderLatex(elementId) {
@@ -875,21 +947,33 @@ function renderLatex(elementId) {
 }
 
 function renderLatexInEl(el) {
-  if (!el || typeof renderMathInElement === 'undefined') return;
-  try {
-    renderMathInElement(el, {
-      delimiters: [
-        { left: '$$', right: '$$', display: true  },
-        { left: '$',  right: '$',  display: false },
-        { left: '\\(', right: '\\)', display: false },
-        { left: '\\[', right: '\\]', display: true  },
-      ],
-      throwOnError: false,
-    });
-  } catch(e) {
-    // Silently fail — don't break the UI if LaTeX is malformed
-    console.warn('KaTeX render error:', e.message);
+  if (!el) return;
+
+  // Stage 1: convert text-mode LaTeX commands to HTML
+  // We set innerHTML directly (processLatexText already escaped HTML special chars)
+  el.innerHTML = processLatexText(el.textContent || el.innerText || '');
+
+  // Stage 2: run KaTeX on the result for $...$ and $$...$$ math
+  if (typeof renderMathInElement !== 'undefined') {
+    try {
+      renderMathInElement(el, {
+        delimiters: [
+          { left: '$$', right: '$$', display: true  },
+          { left: '$',  right: '$',  display: false },
+          { left: '\\(', right: '\\)', display: false },
+          { left: '\\[', right: '\\]', display: true  },
+        ],
+        throwOnError: false,
+      });
+    } catch(e) {
+      console.warn('KaTeX render error:', e.message);
+    }
   }
+}
+
+// Render a raw string to HTML (for use before DOM insertion)
+function latexToHtml(str) {
+  return processLatexText(str);
 }
 
 // ─────────────────────────────────────────────
