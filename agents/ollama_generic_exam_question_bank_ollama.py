@@ -1,7 +1,8 @@
 """
-generic_exam_question_bank.py
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Generic multi-exam question bank generator.
+generic_exam_question_bank_ollama.py
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Generic multi-exam question bank generator — Ollama / Gemma4 31b edition.
+Uses a locally-hosted Gemma4 31b model via Ollama instead of AWS Bedrock.
 Supports any exam in syllabus_maps.json — question style, difficulty scale,
 LaTeX conventions, and critic logic all adapt automatically to the chosen exam.
 
@@ -26,10 +27,9 @@ import requests
 import time
 from typing import TypedDict, Optional, Dict, Any, List, Tuple
 from dotenv import load_dotenv
-from langchain_aws import ChatBedrock
+from langchain_ollama import ChatOllama
 from langchain_core.messages import SystemMessage, HumanMessage
 from langgraph.graph import StateGraph, END
-from botocore.config import Config
 
 try:
     import cairosvg
@@ -48,9 +48,16 @@ MAX_RETRIES       = 10
 PIVOT_AFTER_FAILS = 3
 RENDERER_URL      = os.getenv("RENDERER_URL", "http://localhost:3002/api/render")
 
-_MODEL_HAIKU  = os.getenv("Model_ID_Sonnet")
-_MODEL_SONNET = os.getenv("Model_ID", "us.anthropic.claude-sonnet-4-6")
-_MODEL_OPUS   = os.getenv("Model_ID_Opus", _MODEL_SONNET)
+# ── Ollama config ──────────────────────────────────────────────
+# All three model slots point to Gemma4 31b running locally via Ollama.
+# Override via .env: OLLAMA_BASE_URL, OLLAMA_MODEL
+OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
+OLLAMA_MODEL    = os.getenv("OLLAMA_MODEL", "gemma4:31b")
+
+# Keep these aliases so the rest of the code remains unchanged.
+_MODEL_HAIKU  = OLLAMA_MODEL
+_MODEL_SONNET = OLLAMA_MODEL
+_MODEL_OPUS   = OLLAMA_MODEL
 
 # ==========================================
 # 0a. EXAM CATEGORY DETECTION
@@ -513,7 +520,6 @@ class QuestionState(TypedDict):
     diagram_feedback:  Optional[str]
     final_image_path:  Optional[str]
     used_numbers:      List[str]
-    image_dir:         str
 
 # ==========================================
 # 1a. HELPERS
@@ -562,35 +568,33 @@ def pick_generator_model(gen_count: int, has_diagram: bool) -> tuple:
             return _MODEL_OPUS, "Opus" if _MODEL_OPUS != _MODEL_SONNET else "Sonnet"
 
 
-def make_llm(model_id: str, max_tokens: int = 8192) -> ChatBedrock:
-    return ChatBedrock(
-        model_id=model_id,
-        region_name=os.getenv("AWS_DEFAULT_REGION", "us-east-1"),
-        model_kwargs={"max_tokens": max_tokens},
-        config=Config(read_timeout=300),
+def make_llm(model_id: str, max_tokens: int = 8192) -> ChatOllama:
+    """
+    Creates a ChatOllama instance pointing at the local Ollama server.
+    model_id is accepted for API-compatibility but always resolves to OLLAMA_MODEL.
+    """
+    return ChatOllama(
+        model=OLLAMA_MODEL,
+        base_url=OLLAMA_BASE_URL,
+        num_predict=max_tokens,   # Ollama's equivalent of max_tokens
+        temperature=0.7,
+        timeout=300,
     )
+
 
 def safe_invoke(model_id: str, messages: list, max_tokens: int = 8192, retries: int = 3):
     """
-    Safely invokes the LLM. If the machine sleeps and the AWS signature expires,
-    or if there is a temporary network drop, it recreates the client and retries.
+    Safely invokes the local Ollama LLM.
+    Retries on transient connection errors (e.g. Ollama not yet warmed up).
     """
     for attempt in range(retries):
         try:
-            # We recreate the LLM client on each attempt to force a fresh AWS SigV4 timestamp
             llm = make_llm(model_id, max_tokens=max_tokens)
             return llm.invoke(messages)
-        except ClientError as e:
-            error_code = e.response.get("Error", {}).get("Code", "")
-            if error_code == "InvalidSignatureException" or attempt < retries - 1:
-                print(f"   ⚠️ AWS Signature/Connection error ({error_code}). Waking up and retrying {attempt+1}/{retries}...")
-                time.sleep(2)
-                continue
-            raise e
         except Exception as e:
             if attempt < retries - 1:
-                print(f"   ⚠️ LLM Error: {e}. Retrying {attempt+1}/{retries}...")
-                time.sleep(2)
+                print(f"   ⚠️ Ollama error: {e}. Retrying {attempt+1}/{retries}...")
+                time.sleep(3)
                 continue
             raise e
 
@@ -742,10 +746,9 @@ def compiler_node(state: QuestionState) -> dict:
         res = requests.post(RENDERER_URL, json={"code": q_data["TikZ_Code"]}, timeout=120)
         if res.status_code == 200:
             gen      = state.get("generation_count", 0)
-            img_dir  = state.get("image_dir", "local_images")
             img_name = f"{q_data['id']}_a{gen}.svg"
-            img_path = os.path.join(img_dir, img_name)            # ✅
-            os.makedirs(img_dir, exist_ok=True) 
+            img_path = os.path.join("local_images", img_name)
+            os.makedirs("local_images", exist_ok=True)
             with open(img_path, "wb") as f:
                 f.write(res.content)
             print(f"   ✅ Saved {img_name}")
@@ -819,9 +822,10 @@ def diagram_critic_node(state: QuestionState) -> dict:
         print("   ✅ Diagram check skipped (no image available)")
         return {"diagram_feedback": None}
 
+    # LangChain / Ollama multimodal format: image_url with base64 data URI
     human_content = [
-        {"type": "image", "source": {
-            "type": "base64", "media_type": "image/png", "data": png_b64
+        {"type": "image_url", "image_url": {
+            "url": f"data:image/png;base64,{png_b64}"
         }},
         {"type": "text", "text": (
             f"The diagram illustrates this question:\n{q_data.get('text', '')}\n\n"
@@ -920,10 +924,8 @@ def run_seeder(
     print(f"   N/level     : {n_per_level}  (questions per difficulty per iteration)")
     print(f"   K iterations: {k_iterations}")
     print(f"   Difficulties: {difficulty_levels}")
-    print(f"   Haiku       : {_MODEL_HAIKU  or '⚠️  NOT SET — falls back to Sonnet'}")
-    print(f"   Sonnet      : {_MODEL_SONNET}")
-    print(f"   Opus        : {_MODEL_OPUS}")
-    print(f"   Critics     : Factual=Sonnet | Diagram=Sonnet+Vision (visual only)")
+    print(f"   Model       : {OLLAMA_MODEL}  (via Ollama at {OLLAMA_BASE_URL})")
+    print(f"   Critics     : Factual={OLLAMA_MODEL} | Diagram={OLLAMA_MODEL}+Vision (visual only)")
     print(f"   Budget      : {MAX_RETRIES} attempts/round, infinite rounds/slot")
     vision_ok = "✅ cairosvg installed" if _CAIROSVG_AVAILABLE else "⚠️  cairosvg missing"
     print(f"   Vision      : {vision_ok}")
@@ -1036,8 +1038,6 @@ def run_seeder(
 
                         print(f"   🔁 Round {round_num}")
 
-                        image_dir = os.path.splitext(output_file)[0]
-
                         initial_state: QuestionState = {
                             "request_prompt":    request,
                             "forced_id":         forced_id,
@@ -1046,7 +1046,6 @@ def run_seeder(
                             "generation_count":  0,
                             "total_fail_count":  0,
                             "last_failure_type": "",
-                            "image_dir": image_dir,
                             "raw_json_str":      None,
                             "question_data":     None,
                             "compile_error":     None,
@@ -1076,7 +1075,9 @@ def run_seeder(
                         if succeeded:
                             tmp_img = final_state.get("final_image_path")
                             if tmp_img and os.path.exists(tmp_img):
-                                final_img = os.path.join(image_dir, f"{q_data['id']}.svg")
+                                final_img = os.path.join(
+                                    "local_images", f"{q_data['id']}.svg"
+                                )
                                 os.rename(tmp_img, final_img)
                                 q_data["local_image_path"] = final_img
 
@@ -1118,7 +1119,7 @@ if __name__ == "__main__":
     #   "SSC CGL"
     #   "AWS Solutions Architect Associate"
     #   ... (see syllabus_maps.json for full list)
-    EXAM = "AWS Solutions Architect Associate"
+    EXAM = "Microsoft Power BI Data Analyst (PL-300)"
 
     # ── SCOPE SELECTION ────────────────────────────────────────────────────
     # Set any of these to "All" to iterate all options at that level.
@@ -1128,12 +1129,12 @@ if __name__ == "__main__":
     #   SUBJECT="Indian Polity", TOPIC="All", SUB_TOPIC="Fundamental Rights (Articles 12–35)"
     #   SUBJECT="All", TOPIC="All", SUB_TOPIC="Fundamental Rights (Articles 12–35)"
 
-    SUBJECT   = "All"
-    TOPIC     = "All"        # UPSC GS-1 is flat (no topic level), keep as "All"
+    SUBJECT   = "Model the Data"
+    TOPIC     = "Data Modelling"        # UPSC GS-1 is flat (no topic level), keep as "All"
     SUB_TOPIC = "All"        # "All" = iterate every subtopic under chosen subject
 
     # ── GENERATION CONFIG ──────────────────────────────────────────────────
-    N_PER_LEVEL       = 1          # questions to bank per difficulty level per iteration
+    N_PER_LEVEL       = 2          # questions to bank per difficulty level per iteration
     K_ITERATIONS      = 1          # iterations (K=2 doubles the total questions)
     DIFFICULTY_LEVELS = [1,2,3,4,5]
 

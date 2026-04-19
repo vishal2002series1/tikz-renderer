@@ -1,0 +1,88 @@
+[
+  {
+    "id": "GOOGLE_GOOGLECLOU_1_1_1_461c87",
+    "text": "A new enterprise company is setting up its **Google Cloud** environment for the first time. The cloud administrator needs to understand where **Organisation-level IAM policies** sit within the **Google Cloud Resource Hierarchy**. Which statement BEST describes the effect of an IAM policy applied at the **Organisation node**?",
+    "options": {
+      "A": "The policy applies only to resources within a single **Project** and does not propagate to other Projects.",
+      "B": "The policy applies only to **Folders** directly beneath the Organisation and must be re-applied to each Project manually.",
+      "C": "The policy is inherited by all **Folders**, **Projects**, and **Resources** beneath the Organisation node.",
+      "D": "The policy applies only to **Billing Accounts** linked to the Organisation and has no effect on compute resources."
+    },
+    "correct_answer": "C",
+    "explanation": "**C is correct:** In the **Google Cloud Resource Hierarchy**, IAM policies follow an *inheritance model*. A policy set at a higher node \u2014 such as the **Organisation** \u2014 is automatically inherited by all child nodes: **Folders**, **Projects**, and the individual **Resources** within those Projects. This means access granted or denied at the Organisation level cascades downward throughout the entire hierarchy without requiring manual re-application at each level.\n\n**A is incorrect:** Policies applied at the Organisation level are NOT scoped to a single Project. They propagate across the entire resource hierarchy.\n\n**B is incorrect:** Organisation-level policies automatically inherit through all Folders and Projects \u2014 administrators do not need to manually re-apply them at each level.\n\n**D is incorrect:** Organisation-level IAM policies govern access to all resources and services beneath the Organisation node, not just **Billing Accounts**. Billing Account permissions are managed separately.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Google Cloud Associate Cloud Engineer",
+      "subject": "Setting Up a Cloud Solution Environment",
+      "topic": "Cloud Projects & Billing",
+      "sub_topic": "Google Cloud Resource Hierarchy \u2013 Organisation, Folders, Projects, Resources",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "GOOGLE_GOOGLECLOU_1_1_2_381c0b",
+    "text": "An organisation is setting up Google Cloud resources across multiple business units. Each business unit requires independent billing, resource management, and IAM policies, but all units must remain under a single organisation for compliance reporting. Which resource hierarchy structure BEST meets these requirements?",
+    "options": {
+      "A": "Create a single **Project** per business unit and link all projects directly to the **Organisation** node",
+      "B": "Create **Folders** under the **Organisation** node, with one **Folder** per business unit, and place **Projects** within each **Folder**",
+      "C": "Create multiple **Organisations**, one per business unit, and link them all to a parent **Billing Account**",
+      "D": "Create a single **Folder** at the **Organisation** level and place all business unit **Projects** directly into it"
+    },
+    "correct_answer": "B",
+    "explanation": "**B is correct:** The **Google Cloud Resource Hierarchy** follows a strict structure: **Organisation** \u2192 **Folders** (optional, can be nested) \u2192 **Projects** \u2192 **Resources**. **Folders** provide the logical container for grouping **Projects** and allow independent billing, IAM policies, and resource management per business unit while maintaining compliance visibility at the **Organisation** level. Each **Folder** can have its own **Billing Account**, enable/disable APIs independently, and apply distinct **IAM** policies.\n\n**A is incorrect:** While you can place **Projects** directly under an **Organisation** without **Folders**, this approach lacks the hierarchical structure needed for independent management of business unit resources and makes scaling difficult. You cannot apply distinct policies or billing controls at the intermediate level.\n\n**C is incorrect:** Creating multiple **Organisations** violates the requirement to remain under a single **Organisation** for compliance reporting. Additionally, managing compliance across multiple **Organisations** is operationally complex.\n\n**D is incorrect:** Using a single **Folder** defeats the purpose of hierarchical separation. All business units would share the same policy scope and billing controls, preventing independent resource management.",
+    "Requires_Diagram": true,
+    "TikZ_Code": "\\documentclass[varwidth=21cm, border=5mm]{standalone}\n\\usepackage{tikz}\n\\usetikzlibrary{shapes,arrows,positioning}\n\n\\begin{document}\n\\begin{tikzpicture}[node distance=2cm, font=\\small]\n  % Organisation node\n  \\node[draw, rectangle, thick, fill=blue!20, minimum width=3cm, minimum height=0.8cm] (org) {\\textbf{Organisation}};\n  \n  % Folders\n  \\node[draw, rectangle, thick, fill=green!20, minimum width=2.5cm, minimum height=0.7cm, below left=1.5cm and 3cm of org] (folder1) {\\textbf{Folder: Unit A}};\n  \\node[draw, rectangle, thick, fill=green!20, minimum width=2.5cm, minimum height=0.7cm, below right=1.5cm and 3cm of org] (folder2) {\\textbf{Folder: Unit B}};\n  \n  % Projects under Folder 1\n  \\node[draw, rectangle, thick, fill=yellow!20, minimum width=2cm, minimum height=0.6cm, below left=1.2cm and 1cm of folder1] (proj1) {\\textbf{Project 1A}};\n  \\node[draw, rectangle, thick, fill=yellow!20, minimum width=2cm, minimum height=0.6cm, below right=1.2cm and 1cm of folder1] (proj2) {\\textbf{Project 1B}};\n  \n  % Projects under Folder 2\n  \\node[draw, rectangle, thick, fill=yellow!20, minimum width=2cm, minimum height=0.6cm, below left=1.2cm and 1cm of folder2] (proj3) {\\textbf{Project 2A}};\n  \\node[draw, rectangle, thick, fill=yellow!20, minimum width=2cm, minimum height=0.6cm, below right=1.2cm and 1cm of folder2] (proj4) {\\textbf{Project 2B}};\n  \n  % Arrows from Organisation to Folders\n  \\draw[->, thick] (org) -- (folder1);\n  \\draw[->, thick] (org) -- (folder2);\n  \n  % Arrows from Folders to Projects\n  \\draw[->, thick] (folder1) -- (proj1);\n  \\draw[->, thick] (folder1) -- (proj2);\n  \\draw[->, thick] (folder2) -- (proj3);\n  \\draw[->, thick] (folder2) -- (proj4);\n  \n  % Legend\n  \\node[text=gray, font=\\tiny, anchor=north west] at (0, -5.5) {\\textit{Each Folder supports independent billing, IAM, and API management per business unit}};\n\\end{tikzpicture}\n\\end{document}",
+    "metadata": {
+      "exam": "Google Cloud Associate Cloud Engineer",
+      "subject": "Setting Up a Cloud Solution Environment",
+      "topic": "Cloud Projects & Billing",
+      "sub_topic": "Google Cloud Resource Hierarchy \u2013 Organisation, Folders, Projects, Resources",
+      "difficulty_level": 1
+    },
+    "local_image_path": "local_images/GOOGLE_GOOGLECLOU_1_1_2_381c0b.svg"
+  },
+  {
+    "id": "GOOGLE_GOOGLECLOU_1_1_3_040032",
+    "text": "An organisation has multiple business units, each requiring separate cost tracking and policy enforcement. The organisation wants to grant certain permissions to all projects within a business unit without managing permissions at the individual project level. Which level of the Google Cloud resource hierarchy should be used to group these projects?",
+    "options": {
+      "A": "**Organisation** \u2014 the top-level container for all Google Cloud resources",
+      "B": "**Folder** \u2014 an intermediate container that groups projects and enables hierarchical policy management",
+      "C": "**Project** \u2014 the fundamental unit for resource billing and policy assignment",
+      "D": "**Resource** \u2014 the lowest level where individual services like **Compute Engine** instances are created"
+    },
+    "correct_answer": "B",
+    "explanation": "**B is correct:** **Folders** are intermediate containers in the Google Cloud resource hierarchy specifically designed to group projects and enable *hierarchical policy inheritance*. Policies and roles assigned to a **Folder** automatically apply to all projects within that **Folder**, allowing centralised management without touching individual project policies.\n\n**A is incorrect:** The **Organisation** is the root-level container for the entire resource hierarchy. While policies set at the **Organisation** level do propagate down, using **Folders** provides the granularity needed to manage separate business units independently.\n\n**C is incorrect:** **Projects** are the fundamental billing and resource unit, but assigning permissions at the project level requires individual configuration for each project \u2014 defeating the requirement to manage permissions for entire business units centrally.\n\n**D is incorrect:** **Resources** (compute instances, databases, storage buckets) are the lowest level and cannot group projects. Policies must be assigned at higher levels (**Folder**, **Project**, or **Organisation**).",
+    "Requires_Diagram": true,
+    "TikZ_Code": "\\documentclass[varwidth=21cm, border=5mm]{standalone}\n\\usepackage{tikz}\n\\usetikzlibrary{shapes,arrows,positioning}\n\\begin{document}\n\\begin{tikzpicture}[\n  every node/.style={draw, rounded rectangle, minimum width=3cm, minimum height=0.8cm, align=center, fill=white},\n  level distance=1.8cm\n]\n  \\node (org) at (0, 0) {Organisation};\n  \\node (folder1) at (-4, -2) {Folder: Finance};\n  \\node (folder2) at (4, -2) {Folder: Engineering};\n  \\node (proj1) at (-6, -4) {Project A};\n  \\node (proj2) at (-2, -4) {Project B};\n  \\node (proj3) at (2, -4) {Project C};\n  \\node (proj4) at (6, -4) {Project D};\n  \\node (res1) at (-6, -6) {Resources};\n  \\draw [->] (org) -- (folder1);\n  \\draw [->] (org) -- (folder2);\n  \\draw [->] (folder1) -- (proj1);\n  \\draw [->] (folder1) -- (proj2);\n  \\draw [->] (folder2) -- (proj3);\n  \\draw [->] (folder2) -- (proj4);\n  \\draw [dashed, ->] (proj1) -- (res1);\n\\end{tikzpicture}\n\\end{document}",
+    "metadata": {
+      "exam": "Google Cloud Associate Cloud Engineer",
+      "subject": "Setting Up a Cloud Solution Environment",
+      "topic": "Cloud Projects & Billing",
+      "sub_topic": "Google Cloud Resource Hierarchy \u2013 Organisation, Folders, Projects, Resources",
+      "difficulty_level": 1
+    },
+    "local_image_path": "local_images/GOOGLE_GOOGLECLOU_1_1_3_040032.svg"
+  },
+  {
+    "id": "GOOGLE_GOOGLECLOU_1_1_4_ca2ceb",
+    "text": "An organization is setting up Google Cloud for the first time and needs to organize resources across multiple business units and environments (development, staging, production). A solutions architect wants to ensure that billing is tracked separately per business unit and that IAM policies can be applied consistently across all resources in each environment. Which resource hierarchy structure BEST achieves this organizational requirement?",
+    "options": {
+      "A": "Create a single **Project** per business unit with all environments (dev, staging, prod) as separate **Folders** within each **Project**",
+      "B": "Create an **Organization**, then create **Folders** per business unit, and within each business unit **Folder** create sub-**Folders** for each environment (dev, staging, prod), with **Projects** at the environment level",
+      "C": "Create a separate **Project** for each environment across all business units without using **Folders**",
+      "D": "Create an **Organization** with a single **Folder** per environment, then nest all business unit **Projects** within each environment **Folder**"
+    },
+    "correct_answer": "B",
+    "explanation": "**B is correct:** This structure aligns with Google Cloud best practices for resource hierarchy. By creating **Folders** per business unit first, billing can be aggregated and tracked separately per business unit using the **Cloud Billing API** and custom cost reports. Within each business unit **Folder**, environment-level sub-**Folders** (dev, staging, prod) allow IAM policies to be applied consistently across all **Projects** in the same environment. **Projects** are the lowest level and contain actual resources. This enables both billing isolation by business unit and IAM consistency by environment.\n\n**A is incorrect:** **Folders** cannot contain **Projects** directly as children and also contain other **Folders**\u2014the hierarchy is strict. Additionally, creating **Folders** at the environment level within a **Project** is not the correct structural approach; **Folders** should organize **Projects**, not be nested inside them.\n\n**C is incorrect:** Without using **Folders**, it is not possible to apply IAM policies consistently across multiple **Projects** at once, and billing tracking by business unit would require manual consolidation rather than leveraging the hierarchy for automatic cost allocation.\n\n**D is incorrect:** While this uses **Organization** and **Folders**, organizing by environment first (rather than business unit) makes it harder to track billing per business unit. Additionally, this inverts the typical organizational structure and does not enable the requirement of separate billing per business unit.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "Google Cloud Associate Cloud Engineer",
+      "subject": "Setting Up a Cloud Solution Environment",
+      "topic": "Cloud Projects & Billing",
+      "sub_topic": "Google Cloud Resource Hierarchy \u2013 Organisation, Folders, Projects, Resources",
+      "difficulty_level": 1
+    }
+  }
+]

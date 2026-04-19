@@ -513,7 +513,6 @@ class QuestionState(TypedDict):
     diagram_feedback:  Optional[str]
     final_image_path:  Optional[str]
     used_numbers:      List[str]
-    image_dir:         str
 
 # ==========================================
 # 1a. HELPERS
@@ -742,10 +741,9 @@ def compiler_node(state: QuestionState) -> dict:
         res = requests.post(RENDERER_URL, json={"code": q_data["TikZ_Code"]}, timeout=120)
         if res.status_code == 200:
             gen      = state.get("generation_count", 0)
-            img_dir  = state.get("image_dir", "local_images")
             img_name = f"{q_data['id']}_a{gen}.svg"
-            img_path = os.path.join(img_dir, img_name)            # ✅
-            os.makedirs(img_dir, exist_ok=True) 
+            img_path = os.path.join("local_images", img_name)
+            os.makedirs("local_images", exist_ok=True)
             with open(img_path, "wb") as f:
                 f.write(res.content)
             print(f"   ✅ Saved {img_name}")
@@ -1036,8 +1034,6 @@ def run_seeder(
 
                         print(f"   🔁 Round {round_num}")
 
-                        image_dir = os.path.splitext(output_file)[0]
-
                         initial_state: QuestionState = {
                             "request_prompt":    request,
                             "forced_id":         forced_id,
@@ -1046,7 +1042,6 @@ def run_seeder(
                             "generation_count":  0,
                             "total_fail_count":  0,
                             "last_failure_type": "",
-                            "image_dir": image_dir,
                             "raw_json_str":      None,
                             "question_data":     None,
                             "compile_error":     None,
@@ -1076,7 +1071,9 @@ def run_seeder(
                         if succeeded:
                             tmp_img = final_state.get("final_image_path")
                             if tmp_img and os.path.exists(tmp_img):
-                                final_img = os.path.join(image_dir, f"{q_data['id']}.svg")
+                                final_img = os.path.join(
+                                    "local_images", f"{q_data['id']}.svg"
+                                )
                                 os.rename(tmp_img, final_img)
                                 q_data["local_image_path"] = final_img
 
@@ -1118,7 +1115,7 @@ if __name__ == "__main__":
     #   "SSC CGL"
     #   "AWS Solutions Architect Associate"
     #   ... (see syllabus_maps.json for full list)
-    EXAM = "AWS Solutions Architect Associate"
+    EXAM = "Google Cloud Associate Cloud Engineer"
 
     # ── SCOPE SELECTION ────────────────────────────────────────────────────
     # Set any of these to "All" to iterate all options at that level.
@@ -1133,7 +1130,7 @@ if __name__ == "__main__":
     SUB_TOPIC = "All"        # "All" = iterate every subtopic under chosen subject
 
     # ── GENERATION CONFIG ──────────────────────────────────────────────────
-    N_PER_LEVEL       = 1          # questions to bank per difficulty level per iteration
+    N_PER_LEVEL       = 5          # questions to bank per difficulty level per iteration
     K_ITERATIONS      = 1          # iterations (K=2 doubles the total questions)
     DIFFICULTY_LEVELS = [1,2,3,4,5]
 
