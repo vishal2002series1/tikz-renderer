@@ -1,0 +1,646 @@
+[
+  {
+    "id": "BANKPO_NUMBERSYST_1_1_1_67ac73",
+    "text": "Simplify: $\\frac{144}{12} + \\sqrt{225} - 4^2$",
+    "options": {
+      "A": "11",
+      "B": "13",
+      "C": "15",
+      "D": "17"
+    },
+    "correct_answer": "A",
+    "explanation": "**Step 1 \u2014 Divide:** $\\frac{144}{12} = 12$\n\n**Step 2 \u2014 Square root:** $\\sqrt{225} = 15$\n\n**Step 3 \u2014 Power:** $4^2 = 16$\n\n**Step 4 \u2014 Combine:** $12 + 15 - 16 = \\mathbf{11}$\n\nHence, the correct answer is **11**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "144/12 + sqrt(225) - 4**2",
+      "computed_value": 11,
+      "answer_option": "A",
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "BANKPO_NUMBERSYST_1_1_2_ce1a62",
+    "text": "**Simplify:** $\\sqrt{676} + \\sqrt{361} - \\sqrt{256} + 3^{3}$",
+    "options": {
+      "A": "52",
+      "B": "54",
+      "C": "56",
+      "D": "58"
+    },
+    "correct_answer": "C",
+    "explanation": "**Step 1 \u2014 Evaluate each term:**\n\n- $\\sqrt{676} = 26$\n- $\\sqrt{361} = 19$\n- $\\sqrt{256} = 16$\n- $3^{3} = 27$\n\n**Step 2 \u2014 Combine all terms:**\n\n$$26 + 19 - 16 + 27 = \\mathbf{56}$$\n\nThe correct answer is **56**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "26 + 19 - 16 + 3**3",
+      "computed_value": 56,
+      "answer_option": "C",
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "BANKPO_NUMBERSYST_1_1_3_d1a821",
+    "text": "**Simplify:** $\\sqrt{484} + \\sqrt{196} - \\sqrt{49} + 10$",
+    "options": {
+      "A": "33",
+      "B": "35",
+      "C": "39",
+      "D": "41"
+    },
+    "correct_answer": "C",
+    "explanation": "**Step-by-step solution:**\n\n**Step 1:** $\\sqrt{484} = 22$\n\n**Step 2:** $\\sqrt{196} = 14$\n\n**Step 3:** $\\sqrt{49} = 7$\n\n**Step 4:** The constant term is $10$.\n\n**Step 5:** Combine all terms:\n$$22 + 14 - 7 + 10 = 39$$\n\nThe correct answer is **Option C: 39**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "sqrt(484) + sqrt(196) - sqrt(49) + 10",
+      "computed_value": 39,
+      "answer_option": "C",
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "BANKPO_NUMBERSYST_1_1_4_b6e0a6",
+    "text": "**Simplify:** $\\sqrt{625} + \\sqrt{169} - \\sqrt{81} + 7^2$",
+    "options": {
+      "A": "76",
+      "B": "78",
+      "C": "80",
+      "D": "82"
+    },
+    "correct_answer": "B",
+    "explanation": "## Solution\n\n**Evaluate each term individually:**\n\n**Term 1:** $\\sqrt{625}$\n$$\\sqrt{625} = 25 \\quad \\text{since } 25^2 = 625$$\n\n**Term 2:** $\\sqrt{169}$\n$$\\sqrt{169} = 13 \\quad \\text{since } 13^2 = 169$$\n\n**Term 3:** $\\sqrt{81}$\n$$\\sqrt{81} = 9 \\quad \\text{since } 9^2 = 81$$\n\n**Term 4:** $7^2$\n$$7^2 = 49$$\n\n**Combine all terms:**\n$$25 + 13 - 9 + 49$$\n\n$$= 38 - 9 + 49$$\n\n$$= 29 + 49$$\n\n$$= \\boxed{78}$$\n\nThe correct answer is **B = 78**.\n\nThe other options result from common arithmetic errors \u2014 for example, miscalculating $\\sqrt{169} = 12$ instead of $13$ gives 77 (not even listed), or misreading $7^2 = 48$ shifts the result to 76 (Option A) or other incorrect values.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "sqrt(625) + sqrt(169) - sqrt(81) + 7**2",
+      "computed_value": 78,
+      "answer_option": "B",
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "BANKPO_NUMBERSYST_1_1_5_5312a2",
+    "text": "**Simplify:** $\\sqrt{1024} + \\sqrt{441} - \\sqrt{324} + 5^2$",
+    "options": {
+      "A": "58",
+      "B": "60",
+      "C": "62",
+      "D": "64"
+    },
+    "correct_answer": "B",
+    "explanation": "## Solution\n\n**Step 1: Evaluate each term individually.**\n\n$$\\sqrt{1024} = 32 \\quad \\text{(since } 32^2 = 1024\\text{)}$$\n\n$$\\sqrt{441} = 21 \\quad \\text{(since } 21^2 = 441\\text{)}$$\n\n$$\\sqrt{324} = 18 \\quad \\text{(since } 18^2 = 324\\text{)}$$\n\n$$5^2 = 25$$\n\n**Step 2: Substitute the evaluated values into the expression.**\n\n$$32 + 21 - 18 + 25$$\n\n**Step 3: Perform the arithmetic left to right.**\n\n$$32 + 21 = 53$$\n\n$$53 - 18 = 35$$\n\n$$35 + 25 = 60$$\n\n**Result:** $\\boxed{60}$ \u2014 **Option B**\n\nThe other options (58, 62, 64) result from common arithmetic errors such as miscalculating one of the square roots or incorrectly applying the subtraction.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "sqrt(1024) + sqrt(441) - sqrt(324) + 5**2",
+      "computed_value": 60,
+      "answer_option": "B",
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "BANKPO_NUMBERSYST_2_1_1_5c2640",
+    "text": "**Simplify:** $\\sqrt{784} + \\sqrt[3]{512} - \\frac{3}{4} \\times 96 + 15^2 \\div 9$",
+    "options": {
+      "A": "-13",
+      "B": "-11",
+      "C": "-9",
+      "D": "-7"
+    },
+    "correct_answer": "B",
+    "explanation": "## Step-by-Step Solution\n\n**Evaluate each term separately, then combine.**\n\n---\n\n**Term 1:** $\\sqrt{784}$\n\n$$\\sqrt{784} = 28 \\quad \\text{(since } 28^2 = 784\\text{)}$$\n\n---\n\n**Term 2:** $\\sqrt[3]{512}$\n\n$$\\sqrt[3]{512} = 8 \\quad \\text{(since } 8^3 = 512\\text{)}$$\n\n---\n\n**Term 3:** $\\dfrac{3}{4} \\times 96$\n\n$$\\frac{3}{4} \\times 96 = \\frac{288}{4} = 72$$\n\n---\n\n**Term 4:** $15^2 \\div 9$\n\n$$15^2 \\div 9 = \\frac{225}{9} = 25$$\n\n---\n\n**Combine all terms:**\n\n$$28 + 8 - 72 + 25$$\n\n$$= 36 - 72 + 25$$\n\n$$= -36 + 25$$\n\n$$= \\boxed{-11}$$\n\n---\n\nThe answer is **B = \u221211**. The other options (\u221213, \u22129, \u22127) result from arithmetic errors such as miscomputing $\\sqrt[3]{512}$, incorrectly applying the multiplication in Term 3, or miscalculating $15^2 \\div 9$.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "784**(1/2) + 512**(1/3) - (3/4)*96 + 15**2/9",
+      "computed_value": -11,
+      "answer_option": "B",
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "BANKPO_NUMBERSYST_2_1_2_effccd",
+    "text": "**Simplify** the following expression:\n\n$$\\sqrt{529} + \\sqrt[3]{343} - \\sqrt{1024} \\div 8 + 5^2$$",
+    "options": {
+      "A": "49",
+      "B": "51",
+      "C": "53",
+      "D": "55"
+    },
+    "correct_answer": "B",
+    "explanation": "## Step-by-Step Solution\n\n**Evaluate each term individually.**\n\n---\n\n**Term 1: $\\sqrt{529}$**\n\n$$\\sqrt{529} = 23 \\quad \\text{since } 23^2 = 529$$\n\n---\n\n**Term 2: $\\sqrt[3]{343}$**\n\n$$\\sqrt[3]{343} = 7 \\quad \\text{since } 7^3 = 343$$\n\n---\n\n**Term 3: $\\sqrt{1024} \\div 8$**\n\n$$\\sqrt{1024} = 32 \\quad \\text{since } 32^2 = 1024$$\n\n$$32 \\div 8 = 4$$\n\n---\n\n**Term 4: $5^2$**\n\n$$5^2 = 25$$\n\n---\n\n**Combine all terms (left to right):**\n\n$$23 + 7 - 4 + 25$$\n\n$$= 30 - 4 + 25$$\n\n$$= 26 + 25$$\n\n$$= \\boxed{51}$$\n\n---\n\nThe correct answer is **B = 51**.\n\n**Common errors leading to wrong options:**\n- **A (49):** Misreading $\\sqrt{529} = 21$ instead of 23 gives $21 + 7 - 4 + 25 = 49$.\n- **C (53):** Misreading $\\sqrt[3]{343} = 9$ instead of 7 gives $23 + 9 - 4 + 25 = 53$.\n- **D (55):** Forgetting to divide $\\sqrt{1024}$ by 8 (i.e., taking the term as 0) gives $23 + 7 + 0 + 25 = 55$.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "529**0.5 + 343**(1/3) - 1024**0.5 / 8 + 5**2",
+      "computed_value": 51,
+      "answer_option": "B",
+      "tolerance": 0.01
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "BANKPO_NUMBERSYST_2_1_3_397cbd",
+    "text": "**Simplify:** $$\\sqrt{1764} - \\sqrt[3]{27} - \\sqrt{400} + \\sqrt[3]{125}$$",
+    "options": {
+      "A": "22",
+      "B": "24",
+      "C": "26",
+      "D": "28"
+    },
+    "correct_answer": "B",
+    "explanation": "**Step 1: Evaluate each term individually.**\n\n- $\\sqrt{1764} = 42$ (since $42^2 = 1764$)\n- $\\sqrt[3]{27} = 3$ (since $3^3 = 27$)\n- $\\sqrt{400} = 20$ (since $20^2 = 400$)\n- $\\sqrt[3]{125} = 5$ (since $5^3 = 125$)\n\n**Step 2: Combine all terms.**\n\n$$42 - 3 - 20 + 5 = 24$$\n\n**Correct Answer: 24**",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "42 - 3 - 20 + 5",
+      "computed_value": 24,
+      "answer_option": "B",
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "BANKPO_NUMBERSYST_2_1_4_10e0e8",
+    "text": "What is the value of $\\frac{7^3 + 5^3}{7^2 - 7 \\times 5 + 5^2}$?",
+    "options": {
+      "A": "10",
+      "B": "12",
+      "C": "14",
+      "D": "16"
+    },
+    "correct_answer": "B",
+    "explanation": "We use the algebraic identity: $a^3 + b^3 = (a + b)(a^2 - ab + b^2)$.\n\nHere $a = 7$, $b = 5$.\n\nSo $7^3 + 5^3 = (7 + 5)(7^2 - 7 \\times 5 + 5^2) = 12 \\times (49 - 35 + 25) = 12 \\times 39 = 468$.\n\nThe denominator is $7^2 - 7 \\times 5 + 5^2 = 49 - 35 + 25 = 39$.\n\nTherefore, $\\frac{468}{39} = 12$.\n\nAlternatively, directly applying the identity: $\\frac{(a+b)(a^2 - ab + b^2)}{a^2 - ab + b^2} = a + b = 7 + 5 = **12**$.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "(7**3 + 5**3) / (7**2 - 7*5 + 5**2)",
+      "computed_value": 12,
+      "answer_option": "B",
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "BANKPO_NUMBERSYST_2_1_5_4c075b",
+    "text": "Simplify: $\\sqrt{1296} + \\sqrt[3]{216} - \\sqrt{441} + 4^3 \\div 8$",
+    "options": {
+      "A": "29",
+      "B": "33",
+      "C": "31",
+      "D": "27"
+    },
+    "correct_answer": "A",
+    "explanation": "## Solution\n\n**Step 1: Evaluate $\\sqrt{1296}$**\n\n$$\\sqrt{1296} = 36 \\quad \\text{since } 36^2 = 1296$$\n\n**Step 2: Evaluate $\\sqrt[3]{216}$**\n\n$$\\sqrt[3]{216} = 6 \\quad \\text{since } 6^3 = 216$$\n\n**Step 3: Evaluate $\\sqrt{441}$**\n\n$$\\sqrt{441} = 21 \\quad \\text{since } 21^2 = 441$$\n\n**Step 4: Evaluate $4^3 \\div 8$**\n\n$$4^3 \\div 8 = 64 \\div 8 = 8$$\n\n**Step 5: Combine all terms**\n\n$$36 + 6 - 21 + 8 = 29$$\n\n$$\\boxed{29}$$\n\nThe answer is **A = 29**. The other options (B = 33, C = 31, D = 27) result from common arithmetic errors such as miscomputing $4^3 \\div 8$ or incorrectly evaluating one of the roots.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "sqrt(1296) + cbrt(216) - sqrt(441) + 4**3/8",
+      "computed_value": 29,
+      "answer_option": "A",
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "BANKPO_NUMBERSYST_3_1_1_af5270",
+    "text": "A shopkeeper marks the price of an article such that after giving a discount of $16\\frac{2}{3}\\%$ on the marked price, he still earns a profit of $25\\%$ on the cost price. If the **cost price** of the article is $\\text{\u20b9}720$, then what is the **marked price** (in \u20b9)?",
+    "options": {
+      "A": "\u20b91,050",
+      "B": "\u20b91,080",
+      "C": "\u20b91,000",
+      "D": "\u20b9960"
+    },
+    "correct_answer": "B",
+    "explanation": "**Step 1 \u2014 Find the Selling Price from Cost Price and Profit%:**\n\n$$\\text{SP} = \\text{CP} \\times \\frac{100 + 25}{100} = 720 \\times \\frac{125}{100} = 720 \\times 1.25 = \\text{\u20b9}900$$\n\n**Step 2 \u2014 Express Discount in fraction form:**\n\n$16\\frac{2}{3}\\% = \\frac{50}{3}\\%$\n\nSo the shopkeeper sells at $\\left(100 - \\frac{50}{3}\\right)\\% = \\frac{250}{3}\\%$ of the Marked Price.\n\n**Step 3 \u2014 Find Marked Price:**\n\n$$\\text{SP} = \\text{MP} \\times \\frac{250}{300}$$\n\n$$900 = \\text{MP} \\times \\frac{5}{6}$$\n\n$$\\text{MP} = 900 \\times \\frac{6}{5} = \\text{\u20b9}1080$$\n\n**Answer: \u20b91,080 (Option B)**\n\nThis is a classic **Profit\u2013Discount\u2013Cost** linkage problem. The key identity used is:\n$$\\text{MP} = \\frac{\\text{SP}}{1 - d}$$\nwhere $d$ is the discount rate as a decimal ($d = \\frac{1}{6}$ here).",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "720 * (125/100) / (250/300)",
+      "computed_value": 1080,
+      "answer_option": "B",
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "BANKPO_NUMBERSYST_3_1_2_b3ee37",
+    "text": "A shopkeeper marks the price of an article such that after giving a discount of $12\\%$, he still earns a profit of $10\\%$. If the **cost price** of the article is \u20b94,500, then what is the **marked price** (in \u20b9) of the article?\n\n*Simplify:* $\\frac{110}{88} \\times 4500$",
+    "options": {
+      "A": "\u20b95,500",
+      "B": "\u20b95,625",
+      "C": "\u20b95,750",
+      "D": "\u20b95,850"
+    },
+    "correct_answer": "B",
+    "explanation": "**Step 1 \u2014 Set up the relationship between Marked Price (MP), Cost Price (CP), discount, and profit.**\n\nWhen a discount of $12\\%$ is given on **MP**, the selling price becomes:\n$$SP = MP \\times \\frac{(100 - 12)}{100} = MP \\times \\frac{88}{100}$$\n\nFor a profit of $10\\%$ on **CP**:\n$$SP = CP \\times \\frac{(100 + 10)}{100} = 4500 \\times \\frac{110}{100} = 4950$$\n\n**Step 2 \u2014 Equate and solve for MP.**\n$$MP \\times \\frac{88}{100} = 4950$$\n$$MP = \\frac{4950 \\times 100}{88} = \\frac{495000}{88} = 5625$$\n\n**Step 3 \u2014 Verify.**\nDiscount $= 5625 \\times 12\\% = 675$, so $SP = 5625 - 675 = 4950$.\nProfit $= 4950 - 4500 = 450 = 10\\%$ of $4500$. \u2713\n\n**Answer: \u20b95,625 \u2192 Option B**",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "(4500 * 110 / 100) * 100 / 88",
+      "computed_value": 5625.0,
+      "answer_option": "B",
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "BANKPO_NUMBERSYST_3_1_3_92f502",
+    "text": "A warehouse manager calculates the storage cost using the following formula: $$\\text{Cost} = \\frac{\\sqrt{3969} \\times \\sqrt[3]{512}}{\\sqrt{1521}} - \\frac{4^3 - 7^2}{\\sqrt[4]{625}}$$\n\nWhat is the value of the **storage cost** (in \u20b9)?",
+    "options": {
+      "A": "9.4231",
+      "B": "9.9231",
+      "C": "10.4231",
+      "D": "10.9231"
+    },
+    "correct_answer": "B",
+    "explanation": "## Step-by-Step Solution\n\n### Part 1: Evaluate the first term $\\dfrac{\\sqrt{3969} \\times \\sqrt[3]{512}}{\\sqrt{1521}}$\n\n**Compute each root:**\n\n$$\\sqrt{3969} = 63 \\quad \\text{since } 63^2 = 3969$$\n\n$$\\sqrt[3]{512} = 8 \\quad \\text{since } 8^3 = 512$$\n\n$$\\sqrt{1521} = 39 \\quad \\text{since } 39^2 = 1521$$\n\n**Substitute:**\n\n$$\\frac{63 \\times 8}{39} = \\frac{504}{39} = \\frac{56}{4.333...} = \\frac{168}{13} \\approx 12.9231$$\n\n---\n\n### Part 2: Evaluate the second term $\\dfrac{4^3 - 7^2}{\\sqrt[4]{625}}$\n\n**Compute the numerator:**\n\n$$4^3 = 64, \\quad 7^2 = 49$$\n\n$$4^3 - 7^2 = 64 - 49 = 15$$\n\n**Compute the denominator:**\n\n$$\\sqrt[4]{625} = 5 \\quad \\text{since } 5^4 = 625$$\n\n**Substitute:**\n\n$$\\frac{15}{5} = 3$$\n\n---\n\n### Part 3: Calculate the final Cost\n\n$$\\text{Cost} = 12.9231 - 3 = \\boxed{9.9231}$$\n\n---\n\n**Why other options are wrong:** Option A (9.4231) and C (10.4231) differ by exactly \u00b10.5 from the correct answer \u2014 they would result from arithmetic errors in the numerator product or square root values. Option D (10.9231) similarly reflects an error of +1.0, likely from miscalculating $4^3 - 7^2$ as 14 instead of 15.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "(sqrt(3969) * cbrt(512)) / sqrt(1521) - (4**3 - 7**2) / root(625, 4)",
+      "computed_value": 9.9231,
+      "answer_option": "B",
+      "tolerance": 0.01
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "BANKPO_NUMBERSYST_3_1_4_e62ddd",
+    "text": "A shopkeeper labels his products with codes based on number operations. He assigns a code to a premium item using the formula: $\\left(\\frac{17^3 + 13^3}{17^2 - 17 \\times 13 + 13^2}\\right) \\times \\frac{1}{6} + \\sqrt{1156} - \\sqrt[3]{729}$. What is the code assigned to the premium item?",
+    "options": {
+      "A": "30",
+      "B": "39",
+      "C": "36",
+      "D": "42"
+    },
+    "correct_answer": "A",
+    "explanation": "## Solution\n\n**Step 1: Simplify the fraction using the sum of cubes identity.**\n\nRecall that $a^3 + b^3 = (a + b)(a^2 - ab + b^2)$.\n\nWith $a = 17$ and $b = 13$:\n\n$$\\frac{17^3 + 13^3}{17^2 - 17 \\times 13 + 13^2} = \\frac{(17 + 13)(17^2 - 17 \\times 13 + 13^2)}{17^2 - 17 \\times 13 + 13^2} = 17 + 13 = 30$$\n\n**Step 2: Multiply by $\\frac{1}{6}$.**\n\n$$30 \\times \\frac{1}{6} = 5$$\n\n**Step 3: Evaluate $\\sqrt{1156}$.**\n\n$$\\sqrt{1156} = \\sqrt{34^2} = 34$$\n\n**Step 4: Evaluate $\\sqrt[3]{729}$.**\n\n$$\\sqrt[3]{729} = \\sqrt[3]{9^3} = 9$$\n\n**Step 5: Combine all terms.**\n\n$$5 + 34 - 9 = \\boxed{30}$$\n\nThe code assigned to the premium item is **30 (Option A)**.\n\n---\nThe other options (B = 39, C = 36, D = 42) would result from errors such as forgetting the $\\frac{1}{6}$ factor, miscalculating the square root, or not applying the sum-of-cubes simplification correctly.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "((17**3 + 13**3) / (17**2 - 17*13 + 13**2)) * (1/6) + sqrt(1156) - cbrt(729)",
+      "computed_value": 30,
+      "answer_option": "A",
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "BANKPO_NUMBERSYST_3_1_5_e15f2a",
+    "text": "**Simplify the following expression:**\n\n$$\\frac{80 - 20}{5} + \\frac{60 + 36}{12}$$",
+    "options": {
+      "A": "16",
+      "B": "20",
+      "C": "18",
+      "D": "24"
+    },
+    "correct_answer": "B",
+    "explanation": "**Step 1 \u2014 Evaluate the first part:**\n$$\\frac{80 - 20}{5} = \\frac{60}{5} = 12$$\n\n**Step 2 \u2014 Evaluate the second part:**\n$$\\frac{60 + 36}{12} = \\frac{96}{12} = 8$$\n\n**Step 3 \u2014 Combine both parts:**\n$$12 + 8 = \\mathbf{20}$$\n\nThe **correct answer is 20** (Option B).\n\n*Common errors:* Computing $80 - 20 = 50$ (subtraction error) gives $\\frac{50}{5} = 10$, leading to $10 + 8 = 18$ (Option C). Computing $60 + 36 = 86$ instead of $96$ gives $\\frac{86}{12} \\approx 7.17$, which is not an integer \u2014 a clear sign of mis-evaluation.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "(80 - 20) / 5 + (60 + 36) / 12",
+      "computed_value": 20,
+      "answer_option": "B",
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "BANKPO_NUMBERSYST_4_1_1_b64073",
+    "text": "**Simplify the following expression:**\n\n$$\\frac{\\sqrt{2916} \\times \\sqrt[3]{9261} - 4^3}{\\left(\\frac{3}{4} \\text{ of } 448\\right) \\div 7 + \\sqrt{\\frac{1225}{49}}}$$",
+    "options": {
+      "A": "19.1787",
+      "B": "20.1887",
+      "C": "21.1987",
+      "D": "22.2087"
+    },
+    "correct_answer": "B",
+    "explanation": "## Step-by-Step Solution\n\n### Evaluate the Numerator\n\n**Step 1: Compute $\\sqrt{2916}$**\n\n$$2916 = 54^2 \\implies \\sqrt{2916} = 54$$\n\n**Step 2: Compute $\\sqrt[3]{9261}$**\n\n$$9261 = 21^3 \\implies \\sqrt[3]{9261} = 21$$\n\n**Step 3: Compute $4^3$**\n\n$$4^3 = 64$$\n\n**Step 4: Combine the numerator**\n\n$$54 \\times 21 - 64 = 1134 - 64 = 1070$$\n\n---\n\n### Evaluate the Denominator\n\n**Step 5: Compute $\\tfrac{3}{4}$ of $448$**\n\n$$\\frac{3}{4} \\times 448 = 336$$\n\n**Step 6: Divide by 7**\n\n$$336 \\div 7 = 48$$\n\n**Step 7: Compute $\\sqrt{\\dfrac{1225}{49}}$**\n\n$$\\sqrt{\\frac{1225}{49}} = \\frac{\\sqrt{1225}}{\\sqrt{49}} = \\frac{35}{7} = 5$$\n\n**Step 8: Combine the denominator**\n\n$$48 + 5 = 53$$\n\n---\n\n### Final Division\n\n$$\\frac{1070}{53} = 20.1887$$\n\n---\n\n**Answer: B = 20.1887**\n\nThe other options (A: 19.1787, C: 21.1987, D: 22.2087) result from arithmetic errors in intermediate steps \u2014 such as miscomputing the cube root, the square root, or the \"of\" operation \u2014 and do not match the correctly evaluated expression.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "(54 * 21 - 4**3) / ((3/4 * 448) / 7 + sqrt(1225/49))",
+      "computed_value": 20.1887,
+      "answer_option": "B",
+      "tolerance": 0.01
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "BANKPO_NUMBERSYST_4_1_2_41970f",
+    "text": "**Simplify** the following expression:\n\n$$\\frac{\\sqrt{5776} \\times \\sqrt[3]{2744} + 15\\% \\text{ of } 2800}{\\sqrt{9} \\times 4^3 - \\sqrt[4]{1296}}$$",
+    "options": {
+      "A": "7.5785",
+      "B": "7.9785",
+      "C": "8.3785",
+      "D": "8.7785"
+    },
+    "correct_answer": "B",
+    "explanation": "## Step-by-Step Solution\n\n**Simplify the Numerator**\n\n**Term 1:** $\\sqrt{5776} \\times \\sqrt[3]{2744}$\n\n$$\\sqrt{5776} = 76 \\quad \\text{(since } 76^2 = 5776\\text{)}$$\n$$\\sqrt[3]{2744} = 14 \\quad \\text{(since } 14^3 = 2744\\text{)}$$\n$$\\Rightarrow 76 \\times 14 = 1064$$\n\n**Term 2:** $15\\%$ of $2800$\n\n$$\\frac{15}{100} \\times 2800 = 420$$\n\n**Numerator total:**\n$$1064 + 420 = 1484$$\n\n---\n\n**Simplify the Denominator**\n\n**Term 1:** $\\sqrt{9} \\times 4^3$\n\n$$\\sqrt{9} = 3, \\quad 4^3 = 64$$\n$$\\Rightarrow 3 \\times 64 = 192$$\n\n**Term 2:** $\\sqrt[4]{1296}$\n\n$$\\sqrt[4]{1296} = 6 \\quad \\text{(since } 6^4 = 1296\\text{)}$$\n\n**Denominator total:**\n$$192 - 6 = 186$$\n\n---\n\n**Final Division**\n\n$$\\frac{1484}{186} = 7.9785$$\n\n---\n\n**Why the other options are wrong:** The calculation yields exactly $\\approx 7.9785$, ruling out A ($7.5785$), C ($8.3785$), and D ($8.7785$), each of which would require arithmetic errors in either the roots, the percentage, or the denominator.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "(76 * 14 + 15/100 * 2800) / (3 * 64 - 6)",
+      "computed_value": 7.978494623655914,
+      "answer_option": "B",
+      "tolerance": 8.5
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "BANKPO_NUMBERSYST_4_1_3_ecc7cf",
+    "text": "What is the value of the following expression?\n\n$$\\frac{(17)^3 + (13)^3}{(17)^2 - 17 \\times 13 + (13)^2} + \\frac{(17)^3 - (13)^3}{(17)^2 + 17 \\times 13 + (13)^2}$$",
+    "options": {
+      "A": "56",
+      "B": "60",
+      "C": "64",
+      "D": "34"
+    },
+    "correct_answer": "D",
+    "explanation": "## Solution\n\n**Simplify each fraction using algebraic identities.**\n\n**Recall the sum and difference of cubes formulas:**\n$$a^3 + b^3 = (a + b)(a^2 - ab + b^2)$$\n$$a^3 - b^3 = (a - b)(a^2 + ab + b^2)$$\n\n---\n\n**Simplify the first fraction:**\n\n$$\\frac{(17)^3 + (13)^3}{(17)^2 - 17 \\times 13 + (13)^2}$$\n\nUsing $a^3 + b^3 = (a+b)(a^2 - ab + b^2)$ with $a = 17$, $b = 13$:\n\n$$= \\frac{(17 + 13)\\,(17^2 - 17 \\cdot 13 + 13^2)}{(17^2 - 17 \\cdot 13 + 13^2)}$$\n\nThe $(a^2 - ab + b^2)$ terms cancel:\n\n$$= 17 + 13 = 30$$\n\n---\n\n**Simplify the second fraction:**\n\n$$\\frac{(17)^3 - (13)^3}{(17)^2 + 17 \\times 13 + (13)^2}$$\n\nUsing $a^3 - b^3 = (a-b)(a^2 + ab + b^2)$ with $a = 17$, $b = 13$:\n\n$$= \\frac{(17 - 13)\\,(17^2 + 17 \\cdot 13 + 13^2)}{(17^2 + 17 \\cdot 13 + 13^2)}$$\n\nThe $(a^2 + ab + b^2)$ terms cancel:\n\n$$= 17 - 13 = 4$$\n\n---\n\n**Add the two results:**\n\n$$30 + 4 = \\boxed{34}$$\n\n---\n\nThe other options (56, 60, 64) would result from arithmetic errors such as adding the numbers directly without applying the cube identities to cancel the denominators.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "(17**3 + 13**3) / (17**2 - 17*13 + 13**2) + (17**3 - 13**3) / (17**2 + 17*13 + 13**2)",
+      "computed_value": 34,
+      "answer_option": "D",
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "BANKPO_NUMBERSYST_4_1_4_4e0573",
+    "text": "What is the value of $\\frac{(0.6)^3 + (0.4)^3}{(0.6)^2 - 0.6 \\times 0.4 + (0.4)^2} + \\frac{(0.6)^3 - (0.4)^3}{(0.6)^2 + 0.6 \\times 0.4 + (0.4)^2}$?",
+    "options": {
+      "A": "1.0",
+      "B": "1.2",
+      "C": "1.4",
+      "D": "1.6"
+    },
+    "correct_answer": "B",
+    "explanation": "We use the algebraic identities:\n\n**Identity 1:** $a^3 + b^3 = (a + b)(a^2 - ab + b^2)$\n\n**Identity 2:** $a^3 - b^3 = (a - b)(a^2 + ab + b^2)$\n\nLet $a = 0.6$ and $b = 0.4$.\n\n**First term:**\n$$\\frac{(0.6)^3 + (0.4)^3}{(0.6)^2 - 0.6 \\times 0.4 + (0.4)^2} = \\frac{(a+b)(a^2 - ab + b^2)}{(a^2 - ab + b^2)} = a + b = 0.6 + 0.4 = 1.0$$\n\n**Second term:**\n$$\\frac{(0.6)^3 - (0.4)^3}{(0.6)^2 + 0.6 \\times 0.4 + (0.4)^2} = \\frac{(a-b)(a^2 + ab + b^2)}{(a^2 + ab + b^2)} = a - b = 0.6 - 0.4 = 0.2$$\n\n**Total:** $1.0 + 0.2 = 1.2$\n\nThe answer is **1.2**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "(0.6**3 + 0.4**3)/(0.6**2 - 0.6*0.4 + 0.4**2) + (0.6**3 - 0.4**3)/(0.6**2 + 0.6*0.4 + 0.4**2)",
+      "computed_value": 1.2,
+      "answer_option": "B",
+      "tolerance": 0.001
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "BANKPO_NUMBERSYST_4_1_5_b7b979",
+    "text": "**Simplify the following expression:**\n\n$$\\frac{\\sqrt{3364} \\times \\sqrt[3]{2197} + 45\\% \\text{ of } 1480}{\\sqrt{6241} - \\sqrt[3]{3375} + 8^2}$$",
+    "options": {
+      "A": "10.5437",
+      "B": "11.0938",
+      "C": "11.6438",
+      "D": "12.1937"
+    },
+    "correct_answer": "B",
+    "explanation": "## Step-by-Step Solution\n\n**Step 1: Evaluate each component in the numerator.**\n\n- $\\sqrt{3364} = 58$ (since $58^2 = 3364$)\n- $\\sqrt[3]{2197} = 13$ (since $13^3 = 2197$)\n- $45\\%$ of $1480 = \\dfrac{45}{100} \\times 1480 = 666$\n\n**Numerator:**\n$$58 \\times 13 + 666 = 754 + 666 = 1420$$\n\n---\n\n**Step 2: Evaluate each component in the denominator.**\n\n- $\\sqrt{6241} = 79$ (since $79^2 = 6241$)\n- $\\sqrt[3]{3375} = 15$ (since $15^3 = 3375$)\n- $8^2 = 64$\n\n**Denominator:**\n$$79 - 15 + 64 = 128$$\n\n---\n\n**Step 3: Divide numerator by denominator.**\n\n$$\\frac{1420}{128} = 11.09375$$\n\n---\n\n**Result:** $\\boxed{11.0938}$ \\rightarrow **Option B**\n\nThe other options arise from arithmetic errors in individual components (e.g., miscomputing the cube roots, square roots, or the percentage), which shift the result by roughly $\\pm 0.55$ per wrong step \u2014 none of which match the correct evaluation.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "(58 * 13 + 45/100 * 1480) / (79 - 15 + 64)",
+      "computed_value": 11.09375,
+      "answer_option": "B",
+      "tolerance": 0.01
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "BANKPO_NUMBERSYST_5_1_1_76ce8d",
+    "text": "What is the value of the following expression?\n\n$$\\frac{(0.85)^3 + (0.15)^3}{(0.85)^2 - (0.85)(0.15) + (0.15)^2} + \\frac{(0.85)^3 - (0.15)^3}{(0.85)^2 + (0.85)(0.15) + (0.15)^2}$$",
+    "options": {
+      "A": "1.40",
+      "B": "1.70",
+      "C": "2.00",
+      "D": "1.00"
+    },
+    "correct_answer": "B",
+    "explanation": "We use the **algebraic identities**:\n\n**Identity 1:** $a^3 + b^3 = (a+b)(a^2 - ab + b^2)$\n\nTherefore: $\\frac{a^3 + b^3}{a^2 - ab + b^2} = \\frac{(a+b)(a^2 - ab + b^2)}{a^2 - ab + b^2} = a + b$\n\n**Identity 2:** $a^3 - b^3 = (a-b)(a^2 + ab + b^2)$\n\nTherefore: $\\frac{a^3 - b^3}{a^2 + ab + b^2} = \\frac{(a-b)(a^2 + ab + b^2)}{a^2 + ab + b^2} = a - b$\n\nHere, $a = 0.85$ and $b = 0.15$.\n\nSo the expression simplifies to:\n$$(a + b) + (a - b) = 2a = 2 \\times 0.85 = 1.70$$\n\nThe answer is **1.70**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "(0.85 + 0.15) + (0.85 - 0.15)",
+      "computed_value": 1.7,
+      "answer_option": "B",
+      "tolerance": 0.01
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 5
+    }
+  },
+  {
+    "id": "BANKPO_NUMBERSYST_5_1_2_c7ba54",
+    "text": "What is the value of the following expression?\n\n$$\\frac{(0.6)^3 + (0.4)^3 + (0.5)^3 - 3 \\times 0.6 \\times 0.4 \\times 0.5}{(0.6)^2 + (0.4)^2 + (0.5)^2 - 0.6 \\times 0.4 - 0.4 \\times 0.5 - 0.5 \\times 0.6}$$",
+    "options": {
+      "A": "0.5",
+      "B": "1.0",
+      "C": "1.5",
+      "D": "2.0"
+    },
+    "correct_answer": "C",
+    "explanation": "We use the **algebraic identity**:\n\n$$a^3 + b^3 + c^3 - 3abc = (a + b + c)(a^2 + b^2 + c^2 - ab - bc - ca)$$\n\nHere $a = 0.6$, $b = 0.4$, $c = 0.5$.\n\nThe given expression simplifies to:\n\n$$\\frac{(a + b + c)(a^2 + b^2 + c^2 - ab - bc - ca)}{a^2 + b^2 + c^2 - ab - bc - ca}$$\n\nSince the denominator is $a^2 + b^2 + c^2 - ab - bc - ca$, the entire expression reduces to:\n\n$$a + b + c = 0.6 + 0.4 + 0.5 = 1.5$$\n\nTherefore, the answer is **1.5**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "((0.6)**3 + (0.4)**3 + (0.5)**3 - 3*0.6*0.4*0.5) / ((0.6)**2 + (0.4)**2 + (0.5)**2 - 0.6*0.4 - 0.4*0.5 - 0.5*0.6)",
+      "computed_value": 1.5,
+      "answer_option": "C",
+      "tolerance": 0.001
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 5
+    }
+  },
+  {
+    "id": "BANKPO_NUMBERSYST_5_1_3_e923d2",
+    "text": "What is the value of:\n\n$$\\frac{(0.7)^3 + (0.3)^3}{(0.7)^2 - 0.7 \\times 0.3 + (0.3)^2} + \\frac{(0.7)^3 - (0.3)^3}{(0.7)^2 + 0.7 \\times 0.3 + (0.3)^2}$$",
+    "options": {
+      "A": "1.0",
+      "B": "1.4",
+      "C": "2.0",
+      "D": "1.8"
+    },
+    "correct_answer": "B",
+    "explanation": "We use two standard algebraic identities:\n\n**Identity 1:** $a^3 + b^3 = (a + b)(a^2 - ab + b^2)$\n\nSo $\\frac{a^3 + b^3}{a^2 - ab + b^2} = a + b$\n\n**Identity 2:** $a^3 - b^3 = (a - b)(a^2 + ab + b^2)$\n\nSo $\\frac{a^3 - b^3}{a^2 + ab + b^2} = a - b$\n\nHere $a = 0.7$ and $b = 0.3$.\n\n**First term:** $\\frac{(0.7)^3 + (0.3)^3}{(0.7)^2 - 0.7 \\times 0.3 + (0.3)^2} = 0.7 + 0.3 = 1.0$\n\n**Second term:** $\\frac{(0.7)^3 - (0.3)^3}{(0.7)^2 + 0.7 \\times 0.3 + (0.3)^2} = 0.7 - 0.3 = 0.4$\n\n**Total:** $1.0 + 0.4 = 1.4$\n\nThe answer is **1.4**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "((0.7)**3 + (0.3)**3) / ((0.7)**2 - 0.7*0.3 + (0.3)**2) + ((0.7)**3 - (0.3)**3) / ((0.7)**2 + 0.7*0.3 + (0.3)**2)",
+      "computed_value": 1.4,
+      "answer_option": "B",
+      "tolerance": 0.01
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 5
+    }
+  }
+]

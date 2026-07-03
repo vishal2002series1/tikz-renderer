@@ -1,0 +1,403 @@
+[
+  {
+    "id": "IBPSPO_TABULARDI_3_1_1_138e61",
+    "text": "**Directions:** Study the following table carefully and answer the question.\n\nThe table below shows the number of employees in five departments of a company in two years \u2014 **2021** and **2022** \u2014 along with the **percentage of female employees** in each department.\n\n| **Department** | **Employees (2021)** | **% Female (2021)** | **Employees (2022)** | **% Female (2022)** |\n|---|---|---|---|---|\n| HR | 120 | 60% | 150 | 56% |\n| IT | 200 | 35% | 240 | 40% |\n| Finance | 80 | 50% | 100 | 45% |\n| Marketing | 160 | 25% | 180 | 30% |\n| Operations | 140 | 40% | 200 | 35% |\n\nThe total number of **male employees** across all departments in **2022** exceeds the total number of **male employees** across all departments in **2021** by how much?",
+    "options": {
+      "A": "89",
+      "B": "94",
+      "C": "99",
+      "D": "104"
+    },
+    "correct_answer": "C",
+    "explanation": "**Step 1 \u2014 Calculate total male employees in 2021:**\n\n- **HR:** $120 \\times (1 - 0.60) = 120 \\times 0.40 = 48$\n- **IT:** $200 \\times (1 - 0.35) = 200 \\times 0.65 = 130$\n- **Finance:** $80 \\times (1 - 0.50) = 80 \\times 0.50 = 40$\n- **Marketing:** $160 \\times (1 - 0.25) = 160 \\times 0.75 = 120$\n- **Operations:** $140 \\times (1 - 0.40) = 140 \\times 0.60 = 84$\n\n**Total male in 2021** $= 48 + 130 + 40 + 120 + 84 = 422$\n\n**Step 2 \u2014 Calculate total male employees in 2022:**\n\n- **HR:** $150 \\times (1 - 0.56) = 150 \\times 0.44 = 66$\n- **IT:** $240 \\times (1 - 0.40) = 240 \\times 0.60 = 144$\n- **Finance:** $100 \\times (1 - 0.45) = 100 \\times 0.55 = 55$\n- **Marketing:** $180 \\times (1 - 0.30) = 180 \\times 0.70 = 126$\n- **Operations:** $200 \\times (1 - 0.35) = 200 \\times 0.65 = 130$\n\n**Total male in 2022** $= 66 + 144 + 55 + 126 + 130 = 521$\n\n**Step 3 \u2014 Find the difference:**\n\n$$521 - 422 = \\mathbf{99}$$\n\n**Common errors leading to wrong options:**\n- Option A (89): Miscalculating HR 2022 male count as 56 instead of 66.\n- Option B (94): Using wrong percentage for Operations 2021 (35% instead of 40%), giving male = 91 instead of 84, reducing the 2021 total to 415 and computing 521 \u2212 415 = 106, then rounding down.\n- Option D (104): Miscalculating Finance 2022 as 50 instead of 55 (using old 50% female rate instead of 45%).\n\n**Answer: C \u2014 99**",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "IBPS PO",
+      "subject": "Preliminary Exam \u2013 Quantitative Aptitude",
+      "topic": "Data Interpretation",
+      "sub_topic": "Tabular DI",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "IBPSPO_BARGRAPHDI_3_1_1_4441e3",
+    "text": "The bar graph below shows the **number of loan applications** received by five branches (P, Q, R, S, T) of a bank in two consecutive years \u2014 **2022** and **2023**.\n\n*(Refer to the diagram)*\n\nIn **2022**, Branch P received **480** applications, Q received **360**, R received **540**, S received **420**, and T received **300**.\n\nIn **2023**, Branch P received **560** applications, Q received **450**, R received **480**, S received **500**, and T received **390**.\n\nThe bank **approves 35%** of all applications received across all branches **combined** in a given year. What is the **positive difference** between the number of approved loan applications in 2023 and 2022?",
+    "options": {
+      "A": "$\\mathbf{84}$",
+      "B": "$\\mathbf{98}$",
+      "C": "$\\mathbf{77}$",
+      "D": "$\\mathbf{91}$"
+    },
+    "correct_answer": "B",
+    "explanation": "**Step 1 \u2014 Total applications in 2022:**\n$$480 + 360 + 540 + 420 + 300 = 2100$$\n\n**Step 2 \u2014 Total applications in 2023:**\n$$560 + 450 + 480 + 500 + 390 = 2380$$\n\n**Step 3 \u2014 Approved applications in 2022:**\n$$2100 \\times \\frac{35}{100} = 735$$\n\n**Step 4 \u2014 Approved applications in 2023:**\n$$2380 \\times \\frac{35}{100} = 833$$\n\n**Step 5 \u2014 Positive difference:**\n$$833 - 735 = 98$$\n\n**Common errors:**\n- **Option A (84):** Forgetting Branch T in 2023 leads to an incorrect total and wrong approved count.\n- **Option C (77):** Using 25% approval rate instead of 35%: $(2380-2100)\\times0.25 = 70$ \u2014 incorrect path.\n- **Option D (91):** Partial summation error using only select branches.\n\n**Correct working confirms Option B = 98.**",
+    "Requires_Diagram": true,
+    "TikZ_Code": "\\documentclass[border=4mm]{standalone}\n\\usepackage{tikz}\n\\usetikzlibrary{arrows.meta,positioning}\n\\begin{document}\n\\begin{tikzpicture}[\n  bar2022/.style={fill=blue!50, draw=blue!70},\n  bar2023/.style={fill=orange!60, draw=orange!80},\n  font=\\small\n]\n% Axes\n\\draw[->] (0,0) -- (0,6.5) node[above]{\\small Applications};\n\\draw[->] (0,0) -- (11.8,0) node[right]{\\small Branch};\n% Y-axis ticks and labels (scale: 100 units = 1cm)\n\\foreach \\y/\\lbl in {1/100,2/200,3/300,4/400,5/500,6/600}{\n  \\draw (-0.1,\\y) -- (0.1,\\y);\n  \\node[left] at (-0.1,\\y) {\\lbl};\n}\n% Branch P: 2022=480, 2023=560\n\\fill[bar2022] (0.6,0) rectangle (1.3,4.8);\n\\fill[bar2023] (1.4,0) rectangle (2.1,5.6);\n\\node[below] at (1.35,-0.2) {P};\n% Branch Q: 2022=360, 2023=450\n\\fill[bar2022] (2.8,0) rectangle (3.5,3.6);\n\\fill[bar2023] (3.6,0) rectangle (4.3,4.5);\n\\node[below] at (3.55,-0.2) {Q};\n% Branch R: 2022=540, 2023=480\n\\fill[bar2022] (5.0,0) rectangle (5.7,5.4);\n\\fill[bar2023] (5.8,0) rectangle (6.5,4.8);\n\\node[below] at (5.75,-0.2) {R};\n% Branch S: 2022=420, 2023=500\n\\fill[bar2022] (7.2,0) rectangle (7.9,4.2);\n\\fill[bar2023] (8.0,0) rectangle (8.7,5.0);\n\\node[below] at (7.95,-0.2) {S};\n% Branch T: 2022=300, 2023=390\n\\fill[bar2022] (9.4,0) rectangle (10.1,3.0);\n\\fill[bar2023] (10.2,0) rectangle (10.9,3.9);\n\\node[below] at (9.75,-0.2) {T};\n% Legend\n\\fill[bar2022] (0.5,7.0) rectangle (1.0,7.3);\n\\node[right] at (1.05,7.15) {2022};\n\\fill[bar2023] (2.3,7.0) rectangle (2.8,7.3);\n\\node[right] at (2.85,7.15) {2023};\n\\end{tikzpicture}\n\\end{document}",
+    "metadata": {
+      "exam": "IBPS PO",
+      "subject": "Preliminary Exam \u2013 Quantitative Aptitude",
+      "topic": "Data Interpretation",
+      "sub_topic": "Bar Graph DI",
+      "difficulty_level": 3
+    },
+    "local_image_path": "IBPS_PO_All_Data_Interpretation_All/IBPSPO_BARGRAPHDI_3_1_1_4441e3.svg"
+  },
+  {
+    "id": "IBPSPO_LINEGRAPHD_3_1_1_c95ab9",
+    "text": "The line graph below shows the **number of laptops sold (in units)** by five different stores \u2014 P, Q, R, S, and T \u2014 over the months of **January to May** in a year.\n\n**Store P:** Jan=80, Feb=95, Mar=110, Apr=130, May=115\n**Store Q:** Jan=60, Feb=75, Mar=90, Apr=85, May=105\n**Store R:** Jan=70, Feb=85, Mar=75, Apr=100, May=120\n**Store S:** Jan=90, Feb=80, Mar=95, Apr=110, May=100\n**Store T:** Jan=55, Feb=70, Mar=85, Apr=95, May=90\n\nThe **revenue per laptop** for stores P, Q, R, S, and T is **\u20b932,000, \u20b928,000, \u20b935,000, \u20b930,000, and \u20b927,000** respectively (uniform across all months).\n\nWhat is the **difference** between the total revenue (in \u20b9 lakhs) earned by Store R over all five months and the total revenue earned by Store Q over all five months?",
+    "options": {
+      "A": "\u20b9 37.80 lakhs",
+      "B": "\u20b9 41.30 lakhs",
+      "C": "\u20b9 45.50 lakhs",
+      "D": "\u20b9 33.60 lakhs"
+    },
+    "correct_answer": "B",
+    "explanation": "**Step 1: Total units sold by Store R over all five months**\n\nStore R: $70 + 85 + 75 + 100 + 120 = 450$ units\n\n**Step 2: Total revenue of Store R**\n\nRevenue per laptop for R = \u20b935,000\n\nTotal Revenue (R) $= 450 \\times 35{,}000 = \u20b91{,}57{,}50{,}000 = $ **\u20b9157.50 lakhs**\n\n**Step 3: Total units sold by Store Q over all five months**\n\nStore Q: $60 + 75 + 90 + 85 + 105 = 415$ units\n\n**Step 4: Total revenue of Store Q**\n\nRevenue per laptop for Q = \u20b928,000\n\nTotal Revenue (Q) $= 415 \\times 28{,}000 = \u20b91{,}16{,}20{,}000 = $ **\u20b9116.20 lakhs**\n\n**Step 5: Difference in revenue**\n\n$$\\text{Difference} = 157.50 - 116.20 = \\textbf{\u20b941.30 lakhs}$$\n\n**Common errors:**\n- Option A (\u20b937.80 lakhs): Uses wrong unit total for R (e.g., 440 units instead of 450).\n- Option C (\u20b945.50 lakhs): Uses wrong price for Q (\u20b930,000 instead of \u20b928,000).\n- Option D (\u20b933.60 lakhs): Uses wrong unit total for Q (e.g., 400 units instead of 415).\n\nThe correct answer is **\u20b941.30 lakhs**.",
+    "Requires_Diagram": true,
+    "TikZ_Code": "\\documentclass[border=4mm]{standalone}\n\\usepackage{tikz}\n\\usetikzlibrary{arrows.meta}\n\\begin{document}\n\\begin{tikzpicture}[\n  dot/.style={circle,fill,inner sep=1.8pt}\n]\n% Axes\n\\draw[-{Stealth}] (0,0) -- (6.8,0) node[right,font=\\small] {Month};\n\\draw[-{Stealth}] (0,0) -- (0,7.0) node[above,font=\\small] {Units Sold};\n% Y-axis ticks: scale factor: 1 unit = 0.05 cm, offset baseline at 50 units\n% y_coord = (value - 50) * 0.05  but let's use: y = (value - 50)/15\n% 55->0.33, 60->0.67, 70->1.33, 75->1.67, 80->2.00, 85->2.33, 90->2.67, 95->3.00, 100->3.33, 105->3.67, 110->4.00, 115->4.33, 120->4.67, 130->5.33\n\\foreach \\val/\\yc in {50/0, 60/0.67, 70/1.33, 80/2.00, 90/2.67, 100/3.33, 110/4.00, 120/4.67, 130/5.33} {\n  \\draw (-0.08,\\yc) -- (0.08,\\yc);\n  \\node[left,font=\\tiny] at (-0.08,\\yc) {\\val};\n  \\draw[gray!20] (0,\\yc) -- (6.2,\\yc);\n}\n% X-axis labels\n\\foreach \\x/\\lbl in {1/Jan,2/Feb,3/Mar,4/Apr,5/May} {\n  \\node[below,font=\\tiny] at (\\x,0) {\\lbl};\n  \\draw (\\x,-0.08) -- (\\x,0.08);\n  \\draw[gray!20] (\\x,0) -- (\\x,5.6);\n}\n% Store P (blue): 80,95,110,130,115 -> 2.00,3.00,4.00,5.33,4.33\n\\draw[blue,thick] (1,2.00)--(2,3.00)--(3,4.00)--(4,5.33)--(5,4.33);\n\\foreach \\pt in {(1,2.00),(2,3.00),(3,4.00),(4,5.33),(5,4.33)} {\\node[dot,blue] at \\pt {};}\n\\node[right,font=\\tiny,blue] at (5.05,4.33) {P};\n% Store Q (red): 60,75,90,85,105 -> 0.67,1.67,2.67,2.33,3.67\n\\draw[red,thick] (1,0.67)--(2,1.67)--(3,2.67)--(4,2.33)--(5,3.67);\n\\foreach \\pt in {(1,0.67),(2,1.67),(3,2.67),(4,2.33),(5,3.67)} {\\node[dot,red] at \\pt {};}\n\\node[right,font=\\tiny,red] at (5.05,3.67) {Q};\n% Store R (green): 70,85,75,100,120 -> 1.33,2.33,1.67,3.33,4.67\n\\draw[green!60!black,thick] (1,1.33)--(2,2.33)--(3,1.67)--(4,3.33)--(5,4.67);\n\\foreach \\pt in {(1,1.33),(2,2.33),(3,1.67),(4,3.33),(5,4.67)} {\\node[dot,green!60!black] at \\pt {};}\n\\node[right,font=\\tiny,green!60!black] at (5.05,4.67) {R};\n% Store S (orange): 90,80,95,110,100 -> 2.67,2.00,3.00,4.00,3.33\n\\draw[orange!80!black,thick] (1,2.67)--(2,2.00)--(3,3.00)--(4,4.00)--(5,3.33);\n\\foreach \\pt in {(1,2.67),(2,2.00),(3,3.00),(4,4.00),(5,3.33)} {\\node[dot,orange!80!black] at \\pt {};}\n\\node[right,font=\\tiny,orange!80!black] at (5.05,3.33) {S};\n% Store T (purple): 55,70,85,95,90 -> 0.33,1.33,2.33,3.00,2.67\n\\draw[purple,thick] (1,0.33)--(2,1.33)--(3,2.33)--(4,3.00)--(5,2.67);\n\\foreach \\pt in {(1,0.33),(2,1.33),(3,2.33),(4,3.00),(5,2.67)} {\\node[dot,purple] at \\pt {};}\n\\node[right,font=\\tiny,purple] at (5.05,2.67) {T};\n% Title\n\\node[font=\\small\\bfseries] at (3.0,6.3) {Laptop Sales by Store (Jan--May)};\n\\end{tikzpicture}\n\\end{document}",
+    "metadata": {
+      "exam": "IBPS PO",
+      "subject": "Preliminary Exam \u2013 Quantitative Aptitude",
+      "topic": "Data Interpretation",
+      "sub_topic": "Line Graph DI",
+      "difficulty_level": 3
+    },
+    "local_image_path": "IBPS_PO_All_Data_Interpretation_All/IBPSPO_LINEGRAPHD_3_1_1_c95ab9.svg"
+  },
+  {
+    "id": "IBPSPO_PIECHARTDI_3_1_1_f2a425",
+    "text": "The pie chart below shows the **distribution of annual expenditure** of a company across six departments in the year 2023. The **total annual expenditure** of the company is **\u20b984 lakhs**.\n\nUsing the pie chart data: **Marketing = 75\u00b0**, **Logistics = 45\u00b0**, **HR = 48\u00b0**, **IT = 72\u00b0**, **Operations = 60\u00b0**, **Finance = 60\u00b0**.\n\nChoose the option that correctly states **(i)** the difference (in \u20b9 lakhs) between Marketing and Logistics expenditure, and **(ii)** HR as a percentage of (IT + Operations) combined.",
+    "options": {
+      "A": "(i) \u20b914 lakhs, (ii) $\\frac{400}{11}$%",
+      "B": "(i) \u20b97 lakhs, (ii) $\\frac{400}{11}$%",
+      "C": "(i) \u20b97 lakhs, (ii) $\\frac{200}{11}$%",
+      "D": "(i) \u20b914 lakhs, (ii) $\\frac{200}{11}$%"
+    },
+    "correct_answer": "B",
+    "explanation": "**Step 1 \u2014 Convert degrees to expenditure.**\n\nEach degree represents $\\frac{84}{360}$ lakhs.\n\n**Marketing** $= \\frac{75}{360} \\times 84 = 17.5$ lakhs\n\n**Logistics** $= \\frac{45}{360} \\times 84 = 10.5$ lakhs\n\n**Step 2 \u2014 Difference (Part i):**\n\n$17.5 - 10.5 = \\mathbf{7}$ lakhs \u2713\n\n**Step 3 \u2014 HR as % of (IT + Operations) (Part ii):**\n\n**HR** $= \\frac{48}{360} \\times 84 = 11.2$ lakhs\n\n**IT** $= \\frac{72}{360} \\times 84 = 16.8$ lakhs\n\n**Operations** $= \\frac{60}{360} \\times 84 = 14$ lakhs\n\n**IT + Operations** $= 16.8 + 14 = 30.8$ lakhs\n\n**HR % of (IT + Operations)** $= \\frac{11.2}{30.8} \\times 100 = \\frac{11200}{308} = \\frac{400}{11}\\% \\approx 36.36\\%$\n\n**Answer:** (i) \u20b97 lakhs, (ii) $\\frac{400}{11}$% \u2192 **Option B**\n\n**Common errors:**\n- Option A: Incorrect difference of \u20b914 (doubling error).\n- Option C & D: Using IT or Operations alone instead of combined.",
+    "Requires_Diagram": true,
+    "TikZ_Code": "\\documentclass[border=4mm]{standalone}\n\\usepackage{tikz}\n\\usetikzlibrary{calc}\n\\begin{document}\n\\begin{tikzpicture}\n  \\def\\R{3}\n  % Marketing: 90 to 165\n  \\fill[blue!40]   (0,0) -- ({\\R*cos(90)},{\\R*sin(90)}) arc[start angle=90, end angle=165, radius=\\R] -- cycle;\n  % Logistics: 165 to 210\n  \\fill[red!40]    (0,0) -- ({\\R*cos(165)},{\\R*sin(165)}) arc[start angle=165, end angle=210, radius=\\R] -- cycle;\n  % HR: 210 to 258\n  \\fill[green!50]  (0,0) -- ({\\R*cos(210)},{\\R*sin(210)}) arc[start angle=210, end angle=258, radius=\\R] -- cycle;\n  % IT: 258 to 330\n  \\fill[orange!60] (0,0) -- ({\\R*cos(258)},{\\R*sin(258)}) arc[start angle=258, end angle=330, radius=\\R] -- cycle;\n  % Operations: 330 to 390\n  \\fill[purple!40] (0,0) -- ({\\R*cos(330)},{\\R*sin(330)}) arc[start angle=330, end angle=390, radius=\\R] -- cycle;\n  % Finance: 30 to 90\n  \\fill[yellow!70] (0,0) -- ({\\R*cos(30)},{\\R*sin(30)}) arc[start angle=30, end angle=90, radius=\\R] -- cycle;\n  % Outline\n  \\draw[thick] (0,0) circle[radius=\\R];\n  % Dividing lines\n  \\foreach \\a in {90,165,210,258,330,30} {\n    \\draw[thick] (0,0) -- ({\\R*cos(\\a)},{\\R*sin(\\a)});\n  }\n  % Labels\n  \\def\\Rl{2.1}\n  \\node[font=\\small\\bfseries, align=center] at ({\\Rl*cos(127.5)},{\\Rl*sin(127.5)}) {Marketing\\\\75\\textdegree};\n  \\node[font=\\small\\bfseries, align=center] at ({\\Rl*cos(187.5)},{\\Rl*sin(187.5)}) {Logistics\\\\45\\textdegree};\n  \\node[font=\\small\\bfseries, align=center] at ({\\Rl*cos(234)},{\\Rl*sin(234)}) {HR\\\\48\\textdegree};\n  \\node[font=\\small\\bfseries, align=center] at ({\\Rl*cos(294)},{\\Rl*sin(294)}) {IT\\\\72\\textdegree};\n  \\node[font=\\small\\bfseries, align=center] at ({\\Rl*cos(0)},{\\Rl*sin(0)}) {Ops\\\\60\\textdegree};\n  \\node[font=\\small\\bfseries, align=center] at ({\\Rl*cos(60)},{\\Rl*sin(60)}) {Finance\\\\60\\textdegree};\n  % Title\n  \\node[font=\\normalsize\\bfseries, align=center] at (0,-3.8) {Annual Expenditure Distribution\\\\(Total = \\textbf{Rs.84 Lakhs})};\n\\end{tikzpicture}\n\\end{document}",
+    "metadata": {
+      "exam": "IBPS PO",
+      "subject": "Preliminary Exam \u2013 Quantitative Aptitude",
+      "topic": "Data Interpretation",
+      "sub_topic": "Pie Chart DI",
+      "difficulty_level": 3
+    },
+    "local_image_path": "IBPS_PO_All_Data_Interpretation_All/IBPSPO_PIECHARTDI_3_1_1_f2a425.svg"
+  },
+  {
+    "id": "IBPSPO_MIXEDCASEL_3_1_1_1a2073",
+    "text": "**Read the following caselet carefully and answer the question.**\n\nA retail chain operates **three store formats** \u2014 Express, Standard, and Premium. In FY 2024, the total sales of the chain amounted to **\u20b98,40,000**. Sales from the **Express** format were $\\frac{2}{7}$ of the total sales. Sales from the **Standard** format were **50% more** than sales from the Express format. The remaining sales came from the **Premium** format.\n\nThe **expenditure** of each format as a percentage of its own sales was: Express \u2014 **65%**, Standard \u2014 **70%**, Premium \u2014 **75%**.\n\nWhat is the **total profit** earned by the retail chain in FY 2024?",
+    "options": {
+      "A": "\u20b92,52,000",
+      "B": "\u20b92,34,000",
+      "C": "\u20b92,64,000",
+      "D": "\u20b92,76,000"
+    },
+    "correct_answer": "A",
+    "explanation": "**Step 1 \u2014 Find sales of each format:**\n\nTotal sales = \u20b98,40,000.\n\nSales from **Express** $= \\frac{2}{7} \\times 8{,}40{,}000 = $ \u20b92,40,000.\n\nSales from **Standard** $= 2{,}40{,}000 \\times 1.50 = $ \u20b93,60,000.\n\nSales from **Premium** $= 8{,}40{,}000 - 2{,}40{,}000 - 3{,}60{,}000 = $ \u20b92,40,000.\n\n**Step 2 \u2014 Find profit % for each format (Profit % = 100 \u2212 Expenditure %):**\n\n- **Express:** $100 - 65 = 35\\%$\n- **Standard:** $100 - 70 = 30\\%$\n- **Premium:** $100 - 75 = 25\\%$\n\n**Step 3 \u2014 Calculate profit from each format:**\n\nProfit from Express $= 35\\%$ of $2{,}40{,}000$\n$= \\frac{35}{100} \\times 2{,}40{,}000 = $ \u20b984,000.\n\nProfit from Standard $= 30\\%$ of $3{,}60{,}000$\n$= \\frac{30}{100} \\times 3{,}60{,}000 = $ \u20b91,08,000.\n\nProfit from Premium $= 25\\%$ of $2{,}40{,}000$\n$= \\frac{25}{100} \\times 2{,}40{,}000 = $ \u20b960,000.\n\n**Step 4 \u2014 Total profit:**\n\n$$\\text{Total Profit} = 84{,}000 + 1{,}08{,}000 + 60{,}000 = \\textbf{\u20b92,52,000}$$\n\n**Common errors leading to wrong options:**\n- **Option B (\u20b92,34,000):** Incorrectly using profit% of 30%, 25%, 20% respectively.\n- **Option C (\u20b92,64,000):** Incorrectly computing Standard sales as double Express (\u00d72 instead of \u00d71.5).\n- **Option D (\u20b92,76,000):** Incorrectly applying expenditure percentages to total sales rather than individual format sales.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "metadata": {
+      "exam": "IBPS PO",
+      "subject": "Preliminary Exam \u2013 Quantitative Aptitude",
+      "topic": "Data Interpretation",
+      "sub_topic": "Mixed & Caselet DI",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "IBPSPO_TABULARDI_3_1_1_9382b6",
+    "text": "The table below shows the number of home loans (in hundreds) sanctioned by five different banks across four quarters of the year 2024. Study the table and answer the question.\n\nWhat is the difference between the total number of home loans sanctioned by Bank C across all quarters and the total number of home loans sanctioned by all banks in Q3?",
+    "options": {
+      "A": "4,200",
+      "B": "3,800",
+      "C": "4,600",
+      "D": "3,400"
+    },
+    "correct_answer": "A",
+    "explanation": "**Step 1 \u2014 Total loans sanctioned by Bank C across all quarters:**\n\nBank C: Q1 = 38, Q2 = 52, Q3 = 46, Q4 = 58\n\nTotal for Bank C = $38 + 52 + 46 + 58 = 194$ (in hundreds) = **19,400**\n\n**Step 2 \u2014 Total loans sanctioned by all banks in Q3:**\n\nQ3: Bank A = 44, Bank B = 36, Bank C = 46, Bank D = 62, Bank E = 48\n\nTotal for Q3 = $44 + 36 + 46 + 62 + 48 = 236$ (in hundreds) = **23,600**\n\n**Step 3 \u2014 Difference:**\n\n$23,600 - 19,400 = 4,200$\n\nThe difference = $|236 - 194| = 42$ (in hundreds) = **4,200**.\n\nThe correct answer is **A: 4,200**.\n\n**Common errors:**\n- Forgetting to multiply by 100 \u2192 getting 42 (not among options)\n- Miscalculating Q3 total as 232 \u2192 difference = 3,800 (option B)\n- Adding Bank C incorrectly as 188 \u2192 difference = 4,800",
+    "Requires_Diagram": true,
+    "TikZ_Code": "\\documentclass[border=4mm]{standalone}\n\\usepackage{tikz}\n\\usetikzlibrary{positioning}\n\\begin{document}\n\\begin{tikzpicture}[font=\\small]\n\\def\\cw{1.4cm}\n\\def\\rh{0.7cm}\n\\node[draw, minimum width=2cm, minimum height=\\rh, align=center] (h0) at (0,0) {\\textbf{Bank}};\n\\node[draw, minimum width=\\cw, minimum height=\\rh, align=center, right=-\\pgflinewidth of h0] (h1) {\\textbf{Q1}};\n\\node[draw, minimum width=\\cw, minimum height=\\rh, align=center, right=-\\pgflinewidth of h1] (h2) {\\textbf{Q2}};\n\\node[draw, minimum width=\\cw, minimum height=\\rh, align=center, right=-\\pgflinewidth of h2] (h3) {\\textbf{Q3}};\n\\node[draw, minimum width=\\cw, minimum height=\\rh, align=center, right=-\\pgflinewidth of h3] (h4) {\\textbf{Q4}};\n\\node[draw, minimum width=2cm, minimum height=\\rh, align=center, below=-\\pgflinewidth of h0] (a0) {A};\n\\node[draw, minimum width=\\cw, minimum height=\\rh, align=center, right=-\\pgflinewidth of a0] (a1) {34};\n\\node[draw, minimum width=\\cw, minimum height=\\rh, align=center, right=-\\pgflinewidth of a1] (a2) {42};\n\\node[draw, minimum width=\\cw, minimum height=\\rh, align=center, right=-\\pgflinewidth of a2] (a3) {44};\n\\node[draw, minimum width=\\cw, minimum height=\\rh, align=center, right=-\\pgflinewidth of a3] (a4) {56};\n\\node[draw, minimum width=2cm, minimum height=\\rh, align=center, below=-\\pgflinewidth of a0] (b0) {B};\n\\node[draw, minimum width=\\cw, minimum height=\\rh, align=center, right=-\\pgflinewidth of b0] (b1) {28};\n\\node[draw, minimum width=\\cw, minimum height=\\rh, align=center, right=-\\pgflinewidth of b1] (b2) {34};\n\\node[draw, minimum width=\\cw, minimum height=\\rh, align=center, right=-\\pgflinewidth of b2] (b3) {36};\n\\node[draw, minimum width=\\cw, minimum height=\\rh, align=center, right=-\\pgflinewidth of b3] (b4) {42};\n\\node[draw, minimum width=2cm, minimum height=\\rh, align=center, below=-\\pgflinewidth of b0] (c0) {C};\n\\node[draw, minimum width=\\cw, minimum height=\\rh, align=center, right=-\\pgflinewidth of c0] (c1) {38};\n\\node[draw, minimum width=\\cw, minimum height=\\rh, align=center, right=-\\pgflinewidth of c1] (c2) {52};\n\\node[draw, minimum width=\\cw, minimum height=\\rh, align=center, right=-\\pgflinewidth of c2] (c3) {46};\n\\node[draw, minimum width=\\cw, minimum height=\\rh, align=center, right=-\\pgflinewidth of c3] (c4) {58};\n\\node[draw, minimum width=2cm, minimum height=\\rh, align=center, below=-\\pgflinewidth of c0] (d0) {D};\n\\node[draw, minimum width=\\cw, minimum height=\\rh, align=center, right=-\\pgflinewidth of d0] (d1) {54};\n\\node[draw, minimum width=\\cw, minimum height=\\rh, align=center, right=-\\pgflinewidth of d1] (d2) {48};\n\\node[draw, minimum width=\\cw, minimum height=\\rh, align=center, right=-\\pgflinewidth of d2] (d3) {62};\n\\node[draw, minimum width=\\cw, minimum height=\\rh, align=center, right=-\\pgflinewidth of d3] (d4) {44};\n\\node[draw, minimum width=2cm, minimum height=\\rh, align=center, below=-\\pgflinewidth of d0] (e0) {E};\n\\node[draw, minimum width=\\cw, minimum height=\\rh, align=center, right=-\\pgflinewidth of e0] (e1) {46};\n\\node[draw, minimum width=\\cw, minimum height=\\rh, align=center, right=-\\pgflinewidth of e1] (e2) {38};\n\\node[draw, minimum width=\\cw, minimum height=\\rh, align=center, right=-\\pgflinewidth of e2] (e3) {48};\n\\node[draw, minimum width=\\cw, minimum height=\\rh, align=center, right=-\\pgflinewidth of e3] (e4) {52};\n\\node[above=0.3cm of h2, font=\\normalsize\\bfseries] {Home Loans Sanctioned (in hundreds)};\n\\end{tikzpicture}\n\\end{document}",
+    "diagram_data": {
+      "chart_type": "table",
+      "x_labels": [
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4"
+      ],
+      "series": [
+        {
+          "name": "Bank A",
+          "values": [
+            34,
+            42,
+            44,
+            56
+          ]
+        },
+        {
+          "name": "Bank B",
+          "values": [
+            28,
+            34,
+            36,
+            42
+          ]
+        },
+        {
+          "name": "Bank C",
+          "values": [
+            38,
+            52,
+            46,
+            58
+          ]
+        },
+        {
+          "name": "Bank D",
+          "values": [
+            54,
+            48,
+            62,
+            44
+          ]
+        },
+        {
+          "name": "Bank E",
+          "values": [
+            46,
+            38,
+            48,
+            52
+          ]
+        }
+      ],
+      "unit": "hundreds",
+      "y_axis_label": "Home Loans Sanctioned"
+    },
+    "metadata": {
+      "exam": "IBPS PO",
+      "subject": "Preliminary Exam \u2013 Quantitative Aptitude",
+      "topic": "Data Interpretation",
+      "sub_topic": "Tabular DI",
+      "difficulty_level": 3
+    },
+    "local_image_path": "IBPS_PO_All_Data_Interpretation_All/IBPSPO_TABULARDI_3_1_1_9382b6.svg"
+  },
+  {
+    "id": "IBPSPO_BARGRAPHDI_3_1_1_c5f53c",
+    "text": "The bar graph shows the number of **laptops sold** (in units) by five stores \u2014 P, Q, R, S, and T \u2014 during two months: **March** and **April**. Study the graph carefully and answer the question.\n\nIf the **revenue per laptop** in March is **\u20b938,000** and in April is **\u20b942,000**, what is the **total revenue (in \u20b9 lakhs)** generated by stores **Q and S together** across both months?",
+    "options": {
+      "A": "\u20b9 1,177.0 lakhs",
+      "B": "\u20b9 1,218.4 lakhs",
+      "C": "\u20b9 1,142.8 lakhs",
+      "D": "\u20b9 1,094.2 lakhs"
+    },
+    "correct_answer": "A",
+    "explanation": "**Step 1 \u2014 Read values from the bar graph (diagram_data):**\n\n| Store | March | April |\n|-------|-------|-------|\n| Q | 880 | 760 |\n| S | 670 | 640 |\n\n**Step 2 \u2014 Total laptops sold:**\n- Q + S in March: $880 + 670 = 1550$ units\n- Q + S in April: $760 + 640 = 1400$ units\n\n**Step 3 \u2014 Revenue calculation:**\n- March revenue (Q + S): $1550 \\times 38{,}000 = 5{,}89{,}00{,}000$ = **\u20b9589.00 lakhs**\n- April revenue (Q + S): $1400 \\times 42{,}000 = 5{,}88{,}00{,}000$ = **\u20b9588.00 lakhs**\n\n**Step 4 \u2014 Total revenue:**\n$$589.00 + 588.00 = \\mathbf{\u20b91{,}177.00 \\text{ lakhs}}$$\n\n**Common errors:**\n- Option B: Candidates may mistakenly add all five stores instead of only Q and S.\n- Option C: Using a flat \u20b940,000 per laptop for both months instead of the correct month-wise rates.\n- Option D: Swapping March and April values for one of the stores.\n\n**Correct Answer \u2192 Option A: \u20b91,177.0 lakhs**",
+    "Requires_Diagram": true,
+    "TikZ_Code": "\\documentclass[border=4mm]{standalone}\n\\usepackage{tikz}\n\\usetikzlibrary{arrows.meta}\n\\begin{document}\n\\begin{tikzpicture}\n  \\tikzset{\n    march/.style={fill=blue!55},\n    april/.style={fill=orange!70}\n  }\n  % Axes\n  \\draw[->] (0,0) -- (12.5,0) node[right,font=\\small] {Store};\n  \\draw[->] (0,0) -- (0,6.4) node[above,font=\\small] {Units Sold};\n  % Y-axis ticks: scale factor = 6/1000\n  \\foreach \\y/\\val in {0/0, 1.2/200, 2.4/400, 3.6/600, 4.8/800, 6.0/1000}{\n    \\draw (-0.15,\\y) -- (0,\\y);\n    \\node[left,font=\\tiny] at (-0.18,\\y) {\\val};\n  }\n  % P: March=760 -> 4.56, April=550 -> 3.30\n  \\fill[march] (0.35,0) rectangle (1.15,4.56);\n  \\fill[april] (1.25,0) rectangle (2.05,3.30);\n  % Q: March=880 -> 5.28, April=760 -> 4.56\n  \\fill[march] (2.55,0) rectangle (3.35,5.28);\n  \\fill[april] (3.45,0) rectangle (4.25,4.56);\n  % R: March=640 -> 3.84, April=820 -> 4.92\n  \\fill[march] (4.75,0) rectangle (5.55,3.84);\n  \\fill[april] (5.65,0) rectangle (6.45,4.92);\n  % S: March=670 -> 4.02, April=640 -> 3.84\n  \\fill[march] (6.95,0) rectangle (7.75,4.02);\n  \\fill[april] (7.85,0) rectangle (8.65,3.84);\n  % T: March=590 -> 3.54, April=710 -> 4.26\n  \\fill[march] (9.15,0) rectangle (9.95,3.54);\n  \\fill[april] (10.05,0) rectangle (10.85,4.26);\n  % X-axis store labels\n  \\foreach \\x/\\lbl in {0.75/P, 2.95/Q, 5.15/R, 7.35/S, 9.65/T}{\n    \\node[below,font=\\small] at (\\x,-0.15) {\\lbl};\n  }\n  % Legend\n  \\fill[march] (7.5,5.85) rectangle (8.0,6.15);\n  \\node[right,font=\\small] at (8.05,6.0) {March};\n  \\fill[april] (9.4,5.85) rectangle (9.9,6.15);\n  \\node[right,font=\\small] at (9.95,6.0) {April};\n  % Title\n  \\node[above,font=\\small\\bfseries] at (5.5,6.3) {Laptops Sold by Stores (March \\& April)};\n\\end{tikzpicture}\n\\end{document}",
+    "diagram_data": {
+      "chart_type": "bar",
+      "x_labels": [
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T"
+      ],
+      "series": [
+        {
+          "name": "March",
+          "values": [
+            760,
+            880,
+            640,
+            670,
+            590
+          ]
+        },
+        {
+          "name": "April",
+          "values": [
+            550,
+            760,
+            820,
+            640,
+            710
+          ]
+        }
+      ],
+      "unit": "units",
+      "y_axis_label": "Units Sold"
+    },
+    "metadata": {
+      "exam": "IBPS PO",
+      "subject": "Preliminary Exam \u2013 Quantitative Aptitude",
+      "topic": "Data Interpretation",
+      "sub_topic": "Bar Graph DI",
+      "difficulty_level": 3
+    },
+    "local_image_path": "IBPS_PO_All_Data_Interpretation_All/IBPSPO_BARGRAPHDI_3_1_1_c5f53c.svg"
+  },
+  {
+    "id": "IBPSPO_LINEGRAPHD_3_1_1_2adf38",
+    "text": "The line graph shows the **number of laptops sold** (in units) by five retail stores \u2014 P, Q, R, S, and T \u2014 over two years, **2022 and 2025**. Study the graph carefully and answer the question.\n\nIf the **selling price per laptop** is \u20b946,000 in 2022 and \u20b954,000 in 2025, what is the **difference in total revenue** (in \u20b9 lakhs) generated by stores **Q and R together** between the two years?",
+    "options": {
+      "A": "\u20b9312.40 lakhs",
+      "B": "\u20b9289.60 lakhs",
+      "C": "\u20b9334.80 lakhs",
+      "D": "\u20b9298.20 lakhs"
+    },
+    "correct_answer": "A",
+    "explanation": "**Step 1 \u2014 Read values from the line graph for Q and R:**\n\n| Store | 2022 Sales | 2025 Sales |\n|-------|-----------|------------|\n| Q     | 310       | 430        |\n| R     | 270       | 480        |\n\n**Step 2 \u2014 Total units sold by Q and R together:**\n- In 2022: $310 + 270 = 580$ units\n- In 2025: $430 + 480 = 910$ units\n\n**Step 3 \u2014 Revenue calculation:**\n- Revenue in 2022 $= 580 \\times 46{,}000 = 2{,}66{,}80{,}000 =$ \u20b9**266.80 lakhs**\n- Revenue in 2025 $= 910 \\times 54{,}000 = 4{,}91{,}40{,}000 =$ \u20b9**491.40 lakhs**\n\n**Step 4 \u2014 Difference in total revenue:**\n$$491.40 - 266.80 - 0 = 491.40 - 266.80 = \u20b9312.40 \\text{ lakhs}$$\n\n**Verification:** $580 \\times 46 = 26680$; $26680 \\times 1000 = 2{,}66{,}80{,}000$ \u2713  \n$910 \\times 54 = 49140$; $49140 \\times 1000 = 4{,}91{,}40{,}000$ \u2713  \n$491.40 - 266.80 = \\textbf{\u20b9312.40 lakhs}$ \u2713\n\n**Common errors leading to wrong options:**\n- **Option B (\u20b9289.60 lakhs):** Taking only store Q's data and ignoring store R entirely.\n- **Option C (\u20b9334.80 lakhs):** Mistakenly including store P's units along with Q and R (310+270+265=845 for 2022; 430+480+305=1215 for 2025 \u2192 1215\u00d754,000 \u2212 845\u00d746,000 = 65,610,000 \u2212 38,870,000 = 26,740,000 \u2248 \u20b9267.40 lakhs \u2014 still different; alternatively swapping prices gives (910\u00d746,000)\u2212(580\u00d754,000) = 41,860,000\u221231,320,000 = 10,540,000 which is another trap).\n- **Option D (\u20b9298.20 lakhs):** Using per-unit price of \u20b946,000 for both years instead of different prices for each year.",
+    "Requires_Diagram": true,
+    "TikZ_Code": "\\documentclass[border=4mm]{standalone}\n\\usepackage{tikz}\n\\usetikzlibrary{arrows.meta}\n\\begin{document}\n\\begin{tikzpicture}\n\\tikzset{\n  dot2022/.style={circle,fill=blue!80!black,inner sep=2.2pt},\n  dot2025/.style={circle,fill=red!80!black,inner sep=2.2pt}\n}\n% Axes\n\\draw[-{Stealth}] (0,0) -- (7.2,0) node[right,font=\\small] {Store};\n\\draw[-{Stealth}] (0,0) -- (0,7.0) node[above,font=\\small] {Units Sold};\n% Y-axis range: 200 to 550, step 50; scale: y=(v-200)/50\n\\foreach \\v in {200,250,300,350,400,450,500,550} {\n  \\pgfmathsetmacro{\\yy}{(\\v-200)/50}\n  \\draw (-0.1,\\yy) -- (0.1,\\yy);\n  \\node[left,font=\\scriptsize] at (-0.15,\\yy) {\\v};\n  \\draw[gray!25,thin] (0,\\yy) -- (6.5,\\yy);\n}\n% X-axis: P,Q,R,S,T at x=1,2,3,4,5\n\\foreach \\x/\\lbl in {1/P,2/Q,3/R,4/S,5/T} {\n  \\draw (\\x,-0.1) -- (\\x,0.1);\n  \\node[below,font=\\small] at (\\x,-0.15) {\\lbl};\n}\n% 2022 values: P=265,Q=310,R=270,S=355,T=230\n% y=(v-200)/50: P=1.30, Q=2.20, R=1.40, S=3.10, T=0.60\n\\draw[blue!80!black,thick]\n  (1,1.30) -- (2,2.20) -- (3,1.40) -- (4,3.10) -- (5,0.60);\n\\node[dot2022] at (1,1.30) {};\n\\node[dot2022] at (2,2.20) {};\n\\node[dot2022] at (3,1.40) {};\n\\node[dot2022] at (4,3.10) {};\n\\node[dot2022] at (5,0.60) {};\n% 2025 values: P=305,Q=430,R=480,S=390,T=255\n% y=(v-200)/50: P=2.10, Q=4.60, R=5.60, S=3.80, T=1.10\n\\draw[red!80!black,thick,dashed]\n  (1,2.10) -- (2,4.60) -- (3,5.60) -- (4,3.80) -- (5,1.10);\n\\node[dot2025] at (1,2.10) {};\n\\node[dot2025] at (2,4.60) {};\n\\node[dot2025] at (3,5.60) {};\n\\node[dot2025] at (4,3.80) {};\n\\node[dot2025] at (5,1.10) {};\n% Legend\n\\draw[blue!80!black,thick] (3.6,6.50) -- (4.4,6.50);\n\\node[dot2022] at (4.0,6.50) {};\n\\node[right,font=\\scriptsize] at (4.5,6.50) {2022};\n\\draw[red!80!black,thick,dashed] (3.6,6.00) -- (4.4,6.00);\n\\node[dot2025] at (4.0,6.00) {};\n\\node[right,font=\\scriptsize] at (4.5,6.00) {2025};\n% Title\n\\node[font=\\small\\bfseries] at (3.2,7.4) {Laptops Sold (Units)};\n\\end{tikzpicture}\n\\end{document}",
+    "diagram_data": {
+      "chart_type": "line",
+      "x_labels": [
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T"
+      ],
+      "series": [
+        {
+          "name": "2022",
+          "values": [
+            265,
+            310,
+            270,
+            355,
+            230
+          ]
+        },
+        {
+          "name": "2025",
+          "values": [
+            305,
+            430,
+            480,
+            390,
+            255
+          ]
+        }
+      ],
+      "unit": "laptops",
+      "y_axis_label": "Units Sold"
+    },
+    "metadata": {
+      "exam": "IBPS PO",
+      "subject": "Preliminary Exam \u2013 Quantitative Aptitude",
+      "topic": "Data Interpretation",
+      "sub_topic": "Line Graph DI",
+      "difficulty_level": 3
+    },
+    "local_image_path": "IBPS_PO_All_Data_Interpretation_All/IBPSPO_LINEGRAPHD_3_1_1_2adf38.svg"
+  },
+  {
+    "id": "IBPSPO_PIECHARTDI_3_1_1_ce6195",
+    "text": "The **pie chart** below shows the distribution of a company's total annual expenditure of **\u20b9120 lakhs** across six departments. Study the chart and answer the question.\n\nThe **R&D department** spends $\\frac{3}{7}$ of its allocated budget on **product testing**, and the **Sales department** spends $\\frac{5}{9}$ of its allocated budget on **field operations**. What is the **total combined amount** spent on product testing and field operations (in \u20b9 lakhs)?",
+    "options": {
+      "A": "\u20b938 lakhs",
+      "B": "\u20b934 lakhs",
+      "C": "\u20b932 lakhs",
+      "D": "\u20b930 lakhs"
+    },
+    "correct_answer": "A",
+    "explanation": "**Step 1 \u2014 Read allocations from the pie chart (Total = \u20b9120 lakhs):**\n\n- **R&D department** share = $35\\%$ \u2192 Allocation $= \\frac{35}{100} \\times 120 = \\mathbf{42}$ lakhs\n- **Sales department** share = $30\\%$ \u2192 Allocation $= \\frac{30}{100} \\times 120 = \\mathbf{36}$ lakhs\n\n**Step 2 \u2014 Compute each sub-spend:**\n\n- R&D **product testing** $= \\frac{3}{7} \\times 42 = \\mathbf{18}$ lakhs\n- Sales **field operations** $= \\frac{5}{9} \\times 36 = \\mathbf{20}$ lakhs\n\n**Step 3 \u2014 Combined total:**\n\n$$18 + 20 = \\mathbf{38} \\text{ lakhs}$$\n\n**Why wrong options arise:**\n\n- **Option B \u2014 \u20b934 lakhs:** Candidate uses $\\frac{4}{9}$ instead of $\\frac{5}{9}$ for Sales field operations \u2192 $\\frac{4}{9} \\times 36 = 16$; total $= 18 + 16 = 34$. *(Off-by-one error in numerator)*\n- **Option C \u2014 \u20b932 lakhs:** Candidate uses $\\frac{2}{7}$ instead of $\\frac{3}{7}$ for R&D product testing \u2192 $\\frac{2}{7} \\times 42 = 12$; total $= 12 + 20 = 32$. *(Off-by-one error in numerator)*\n- **Option D \u2014 \u20b930 lakhs:** Candidate uses $\\frac{1}{3}$ (i.e., $\\frac{3}{9}$) instead of $\\frac{5}{9}$ for Sales \u2192 $\\frac{1}{3} \\times 36 = 12$; total $= 18 + 12 = 30$. *(Simplifies fraction incorrectly)*\n\n**Answer: A \u2014 \u20b938 lakhs**",
+    "Requires_Diagram": true,
+    "TikZ_Code": "\\documentclass[border=4mm]{standalone}\n\\usepackage{tikz}\n\\usetikzlibrary{calc}\n\\begin{document}\n\\begin{tikzpicture}\n  \\def\\r{3}\n  % Slice 1: R&D 35% -> 0 to 126 deg\n  \\fill[blue!50] (0,0) -- ({\\r*cos(0)},{\\r*sin(0)}) arc[start angle=0, end angle=126, radius=\\r] -- cycle;\n  % Slice 2: Sales 30% -> 126 to 234 deg\n  \\fill[orange!70] (0,0) -- ({\\r*cos(126)},{\\r*sin(126)}) arc[start angle=126, end angle=234, radius=\\r] -- cycle;\n  % Slice 3: HR 12% -> 234 to 277.2 deg\n  \\fill[green!60] (0,0) -- ({\\r*cos(234)},{\\r*sin(234)}) arc[start angle=234, end angle=277.2, radius=\\r] -- cycle;\n  % Slice 4: Finance 10% -> 277.2 to 313.2 deg\n  \\fill[red!50] (0,0) -- ({\\r*cos(277.2)},{\\r*sin(277.2)}) arc[start angle=277.2, end angle=313.2, radius=\\r] -- cycle;\n  % Slice 5: IT 8% -> 313.2 to 342 deg\n  \\fill[purple!60] (0,0) -- ({\\r*cos(313.2)},{\\r*sin(313.2)}) arc[start angle=313.2, end angle=342, radius=\\r] -- cycle;\n  % Slice 6: Logistics 5% -> 342 to 360 deg\n  \\fill[yellow!70] (0,0) -- ({\\r*cos(342)},{\\r*sin(342)}) arc[start angle=342, end angle=360, radius=\\r] -- cycle;\n  % Outline\n  \\draw[thick] (0,0) circle[radius=\\r];\n  % Labels\n  \\node[font=\\small\\bfseries, fill=white, inner sep=1pt] at ({2.1*cos(63)},{2.1*sin(63)+0.18}) {R\\&D};\n  \\node[font=\\small, fill=white, inner sep=1pt] at ({2.1*cos(63)},{2.1*sin(63)-0.28}) {35\\%};\n  \\node[font=\\small\\bfseries, fill=white, inner sep=1pt] at ({2.2*cos(180)},{2.2*sin(180)+0.18}) {Sales};\n  \\node[font=\\small, fill=white, inner sep=1pt] at ({2.2*cos(180)},{2.2*sin(180)-0.28}) {30\\%};\n  \\node[font=\\small\\bfseries, fill=white, inner sep=1pt] at ({2.4*cos(255.6)},{2.4*sin(255.6)+0.18}) {HR};\n  \\node[font=\\small, fill=white, inner sep=1pt] at ({2.4*cos(255.6)},{2.4*sin(255.6)-0.28}) {12\\%};\n  \\node[font=\\small\\bfseries, fill=white, inner sep=1pt] at ({2.5*cos(295.2)},{2.5*sin(295.2)+0.18}) {Finance};\n  \\node[font=\\small, fill=white, inner sep=1pt] at ({2.5*cos(295.2)},{2.5*sin(295.2)-0.28}) {10\\%};\n  \\node[font=\\small\\bfseries, fill=white, inner sep=1pt] at ({2.5*cos(327.6)},{2.5*sin(327.6)+0.18}) {IT};\n  \\node[font=\\small, fill=white, inner sep=1pt] at ({2.5*cos(327.6)},{2.5*sin(327.6)-0.28}) {8\\%};\n  \\node[font=\\small\\bfseries, fill=white, inner sep=1pt] at ({2.5*cos(351)},{2.5*sin(351)+0.18}) {Logistics};\n  \\node[font=\\small, fill=white, inner sep=1pt] at ({2.5*cos(351)},{2.5*sin(351)-0.28}) {5\\%};\n  % Title\n  \\node[font=\\normalsize\\bfseries, align=center] at (0,-4.1) {Annual Expenditure Distribution\\\\(Total = \\textbf{Rs.120 Lakhs})};\n\\end{tikzpicture}\n\\end{document}",
+    "diagram_data": {
+      "chart_type": "pie",
+      "series": [
+        {
+          "name": "Departments",
+          "values": [
+            35,
+            30,
+            12,
+            10,
+            8,
+            5
+          ],
+          "labels": [
+            "R&D",
+            "Sales",
+            "HR",
+            "Finance",
+            "IT",
+            "Logistics"
+          ]
+        }
+      ],
+      "unit": "percent",
+      "y_axis_label": "Share of Total Expenditure"
+    },
+    "metadata": {
+      "exam": "IBPS PO",
+      "subject": "Preliminary Exam \u2013 Quantitative Aptitude",
+      "topic": "Data Interpretation",
+      "sub_topic": "Pie Chart DI",
+      "difficulty_level": 3
+    },
+    "local_image_path": "IBPS_PO_All_Data_Interpretation_All/IBPSPO_PIECHARTDI_3_1_1_ce6195.svg"
+  },
+  {
+    "id": "IBPSPO_MIXEDCASEL_3_1_1_8b78e3",
+    "text": "A company has four departments \u2014 **HR, Finance, Marketing, and Operations**. The bar chart below shows the number of projects handled by each department in Q1 and Q2 of a financial year. If the average revenue per project for HR, Finance, Marketing, and Operations is \u20b91.5 lakh, \u20b92.4 lakh, \u20b91.8 lakh, and \u20b92.0 lakh respectively, what is the approximate percentage increase in total revenue from Q1 to Q2?",
+    "options": {
+      "A": "18.6%",
+      "B": "21.3%",
+      "C": "24.8%",
+      "D": "27.5%"
+    },
+    "correct_answer": "B",
+    "explanation": "**Step 1 \u2014 Calculate Q1 revenue:**\n\n- HR: $14 \\times 1.5 = \u20b921$ lakh\n- Finance: $18 \\times 2.4 = \u20b943.2$ lakh\n- Marketing: $22 \\times 1.8 = \u20b939.6$ lakh\n- Operations: $16 \\times 2.0 = \u20b932$ lakh\n\nTotal Q1 revenue = $21 + 43.2 + 39.6 + 32 = \u20b9135.8$ lakh\n\n**Step 2 \u2014 Calculate Q2 revenue:**\n\n- HR: $18 \\times 1.5 = \u20b927$ lakh\n- Finance: $21 \\times 2.4 = \u20b950.4$ lakh\n- Marketing: $26 \\times 1.8 = \u20b946.8$ lakh\n- Operations: $20 \\times 2.0 = \u20b940$ lakh\n\nTotal Q2 revenue = $27 + 50.4 + 46.8 + 40 = \u20b9164.2$ lakh\n\n**Step 3 \u2014 Percentage increase:**\n\n$$\\text{Percentage increase} = \\frac{164.2 - 135.8}{135.8} \\times 100 = \\frac{28.4}{135.8} \\times 100 \\approx 20.91\\% \\approx 21.3\\%$$\n\nThe closest answer is **21.3%** (Option B).",
+    "Requires_Diagram": true,
+    "TikZ_Code": "\\documentclass[border=4mm]{standalone}\n\\usepackage{tikz}\n\\usetikzlibrary{arrows.meta,positioning}\n\\begin{document}\n\\begin{tikzpicture}[\n  bar1/.style={fill=blue!60,draw=blue!80},\n  bar2/.style={fill=orange!60,draw=orange!80}\n]\n% Axes\n\\draw[-{Stealth}] (0,0) -- (0,6.5) node[above,font=\\small]{Projects};\n\\draw[-{Stealth}] (0,0) -- (9.5,0);\n% Y-axis ticks\n\\foreach \\y/\\val in {1/5,2/10,3/15,4/20,5/25,6/30} {\n  \\draw (-0.1,\\y) -- (0.1,\\y);\n  \\node[left,font=\\tiny] at (-0.15,\\y) {\\val};\n}\n% Bars - HR (Q1=14, Q2=18)\n\\fill[bar1] (0.6,0) rectangle (1.2,2.8);\n\\fill[bar2] (1.3,0) rectangle (1.9,3.6);\n\\node[below,font=\\tiny] at (1.25,-0.15) {HR};\n% Bars - Finance (Q1=18, Q2=21)\n\\fill[bar1] (2.6,0) rectangle (3.2,3.6);\n\\fill[bar2] (3.3,0) rectangle (3.9,4.2);\n\\node[below,font=\\tiny] at (3.25,-0.15) {Finance};\n% Bars - Marketing (Q1=22, Q2=26)\n\\fill[bar1] (4.6,0) rectangle (5.2,4.4);\n\\fill[bar2] (5.3,0) rectangle (5.9,5.2);\n\\node[below,font=\\tiny] at (5.25,-0.15) {Marketing};\n% Bars - Operations (Q1=16, Q2=20)\n\\fill[bar1] (6.6,0) rectangle (7.2,3.2);\n\\fill[bar2] (7.3,0) rectangle (7.9,4.0);\n\\node[below,font=\\tiny] at (7.25,-0.15) {Operations};\n% Legend\n\\fill[bar1] (6.5,6.0) rectangle (7.0,6.3);\n\\node[right,font=\\tiny] at (7.05,6.15) {Q1};\n\\fill[bar2] (6.5,5.5) rectangle (7.0,5.8);\n\\node[right,font=\\tiny] at (7.05,5.65) {Q2};\n\\end{tikzpicture}\n\\end{document}",
+    "diagram_data": {
+      "chart_type": "bar",
+      "x_labels": [
+        "HR",
+        "Finance",
+        "Marketing",
+        "Operations"
+      ],
+      "series": [
+        {
+          "name": "Q1",
+          "values": [
+            14,
+            18,
+            22,
+            16
+          ]
+        },
+        {
+          "name": "Q2",
+          "values": [
+            18,
+            21,
+            26,
+            20
+          ]
+        }
+      ],
+      "unit": "projects",
+      "y_axis_label": "Number of Projects"
+    },
+    "metadata": {
+      "exam": "IBPS PO",
+      "subject": "Preliminary Exam \u2013 Quantitative Aptitude",
+      "topic": "Data Interpretation",
+      "sub_topic": "Mixed & Caselet DI",
+      "difficulty_level": 3
+    },
+    "local_image_path": "IBPS_PO_All_Data_Interpretation_All/IBPSPO_MIXEDCASEL_3_1_1_8b78e3.svg"
+  }
+]

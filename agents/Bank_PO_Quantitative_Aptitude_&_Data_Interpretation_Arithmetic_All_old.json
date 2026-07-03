@@ -1,0 +1,332 @@
+[
+  {
+    "id": "BANKPO_NUMBERSYST_1_1_1_9b525e",
+    "text": "What is the value of $\\frac{3}{4}$ of $\\frac{8}{9}$ of $\\frac{1}{2}$ of $360$?",
+    "options": {
+      "A": "60",
+      "B": "80",
+      "C": "90",
+      "D": "120"
+    },
+    "correct_answer": "D",
+    "explanation": "**Step 1 \u2014 Apply all fractions to the base number:**\n\n$$\\frac{3}{4} \\times \\frac{8}{9} \\times \\frac{1}{2} \\times 360$$\n\n**Step 2 \u2014 Combine the fractions first:**\n\nNumerators: $3 \\times 8 \\times 1 = 24$\n\nDenominators: $4 \\times 9 \\times 2 = 72$\n\nCombined fraction $= \\dfrac{24}{72} = \\dfrac{1}{3}$\n\n**Step 3 \u2014 Multiply by the base:**\n\n$$\\frac{1}{3} \\times 360 = 120$$\n\n**Verification (step-by-step):**\n\n$\\dfrac{1}{2} \\times 360 = 180$\n\n$\\dfrac{8}{9} \\times 180 = 160$\n\n$\\dfrac{3}{4} \\times 160 = 120$\n\n**The correct answer is 120 \u2014 Option D.**",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "BANKPO_NUMBERSYST_1_1_2_dee943",
+    "text": "Simplify: $\\frac{144 \\div 12 \\times 3 + 27}{6^2 - 11}$",
+    "options": {
+      "A": "$\\frac{63}{25}$",
+      "B": "$\\frac{59}{25}$",
+      "C": "$\\frac{63}{20}$",
+      "D": "$\\frac{61}{25}$"
+    },
+    "correct_answer": "A",
+    "explanation": "**Step 1 \u2014 Simplify the numerator:**\n\n$144 \\div 12 \\times 3 + 27$\n\nApply **BODMAS**: division and multiplication left to right first.\n\n$144 \\div 12 = 12$\n\n$12 \\times 3 = 36$\n\n$36 + 27 = 63$\n\n**Step 2 \u2014 Simplify the denominator:**\n\n$6^2 - 11 = 36 - 11 = 25$\n\n**Step 3 \u2014 Final result:**\n\n$$\\frac{63}{25}$$\n\nThe fraction $\\frac{63}{25}$ cannot be simplified further as **HCF(63, 25) = 1**.\n\n**Correct Answer: A \u2014 $\\frac{63}{25}$**\n\n**Why other options are wrong:**\n- Option B ($\\frac{59}{25}$): Error from computing $36 + 23 = 59$ instead of $36 + 27 = 63$.\n- Option C ($\\frac{63}{20}$): Error from computing $6^2 - 16 = 20$ instead of $36 - 11 = 25$.\n- Option D ($\\frac{61}{25}$): Error from computing $144 \\div 12 \\times 3 = 34$ instead of $36$.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "BANKPO_NUMBERSYST_1_1_3_6d9d24",
+    "text": "What is the value of $\\frac{5^3 + 7^2 - 4^3}{\\sqrt{169} + 3^2}$?",
+    "options": {
+      "A": "5",
+      "B": "6",
+      "C": "4",
+      "D": "3"
+    },
+    "correct_answer": "A",
+    "explanation": "**Step 1 \u2014 Evaluate the numerator:**\n\n$5^3 = 125$, $7^2 = 49$, $4^3 = 64$\n\n$$5^3 + 7^2 - 4^3 = 125 + 49 - 64 = 110$$\n\n**Step 2 \u2014 Evaluate the denominator:**\n\n$\\sqrt{169} = 13$, $3^2 = 9$\n\n$$\\sqrt{169} + 3^2 = 13 + 9 = 22$$\n\n**Step 3 \u2014 Final division:**\n\n$$\\frac{110}{22} = 5$$\n\n**Common error traps:**\n- Candidates may compute $\\sqrt{169} = 12$ (confusing with $\\sqrt{144}$), giving denominator $= 21$ and a non-integer result.\n- Candidates may compute $4^3 = 48$ instead of $64$, inflating the numerator to $126$.\n\nThe correct answer is **5**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "BANKPO_NUMBERSYST_1_1_4_d3230c",
+    "text": "Simplify: $\\frac{625 \\div 25 \\times 4 + 18}{\\sqrt{81} - 3 \\times 2}$",
+    "options": {
+      "A": "$\\frac{118}{3}$",
+      "B": "$\\frac{116}{3}$",
+      "C": "$\\frac{121}{3}$",
+      "D": "$\\frac{124}{3}$"
+    },
+    "correct_answer": "A",
+    "explanation": "**Step 1 \u2014 Simplify the numerator:**\n\n$625 \\div 25 \\times 4 + 18$\n\nApply **BODMAS**: division and multiplication left to right first.\n\n$625 \\div 25 = 25$\n\n$25 \\times 4 = 100$\n\n$100 + 18 = 118$\n\n**Step 2 \u2014 Simplify the denominator:**\n\n$\\sqrt{81} - 3 \\times 2$\n\n$\\sqrt{81} = 9$\n\n$3 \\times 2 = 6$\n\n$9 - 6 = 3$\n\n**Step 3 \u2014 Final division:**\n\n$$\\frac{118}{3}$$\n\nSince $118$ and $3$ share no common factor, the fraction is already in its **simplest form**.\n\n**Answer: $\\frac{118}{3}$** \u2192 Option **A**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "BANKPO_NUMBERSYST_1_1_5_04f81d",
+    "text": "Simplify: $\\dfrac{\\sqrt{36} + 4^2 - 2^3}{2^2 + 3}$",
+    "options": {
+      "A": "$3$",
+      "B": "$2$",
+      "C": "$4$",
+      "D": "$\\dfrac{11}{7}$"
+    },
+    "correct_answer": "B",
+    "explanation": "**Step 1 \u2014 Evaluate the numerator:**\n\n- $\\sqrt{36} = 6$\n- $4^2 = 16$\n- $2^3 = 8$\n\n$$\\text{Numerator} = 6 + 16 - 8 = 14$$\n\n**Step 2 \u2014 Evaluate the denominator:**\n\n- $2^2 = 4$\n\n$$\\text{Denominator} = 4 + 3 = 7$$\n\n**Step 3 \u2014 Simplify:**\n\n$$\\dfrac{14}{7} = \\mathbf{2}$$\n\n---\n\n**Why the wrong options arise:**\n\n- **Option A ($3$):** A candidate who mistakenly computes $\\sqrt{36} = 6$ but uses $4^2 = 16$ and forgets to subtract $2^3$ gets numerator $= 6 + 16 = 22$; then divides by the wrong denominator $2 + 3 = 5$ (treating $2^2$ as simply $2$) to get $\\approx 4$. Alternatively, misreading $4^2$ as $4 \\times 2 = 8$ gives numerator $= 6 + 8 - 8 = 6$, then $6 \\div (4-3) = 6$. A direct path to $3$: compute numerator correctly as $14$ but use denominator $= 2 + 3 + 2 - 2 = ?$ \u2014 no clean route. Most likely error: treating $2^2 + 3$ as $2 + 3 = 5$, wrong numerator $6 + 8 - 8 = 6$, then $\\frac{6 + ?}{5}$, or computing the whole expression as $\\frac{6 + 16 - 8}{4 + ?}$. The value $3$ is a classic \"off-by-one\" guess.\n\n- **Option C ($4$):** Ignoring the subtraction of $2^3$ entirely: numerator $= 6 + 16 = 22$; denominator $= 4 + 3 - 3 = ?$. A cleaner path: mistaking $2^3 = 2$ (reading the exponent as a multiplier): numerator $= 6 + 16 - 2 = 20$; denominator $= 4 + 3 = 7$; giving $20/7 \\approx 2.86 \\approx 3$. Or: mistaking $\\sqrt{36} = 6$ and $4^2 = 4 \\times 2 = 8$, numerator $= 6 + 8 - 8 = 6$, denominator $= 2 + 3 = 5$, result $\\approx 1$. Many candidates simply round up from $2$ to $4$ if they miscompute the denominator as $2^2 + 3 = 2 + 3 = 5$: $\\frac{20}{5} = 4$ (ignoring $2^3$ in numerator).\n\n- **Option D ($\\dfrac{11}{7}$):** Mistaking $\\sqrt{36} = 3$ (taking half of 6 instead of the square root): numerator $= 3 + 16 - 8 = 11$; denominator $= 4 + 3 = 7$; giving $\\dfrac{11}{7}$. This is a natural and plausible error.\n\n**Correct Answer: B \u2014 $2$**",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "BANKPO_NUMBERSYST_2_1_1_362d79",
+    "text": "Find the value of $\\frac{5^{10} \\times 4^5}{20^5 \\times 5^3}$.",
+    "options": {
+      "A": "$5^2$",
+      "B": "$5^3$",
+      "C": "$5^4$",
+      "D": "$5^5$"
+    },
+    "correct_answer": "A",
+    "explanation": "**Step 1 \u2014 Rewrite $20^5$:**\n\n$$20^5 = (4 \\times 5)^5 = 4^5 \\times 5^5$$\n\n**Step 2 \u2014 Substitute into the expression:**\n\n$$\\frac{5^{10} \\times 4^5}{4^5 \\times 5^5 \\times 5^3}$$\n\n**Step 3 \u2014 Cancel $4^5$ from numerator and denominator:**\n\n$$\\frac{5^{10}}{5^5 \\times 5^3} = \\frac{5^{10}}{5^8}$$\n\n**Step 4 \u2014 Apply the law of exponents** $\\left(\\frac{a^m}{a^n} = a^{m-n}\\right)$:\n\n$$5^{10-8} = 5^2$$\n\n**Common errors:** Candidates often forget to expand $20^5$ fully and mistakenly cancel only the $5^5$ factor, arriving at $5^3$ (Option B) or miscount the exponents to get $5^4$ (Option C).\n\n**Answer: $5^2$**",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "BANKPO_NUMBERSYST_2_1_2_532359",
+    "text": "Simplify: $\\dfrac{\\sqrt{576} + 3^2 - 5^2}{\\sqrt[3]{8} + 2^2 - 4}$",
+    "options": {
+      "A": "$3$",
+      "B": "$\\dfrac{5}{2}$",
+      "C": "$4$",
+      "D": "$2$"
+    },
+    "correct_answer": "C",
+    "explanation": "**Step 1 \u2014 Evaluate the numerator:**\n\n- $\\sqrt{576} = 24$ (since $24^2 = 576$)\n- $3^2 = 9$\n- $5^2 = 25$\n\n$$\\text{Numerator} = 24 + 9 - 25 = \\mathbf{8}$$\n\n**Step 2 \u2014 Evaluate the denominator:**\n\n- $\\sqrt[3]{8} = 2$ (since $2^3 = 8$)\n- $2^2 = 4$\n\n$$\\text{Denominator} = 2 + 4 - 4 = \\mathbf{2}$$\n\n**Step 3 \u2014 Simplify:**\n\n$$\\dfrac{8}{2} = \\mathbf{4}$$\n\n**Common errors:**\n- Option A ($3$): Miscalculating $\\sqrt{576} = 23$ instead of $24$, giving numerator $= 7$ and denominator $= 2$, yielding $3.5$, then rounding.\n- Option B ($\\dfrac{5}{2}$): Errors in cube root, taking $\\sqrt[3]{8} = 4$, giving denominator $= 4$, and $\\dfrac{8}{4} = 2$... or other computation mistakes.\n- Option D ($2$): Taking denominator as $4$ and numerator as $8$.\n\nThe correct answer is **C: $4$**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "BANKPO_NUMBERSYST_2_1_3_a4236e",
+    "text": "Simplify: $$\\dfrac{\\sqrt{144} \\times 5^2 - 6^3}{\\sqrt[3]{512} \\times 7 - 28}$$",
+    "options": {
+      "A": "$3$",
+      "B": "$4$",
+      "C": "$2$",
+      "D": "$6$"
+    },
+    "correct_answer": "A",
+    "explanation": "**Step 1 \u2014 Evaluate each component:**\n\n- $\\sqrt{144} = 12$\n- $5^2 = 25$\n- $6^3 = 216$\n- $\\sqrt[3]{512} = 8$\n\n**Step 2 \u2014 Compute the Numerator:**\n\n$$\\sqrt{144} \\times 5^2 - 6^3 = 12 \\times 25 - 216 = 300 - 216 = 84$$\n\n**Step 3 \u2014 Compute the Denominator:**\n\n$$\\sqrt[3]{512} \\times 7 - 28 = 8 \\times 7 - 28 = 56 - 28 = 28$$\n\n**Step 4 \u2014 Final Result:**\n\n$$\\dfrac{84}{28} = \\mathbf{3}$$\n\nThe correct answer is **A) 3**.\n\n**Why other options are wrong:**\n- **B (4):** Requires denominator $= 21$, but the denominator is $28$.\n- **C (2):** Requires numerator $= 56$, but the numerator is $84$.\n- **D (6):** Requires denominator $= 14$, but the denominator is $28$.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "BANKPO_NUMBERSYST_2_1_4_867bac",
+    "text": "Simplify: $\\dfrac{\\sqrt{256} \\times (13 - 5^3 \\div 25)}{\\sqrt[3]{216} + 3^2 - 7}$",
+    "options": {
+      "A": "$16$",
+      "B": "$18$",
+      "C": "$20$",
+      "D": "$22$"
+    },
+    "correct_answer": "A",
+    "explanation": "**Step 1 \u2014 Evaluate the key components.**\n\n- $\\sqrt{256} = 16$\n- $5^3 = 125$, so $5^3 \\div 25 = 5$\n- $\\sqrt[3]{216} = 6$\n- $3^2 = 9$\n\n**Step 2 \u2014 Compute the numerator** (bracket first, then multiply):\n$$\\sqrt{256} \\times (13 - 5^3 \\div 25) = 16 \\times (13 - 5) = 16 \\times 8 = 128$$\n\n**Step 3 \u2014 Compute the denominator:**\n$$\\sqrt[3]{216} + 3^2 - 7 = 6 + 9 - 7 = 8$$\n\n**Step 4 \u2014 Divide:**\n$$\\frac{128}{8} = \\mathbf{16}$$\n\n**Answer: A) $16$**",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "BANKPO_NUMBERSYST_2_1_5_e6269c",
+    "text": "Simplify: $\\dfrac{\\sqrt{400} \\times \\sqrt[3]{125} + 9^2}{\\sqrt{196} \\div 7 + 4^3}$",
+    "options": {
+      "A": "$\\dfrac{181}{66}$",
+      "B": "$\\dfrac{181}{70}$",
+      "C": "$\\dfrac{175}{66}$",
+      "D": "$\\dfrac{181}{72}$"
+    },
+    "correct_answer": "A",
+    "explanation": "**Step 1 \u2014 Evaluate the numerator:**\n\n- $\\sqrt{400} = 20$\n- $\\sqrt[3]{125} = 5$\n- $9^2 = 81$\n\nNumerator $= 20 \\times 5 + 81 = 100 + 81 = 181$\n\n**Step 2 \u2014 Evaluate the denominator:**\n\n- $\\sqrt{196} = 14$\n- $14 \\div 7 = 2$\n- $4^3 = 64$\n\nDenominator $= 2 + 64 = 66$\n\n**Step 3 \u2014 Final answer:**\n\n$$\\frac{181}{66}$$\n\nThis fraction is already in its **simplest form** since $\\gcd(181, 66) = 1$ (181 is a prime number).\n\n**Why other options are wrong:**\n- Option B uses $70$ in denominator \u2014 a common error when computing $\\sqrt{196} \\div 7$ as $10$ instead of $2$, giving $10 + 64 = 74$, or miscalculating $4^3$ as $60$.\n- Option C uses $175$ in numerator \u2014 mistaking $9^2 = 75$ instead of $81$.\n- Option D uses $72$ in denominator \u2014 a common error by taking $4^3 = 72$ instead of $64$.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "BANKPO_NUMBERSYST_3_1_1_3ef265",
+    "text": "A number when divided by a **divisor** leaves a remainder of 43. When **twice** the original number is divided by the same divisor, the remainder is 29. What is the divisor?",
+    "options": {
+      "A": "57",
+      "B": "63",
+      "C": "52",
+      "D": "None of these"
+    },
+    "correct_answer": "A",
+    "explanation": "**Setting up the equation:**\n\nLet the original number be $N$ and the divisor be $d$.\n\nGiven: $N = dq + 43$ for some quotient $q$.\n\nSo $2N = 2dq + 86$.\n\nWhen $2N$ is divided by $d$, the remainder is $29$.\n\nThis means: $2N = d \\cdot k + 29$ for some integer $k$.\n\n**Key relationship:**\n\n$2N = 2dq + 86$\n\nThe remainder when $2N$ is divided by $d$ is the remainder when $86$ is divided by $d$ (since $2dq$ is divisible by $d$).\n\nSo we need: $86 \\div d$ gives remainder $29$.\n\nThis means: $86 = d \\cdot m + 29$ for some positive integer $m$.\n\n$$d \\cdot m = 86 - 29 = 57$$\n\n**Finding valid divisor:**\n\n$d$ must divide $57$, and $d$ must be **greater than** the remainder $43$ (since a remainder is always less than the divisor).\n\nFactors of $57$: $1, 3, 19, 57$.\n\nOnly $57 > 43$. \u2713\n\nCheck: $86 = 57 \\times 1 + 29$ \u2713 (remainder = 29 \u2713)\n\nAlso verify $d > 43$ (the first remainder): $57 > 43$ \u2713\n\n**The divisor is $57$.**\n\n**Why other options are wrong:**\n- **B (63):** $57 \\div 63$ \u2192 not a factor relationship; $86 - 29 = 57$, and $63 \\nmid 57$.\n- **C (52):** Similarly, $52 \\nmid 57$.\n- **D:** 'None of these' is incorrect since $57$ is a valid answer.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "BANKPO_NUMBERSYST_3_1_2_c1f2b4",
+    "text": "A number when divided by a **divisor** leaves a remainder of 17. When twice the same number is divided by the same divisor, the remainder is 11. What is the divisor?",
+    "options": {
+      "A": "19",
+      "B": "23",
+      "C": "28",
+      "D": "34"
+    },
+    "correct_answer": "B",
+    "explanation": "**Setting up the equations using remainder properties:**\n\nLet the number be $N$ and the divisor be $d$.\n\n**Step 1 \u2014 Express the given conditions:**\n\nWhen $N$ is divided by $d$, remainder = 17:\n$$N = dq + 17 \\quad \\text{...(i)}$$\n\nWhen $2N$ is divided by $d$, remainder = 11:\n$$2N = dk + 11 \\quad \\text{...(ii)}$$\n\n**Step 2 \u2014 Derive a relation:**\n\nMultiply equation (i) by 2:\n$$2N = 2dq + 34$$\n\nSubstituting into (ii):\n$$2dq + 34 = dk + 11$$\n$$d(k - 2q) = 34 - 11 = 23$$\n\n**Step 3 \u2014 Find the divisor:**\n\nSo $d$ divides 23. Since 23 is **prime**, its only divisors are 1 and 23.\n\nSince the remainder 17 must be less than the divisor $d$, we need $d > 17$.\n\nTherefore, $d = 23$.\n\n**Verification:**\nIf $d = 23$ and $N = 23 \\times 1 + 17 = 40$:\n- $40 \\div 23$ \u2192 remainder $= 17$ \u2713\n- $80 \\div 23 = 3 \\times 23 + 11$ \u2192 remainder $= 11$ \u2713\n\nThe answer is **23**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "BANKPO_NUMBERSYST_3_1_3_3e81f6",
+    "text": "**Simplify the following expression:**\n\n$$\\frac{\\sqrt{900} \\times 6^2 - 3^3 \\times 10}{\\sqrt[3]{1331} + 7}$$",
+    "options": {
+      "A": "51",
+      "B": "45",
+      "C": "48",
+      "D": "54"
+    },
+    "correct_answer": "B",
+    "explanation": "**Step 1 \u2014 Simplify the numerator:**\n\n- $\\sqrt{900} = 30$ (since $30^2 = 900$)\n- $6^2 = 36$\n- $3^3 = 27$, and $27 \\times 10 = 270$\n\n$$\\text{Numerator} = 30 \\times 36 - 270 = 1080 - 270 = 810$$\n\n**Step 2 \u2014 Simplify the denominator:**\n\n- $\\sqrt[3]{1331} = 11$ (since $11^3 = 1331$)\n\n$$\\text{Denominator} = 11 + 7 = 18$$\n\n**Step 3 \u2014 Final computation:**\n\n$$\\frac{810}{18} = 45$$\n\n**Verification:** $18 \\times 45 = 810$ \u2713\n\nThe correct answer is **Option B: 45**.\n\n**Why the other options are wrong:**\n- **Option A (51):** Would require $18 \\times 51 = 918 \\neq 810$\n- **Option C (48):** Would require $18 \\times 48 = 864 \\neq 810$\n- **Option D (54):** Would require $18 \\times 54 = 972 \\neq 810$",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "BANKPO_NUMBERSYST_3_1_4_30b156",
+    "text": "A number when divided by a **divisor** leaves a remainder of 23. When **twice** the original number is divided by the same divisor, the remainder is 11. What is the divisor?",
+    "options": {
+      "A": "34",
+      "B": "35",
+      "C": "33",
+      "D": "36"
+    },
+    "correct_answer": "B",
+    "explanation": "Let the original number be $N$ and the divisor be $d$.\n\n**Step 1 \u2014 Set up the congruence equations:**\n\nGiven: $N \\equiv 23 \\pmod{d}$ ... (i)\n\nWhen $2N$ is divided by $d$, the remainder is 11:\n$2N \\equiv 11 \\pmod{d}$ ... (ii)\n\n**Step 2 \u2014 Use equation (i) to derive $2N \\pmod{d}$:**\n\nFrom (i): $2N \\equiv 2 \\times 23 = 46 \\pmod{d}$\n\nBut from (ii): $2N \\equiv 11 \\pmod{d}$\n\n**Step 3 \u2014 Find $d$:**\n\nSince both expressions equal $2N \\pmod{d}$:\n$$46 - 11 = 35 \\equiv 0 \\pmod{d}$$\n\nSo $d$ divides $35$. The divisors of $35$ are: $1, 5, 7, 35$.\n\n**Step 4 \u2014 Apply the constraint that remainder must be less than divisor:**\n\nThe remainder when $N$ is divided by $d$ is $23$, so $d > 23$.\n\nAmong $\\{1, 5, 7, 35\\}$, only $d = 35 > 23$ satisfies this condition.\n\n**Verification:** If $d = 35$ and $N \\equiv 23 \\pmod{35}$, say $N = 23$, then $2N = 46 = 35 + 11$, so remainder $= 11$. \u2713\n\n**Answer: The divisor is $35$.**",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "BANKPO_NUMBERSYST_3_1_5_68673a",
+    "text": "A shopkeeper has a total of $N$ items, where $N$ satisfies the following condition: $N$ is the smallest positive integer such that $\\frac{N}{6}$, $\\frac{N}{7}$, $\\frac{N}{8}$, and $\\frac{N}{9}$ are all integers. He sells $\\frac{3}{8}$ of his items on Monday and $\\frac{5}{9}$ of the remaining items on Tuesday. How many items does he have left after Tuesday?",
+    "options": {
+      "A": "126",
+      "B": "112",
+      "C": "140",
+      "D": "98"
+    },
+    "correct_answer": "C",
+    "explanation": "**Step 1 \u2014 Find N (the LCM of 6, 7, 8, 9):**\n\nWe need the smallest $N$ divisible by 6, 7, 8, and 9.\n\n$$6 = 2 \\times 3, \\quad 7 = 7, \\quad 8 = 2^3, \\quad 9 = 3^2$$\n\n$$\\text{LCM} = 2^3 \\times 3^2 \\times 7 = 8 \\times 9 \\times 7 = 504$$\n\nSo $N = 504$.\n\n**Step 2 \u2014 Items sold on Monday:**\n\n$$\\text{Sold on Monday} = \\frac{3}{8} \\times 504 = 189$$\n\n$$\\text{Remaining after Monday} = 504 - 189 = 315$$\n\n**Step 3 \u2014 Items sold on Tuesday:**\n\n$$\\text{Sold on Tuesday} = \\frac{5}{9} \\times 315 = 175$$\n\n$$\\text{Remaining after Tuesday} = 315 - 175 = 140$$\n\nWait \u2014 let me recheck: $315 - 175 = 140$.\n\nBut let us verify using the fraction left:\n\nFraction remaining after Monday $= 1 - \\frac{3}{8} = \\frac{5}{8}$\n\nFraction remaining after Tuesday $= \\frac{5}{8} \\times \\left(1 - \\frac{5}{9}\\right) = \\frac{5}{8} \\times \\frac{4}{9} = \\frac{20}{72} = \\frac{5}{18}$\n\n$$\\text{Items left} = \\frac{5}{18} \\times 504 = 5 \\times 28 = 140$$\n\nHmm, that gives **140 (Option C)**. Let me re-examine the options.\n\nActually the correct computation yields **140**, so the correct answer is **C**.\n\n**Verification:**\n- $N = \\text{LCM}(6,7,8,9) = 504$ \u2713\n- After Monday: $504 \\times \\frac{5}{8} = 315$ \u2713\n- After Tuesday: $315 \\times \\frac{4}{9} = 140$ \u2713\n\nThe answer is $\\boxed{140}$.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Number System & Simplification / Approximation",
+      "difficulty_level": 3
+    }
+  }
+]

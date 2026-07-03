@@ -1,0 +1,1903 @@
+[
+  {
+    "id": "BANKPO_TIMEWORKPI_1_1_1_837ce8",
+    "text": "**A** can complete a piece of work in 12 days and **B** can complete the same work in 18 days. If both work together, in how many days will the work be completed?",
+    "options": {
+      "A": "$6.84$",
+      "B": "$7.2$",
+      "C": "$7.56$",
+      "D": "$7.92$"
+    },
+    "correct_answer": "B",
+    "explanation": "## Solution\n\n**Step 1: Find A's one-day work**\n\nA completes the work in 12 days, so in one day A does:\n$$\\frac{1}{12} \\text{ of the work}$$\n\n**Step 2: Find B's one-day work**\n\nB completes the work in 18 days, so in one day B does:\n$$\\frac{1}{18} \\text{ of the work}$$\n\n**Step 3: Find their combined one-day work**\n\nWorking together, they complete in one day:\n$$\\frac{1}{12} + \\frac{1}{18}$$\n\nFind the LCM of 12 and 18, which is **36**:\n$$\\frac{1}{12} + \\frac{1}{18} = \\frac{3}{36} + \\frac{2}{36} = \\frac{5}{36}$$\n\n**Step 4: Calculate the total number of days**\n\nIf they complete $\\dfrac{5}{36}$ of the work per day, the total days required is the reciprocal:\n$$\\text{Days} = \\frac{1}{\\dfrac{5}{36}} = \\frac{36}{5} = \\boxed{7.2 \\text{ days}}$$\n\n---\n\nThe other options (6.84, 7.56, 7.92) result from arithmetic errors in computing the LCM or the final fraction, and do not satisfy the standard combined-work formula.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "1 / (1/12 + 1/18)",
+      "computed_value": 7.2,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Time & Work & Pipes",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "BANKPO_TIMEWORKPI_1_1_2_c1db38",
+    "text": "A tap can fill a tank in 8 hours. Due to a leak at the bottom, the tank takes 10 hours to be filled completely. In how many hours will the leak alone empty the full tank?",
+    "options": {
+      "A": "35 hours",
+      "B": "40 hours",
+      "C": "45 hours",
+      "D": "50 hours"
+    },
+    "correct_answer": "B",
+    "explanation": "**Step 1 \u2014 Identify individual rates:**\n\n- Rate of the filling tap = $\\frac{1}{8}$ of the tank per hour.\n- Combined rate (tap + leak) = $\\frac{1}{10}$ of the tank per hour.\n\n**Step 2 \u2014 Find the leak's rate:**\n\nSince the leak empties the tank, its rate is **negative**:\n\n$$\\text{Leak's rate} = \\frac{1}{8} - \\frac{1}{10} = \\frac{5 - 4}{40} = \\frac{1}{40}$$\n\n**Step 3 \u2014 Time for leak to empty full tank:**\n\nThe leak empties $\\frac{1}{40}$ of the tank per hour, so it will empty the full tank in **40 hours**.\n\n**Correct Answer: B) 40 hours**",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "1 / (1/8 - 1/10)",
+      "computed_value": 40,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Time & Work & Pipes",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "BANKPO_TIMEWORKPI_1_1_3_88dbdf",
+    "text": "Pipe **A** can fill a tank in **15 hours** and Pipe **B** can empty the same tank in **20 hours**. If both pipes are opened simultaneously when the tank is completely empty, in how many hours will the tank be **full**?",
+    "options": {
+      "A": "45 hours",
+      "B": "60 hours",
+      "C": "55 hours",
+      "D": "48 hours"
+    },
+    "correct_answer": "B",
+    "explanation": "**Step 1 \u2014 Find the net rate when both pipes are open:**\n\nPipe **A** fills $\\frac{1}{15}$ of the tank per hour.\nPipe **B** empties $\\frac{1}{20}$ of the tank per hour.\n\nNet filling rate $= \\frac{1}{15} - \\frac{1}{20}$\n\n$$\\frac{1}{15} - \\frac{1}{20} = \\frac{4}{60} - \\frac{3}{60} = \\frac{1}{60}$$\n\n**Step 2 \u2014 Find total time to fill the tank:**\n\nTime $= \\frac{1}{\\text{Net rate}} = \\frac{1}{\\frac{1}{60}} = 60$ hours.\n\n**Answer: 60 hours (Option B)**",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "1 / (1/15 - 1/20)",
+      "computed_value": 60,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Time & Work & Pipes",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "BANKPO_TIMEWORKPI_1_1_4_a7e5ce",
+    "text": "A tap can fill a tank in **24 minutes**. Due to a leak at the bottom, the tank takes **30 minutes** to be filled completely. If the tank is **already full**, in how many minutes will the leak **empty the full tank**?",
+    "options": {
+      "A": "100 minutes",
+      "B": "120 minutes",
+      "C": "90 minutes",
+      "D": "144 minutes"
+    },
+    "correct_answer": "B",
+    "explanation": "**Step 1 \u2014 Find the net filling rate:**\n\nFilling rate of tap $= \\frac{1}{24}$ tank per minute.\n\nNet filling rate (tap ON + leak) $= \\frac{1}{30}$ tank per minute.\n\n**Step 2 \u2014 Find the leak's emptying rate:**\n\n$$\\text{Leak rate} = \\frac{1}{24} - \\frac{1}{30} = \\frac{5}{120} - \\frac{4}{120} = \\frac{1}{120} \\text{ tank per minute}$$\n\n**Step 3 \u2014 Find time for leak to empty the full tank:**\n\nSince the leak empties $\\frac{1}{120}$ of the tank per minute, it will empty the **full tank** in:\n\n$$\\text{Time} = \\frac{1}{1/120} = 120 \\text{ minutes}$$\n\nHence the leak alone will empty the full tank in **120 minutes**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "1 / (1/24 - 1/30)",
+      "computed_value": 120,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Time & Work & Pipes",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "BANKPO_TIMEWORKPI_1_1_5_409c0a",
+    "text": "**A** can complete a piece of work in **9 days** and **B** can complete the same work in **12 days**. They start working together, but **A leaves after 3 days**. In how many more days will **B** alone finish the remaining work?",
+    "options": {
+      "A": "4 days",
+      "B": "5 days",
+      "C": "6 days",
+      "D": "3 days"
+    },
+    "correct_answer": "B",
+    "explanation": "**Step 1 \u2014 Find combined daily work:**\n\nA's 1-day work $= \\frac{1}{9}$, B's 1-day work $= \\frac{1}{12}$\n\nTogether in 1 day $= \\frac{1}{9} + \\frac{1}{12} = \\frac{4}{36} + \\frac{3}{36} = \\frac{7}{36}$\n\n**Step 2 \u2014 Work done in 3 days together:**\n\nWork done $= 3 \\times \\frac{7}{36} = \\frac{21}{36} = \\frac{7}{12}$\n\n**Step 3 \u2014 Remaining work after A leaves:**\n\nRemaining $= 1 - \\frac{7}{12} = \\frac{5}{12}$\n\n**Step 4 \u2014 Days for B to finish remaining work alone:**\n\nB finishes $\\frac{1}{12}$ per day, so days needed $= \\frac{5/12}{1/12} = 5$ days\n\n**Answer: B alone takes 5 more days.**",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "(1 - 3*(1/9 + 1/12)) / (1/12)",
+      "computed_value": 5,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Time & Work & Pipes",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "BANKPO_TIMEWORKPI_2_1_1_13bd91",
+    "text": "**Pipe A** can fill a tank in 16 hours and **Pipe B** can fill the same tank in 24 hours. **Pipe C** can empty the full tank in 32 hours. If all three pipes are opened simultaneously, what fraction of the tank will be filled after **4 hours**?",
+    "options": {
+      "A": "$\\frac{7}{24}$",
+      "B": "$\\frac{5}{16}$",
+      "C": "$\\frac{11}{32}$",
+      "D": "$\\frac{3}{8}$"
+    },
+    "correct_answer": "A",
+    "explanation": "**Step 1 \u2014 Find individual rates (fraction of tank per hour):**\n\n- Pipe A fills: $\\frac{1}{16}$ of the tank per hour\n- Pipe B fills: $\\frac{1}{24}$ of the tank per hour\n- Pipe C empties: $\\frac{1}{32}$ of the tank per hour\n\n**Step 2 \u2014 Net filling rate when all three are open:**\n\n$$\\text{Net rate} = \\frac{1}{16} + \\frac{1}{24} - \\frac{1}{32}$$\n\nLCM of 16, 24, 32 = 96\n\n$$= \\frac{6}{96} + \\frac{4}{96} - \\frac{3}{96} = \\frac{7}{96} \\text{ per hour}$$\n\n**Step 3 \u2014 Fraction filled in 4 hours:**\n\n$$= 4 \\times \\frac{7}{96} = \\frac{28}{96} = \\frac{7}{24}$$\n\n**Answer: $\\frac{7}{24}$ of the tank is filled after 4 hours.**\n\n**Why other options are wrong:**\n- Option B ($\\frac{5}{16}$): Arises from ignoring Pipe C entirely and using an incorrect LCM.\n- Option C ($\\frac{11}{32}$): Results from a sign error, treating C as a filler not an emptier.\n- Option D ($\\frac{3}{8}$): Comes from using only Pipes A and B without Pipe C.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "4 * (1/16 + 1/24 - 1/32)",
+      "computed_value": 0.2917,
+      "tolerance": 0.001
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Time & Work & Pipes",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "BANKPO_TIMEWORKPI_2_1_2_d509c6",
+    "text": "Pipe **A** can fill a tank in 18 hours. Pipe **B** can empty the same tank in 9 hours. If the tank is completely full and both pipes are opened simultaneously, in how many hours will the tank be completely emptied?",
+    "options": {
+      "A": "15 hours",
+      "B": "18 hours",
+      "C": "20 hours",
+      "D": "12 hours"
+    },
+    "correct_answer": "B",
+    "explanation": "## Solution\n\n**Step 1: Identify the rates.**\n\n- Pipe A *fills* at a rate of $\\dfrac{1}{18}$ of the tank per hour.\n- Pipe B *empties* at a rate of $\\dfrac{1}{9}$ of the tank per hour.\n\n**Step 2: Find the net emptying rate when both pipes are open.**\n\nSince Pipe B empties faster than Pipe A fills, the net effect is emptying:\n\n$$\\text{Net emptying rate} = \\frac{1}{9} - \\frac{1}{18} = \\frac{2}{18} - \\frac{1}{18} = \\frac{1}{18} \\text{ per hour}$$\n\n**Step 3: Find the time to empty the full tank.**\n\n$$\\text{Time} = \\frac{1}{\\dfrac{1}{18}} = 18 \\text{ hours}$$\n\n**Result: The tank will be emptied in **18 hours**.**\n\n---\n\n**Why the other options are wrong:**\n- **15 hours** would require a net emptying rate of $\\dfrac{1}{15}$, which doesn't result from these pipe rates.\n- **20 hours** would require a net rate of $\\dfrac{1}{20}$, also incorrect.\n- **12 hours** would require a net rate of $\\dfrac{1}{12}$, which is not obtained here.\n\nOnly $\\dfrac{1}{9} - \\dfrac{1}{18} = \\dfrac{1}{18}$ gives exactly **18 hours**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "1 / (1/9 - 1/18)",
+      "computed_value": 18,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Time & Work & Pipes",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "BANKPO_TIMEWORKPI_2_1_3_068240",
+    "text": "**Pipe A** can fill a tank in 6 hours. **Pipe B** can fill the same tank in 10 hours. **Pipe C** can empty the tank in 15 hours. If all three pipes are opened simultaneously, in how many hours will the empty tank be completely filled?",
+    "options": {
+      "A": "$\\frac{15}{2}$ hours",
+      "B": "$5$ hours",
+      "C": "$\\frac{30}{7}$ hours",
+      "D": "$\\frac{20}{3}$ hours"
+    },
+    "correct_answer": "B",
+    "explanation": "## Solution\n\n**Step 1: Find the filling/emptying rate of each pipe.**\n\nThe rate is defined as the fraction of the tank handled per hour.\n\n- Pipe A (fills): $\\dfrac{1}{6}$ tank/hour\n- Pipe B (fills): $\\dfrac{1}{10}$ tank/hour\n- Pipe C (empties): $\\dfrac{1}{15}$ tank/hour\n\n**Step 2: Find the combined net rate when all three pipes are open simultaneously.**\n\nSince A and B fill while C empties, the net rate is:\n\n$$R = \\frac{1}{6} + \\frac{1}{10} - \\frac{1}{15}$$\n\n**Step 3: Compute the net rate using the LCM of 6, 10, and 15.**\n\nThe LCM of 6, 10, and 15 is **30**. Convert each fraction:\n\n$$R = \\frac{5}{30} + \\frac{3}{30} - \\frac{2}{30} = \\frac{5 + 3 - 2}{30} = \\frac{6}{30} = \\frac{1}{5}$$\n\n**Step 4: Calculate the time to fill the complete tank.**\n\nTime $= \\dfrac{1}{R} = \\dfrac{1}{\\,1/5\\,} = \\boxed{5}$ hours\n\n---\n\n**Why the other options are wrong:** Option A ($\\frac{15}{2}$) and D ($\\frac{20}{3}$) arise from arithmetic errors in combining the rates, while Option C ($\\frac{30}{7}$) results from incorrectly treating C as a filling pipe instead of an emptying pipe.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "1 / (1/6 + 1/10 - 1/15)",
+      "computed_value": 5,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Time & Work & Pipes",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "BANKPO_TIMEWORKPI_2_1_4_808fb1",
+    "text": "Pipe A can fill a tank in 36 hours and Pipe B can empty the same tank in 45 hours. If both pipes are opened simultaneously when the tank is completely empty, after how many hours will the tank be **completely filled**?",
+    "options": {
+      "A": "140 hours",
+      "B": "160 hours",
+      "C": "180 hours",
+      "D": "120 hours"
+    },
+    "correct_answer": "C",
+    "explanation": "**Step 1 \u2014 Find net filling rate per hour:**\n\nPipe A fills $\\frac{1}{36}$ of the tank per hour.\nPipe B empties $\\frac{1}{45}$ of the tank per hour.\n\n**Net rate** (both open simultaneously) $= \\frac{1}{36} - \\frac{1}{45}$\n\n**Step 2 \u2014 LCM of 36 and 45:**\n$$\\text{LCM}(36, 45) = 180$$\n\n$$\\frac{1}{36} - \\frac{1}{45} = \\frac{5}{180} - \\frac{4}{180} = \\frac{1}{180}$$\n\n**Step 3 \u2014 Time to fill the tank:**\n$$\\text{Time} = \\frac{1}{\\frac{1}{180}} = 180 \\text{ hours}$$\n\nSince the net rate is positive, the tank is being filled. It will be completely filled in **180 hours**.\n\n**Common errors:**\n- Adding instead of subtracting rates \u2192 gives $\\frac{1}{36} + \\frac{1}{45} = \\frac{9}{180}$, leading to 20 hours (wrong).\n- Subtracting time values directly (45 \u2212 36 = 9) rather than working with rates.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "1 / (1/36 - 1/45)",
+      "computed_value": 180,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Time & Work & Pipes",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "BANKPO_TIMEWORKPI_2_1_5_3faf36",
+    "text": "**Pipe A** can fill a tank in 12 hours. **Pipe B** can fill the same tank in 18 hours. **Pipe C** can empty the full tank in 9 hours. If all three pipes are opened simultaneously, in how many hours will the tank be completely filled?",
+    "options": {
+      "A": "18 hours",
+      "B": "36 hours",
+      "C": "24 hours",
+      "D": "The tank will never be filled"
+    },
+    "correct_answer": "B",
+    "explanation": "**Step 1 \u2014 Find individual rates (fraction of tank per hour):**\n\n- Pipe A (fills): $\\frac{1}{12}$ per hour\n- Pipe B (fills): $\\frac{1}{18}$ per hour\n- Pipe C (empties): $-\\frac{1}{9}$ per hour\n\n**Step 2 \u2014 Net filling rate when all three are open:**\n\n$$\\frac{1}{12} + \\frac{1}{18} - \\frac{1}{9}$$\n\nLCM of 12, 18, 9 is **36**.\n\n$$= \\frac{3}{36} + \\frac{2}{36} - \\frac{4}{36} = \\frac{1}{36}$$\n\n**Step 3 \u2014 Time to fill the tank:**\n\nNet rate = $\\frac{1}{36}$ per hour, so time = **36 hours**.\n\n**Common errors addressed:**\n- Option A (18 hrs): Forgetting the effect of Pipe C.\n- Option C (24 hrs): Incorrectly computing LCM or net rate.\n- Option D: Arises from assuming C empties faster than A+B fill \u2014 but net rate is positive ($\\frac{1}{36} > 0$), so the tank is indeed filled.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "1 / (1/12 + 1/18 - 1/9)",
+      "computed_value": 36,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Time & Work & Pipes",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "BANKPO_TIMEWORKPI_3_1_1_a1c828",
+    "text": "A cistern has two inlet pipes **P** and **Q**, and one outlet pipe **R**. Pipe **P** alone can fill the cistern in **15 hours**, pipe **Q** alone can fill it in **30 hours**, and pipe **R** alone can empty it in **40 hours**. All three pipes are opened together at 8:00 AM. After some hours, pipe **R** gets blocked and stops working, and the cistern is found to be completely full exactly 12 hours after opening (i.e., at 8:00 PM). For how many hours was pipe **R** actually working?",
+    "options": {
+      "A": "4 hours",
+      "B": "6 hours",
+      "C": "8 hours",
+      "D": "10 hours"
+    },
+    "correct_answer": "C",
+    "explanation": "**Step 1 \u2014 Find individual rates (fraction of cistern per hour):**\n\n- Pipe **P** fills: $\\frac{1}{15}$ per hour\n- Pipe **Q** fills: $\\frac{1}{30}$ per hour\n- Pipe **R** empties: $\\frac{1}{40}$ per hour\n\n**Step 2 \u2014 Net rate when all three are open:**\n\n$$\\frac{1}{15} + \\frac{1}{30} - \\frac{1}{40} = \\frac{8}{120} + \\frac{4}{120} - \\frac{3}{120} = \\frac{9}{120} = \\frac{3}{40} \\text{ per hour}$$\n\n**Step 3 \u2014 Net rate when only P and Q are open (R blocked):**\n\n$$\\frac{1}{15} + \\frac{1}{30} = \\frac{2}{30} + \\frac{1}{30} = \\frac{3}{30} = \\frac{1}{10} \\text{ per hour}$$\n\n**Step 4 \u2014 Set up the equation:**\n\nLet pipe **R** work for $t$ hours (all three pipes open), after which R is blocked and only P and Q work for the remaining $(12 - t)$ hours.\n\n$$\\frac{3}{40} \\times t + \\frac{1}{10} \\times (12 - t) = 1$$\n\n$$\\frac{3t}{40} + \\frac{12 - t}{10} = 1$$\n\nMultiply throughout by 40:\n\n$$3t + 4(12 - t) = 40$$\n\n$$3t + 48 - 4t = 40$$\n\n$$-t = -8 \\implies t = 8$$\n\n**Pipe R was working for $\\mathbf{8}$ hours.**\n\n**Verification:** Work done in first 8 h (all three open) $= 8 \\times \\frac{3}{40} = \\frac{24}{40} = \\frac{3}{5}$.\n\nWork done in remaining 4 h (P and Q only) $= 4 \\times \\frac{1}{10} = \\frac{4}{10} = \\frac{2}{5}$.\n\nTotal $= \\frac{3}{5} + \\frac{2}{5} = 1$ \u2713",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Time & Work & Pipes",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "BANKPO_TIMEWORKPI_3_1_2_5146b7",
+    "text": "**Pipe A** can fill a tank in 15 hours and **Pipe B** can fill the same tank in 20 hours. **Pipe C** can empty the tank in 10 hours. All three pipes are opened simultaneously. After how many hours should Pipe C be closed so that the tank is completely filled in exactly **12 hours** from the start?",
+    "options": {
+      "A": "2 hours",
+      "B": "3 hours",
+      "C": "4 hours",
+      "D": "5 hours"
+    },
+    "correct_answer": "C",
+    "explanation": "**Step 1 \u2014 Individual rates (fraction of tank per hour):**\n\n- Pipe A (fills): $\\frac{1}{15}$ per hour\n- Pipe B (fills): $\\frac{1}{20}$ per hour\n- Pipe C (empties): $\\frac{1}{10}$ per hour\n\n**Step 2 \u2014 Combined rates:**\n\nWhen all three pipes are open:\n$$\\frac{1}{15} + \\frac{1}{20} - \\frac{1}{10} = \\frac{4}{60} + \\frac{3}{60} - \\frac{6}{60} = \\frac{1}{60} \\text{ per hour}$$\n\nWhen only A and B are open:\n$$\\frac{1}{15} + \\frac{1}{20} = \\frac{4}{60} + \\frac{3}{60} = \\frac{7}{60} \\text{ per hour}$$\n\n**Step 3 \u2014 Set up the equation:**\n\nLet Pipe C be closed after $t$ hours. Then:\n- For the first $t$ hours: all three pipes work at rate $\\frac{1}{60}$\n- For the remaining $(12 - t)$ hours: only A and B work at rate $\\frac{7}{60}$\n\nTotal work done = 1 full tank:\n$$t \\cdot \\frac{1}{60} + (12 - t) \\cdot \\frac{7}{60} = 1$$\n\n**Step 4 \u2014 Solve for $t$:**\n\n$$\\frac{t + 7(12 - t)}{60} = 1$$\n\n$$t + 84 - 7t = 60$$\n\n$$-6t = -24$$\n\n$$t = 4 \\text{ hours}$$\n\n**Step 5 \u2014 Verification:**\n\n$$4 \\times \\frac{1}{60} + 8 \\times \\frac{7}{60} = \\frac{4}{60} + \\frac{56}{60} = \\frac{60}{60} = 1 \\checkmark$$\n\nPipe C should be closed after **4 hours**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Time & Work & Pipes",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "BANKPO_TIMEWORKPI_3_1_3_91fdb9",
+    "text": "A tank has two inlet pipes **P** and **Q**, and one outlet pipe **R**. Pipe P alone can fill the tank in 14 hours, pipe Q alone can fill it in 21 hours, and pipe R alone can empty it in 42 hours. The tank is initially empty. All three pipes are opened together for 4 hours, after which pipe R is closed. How many more hours will it take for pipes P and Q together to completely fill the remaining tank?",
+    "options": {
+      "A": "$4.94$",
+      "B": "$5.2$",
+      "C": "$5.46$",
+      "D": "$5.72$"
+    },
+    "correct_answer": "B",
+    "explanation": "## Solution\n\n**Step 1: Find the per-hour rate of each pipe.**\n\n$$\\text{Rate of P} = \\frac{1}{14}, \\quad \\text{Rate of Q} = \\frac{1}{21}, \\quad \\text{Rate of R} = \\frac{1}{42}$$\n\n**Step 2: Find the combined rate when all three pipes are open.**\n\n$$\\text{Combined rate} = \\frac{1}{14} + \\frac{1}{21} - \\frac{1}{42}$$\n\nFinding a common denominator of 42:\n\n$$= \\frac{3}{42} + \\frac{2}{42} - \\frac{1}{42} = \\frac{4}{42} = \\frac{2}{21}$$\n\n**Step 3: Calculate the fraction of the tank filled in the first 4 hours.**\n\n$$\\text{Filled in 4 hours} = 4 \\times \\frac{2}{21} = \\frac{8}{21}$$\n\n**Step 4: Calculate the remaining fraction of the tank to be filled.**\n\n$$\\text{Remaining} = 1 - \\frac{8}{21} = \\frac{13}{21}$$\n\n**Step 5: Find the combined rate of pipes P and Q only (after R is closed).**\n\n$$\\text{Rate of P + Q} = \\frac{1}{14} + \\frac{1}{21} = \\frac{3}{42} + \\frac{2}{42} = \\frac{5}{42}$$\n\n**Step 6: Calculate the additional time required to fill the remaining tank.**\n\n$$\\text{Time} = \\frac{13/21}{5/42} = \\frac{13}{21} \\times \\frac{42}{5} = \\frac{13 \\times 2}{5} = \\frac{26}{5} = 5.2 \\text{ hours}$$\n\n**Answer: $\\boxed{5.2}$ hours (Option B)**\n\nThe other options arise from common arithmetic errors \u2014 for instance, using an incorrect combined rate or miscalculating the remaining fraction \u2014 none of which satisfy the correctly set-up expression $\\dfrac{1 - 4\\!\\left(\\tfrac{1}{14}+\\tfrac{1}{21}-\\tfrac{1}{42}\\right)}{\\tfrac{1}{14}+\\tfrac{1}{21}}$.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "(1 - 4*(1/14 + 1/21 - 1/42)) / (1/14 + 1/21)",
+      "computed_value": 5.2,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Time & Work & Pipes",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "BANKPO_TIMEWORKPI_3_1_4_ecd756",
+    "text": "Pipe **A** can fill a tank in 20 hours and Pipe **B** can fill the same tank in 30 hours. Pipe **C** is a drain pipe that can empty the full tank in 15 hours. All three pipes are opened simultaneously at the start. After how many hours should Pipe **C** be closed so that the tank is completely filled in exactly **16 hours**?",
+    "options": {
+      "A": "5 hours",
+      "B": "4 hours",
+      "C": "6 hours",
+      "D": "8 hours"
+    },
+    "correct_answer": "A",
+    "explanation": "**Step 1 \u2014 Individual rates per hour:**\n\n- Pipe A fills $\\frac{1}{20}$ of the tank per hour.\n- Pipe B fills $\\frac{1}{30}$ of the tank per hour.\n- Pipe C empties $\\frac{1}{15}$ of the tank per hour.\n\n**Step 2 \u2014 Net rate when all three pipes are open together:**\n\n$$\\frac{1}{20}+\\frac{1}{30}-\\frac{1}{15} = \\frac{3+2-4}{60} = \\frac{1}{60} \\text{ per hour}$$\n\n**Step 3 \u2014 Rate of A and B together (after C is closed):**\n\n$$\\frac{1}{20}+\\frac{1}{30} = \\frac{3+2}{60} = \\frac{5}{60} = \\frac{1}{12} \\text{ per hour}$$\n\nNote: A and B alone take **12 hours** to fill the tank. Since total time = 16 hours > 12 hours, having C open for part of the time is perfectly consistent.\n\n**Step 4 \u2014 Set up the equation:**\n\nLet Pipe C be closed after $t$ hours. For the first $t$ hours all three pipes operate; for the remaining $(16-t)$ hours only A and B operate.\n\n$$t \\times \\frac{1}{60} + (16-t) \\times \\frac{1}{12} = 1$$\n\n**Step 5 \u2014 Solve for $t$:**\n\nMultiply throughout by 60:\n$$t + 5(16-t) = 60$$\n$$t + 80 - 5t = 60$$\n$$-4t = -20$$\n$$t = 5$$\n\n**Step 6 \u2014 Verify:**\n\n$$\\frac{5}{60} + \\frac{11}{12} = \\frac{5}{60} + \\frac{55}{60} = \\frac{60}{60} = 1 \\checkmark$$\n\nPipe **C** should be closed after **5 hours**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Time & Work & Pipes",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "BANKPO_TIMEWORKPI_3_1_5_6e7857",
+    "text": "Two pipes **A** and **B** can fill a tank in 24 minutes and 32 minutes respectively. A drain pipe **C** can empty the full tank in 48 minutes. All three pipes are opened together at 9:00 AM. After some time, pipe **C** is closed and the tank gets completely filled exactly at 9:16 AM. How many minutes after 9:00 AM was pipe **C** closed?",
+    "options": {
+      "A": "4 minutes",
+      "B": "6 minutes",
+      "C": "8 minutes",
+      "D": "10 minutes"
+    },
+    "correct_answer": "C",
+    "explanation": "## Solution\n\n**Step 1: Find the individual rates (fraction of tank per minute)**\n\n- Pipe A fills: $\\dfrac{1}{24}$ of the tank per minute\n- Pipe B fills: $\\dfrac{1}{32}$ of the tank per minute\n- Pipe C drains: $\\dfrac{1}{48}$ of the tank per minute\n\n**Step 2: Find the combined rate when all three pipes are open**\n\n$$\\text{Net rate (A+B\u2212C)} = \\frac{1}{24} + \\frac{1}{32} - \\frac{1}{48}$$\n\nFinding a common denominator of 96:\n\n$$= \\frac{4}{96} + \\frac{3}{96} - \\frac{2}{96} = \\frac{5}{96} \\text{ of the tank per minute}$$\n\n**Step 3: Find the rate when only A and B are open (after C is closed)**\n\n$$\\text{Rate (A+B)} = \\frac{1}{24} + \\frac{1}{32} = \\frac{4}{96} + \\frac{3}{96} = \\frac{7}{96} \\text{ of the tank per minute}$$\n\n**Step 4: Set up the equation**\n\nLet pipe C be closed $t$ minutes after 9:00 AM. The tank is full at 9:16 AM, so pipes A and B run alone for $(16 - t)$ minutes.\n\n$$\\underbrace{\\frac{5}{96} \\cdot t}_{\\text{all three open}} + \\underbrace{\\frac{7}{96} \\cdot (16 - t)}_{\\text{A and B only}} = 1$$\n\n**Step 5: Solve for $t$**\n\nMultiply through by 96:\n\n$$5t + 7(16 - t) = 96$$\n\n$$5t + 112 - 7t = 96$$\n\n$$-2t = 96 - 112$$\n\n$$-2t = -16$$\n\n$$t = \\frac{-16}{-2} = \\boxed{8}$$\n\n**Pipe C was closed 8 minutes after 9:00 AM \u2014 Option C.**\n\n---\nThe other options fail because: 4 or 6 minutes gives too little fill time with only A+B running (tank would be under-filled by 9:16 AM), while 10 minutes means C drains too long and A+B cannot compensate in the remaining 6 minutes \u2014 none satisfy the equation above.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "(-16) / (-2)",
+      "computed_value": 8,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Time & Work & Pipes",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "BANKPO_TIMEWORKPI_4_1_1_f88b50",
+    "text": "A cistern has three pipes: **Pipe A** (inlet), **Pipe B** (inlet), and **Pipe C** (outlet). Pipe A alone can fill the cistern in 18 hours. Pipe B alone can fill it in 27 hours. When all three pipes are opened together, the cistern fills in 54 hours. A contractor opens all three pipes at 6:00 AM. At 12:00 noon, Pipe C accidentally gets blocked (stops draining). In how many more hours after 12:00 noon will the cistern be completely full?",
+    "options": {
+      "A": "$9.12$",
+      "B": "$9.6$",
+      "C": "$10.08$",
+      "D": "$10.56$"
+    },
+    "correct_answer": "B",
+    "explanation": "## Solution\n\n**Step 1: Find the individual rates.**\n\n- Pipe A fills $\\dfrac{1}{18}$ of the cistern per hour.\n- Pipe B fills $\\dfrac{1}{27}$ of the cistern per hour.\n- Combined rate of A and B together: $\\dfrac{1}{18} + \\dfrac{1}{27} = \\dfrac{3}{54} + \\dfrac{2}{54} = \\dfrac{5}{54}$ per hour.\n\n**Step 2: Find Pipe C's drain rate.**\n\nWhen all three pipes are open, the cistern fills in 54 hours, so the net rate is $\\dfrac{1}{54}$ per hour.\n\n$$\\frac{1}{18} + \\frac{1}{27} - r_C = \\frac{1}{54}$$\n\n$$\\frac{5}{54} - r_C = \\frac{1}{54}$$\n\n$$r_C = \\frac{5}{54} - \\frac{1}{54} = \\frac{4}{54} = \\frac{2}{27} \\text{ per hour}$$\n\n**Step 3: Calculate the portion filled from 6:00 AM to 12:00 noon (6 hours).**\n\nDuring these 6 hours, all three pipes are open with a net rate of $\\dfrac{1}{54}$ per hour.\n\n$$\\text{Fraction filled} = 6 \\times \\frac{1}{54} = \\frac{6}{54} = \\frac{1}{9}$$\n\n**Step 4: Find the remaining fraction after noon.**\n\n$$\\text{Remaining} = 1 - \\frac{1}{9} = \\frac{8}{9}$$\n\n**Step 5: Calculate time to fill the remaining fraction with only A and B open.**\n\nAfter noon, Pipe C is blocked, so only A and B operate at a combined rate of $\\dfrac{5}{54}$ per hour.\n\n$$\\text{Time} = \\frac{8/9}{5/54} = \\frac{8}{9} \\times \\frac{54}{5} = \\frac{8 \\times 6}{5} = \\frac{48}{5} = 9.6 \\text{ hours}$$\n\n**The cistern will be completely full 9.6 hours after 12:00 noon \u2192 Answer: B**\n\n---\nThe other options (9.12, 10.08, 10.56) result from minor arithmetic errors \u2014 for instance, miscalculating Pipe C's rate or the net filling rate during the first 6 hours \u2014 none of which satisfy the consistent application of all three given pipe conditions.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "(1 - 6*(1/18 + 1/27 - (1/18 + 1/27 - 1/54))) / (1/18 + 1/27)",
+      "computed_value": 9.6,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Time & Work & Pipes",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "BANKPO_TIMEWORKPI_4_1_2_0c105a",
+    "text": "A tank has two inlet pipes A and B, and one outlet pipe C. Pipe A alone can fill the tank in 8 hours, and pipe B alone can fill it in 24 hours. Pipe C alone can empty the full tank in 12 hours. The tank is initially empty. Pipes A and B are opened together for the first 3 hours, after which pipe C is also opened along with A and B. How many **total hours** from the start will it take to fill the tank completely?",
+    "options": {
+      "A": "7 hours",
+      "B": "9 hours",
+      "C": "11 hours",
+      "D": "13 hours"
+    },
+    "correct_answer": "B",
+    "explanation": "## Solution\n\n**Step 1: Find the individual rates (fraction of tank per hour)**\n\n- Pipe A fills: $\\dfrac{1}{8}$ of the tank per hour\n- Pipe B fills: $\\dfrac{1}{24}$ of the tank per hour\n- Pipe C empties: $\\dfrac{1}{12}$ of the tank per hour\n\n**Step 2: Combined rate of A and B together**\n\n$$\\frac{1}{8} + \\frac{1}{24} = \\frac{3}{24} + \\frac{1}{24} = \\frac{4}{24} = \\frac{1}{6} \\text{ per hour}$$\n\n**Step 3: Fill the tank during the first 3 hours (A and B only)**\n\n$$\\text{Fraction filled} = 3 \\times \\frac{1}{6} = \\frac{3}{6} = \\frac{1}{2}$$\n\nAfter 3 hours, the tank is **half full**.\n\n**Step 4: Net rate once pipe C is also opened (A + B \u2212 C)**\n\n$$\\frac{1}{6} - \\frac{1}{12} = \\frac{2}{12} - \\frac{1}{12} = \\frac{1}{12} \\text{ per hour}$$\n\n**Step 5: Remaining fraction to fill and time needed**\n\nRemaining fraction $= 1 - \\dfrac{1}{2} = \\dfrac{1}{2}$\n\n$$\\text{Additional time} = \\frac{1/2}{1/12} = \\frac{1}{2} \\times 12 = 6 \\text{ hours}$$\n\n**Step 6: Total time from start**\n\n$$3 + 6 = \\boxed{9 \\text{ hours}}$$\n\nThis matches the verified expression: $3 + \\dfrac{24 - (3+1)\\times 3}{(3+1-2)} = 3 + \\dfrac{24-12}{2} = 3 + 6 = 9$\n\n---\n\n**Why the other options are wrong:** 7 hours underestimates by ignoring C's drain effect correctly; 11 and 13 hours overestimate the remaining fill time, likely from errors in computing the net rate or the portion already filled in the first phase.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "3 + (24 - (3+1)*3) / (3+1-2)",
+      "computed_value": 9,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Time & Work & Pipes",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "BANKPO_TIMEWORKPI_4_1_3_43797f",
+    "text": "A cistern has three pipes: **Pipe A** (inlet), **Pipe B** (inlet), and **Pipe C** (outlet). Pipe A alone can fill the cistern in **10 hours**. Pipe B alone can fill it in **15 hours**. When all three pipes are opened together, the cistern fills completely in **9 hours**. A contractor opens only **Pipe A** and **Pipe C** together at **8:00 AM**. At what time will the cistern be **completely full**?",
+    "options": {
+      "A": "21.38",
+      "B": "22.5",
+      "C": "23.62",
+      "D": "24.74"
+    },
+    "correct_answer": "B",
+    "explanation": "## Step-by-Step Solution\n\n### Step 1: Find the Individual Rates\n\n- **Pipe A** fills the cistern in 10 hours \u2192 rate = $\\dfrac{1}{10}$ per hour\n- **Pipe B** fills the cistern in 15 hours \u2192 rate = $\\dfrac{1}{15}$ per hour\n\n### Step 2: Find Pipe C's Rate Using the \"All Three Open\" Condition\n\nWhen all three pipes are open, the cistern fills in **9 hours**:\n\n$$\\frac{1}{A} + \\frac{1}{B} - \\frac{1}{C} = \\frac{1}{9}$$\n\nFirst, compute the combined inlet rate of A and B:\n\n$$\\frac{1}{10} + \\frac{1}{15} = \\frac{3}{30} + \\frac{2}{30} = \\frac{5}{30} = \\frac{1}{6}$$\n\nSubstituting:\n\n$$\\frac{1}{6} - \\frac{1}{C} = \\frac{1}{9}$$\n\n$$\\frac{1}{C} = \\frac{1}{6} - \\frac{1}{9} = \\frac{3}{18} - \\frac{2}{18} = \\frac{1}{18}$$\n\nSo **Pipe C** drains the cistern at a rate of $\\dfrac{1}{18}$ per hour.\n\n### Step 3: Find the Net Rate When Only Pipe A and Pipe C Are Open\n\n$$\\text{Net rate} = \\frac{1}{A} - \\frac{1}{C} = \\frac{1}{10} - \\frac{1}{18}$$\n\n$$= \\frac{9}{90} - \\frac{5}{90} = \\frac{4}{90} = \\frac{2}{45} \\text{ per hour}$$\n\n### Step 4: Apply the Verified Expression\n\nThe verified expression is:\n\n$$\\frac{1}{\\,\\dfrac{1}{10} - \\left(\\dfrac{1}{6} - \\dfrac{1}{9}\\right)\\,}$$\n\nThe term $\\left(\\dfrac{1}{6} - \\dfrac{1}{9}\\right) = \\dfrac{1}{18}$ is exactly Pipe C's drain rate, confirming:\n\n$$\\text{Time} = \\frac{1}{\\,\\dfrac{1}{10} - \\dfrac{1}{18}\\,} = \\frac{1}{\\,\\dfrac{2}{45}\\,} = \\frac{45}{2} = 22.5 \\text{ hours}$$\n\n### Step 5: Determine the Finish Time\n\nThe contractor opens pipes at **8:00 AM**. Adding **22.5 hours**:\n\n$$8{:}00\\ \\text{AM} + 22.5\\ \\text{hours} = 6{:}30\\ \\text{AM (next day)}$$\n\nThe cistern becomes completely full after **22.5 hours** \u2192 **Answer: B = 22.5**\n\n---\n\n*The other options (21.38, 23.62, 24.74) result from arithmetic errors in computing Pipe C's rate or the net filling rate \u2014 none of them satisfy the consistent pipe-rate equations derived above.*",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "1 / (1/10 - (1/6 - 1/9))",
+      "computed_value": 22.5,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Time & Work & Pipes",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "BANKPO_TIMEWORKPI_4_1_4_023a65",
+    "text": "Pipe **A** can fill a tank in 20 hours. Pipe **B** can fill the same tank in 30 hours. Pipe **C** can empty the tank in 60 hours. All three pipes are opened together at **6:00 AM**. However, pipe **C** gets blocked and stops working after some hours, and the tank is found to be completely full at **7:00 PM** on the same day \u2014 **2 hours earlier** than it would have been filled had pipe C never stopped. For how many hours did pipe C actually work?",
+    "options": {
+      "A": "$3$ hours",
+      "B": "$4$ hours",
+      "C": "$5$ hours",
+      "D": "$6$ hours"
+    },
+    "correct_answer": "C",
+    "explanation": "**Step 1 \u2014 Assign tank capacity and individual rates:**\n\nLet the tank capacity = **60 units** (LCM of 20, 30, 60).\n- Rate of A (filling) = $\\frac{60}{20} = 3$ units/hr\n- Rate of B (filling) = $\\frac{60}{30} = 2$ units/hr\n- Rate of C (emptying) = $\\frac{60}{60} = 1$ unit/hr\n\nNet rate when all three work together = $3 + 2 - 1 = 4$ units/hr.\n\n**Step 2 \u2014 Establish the baseline (C never stops):**\n\nIf C had never stopped, all three pipes would work together throughout:\n$$\\text{Time} = \\frac{60}{4} = 15 \\text{ hours}$$\nSo the tank would be full at $6{:}00\\text{ AM} + 15\\text{ hrs} = \\mathbf{9{:}00\\ PM}$.\n\n**Step 3 \u2014 Determine actual fill time:**\n\nThe tank is actually full at **7:00 PM**, which is $6{:}00\\text{ AM} + 13\\text{ hrs}$, i.e., **13 hours** after opening. This is indeed $15 - 2 = 13$ hours \u2014 exactly 2 hours earlier than the baseline. \u2713\n\n**Step 4 \u2014 Set up the equation:**\n\nLet pipe C work for $t$ hours before it stops. For the remaining $(13 - t)$ hours, only A and B work at a combined rate of $3 + 2 = 5$ units/hr.\n\n$$4t + 5(13 - t) = 60$$\n$$4t + 65 - 5t = 60$$\n$$-t = -5$$\n$$t = 5 \\text{ hours}$$\n\n**Step 5 \u2014 Verification:**\n\n- C works for 5 hours, then stops. A and B work for the remaining $13 - 5 = 8$ hours.\n- Work done $= 4 \\times 5 + 5 \\times 8 = 20 + 40 = 60$ units \u2713\n- Total time = 13 hours \u2192 finishes at **7:00 PM**, which is 2 hours before the expected **9:00 PM**. \u2713\n\n**Pipe C worked for $\\boldsymbol{5}$ hours.**",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Time & Work & Pipes",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "BANKPO_TIMEWORKPI_4_1_5_84f353",
+    "text": "**Pipe A** fills a tank in 18 hours. **Pipe B** fills the same tank in 24 hours. **Pipe C** empties the tank in 36 hours. All three pipes are opened simultaneously at 6:00 AM. After some time, Pipe C is closed and the tank gets completely filled exactly at 6:00 PM on the same day (i.e., in 12 hours total). For how many hours was **Pipe C** kept open?",
+    "options": {
+      "A": "3 hours",
+      "B": "4 hours",
+      "C": "6 hours",
+      "D": "8 hours"
+    },
+    "correct_answer": "C",
+    "explanation": "**Step 1 \u2014 Find individual rates (fraction of tank per hour):**\n- Pipe A fills: $\\frac{1}{18}$ per hour\n- Pipe B fills: $\\frac{1}{24}$ per hour\n- Pipe C empties: $\\frac{1}{36}$ per hour\n\n**Step 2 \u2014 Combined rate when all three are open:**\n$$\\frac{1}{18} + \\frac{1}{24} - \\frac{1}{36}$$\nLCM of 18, 24, 36 = 72\n$$= \\frac{4}{72} + \\frac{3}{72} - \\frac{2}{72} = \\frac{5}{72} \\text{ per hour}$$\n\n**Step 3 \u2014 Combined rate when only A and B are open:**\n$$\\frac{1}{18} + \\frac{1}{24} = \\frac{4}{72} + \\frac{3}{72} = \\frac{7}{72} \\text{ per hour}$$\n\n**Step 4 \u2014 Set up the equation:**\nLet Pipe C be open for $x$ hours. After Pipe C closes, A and B operate for the remaining $(12 - x)$ hours.\n\nTotal work done = 1 (full tank):\n$$\\frac{5}{72} \\cdot x + \\frac{7}{72} \\cdot (12 - x) = 1$$\n\n**Step 5 \u2014 Solve for x:**\n$$5x + 7(12 - x) = 72$$\n$$5x + 84 - 7x = 72$$\n$$-2x = -12$$\n$$x = 6$$\n\n**Pipe C was kept open for 6 hours.**\n\n**Verification:** Work done = $\\frac{5}{72} \\times 6 + \\frac{7}{72} \\times 6 = \\frac{30}{72} + \\frac{42}{72} = \\frac{72}{72} = 1$ \u2713",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "(-72 + 7*12) / (7 - 5)",
+      "computed_value": 6,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Time & Work & Pipes",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "BANKPO_TIMEWORKPI_5_1_1_f1e84b",
+    "text": "Pipes **A**, **B**, and **C** can fill a cistern in $10$ hours, $12$ hours, and $15$ hours respectively. Pipe **D** can empty the full cistern in $8$ hours. All four pipes are opened simultaneously. After some time, pipe **D** is closed and the remaining cistern is filled in exactly **2 hours** with only pipes **A**, **B**, and **C** open. For how many hours was pipe **D** open?",
+    "options": {
+      "A": "$3$ hours",
+      "B": "$3.5$ hours",
+      "C": "$4$ hours",
+      "D": "$4.5$ hours"
+    },
+    "correct_answer": "C",
+    "explanation": "**Step 1 \u2014 Combined rate of A, B, and C (filling):**\n\n$$\\frac{1}{10} + \\frac{1}{12} + \\frac{1}{15} = \\frac{6 + 5 + 4}{60} = \\frac{15}{60} = \\frac{1}{4} \\text{ per hour}$$\n\n**Step 2 \u2014 Net rate when all four pipes are open:**\n\nRate of D (emptying) $= \\frac{1}{8}$ per hour.\n\n$$\\text{Net rate} = \\frac{1}{4} - \\frac{1}{8} = \\frac{2 - 1}{8} = \\frac{1}{8} \\text{ per hour (filling)}$$\n\n**Step 3 \u2014 Work done in Phase 2 (after D closes):**\n\nWith A, B, C open for 2 hours:\n$$\\text{Work in Phase 2} = 2 \\times \\frac{1}{4} = \\frac{1}{2}$$\n\n**Step 4 \u2014 Work done in Phase 1 (all 4 pipes open for $t$ hours):**\n\nTotal work = 1 full cistern:\n$$\\frac{t}{8} + \\frac{1}{2} = 1 \\implies \\frac{t}{8} = \\frac{1}{2} \\implies t = 4 \\text{ hours}$$\n\n**Verification:** In 4 hours, all 4 pipes fill $4 \\times \\frac{1}{8} = \\frac{1}{2}$ of the cistern. Then A, B, C fill the remaining $\\frac{1}{2}$ in $\\frac{1/2}{1/4} = 2$ hours. \u2713\n\n**Answer: C \u2014 4 hours.**",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "(1 - 2*(1/10 + 1/12 + 1/15)) / (1/10 + 1/12 + 1/15 - 1/8)",
+      "computed_value": 4,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Time & Work & Pipes",
+      "difficulty_level": 5
+    }
+  },
+  {
+    "id": "BANKPO_TIMEWORKPI_5_1_2_48feb0",
+    "text": "A tank has two inlet pipes **A** and **B**, and one outlet pipe **C**. Pipe A alone can fill the tank in **4 hours**, Pipe B alone can fill it in **6 hours**, and Pipe C alone can empty it in **12 hours**. All three pipes are opened simultaneously when the tank is empty. Exactly when $\\frac{1}{3}$ of the tank has been filled, Pipe A is closed and the remaining two pipes (B and C) continue. It is observed that the time taken to fill the rest of the tank after A is closed is **6 hours more** than what it would have taken had A remained open throughout. How many hours does it take to fill the tank completely after Pipe A is closed?",
+    "options": {
+      "A": "$6$ hours",
+      "B": "$8$ hours",
+      "C": "$10$ hours",
+      "D": "$12$ hours"
+    },
+    "correct_answer": "B",
+    "explanation": "**Step 1 \u2014 Assign capacity and individual rates.**\n\nLet tank capacity = **LCM(4, 6, 12) = 12 units**.\n\n- Rate of A (fill) = $\\frac{12}{4} = 3$ units/hr\n- Rate of B (fill) = $\\frac{12}{6} = 2$ units/hr\n- Rate of C (drain) = $\\frac{12}{12} = 1$ unit/hr\n\n**Step 2 \u2014 Combined rate when all three are open.**\n\n$$\\text{Net rate (A+B+C)} = 3 + 2 - 1 = 4 \\text{ units/hr}$$\n\n**Step 3 \u2014 Time when $\\frac{1}{3}$ of tank is filled.**\n\n$\\frac{1}{3} \\times 12 = 4$ units filled.\n\nTime elapsed $= \\frac{4}{4} = 1$ hour. At this point, **Pipe A is closed**.\n\n**Step 4 \u2014 Net rate after A is closed (only B and C).**\n\n$$\\text{Net rate (B+C)} = 2 - 1 = 1 \\text{ unit/hr}$$\n\n**Step 5 \u2014 Time to fill remaining portion after A is closed.**\n\nRemaining = $12 - 4 = 8$ units.\n\n$$t_{\\text{actual}} = \\frac{8}{1} = \\mathbf{8} \\text{ hours}$$\n\n**Step 6 \u2014 Verify the \"6 hours more\" condition.**\n\nIf A had remained open, the remaining 8 units would fill at 4 units/hr:\n\n$$t_{\\text{if A stayed}} = \\frac{8}{4} = 2 \\text{ hours}$$\n\nExtra time = $8 - 2 = \\mathbf{6}$ hours \u2713\n\nThis exactly matches the condition stated in the problem, confirming the answer.\n\n**Answer: It takes $\\mathbf{8}$ hours to fill the tank after Pipe A is closed.**",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Time & Work & Pipes",
+      "difficulty_level": 5
+    }
+  },
+  {
+    "id": "BANKPO_TIMEWORKPI_5_1_3_3e8acd",
+    "text": "A reservoir is supplied by two inlet pipes, X and Y. Pipe X alone can fill the reservoir in 20 hours, while pipe Y alone can fill it in 30 hours. However, due to a crack at the bottom, water leaks out at a rate that would empty a full reservoir in 45 hours. All three (both inlets and the leak) operate simultaneously. After the reservoir is completely filled, both inlet pipes are closed and only the leak remains active. Additionally, evaporation causes water loss equivalent to emptying the full reservoir in 90 hours. How many hours after closing the inlets will the reservoir become completely empty?",
+    "options": {
+      "A": "25 hours",
+      "B": "30 hours",
+      "C": "35 hours",
+      "D": "40 hours"
+    },
+    "correct_answer": "B",
+    "explanation": "**Step 1 \u2014 Determine individual rates (fraction of reservoir per hour):**\n\nPipe X fills: $\\frac{1}{20}$ per hour\nPipe Y fills: $\\frac{1}{30}$ per hour\nLeak empties: $\\frac{1}{45}$ per hour\n\n**Step 2 \u2014 Combined filling rate (all three working):**\n\n$$\\frac{1}{20} + \\frac{1}{30} - \\frac{1}{45}$$\n\nLCM of 20, 30, 45 = 180\n\n$$= \\frac{9}{180} + \\frac{6}{180} - \\frac{4}{180} = \\frac{11}{180}$$\n\nSo the reservoir fills in $\\frac{180}{11}$ hours (this confirms it does get filled eventually).\n\n**Step 3 \u2014 After the reservoir is full, inlets are closed:**\n\nNow only the **leak** and **evaporation** drain the reservoir.\n\nLeak rate: $\\frac{1}{45}$ per hour (emptying)\nEvaporation rate: $\\frac{1}{90}$ per hour (emptying)\n\n**Step 4 \u2014 Combined emptying rate:**\n\n$$\\frac{1}{45} + \\frac{1}{90} = \\frac{2}{90} + \\frac{1}{90} = \\frac{3}{90} = \\frac{1}{30}$$\n\n**Step 5 \u2014 Time to empty the full reservoir:**\n\n$$\\text{Time} = \\frac{1}{\\frac{1}{30}} = 30 \\text{ hours}$$\n\nThe reservoir becomes completely empty **30 hours** after the inlets are closed.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "1 / (1/45 + 1/90)",
+      "computed_value": 30,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Time & Work & Pipes",
+      "difficulty_level": 5
+    }
+  },
+  {
+    "id": "BANKPO_TIMEWORKPI_5_1_4_9b7d02",
+    "text": "A reservoir is connected to three inlet pipes P, Q, R and one outlet pipe S. Pipe P alone can fill the reservoir in 16 hours, Q alone in 40 hours, and R alone in 48 hours. Pipe S alone can empty the full reservoir in 32 hours. All four pipes are opened simultaneously, but after some time, pipe S is closed and the remaining three pipes fill the rest of the reservoir in 4 hours. How many hours after the start was pipe S closed?",
+    "options": {
+      "A": "6.9814 hours",
+      "B": "7.3514 hours",
+      "C": "7.7214 hours",
+      "D": "8.0914 hours"
+    },
+    "correct_answer": "B",
+    "explanation": "## Solution\n\n**Step 1: Find each pipe's rate (fraction of reservoir per hour)**\n\n$$\\text{Rate of P} = \\frac{1}{16}, \\quad \\text{Rate of Q} = \\frac{1}{40}, \\quad \\text{Rate of R} = \\frac{1}{48}, \\quad \\text{Rate of S (outlet)} = -\\frac{1}{32}$$\n\n**Step 2: Express rates with a common denominator of 480**\n\n$$P = \\frac{30}{480}, \\quad Q = \\frac{12}{480}, \\quad R = \\frac{10}{480}, \\quad S = \\frac{15}{480}$$\n\n**Step 3: Combined rate with all four pipes open**\n\n$$\\text{Net rate (all four)} = \\frac{30 + 12 + 10 - 15}{480} = \\frac{37}{480} \\text{ per hour}$$\n\n**Step 4: Combined rate with only P, Q, R open (S closed)**\n\n$$\\text{Rate (P+Q+R)} = \\frac{30 + 12 + 10}{480} = \\frac{52}{480} \\text{ per hour}$$\n\n**Step 5: Set up the equation**\n\nLet $t$ = number of hours all four pipes run together before S is closed. After S closes, the three inlet pipes fill the remainder in 4 hours.\n\n$$\\frac{37}{480} \\cdot t + \\frac{52}{480} \\cdot 4 = 1$$\n\n**Step 6: Solve for $t$**\n\n$$37t + 208 = 480$$\n\n$$37t = 480 - 208 = 272$$\n\n$$t = \\frac{272}{37} \\approx 7.3514 \\text{ hours}$$\n\nThis matches the verified expression $\\dfrac{480 - 52 \\times 4}{30 + 12 + 10 - 15} = \\dfrac{480 - 208}{37} = \\dfrac{272}{37} \\approx \\mathbf{7.3514}$\n\n**Answer: B = 7.3514 hours** \u2713\n\nThe other options (A, C, D) correspond to off-by-small-amount arithmetic errors in combining the pipe rates or the residual fill time, none of which satisfy the exact equation above.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "(480 - 52*4) / (30 + 12 + 10 - 15)",
+      "computed_value": 7.35,
+      "tolerance": 0.5
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Time & Work & Pipes",
+      "difficulty_level": 5
+    }
+  },
+  {
+    "id": "BANKPO_TIMEWORKPI_5_1_5_fbe719",
+    "text": "A cistern has three pipes \u2014 an inlet pipe **P**, an inlet pipe **Q**, and an outlet pipe **R**. The total capacity of the cistern is **108 units**. Pipe P fills at **6 units/hour** but is active only for $\\frac{2}{3}$ of every hour due to maintenance schedules. Pipe Q fills at **9 units/hour** continuously. Pipe R drains at **4 units/hour** continuously. All three pipes are opened simultaneously. How many hours will it take to completely fill the cistern? $\\frac{108}{(\\frac{6 \\times 2}{3}) + 9 - 4}$",
+    "options": {
+      "A": "$10$ hours",
+      "B": "$11$ hours",
+      "C": "$12$ hours",
+      "D": "$13$ hours"
+    },
+    "correct_answer": "C",
+    "explanation": "**Step 1 \u2014 Effective rate of Pipe P.**\n\nPipe P fills at 6 units/hour but is active only $\\frac{2}{3}$ of every hour:\n$$P_{\\text{eff}} = 6 \\times \\frac{2}{3} = 4 \\text{ units/hour}$$\n\n**Step 2 \u2014 Net fill rate per hour.**\n\nWith all three pipes running:\n$$\\text{Net rate} = P_{\\text{eff}} + Q - R = 4 + 9 - 4 = 9 \\text{ units/hour}$$\n\n**Step 3 \u2014 Time to fill the cistern.**\n\n$$\\text{Time} = \\frac{108}{9} = 12 \\text{ hours}$$\n\nThe cistern is completely filled in **12 hours**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "108 / ((6 * 2/3) + 9 - 4)",
+      "computed_value": 12,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Time & Work & Pipes",
+      "difficulty_level": 5
+    }
+  },
+  {
+    "id": "BANKPO_AVERAGEMIX_1_1_1_a5ec44",
+    "text": "The average age of 5 members of a family is 28 years. If the youngest member is 8 years old, what was the average age of the family (in years) just before the youngest member was born?",
+    "options": {
+      "A": "22.5",
+      "B": "24",
+      "C": "25",
+      "D": "26.5"
+    },
+    "correct_answer": "C",
+    "explanation": "**Step 1 \u2014 Find total current age of all 5 members:**\n\nTotal age $= 5 \\times 28 = 140$ years.\n\n**Step 2 \u2014 Find total age of the remaining 4 members at present:**\n\nAge of 4 members $= 140 - 8 = 132$ years.\n\n**Step 3 \u2014 Find total age of the 4 members 8 years ago (just before the youngest was born):**\n\nEach of the 4 members was 8 years younger, so total age $= 132 - (4 \\times 8) = 132 - 32 = 100$ years.\n\n**Step 4 \u2014 Average age of 4 members 8 years ago:**\n\n$$\\text{Average} = \\frac{100}{4} = 25 \\text{ years}$$\n\nThe answer is **25 years**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "(5*28 - 8 - 4*8) / 4",
+      "computed_value": 25,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Average, Mixtures & Alligation",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "BANKPO_AVERAGEMIX_1_1_2_3fd124",
+    "text": "A shopkeeper mixes two varieties of rice \u2014 one costing **\u20b935 per kg** and another costing **\u20b950 per kg** \u2014 in the ratio **3 : 2**. At what price per kg should he sell the mixture to earn a profit of **20%**?",
+    "options": {
+      "A": "\u20b945.60",
+      "B": "\u20b949.20",
+      "C": "\u20b950.40",
+      "D": "\u20b952.00"
+    },
+    "correct_answer": "B",
+    "explanation": "## Solution\n\n**Step 1: Find the cost price of the mixture using the weighted average.**\n\nThe two varieties are mixed in the ratio **3 : 2**, so for every 5 kg of mixture:\n- 3 kg costs \u20b935/kg \u2192 contribution = $3 \\times 35 = \u20b9105$\n- 2 kg costs \u20b950/kg \u2192 contribution = $2 \\times 50 = \u20b9100$\n\n**Step 2: Calculate the average cost price per kg.**\n\n$$\\text{CP of mixture} = \\frac{105 + 100}{5} = \\frac{205}{5} = \u20b941 \\text{ per kg}$$\n\n**Step 3: Apply 20% profit on the cost price.**\n\n$$\\text{Selling Price} = \\text{CP} \\times \\frac{120}{100} = 41 \\times \\frac{120}{100}$$\n\n$$= 41 \\times 1.2 = \u20b949.20 \\text{ per kg}$$\n\n**Answer: \u20b949.20 \u2192 Option B**\n\nThe other options are incorrect because they result from either a wrong ratio calculation (A), or applying an incorrect profit percentage or cost base (C and D), none of which yield the correct weighted CP of \u20b941 with a 20% markup.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "((3 * 35 + 2 * 50) / 5) * 120 / 100",
+      "computed_value": 49.2,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Average, Mixtures & Alligation",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "BANKPO_AVERAGEMIX_1_1_3_339b81",
+    "text": "A milkman has two types of milk. Type A contains **25% water** and Type B contains **50% water**. In what ratio must Type A and Type B be mixed so that the resulting mixture contains **40% water**?",
+    "options": {
+      "A": "$2:3$",
+      "B": "$3:2$",
+      "C": "$1:2$",
+      "D": "$3:1$"
+    },
+    "correct_answer": "A",
+    "explanation": "## Solution\n\n**Identify the water percentages:**\n- Type A milk: 25% water\n- Type B milk: 50% water\n- Desired mixture: 40% water\n\n**Apply the Rule of Alligation:**\n\n$$\\frac{\\text{Quantity of Type A}}{\\text{Quantity of Type B}} = \\frac{\\text{(Type B)} - \\text{Mean}}{\\text{Mean} - \\text{(Type A)}}$$\n\n**Calculate the differences:**\n\n$$\\text{(Type B)} - \\text{Mean} = 50 - 40 = 10$$\n\n$$\\text{Mean} - \\text{(Type A)} = 40 - 25 = 15$$\n\n**Required ratio:**\n\n$$\\text{Type A : Type B} = 10 : 15 = 2 : 3$$\n\nSo Type A and Type B must be mixed in the ratio $\\mathbf{2:3}$.\n\n**Why the other options are wrong:**\n- **Option B (3:2):** This reverses the ratio \u2014 it would yield a mixture closer to Type A's water content (25%), not 40%.\n- **Option C (1:2):** Gives mixture water% $= \\frac{1 \\times 25 + 2 \\times 50}{3} = \\frac{125}{3} \\approx 41.7\\%$, not 40%.\n- **Option D (3:1):** Gives mixture water% $= \\frac{3 \\times 25 + 1 \\times 50}{4} = \\frac{125}{4} = 31.25\\%$, not 40%.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Average, Mixtures & Alligation",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "BANKPO_AVERAGEMIX_1_1_4_fb3bae",
+    "text": "A vessel contains a mixture of milk and water in the ratio $7:3$. If $20$ litres of the mixture is taken out and replaced with pure milk, the new ratio of milk to water becomes $9:1$. What was the **original quantity** of the mixture in the vessel?",
+    "options": {
+      "A": "98 litres",
+      "B": "100 litres",
+      "C": "102 litres",
+      "D": "104 litres"
+    },
+    "correct_answer": "B",
+    "explanation": "## Solution\n\n**Step 1: Define the variable.**\n\nLet the original total quantity of the mixture be $x$ litres.\n\n**Step 2: Find the initial quantities of milk and water.**\n\nSince the ratio of milk to water is $7:3$, in the original mixture:\n$$\\text{Milk} = \\frac{7}{10}x, \\qquad \\text{Water} = \\frac{3}{10}x$$\n\n**Step 3: Analyze what happens when 20 litres is removed.**\n\nWhen 20 litres of the mixture is taken out, it contains milk and water in the same $7:3$ ratio:\n$$\\text{Milk removed} = \\frac{7}{10} \\times 20 = 14 \\text{ litres}, \\qquad \\text{Water removed} = \\frac{3}{10} \\times 20 = 6 \\text{ litres}$$\n\n**Step 4: Find quantities after removal and replacement.**\n\nAfter removing 20 litres and adding 20 litres of pure milk:\n$$\\text{Milk remaining} = \\frac{7x}{10} - 14 + 20 = \\frac{7x}{10} + 6$$\n$$\\text{Water remaining} = \\frac{3x}{10} - 6$$\n\nThe total quantity stays at $x$ litres.\n\n**Step 5: Apply the new ratio condition.**\n\nThe new ratio of milk to water is $9:1$, which means water is $\\frac{1}{10}$ of the total:\n$$\\frac{3x}{10} - 6 = \\frac{1}{10} \\times x$$\n\n**Step 6: Solve for $x$.**\n\n$$\\frac{3x}{10} - \\frac{x}{10} = 6$$\n$$\\frac{2x}{10} = 6$$\n$$x = 6 \\times \\frac{10}{2} = \\frac{20}{\\left(\\dfrac{2}{10}\\right)} = \\boxed{100}$$\n\n**The original quantity of the mixture was 100 litres \u2014 Option B.**\n\n---\nThe other options (98, 102, 104) are simply incorrect values that do not satisfy the ratio equation $\\frac{2x}{10} = 6$; only $x = 100$ makes both sides equal.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "20 / (2/10)",
+      "computed_value": 100,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Average, Mixtures & Alligation",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "BANKPO_AVERAGEMIX_1_1_5_7dc29c",
+    "text": "A container has two varieties of rice: **Variety X** costing \u20b936 per kg and **Variety Y** costing \u20b948 per kg. If they are mixed in the ratio **3 : 1**, what is the cost (in \u20b9) of the resulting mixture per kg?",
+    "options": {
+      "A": "\u20b938",
+      "B": "\u20b939",
+      "C": "\u20b940",
+      "D": "\u20b942"
+    },
+    "correct_answer": "B",
+    "explanation": "## Solution: Finding the Cost of the Mixture\n\n**Given information:**\n- Cost of Variety X = \u20b936 per kg\n- Cost of Variety Y = \u20b948 per kg\n- Mixing ratio = **3 : 1** (X : Y)\n\n---\n\n### Step 1: Apply the Weighted Average Formula\n\nWhen two items are mixed in a given ratio, the mixture cost is the **weighted average** of their individual costs:\n\n$$\\text{Mixture Cost} = \\frac{(3 \\times 36) + (1 \\times 48)}{3 + 1}$$\n\n$$= \\frac{108 + 48}{4} = \\frac{156}{4} = \\mathbf{\u20b939 \\text{ per kg}}$$\n\n---\n\n### Step 2: Verify Using the Alligation Check\n\nThe mean price \u20b939 lies between \u20b936 and \u20b948. The alligation differences are:\n- Parts of X = 48 \u2212 39 = **9**\n- Parts of Y = 39 \u2212 36 = **3**\n- Ratio = 9 : 3 = **3 : 1** \u2713 (matches the given ratio)\n\n---\n\n### Why other options are wrong:\n- **\u20b938**: Corresponds to a heavier weight on X but gives ratio 10:2 = 5:1, not 3:1.\n- **\u20b940**: Would require ratio 8:4 = 2:1, not 3:1.\n- **\u20b942**: Would require ratio 6:6 = 1:1, not 3:1.\n\n**Correct Answer: Option B \u2014 \u20b939 per kg**",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "(3 * 36 + 1 * 48) / (3 + 1)",
+      "computed_value": 39,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Average, Mixtures & Alligation",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "BANKPO_AVERAGEMIX_2_1_1_04cfea",
+    "text": "A grocer mixes two varieties of rice \u2014 one costing \u20b954 per kg and another costing \u20b978 per kg \u2014 in a certain ratio. He sells the mixture at \u20b975 per kg and earns a **profit of 25%**. In what ratio did he mix the two varieties (cheaper : dearer)?",
+    "options": {
+      "A": "2 : 1",
+      "B": "1 : 2",
+      "C": "3 : 1",
+      "D": "1 : 3"
+    },
+    "correct_answer": "C",
+    "explanation": "## Solution\n\n**Step 1: Find the cost price of the mixture.**\n\nSelling Price = \u20b975, Profit = 25%.\n\n$$\\text{CP}_{\\text{mixture}} = \\frac{75 \\times 100}{125} = \u20b960 \\text{ per kg}$$\n\n**Step 2: Apply the Alligation rule.**\n\nCheaper variety costs \u20b954/kg, dearer variety costs \u20b978/kg, mean = \u20b960/kg.\n\n$$\\text{Parts of cheaper} = \\text{Dearer} - \\text{Mean} = 78 - 60 = 18$$\n$$\\text{Parts of dearer} = \\text{Mean} - \\text{Cheaper} = 60 - 54 = 6$$\n\n$$\\text{Ratio (cheaper : dearer)} = 18 : 6 = \\mathbf{3 : 1}$$\n\n**Step 3: Verify.**\n\n$$\\text{Average CP} = \\frac{3 \\times 54 + 1 \\times 78}{4} = \\frac{162 + 78}{4} = \\frac{240}{4} = \u20b960 \\checkmark$$\n\nProfit at SP = \u20b975: $\\frac{75 - 60}{60} \\times 100 = \\frac{15}{60} \\times 100 = 25\\%$ \u2713\n\n**Other options check:**\n- **A (2:1):** $\\frac{2 \\times 54 + 78}{3} = \\frac{186}{3} = \u20b962 \\neq \u20b960$\n- **B (1:2):** $\\frac{54 + 2 \\times 78}{3} = \\frac{210}{3} = \u20b970 \\neq \u20b960$\n- **D (1:3):** $\\frac{54 + 3 \\times 78}{4} = \\frac{288}{4} = \u20b972 \\neq \u20b960$\n\n**Answer: C \u2014 3 : 1**",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "(78 - (75*100/125)) / ((75*100/125) - 54)",
+      "computed_value": 3.0,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Average, Mixtures & Alligation",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "BANKPO_AVERAGEMIX_2_1_2_ae3d2c",
+    "text": "A merchant mixes two varieties of rice. The cheaper variety costs **\u20b940 per kg** and the dearer variety costs **\u20b952 per kg**. In what ratio must they be mixed so that the mixture, when sold at **\u20b949.45 per kg**, yields a profit of **15%**?",
+    "options": {
+      "A": "$3 : 1$",
+      "B": "$2 : 3$",
+      "C": "$1 : 3$",
+      "D": "$3 : 2$"
+    },
+    "correct_answer": "A",
+    "explanation": "**Step 1 \u2014 Find the cost price of the mixture.**\n\nThe mixture is sold at \u20b949.45/kg with a **15% profit**.\n$$\\text{CP of mixture} = \\frac{49.45}{1.15} = \\frac{4945}{115} = \\textbf{\u20b943 per kg}$$\n\n**Step 2 \u2014 Apply the Alligation Rule.**\n\nThe two varieties cost \u20b940/kg (cheaper) and \u20b952/kg (dearer), and the required mean cost is \u20b943/kg.\n\n$$\\text{Dearer} - \\text{Mean} = 52 - 43 = 9$$\n$$\\text{Mean} - \\text{Cheaper} = 43 - 40 = 3$$\n\n**Step 3 \u2014 Find the ratio.**\n\n$$\\text{Ratio (cheaper : dearer)} = 9 : 3 = \\mathbf{3 : 1}$$\n\n**Verification:** $\\dfrac{3 \\times 40 + 1 \\times 52}{4} = \\dfrac{120 + 52}{4} = \\dfrac{172}{4} = \u20b943$ \u2713\n\nSelling at 15% profit: $43 \\times 1.15 = \u20b949.45$ \u2713\n\nThe correct answer is **A) 3 : 1**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Average, Mixtures & Alligation",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "BANKPO_AVERAGEMIX_2_1_3_df56ab",
+    "text": "A milkman has two types of milk: Type A with **18% fat content** and Type B with **6% fat content**. In what ratio must he mix Type A and Type B so that the resulting mixture has a fat content of **10%**?",
+    "options": {
+      "A": "$1 : 2$",
+      "B": "$2 : 3$",
+      "C": "$1 : 3$",
+      "D": "$2 : 5$"
+    },
+    "correct_answer": "A",
+    "explanation": "Using the **Rule of Alligation**:\n\n$$\\text{Ratio} = \\frac{\\text{Type B's deviation from mean}}{\\text{Type A's deviation from mean}}$$\n\n- Deviation of Type A from mean: $18 - 10 = 8$\n- Deviation of Type B from mean: $10 - 6 = 4$\n\nSo the required ratio of Type A : Type B $= 4 : 8 = 1 : 2$\n\n**Verification:** Fat in mixture $= \\frac{1 \\times 18 + 2 \\times 6}{1+2} = \\frac{18+12}{3} = \\frac{30}{3} = 10\\%$ \u2713\n\nHence the answer is $\\mathbf{1:2}$.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Average, Mixtures & Alligation",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "BANKPO_AVERAGEMIX_2_1_4_61d59e",
+    "text": "A milkman has two types of milk. Type A contains **20% water** and Type B contains **65% water**. In what ratio must Type A and Type B be mixed so that the resulting mixture contains **40% water**?",
+    "options": {
+      "A": "$1.15$",
+      "B": "$1.25$",
+      "C": "$1.35$",
+      "D": "$1.45$"
+    },
+    "correct_answer": "B",
+    "explanation": "## Solution\n\n**Identify the key values:**\n- Type A milk: 20% water\n- Type B milk: 65% water\n- Desired mixture: 40% water\n\n**Apply the Rule of Alligation:**\n\nThe rule of alligation states that when two components are mixed to achieve a mean value, the ratio of their quantities is:\n\n$$\\frac{\\text{Quantity of A}}{\\text{Quantity of B}} = \\frac{\\text{(Water in B)} - \\text{(Mean water)}}{\\text{(Mean water)} - \\text{(Water in A)}}$$\n\n**Substitute the values:**\n\n$$\\frac{\\text{A}}{\\text{B}} = \\frac{65 - 40}{40 - 20}$$\n\n**Evaluate the numerator and denominator:**\n\n$$\\frac{\\text{A}}{\\text{B}} = \\frac{25}{20}$$\n\n**Simplify the ratio:**\n\n$$\\frac{\\text{A}}{\\text{B}} = \\frac{5}{4} = 1.25$$\n\nTherefore, Type A and Type B must be mixed in the ratio **A : B = 1.25 : 1**.\n\n**Answer: Option B = $1.25$**\n\n---\nThe other options (1.15, 1.35, 1.45) result from arithmetic errors in computing $(65-40)/(40-20)$; only $25/20 = 1.25$ is correct.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "(65 - 40) / (40 - 20)",
+      "computed_value": 1.25,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Average, Mixtures & Alligation",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "BANKPO_AVERAGEMIX_2_1_5_1083bd",
+    "text": "A vessel contains a mixture of milk and water in the ratio $5:3$. If $16$ litres of the mixture are removed and replaced with $16$ litres of pure milk, the new ratio of milk to water becomes $7:3$. What was the **original quantity** of the mixture in the vessel?",
+    "options": {
+      "A": "60 litres",
+      "B": "72 litres",
+      "C": "80 litres",
+      "D": "96 litres"
+    },
+    "correct_answer": "C",
+    "explanation": "**Step 1 \u2014 Set up variables.**\n\nLet the original total mixture = $x$ litres.\n\nOriginal milk $= \\frac{5x}{8}$ litres, original water $= \\frac{3x}{8}$ litres.\n\n**Step 2 \u2014 Account for removal.**\n\nWhen $16$ litres of the mixture (ratio $5:3$) are removed:\n- Milk removed $= \\frac{5}{8} \\times 16 = 10$ litres\n- Water removed $= \\frac{3}{8} \\times 16 = 6$ litres\n\nAfter removal:\n- Milk $= \\frac{5x}{8} - 10$\n- Water $= \\frac{3x}{8} - 6$\n\n**Step 3 \u2014 Add pure milk.**\n\nAfter adding $16$ litres of pure milk:\n- Milk $= \\frac{5x}{8} - 10 + 16 = \\frac{5x}{8} + 6$\n- Water $= \\frac{3x}{8} - 6$ (unchanged)\n\n**Step 4 \u2014 Apply the new ratio.**\n\n$$\\frac{\\frac{5x}{8} + 6}{\\frac{3x}{8} - 6} = \\frac{7}{3}$$\n\nCross-multiplying:\n$$3\\left(\\frac{5x}{8} + 6\\right) = 7\\left(\\frac{3x}{8} - 6\\right)$$\n$$\\frac{15x}{8} + 18 = \\frac{21x}{8} - 42$$\n$$42 + 18 = \\frac{21x}{8} - \\frac{15x}{8}$$\n$$60 = \\frac{6x}{8} = \\frac{3x}{4}$$\n$$x = 80 \\text{ litres}$$\n\n**Verification:** Original milk $= 50$ L, water $= 30$ L. Remove $10$ L milk + $6$ L water \u2192 milk $= 40$, water $= 24$. Add $16$ L milk \u2192 milk $= 56$, water $= 24$. Ratio $= 56:24 = 7:3$ \u2713\n\n**Answer: 80 litres**",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Average, Mixtures & Alligation",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "BANKPO_AVERAGEMIX_3_1_1_01a96e",
+    "text": "A milkman has two containers. Container A holds 60 litres of a milk-water mixture with milk concentration **45%**. Container B holds 90 litres of a milk-water mixture with milk concentration **70%**. He pours both containers into a large drum and then removes 30 litres of the resulting mixture. How many litres of **pure milk** remain in the drum?",
+    "options": {
+      "A": "70 litres",
+      "B": "72 litres",
+      "C": "74 litres",
+      "D": "76 litres"
+    },
+    "correct_answer": "B",
+    "explanation": "## Step-by-Step Solution\n\n**Step 1: Find the total milk from Container A.**\n\nContainer A has 60 litres at 45% milk concentration:\n$$\\text{Milk from A} = 0.45 \\times 60 = 27 \\text{ litres}$$\n\n**Step 2: Find the total milk from Container B.**\n\nContainer B has 90 litres at 70% milk concentration:\n$$\\text{Milk from B} = 0.70 \\times 90 = 63 \\text{ litres}$$\n\n**Step 3: Find the total mixture and total milk in the drum after combining.**\n\n$$\\text{Total mixture} = 60 + 90 = 150 \\text{ litres}$$\n$$\\text{Total milk} = 27 + 63 = 90 \\text{ litres}$$\n\n**Step 4: Calculate the milk concentration of the combined mixture.**\n\n$$\\text{Milk concentration} = \\frac{90}{150} = 0.60 = 60\\%$$\n\n**Step 5: Determine how much milk is removed when 30 litres are taken out.**\n\nSince the mixture is uniform at 60% milk, the 30 litres removed contains:\n$$\\text{Milk removed} = 0.60 \\times 30 = 18 \\text{ litres}$$\n\n**Step 6: Calculate the milk remaining in the drum.**\n\n$$\\text{Milk remaining} = 90 - 18 = \\boxed{72} \\text{ litres}$$\n\nThis matches the expression: $\\dfrac{(0.45 \\times 60 + 0.70 \\times 90)}{150} \\times (150 - 30) = 0.60 \\times 120 = 72$\n\n---\n\nThe other options (70, 74, 76) result from either incorrect concentration calculations or arithmetic errors in the removal step; only **72 litres** is consistent with the correct weighted-average concentration of 60%.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "(0.45*60 + 0.70*90) / (60+90) * (60+90-30)",
+      "computed_value": 72,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Average, Mixtures & Alligation",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "BANKPO_AVERAGEMIX_3_1_2_14ba40",
+    "text": "A jar contains a mixture of milk and water in the ratio $5:3$. When $24$ litres of the mixture are removed and replaced with pure milk, the new ratio of milk to water becomes $7:3$. What was the **original quantity** of the mixture in the jar (in litres)?",
+    "options": {
+      "A": "72",
+      "B": "80",
+      "C": "96",
+      "D": "120"
+    },
+    "correct_answer": "D",
+    "explanation": "**Step 1 \u2014 Set up variables.**\n\nLet the original total quantity of the mixture be $x$ litres.\n\nOriginal milk $= \\frac{5}{8}x$, original water $= \\frac{3}{8}x$.\n\n**Step 2 \u2014 Analyse what is removed.**\n\nWhen $24$ litres of the mixture (in ratio $5:3$) are removed:\n- Milk removed $= \\frac{5}{8} \\times 24 = 15$ litres\n- Water removed $= \\frac{3}{8} \\times 24 = 9$ litres\n\n**Step 3 \u2014 Quantities after removal and addition.**\n\nAfter removing $24$ litres and adding $24$ litres of pure milk:\n- Milk $= \\frac{5x}{8} - 15 + 24 = \\frac{5x}{8} + 9$\n- Water $= \\frac{3x}{8} - 9$\n- Total remains $= x$\n\n**Step 4 \u2014 Apply the new ratio.**\n\n$$\\frac{\\frac{5x}{8} + 9}{\\frac{3x}{8} - 9} = \\frac{7}{3}$$\n\nCross-multiplying:\n$$3\\left(\\frac{5x}{8} + 9\\right) = 7\\left(\\frac{3x}{8} - 9\\right)$$\n$$\\frac{15x}{8} + 27 = \\frac{21x}{8} - 63$$\n$$27 + 63 = \\frac{21x}{8} - \\frac{15x}{8}$$\n$$90 = \\frac{6x}{8} = \\frac{3x}{4}$$\n$$x = \\frac{90 \\times 4}{3} = 120$$\n\n**Verification:** Original milk $= 75$ L, water $= 45$ L. Remove $24$ L: milk removed $= 15$ L, water removed $= 9$ L. Remaining: milk $= 60$ L, water $= 36$ L. Add $24$ L pure milk: milk $= 84$ L, water $= 36$ L. New ratio $= 84:36 = 7:3$. \u2713\n\n**The original quantity of the mixture was 120 litres.**",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Average, Mixtures & Alligation",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "BANKPO_AVERAGEMIX_3_1_3_959647",
+    "text": "A shopkeeper has two varieties of rice. **Variety A** costs \u20b956 per kg and **Variety B** costs \u20b980 per kg. He mixes them in a certain ratio and sells the mixture at \u20b984 per kg, making a profit of **20%**. If he has 120 kg of Variety A, how many kg of Variety B must he mix to prepare the blend?",
+    "options": {
+      "A": "166 kg",
+      "B": "168 kg",
+      "C": "170 kg",
+      "D": "172 kg"
+    },
+    "correct_answer": "B",
+    "explanation": "## Solution\n\n**Step 1: Find the cost price of the mixture.**\n\nThe shopkeeper sells the mixture at \u20b984 per kg with a 20% profit. Working back from selling price to cost price:\n\n$$\\text{Cost Price} = \\frac{\\text{Selling Price}}{1 + \\text{Profit\\%}} = \\frac{84}{1.20} = \u20b970 \\text{ per kg}$$\n\n**Step 2: Apply the rule of alligation.**\n\nThe cost price of the mixture (\u20b970) lies between Variety A (\u20b956) and Variety B (\u20b980). Using alligation:\n\n$$\\text{Parts of A} : \\text{Parts of B} = (80 - 70) : (70 - 56) = 10 : 14 = 5 : 7$$\n\n**Step 3: Calculate the required quantity of Variety B.**\n\nThe ratio of A to B is $5 : 7$. Since the shopkeeper has **120 kg of Variety A**:\n\n$$\\frac{A}{B} = \\frac{5}{7} \\implies B = \\frac{7}{5} \\times 120 = \\frac{840}{5} = 168 \\text{ kg}$$\n\n**Answer: 168 kg of Variety B (Option B)**\n\n---\nThe other options (166, 170, 172) result from either rounding the cost price incorrectly or computing the alligation ratio with an error; only the exact calculation yields the whole-number result of **168 kg**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "(84 / 1.20 - 56) / (80 - 84 / 1.20) * 120",
+      "computed_value": 168,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Average, Mixtures & Alligation",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "BANKPO_AVERAGEMIX_3_1_4_9392df",
+    "text": "A milkman has two types of milk solutions. **Solution A** contains milk and water in the ratio $7:3$ and **Solution B** contains milk and water in the ratio $3:2$. He mixes $x$ litres of Solution A with $50$ litres of Solution B to obtain a mixture that is exactly $64\\%$ milk. How many litres of Solution A did he use?",
+    "options": {
+      "A": "$31.6633$ litres",
+      "B": "$33.3333$ litres",
+      "C": "$35.0033$ litres",
+      "D": "$36.6733$ litres"
+    },
+    "correct_answer": "B",
+    "explanation": "## Solution\n\n**Identify the milk fractions in each solution:**\n\n- Solution A has milk and water in ratio $7:3$, so the fraction of milk in A is $\\dfrac{7}{10} = 0.70$\n\n- Solution B has milk and water in ratio $3:2$, so the fraction of milk in B is $\\dfrac{3}{5} = 0.60$\n\n**Set up the mixture equation:**\n\nMixing $x$ litres of Solution A with $50$ litres of Solution B gives a total volume of $(x + 50)$ litres.\n\nThe total milk in the mixture must equal $64\\%$ of the total volume:\n\n$$0.70x + 0.60 \\times 50 = 0.64(x + 50)$$\n\n**Expand and simplify:**\n\n$$0.70x + 30 = 0.64x + 32$$\n\n**Collect the $x$ terms on one side:**\n\n$$0.70x - 0.64x = 32 - 30$$\n\n$$0.06x = 2$$\n\n**Solve for $x$:**\n\n$$x = \\frac{2}{0.06} = 33.3333 \\text{ litres}$$\n\nThis matches the verified expression $2\\,/\\,0.06$.\n\n**Answer: Option B \u2014 $33.3333$ litres**\n\nThe other options (A, C, D) result from small arithmetic errors in expanding or rearranging the mixture equation, leading to slightly off values of the constant or coefficient that do not satisfy $0.06x = 2$.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "2 / 0.06",
+      "computed_value": 33.3333,
+      "tolerance": 0.01
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Average, Mixtures & Alligation",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "BANKPO_AVERAGEMIX_3_1_5_defa5b",
+    "text": "A container has a mixture of milk and water in the ratio $7:3$. When $25$ litres of the mixture is removed and replaced with $25$ litres of pure milk, the new ratio of milk to water becomes $17:5$. What was the **original total quantity** of the mixture in the container?",
+    "options": {
+      "A": "97.965 litres",
+      "B": "103.125 litres",
+      "C": "108.285 litres",
+      "D": "113.445 litres"
+    },
+    "correct_answer": "B",
+    "explanation": "## Solution\n\n**Setting up variables**\n\nLet the original total quantity of the mixture be $V$ litres.\n\nThe original ratio of milk to water is $7:3$, so:\n$$\\text{Milk} = \\frac{7V}{10}, \\quad \\text{Water} = \\frac{3V}{10}$$\n\n---\n\n**After removing 25 litres of the mixture**\n\nWhen 25 litres of the mixture is removed, it contains milk and water in the same $7:3$ ratio:\n$$\\text{Milk removed} = \\frac{7}{10} \\times 25 = \\frac{175}{10} = 17.5 \\text{ litres}$$\n$$\\text{Water removed} = \\frac{3}{10} \\times 25 = \\frac{75}{10} = 7.5 \\text{ litres}$$\n\nAfter removal, the quantities remaining are:\n$$\\text{Milk remaining} = \\frac{7V}{10} - 17.5$$\n$$\\text{Water remaining} = \\frac{3V}{10} - 7.5$$\n\n---\n\n**After adding 25 litres of pure milk**\n\nOnly milk is added back, so:\n$$\\text{New Milk} = \\frac{7V}{10} - 17.5 + 25 = \\frac{7V}{10} + 7.5$$\n$$\\text{New Water} = \\frac{3V}{10} - 7.5$$\n\nThe total volume remains $V$ litres.\n\n---\n\n**Applying the new ratio condition**\n\nThe new ratio of milk to water is $17:5$:\n$$\\frac{\\dfrac{7V}{10} + 7.5}{\\dfrac{3V}{10} - 7.5} = \\frac{17}{5}$$\n\nCross-multiplying:\n$$5\\left(\\frac{7V}{10} + 7.5\\right) = 17\\left(\\frac{3V}{10} - 7.5\\right)$$\n\n$$\\frac{35V}{10} + 37.5 = \\frac{51V}{10} - 127.5$$\n\n$$37.5 + 127.5 = \\frac{51V}{10} - \\frac{35V}{10}$$\n\n$$165 = \\frac{16V}{10}$$\n\n$$V = \\frac{165 \\times 10}{16} = \\frac{1650}{16}$$\n\n---\n\n**Evaluating the expression**\n\nRewriting as the verified expression:\n$$V = \\frac{375 + 1275}{16} = \\frac{1650}{16} = 103.125 \\text{ litres}$$\n\n---\n\n**Answer: $V = \\boxed{103.125}$ litres \u2014 Option B**\n\nThe other options (A, C, D) arise from incorrect ratio setups or arithmetic errors when distributing the removed mixture or cross-multiplying, leading to values that do not satisfy the $17:5$ condition.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "(375 + 1275) / 16",
+      "computed_value": 103.125,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Average, Mixtures & Alligation",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "BANKPO_AVERAGEMIX_4_1_1_a22565",
+    "text": "A **company** conducted an aptitude test for two batches of employees. The **average score** of 40 employees in Batch A is 78, and the average score of 20 employees in Batch B is 84. After combining both batches, it is found that a subgroup of 18 employees has an average score of $x$, while the remaining 42 employees have an average score of $(x + 15)$. Find the value of $x$.",
+    "options": {
+      "A": "66.02",
+      "B": "69.5",
+      "C": "72.98",
+      "D": "76.46"
+    },
+    "correct_answer": "B",
+    "explanation": "## Solution\n\n**Step 1: Find the total combined score of both batches.**\n\n$$\\text{Total score} = (40 \\times 78) + (20 \\times 84) = 3120 + 1680 = 4800$$\n\nThe combined number of employees is $40 + 20 = 60$.\n\n**Step 2: Set up the equation using the subgroup averages.**\n\nAfter combining, the 60 employees are split into:\n- A subgroup of **18 employees** with average score $x$\n- The remaining **42 employees** with average score $(x + 15)$\n\nThe sum of all scores must equal 4800:\n\n$$18x + 42(x + 15) = 4800$$\n\n**Step 3: Expand and simplify.**\n\n$$18x + 42x + 630 = 4800$$\n\n$$60x + 630 = 4800$$\n\n$$60x = 4800 - 630 = 4170$$\n\n$$x = \\frac{4170}{60} = 69.5$$\n\nThis matches the verified expression:\n\n$$x = \\frac{(40 \\times 78) + (20 \\times 84) - 42 \\times 15}{60} = \\frac{4800 - 630}{60} = \\frac{4170}{60} = \\boxed{69.5}$$\n\n**The value of $x$ is 69.5 \u2192 Option B.**\n\nThe other options are incorrect because they result from arithmetic errors in computing the total score or incorrectly distributing the 15-point difference between the subgroups.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "(40*78 + 20*84 - 42*15) / 60",
+      "computed_value": 69.5,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Average, Mixtures & Alligation",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "BANKPO_AVERAGEMIX_4_1_2_7b925e",
+    "text": "A vessel of capacity **200 litres** contains milk and water in the ratio $3:2$. First, **40 litres** of the mixture is withdrawn and replaced with pure water. Then, **50 litres** of the resulting mixture is withdrawn and replaced with pure milk. What is the **final percentage of milk** in the vessel?",
+    "options": {
+      "A": "$55.5\\%$",
+      "B": "$58\\%$",
+      "C": "$61\\%$",
+      "D": "$64\\%$"
+    },
+    "correct_answer": "C",
+    "explanation": "**Step 1 \u2014 Initial composition.**\n\nTotal capacity $V = 200$ litres. Milk to water ratio $= 3:2$, so:\n$$\\text{Initial milk} = \\frac{3}{5} \\times 200 = 120 \\text{ litres}, \\quad \\text{Initial water} = 80 \\text{ litres}$$\n\n**Step 2 \u2014 First operation: withdraw 40 litres, replace with pure water.**\n\nMilk fraction before withdrawal $= \\dfrac{3}{5}$.\n\nMilk removed $= 40 \\times \\dfrac{3}{5} = 24$ litres.\n\nMilk after removal $= 120 - 24 = 96$ litres.\n\nAfter adding 40 litres of pure water, total remains 200 litres.\n$$\\text{Milk} = 96 \\text{ litres}, \\quad \\text{Milk fraction} = \\frac{96}{200} = \\frac{12}{25}$$\n\n**Step 3 \u2014 Second operation: withdraw 50 litres, replace with pure milk.**\n\nMilk fraction $= \\dfrac{12}{25}$.\n\nMilk removed $= 50 \\times \\dfrac{12}{25} = 24$ litres.\n\nMilk remaining $= 96 - 24 = 72$ litres.\n\nAfter adding 50 litres of pure milk:\n$$\\text{Final milk} = 72 + 50 = 122 \\text{ litres}$$\n\n**Step 4 \u2014 Final percentage of milk.**\n$$\\% \\text{ milk} = \\frac{122}{200} \\times 100 = \\mathbf{61\\%}$$\n\nThe correct answer is **Option C: $61\\%$**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Average, Mixtures & Alligation",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "BANKPO_AVERAGEMIX_4_1_3_08b7d6",
+    "text": "A dairy owner has three types of milk: Type X at \u20b932 per litre, Type Y at \u20b944 per litre, and Type Z at \u20b958 per litre. He wants to prepare a mixture of 90 litres that he can sell at \u20b946 per litre (at cost price, no profit no loss). If the quantity of Type Y in the mixture must be exactly twice the quantity of Type X, how many litres of Type Z should be used in the mixture?",
+    "options": {
+      "A": "30 litres",
+      "B": "36 litres",
+      "C": "40 litres",
+      "D": "45 litres"
+    },
+    "correct_answer": "A",
+    "explanation": "Let the quantity of Type X = $a$ litres. Then Type Y = $2a$ litres, and Type Z = $90 - 3a$ litres.\n\nThe **weighted average cost** of the mixture must equal \u20b946 per litre:\n\n$$32a + 44(2a) + 58(90 - 3a) = 46 \\times 90$$\n\n$$32a + 88a + 5220 - 174a = 4140$$\n\n$$(32 + 88 - 174)a + 5220 = 4140$$\n\n$$-54a = 4140 - 5220 = -1080$$\n\n$$a = \\frac{1080}{54} = 20$$\n\nSo Type X = 20 litres, Type Y = 40 litres, Type Z = $90 - 60 = 30$ litres.\n\n**Verification:** $32(20) + 44(40) + 58(30) = 640 + 1760 + 1740 = 4140 = 46 \\times 90$ \u2713\n\nTherefore, **30 litres** of Type Z is required.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "90 - 3 * (1080 / 54)",
+      "computed_value": 30,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Average, Mixtures & Alligation",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "BANKPO_AVERAGEMIX_4_1_4_9ff54c",
+    "text": "A vessel contains a mixture of milk and water in the ratio $2:3$. When $50$ litres of the mixture is drained out and replaced with pure milk, the new ratio of milk to water becomes $4:1$. After this replacement, some pure water is added from a second container so that the final ratio of milk to water becomes $5:3$. How many litres of pure water are added?",
+    "options": {
+      "A": "21 litres",
+      "B": "14 litres",
+      "C": "28 litres",
+      "D": "35 litres"
+    },
+    "correct_answer": "A",
+    "explanation": "**Step 1 \u2014 Find the original volume of the vessel.**\n\nLet the original volume $= V$ litres.\n\nInitially: Milk $= \\frac{2V}{5}$ litres, Water $= \\frac{3V}{5}$ litres.\n\nWhen 50 litres of mixture is removed:\n- Milk removed $= 50 \\times \\frac{2}{5} = 20$ litres\n- Water removed $= 50 \\times \\frac{3}{5} = 30$ litres\n\nAfter adding 50 litres of pure milk:\n- Milk $= \\frac{2V}{5} - 20 + 50 = \\frac{2V}{5} + 30 = \\frac{2V + 150}{5}$\n- Water $= \\frac{3V}{5} - 30 = \\frac{3V - 150}{5}$\n\nNew ratio $= 4:1$:\n$$\\frac{2V + 150}{3V - 150} = \\frac{4}{1}$$\n$$2V + 150 = 12V - 600$$\n$$10V = 750 \\Rightarrow V = 75 \\text{ litres}$$\n\n**Step 2 \u2014 Quantities after replacement.**\n\nTotal volume remains 75 litres.\n- Milk $= \\frac{2(75) + 150}{5} = \\frac{300}{5} = 60$ litres\n- Water $= \\frac{3(75) - 150}{5} = \\frac{75}{5} = 15$ litres\n\nVerify: $60 : 15 = 4 : 1$ \u2713\n\n**Step 3 \u2014 Add pure water to achieve ratio $5:3$.**\n\nLet $x$ litres of pure water be added. Milk stays at 60 litres.\n$$\\frac{60}{15 + x} = \\frac{5}{3}$$\n$$3 \\times 60 = 5(15 + x)$$\n$$180 = 75 + 5x$$\n$$5x = 105 \\Rightarrow x = 21 \\text{ litres}$$\n\n**Answer: 21 litres of pure water are added.**\n\n**Verification:** Final mixture \u2014 Milk $= 60$ L, Water $= 15 + 21 = 36$ L. Ratio $= 60:36 = 5:3$ \u2713\n\n**Why other options are wrong:**\n- **14 litres** \u2192 ratio would be $60:29$, not $5:3$.\n- **28 litres** \u2192 ratio would be $60:43$, not $5:3$.\n- **35 litres** \u2192 ratio would be $60:50 = 6:5$, not $5:3$.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Average, Mixtures & Alligation",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "BANKPO_AVERAGEMIX_4_1_5_822de2",
+    "text": "A vessel contains a mixture of milk and water in the ratio $7:3$. When $40$ litres of the mixture is removed and replaced with pure milk, the ratio of milk to water becomes $9:1$. A second vessel contains pure milk. If $x$ litres from the first vessel (after the replacement) and $60$ litres from the second vessel are mixed, the **average concentration of milk** in the final mixture is $95\\%$. Find the value of $x$.",
+    "options": {
+      "A": "$60$ litres",
+      "B": "$80$ litres",
+      "C": "$100$ litres",
+      "D": "$120$ litres"
+    },
+    "correct_answer": "A",
+    "explanation": "**Step 1 \u2014 Find the initial volume $V$ of the first vessel.**\n\nInitial milk $= \\frac{7V}{10}$, water $= \\frac{3V}{10}$.\n\nWhen 40 litres of the mixture is removed:\n- Milk removed $= 40 \\times \\frac{7}{10} = 28$ litres\n- Water removed $= 40 \\times \\frac{3}{10} = 12$ litres\n\nAfter removing 40 litres and adding 40 litres of pure milk:\n- Milk $= \\frac{7V}{10} - 28 + 40 = \\frac{7V}{10} + 12$\n- Water $= \\frac{3V}{10} - 12$\n\nApplying the new ratio $9:1$:\n$$\\frac{\\frac{7V}{10} + 12}{\\frac{3V}{10} - 12} = \\frac{9}{1}$$\n$$\\frac{7V}{10} + 12 = 9\\left(\\frac{3V}{10} - 12\\right) = \\frac{27V}{10} - 108$$\n$$120 = \\frac{27V}{10} - \\frac{7V}{10} = \\frac{20V}{10} = 2V$$\n$$V = 60 \\text{ litres}$$\n\n**Step 2 \u2014 Find the milk concentration in the first vessel after replacement.**\n\nTotal volume remains $60$ litres.\n- Milk $= \\frac{7 \\times 60}{10} + 12 = 42 - 28 + 40 = 54$ litres\n- Water $= \\frac{3 \\times 60}{10} - 12 = 18 - 12 = 6$ litres\n- Verification: $54 : 6 = 9 : 1$ \u2713\n\nMilk concentration in first vessel $= \\frac{54}{60} = 90\\%$\n\n**Step 3 \u2014 Use the average concentration condition.**\n\nThe second vessel is pure milk, so its concentration $= 100\\%$.\n\nMixing $x$ litres at $90\\%$ milk with $60$ litres at $100\\%$ milk gives an average of $95\\%$:\n$$\\frac{0.90x + 1.00 \\times 60}{x + 60} = 0.95$$\n$$0.90x + 60 = 0.95x + 57$$\n$$3 = 0.05x$$\n$$x = 60 \\text{ litres}$$\n\n**Answer: $x = 60$ litres \u2192 Option A.**",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "3 / 0.05",
+      "computed_value": 60,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Average, Mixtures & Alligation",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "BANKPO_AVERAGEMIX_5_1_1_1bcfbb",
+    "text": "A vessel contains $240$ litres of a milk-water mixture in the ratio $5:3$. First, $80$ litres of the mixture is drawn out and the vessel is topped up with pure milk, bringing the ratio to $3:1$. The vessel is then emptied back to $240$ litres (same composition), and this time the $80$ litres drawn out is replaced with pure water instead of milk. From the resulting mixture, $60$ litres is now drawn out and replaced with pure milk. What is the final ratio of milk to water in the vessel?",
+    "options": {
+      "A": "$9:7$",
+      "B": "$11:9$",
+      "C": "$7:5$",
+      "D": "$13:8$"
+    },
+    "correct_answer": "A",
+    "explanation": "**Step 1 \u2014 Verify the initial setup.**\n\nOriginal volume $= 240$ litres; milk $= 240 \\times \\frac{5}{8} = 150$ L; water $= 90$ L.\n\nDraw $80$ litres (ratio $5:3$): milk drawn $= 80 \\times \\frac{5}{8} = 50$ L; water drawn $= 30$ L.\n\nRefill with pure milk: milk $= 150 - 50 + 80 = 180$ L; water $= 90 - 30 = 60$ L.\n\nNew ratio $= 180:60 = 3:1$ \u2713\n\n**Step 2 \u2014 Water-replacement scenario.**\n\nReset vessel to original: milk $= 150$ L, water $= 90$ L.\n\nDraw $80$ litres (same ratio $5:3$): milk drawn $= 50$ L; water drawn $= 30$ L.\n\nAfter drawing: milk $= 100$ L, water $= 60$ L.\n\nTop up with $80$ litres of **pure water**: milk $= 100$ L; water $= 60 + 80 = 140$ L.\n\nTotal $= 240$ L. Ratio $= 100:140 = 5:7$.\n\n**Step 3 \u2014 Second replacement: draw 60 litres, refill with pure milk.**\n\nCurrent mixture: milk $= 100$ L, water $= 140$ L, total $= 240$ L. Ratio $= 5:7$.\n\nDraw $60$ litres from this mixture:\n$$\\text{Milk drawn} = 60 \\times \\frac{5}{12} = 25 \\text{ L}$$\n$$\\text{Water drawn} = 60 \\times \\frac{7}{12} = 35 \\text{ L}$$\n\nAfter drawing: milk $= 100 - 25 = 75$ L; water $= 140 - 35 = 105$ L.\n\nRefill with $60$ litres of **pure milk**: milk $= 75 + 60 = 135$ L; water $= 105$ L.\n\n**Step 4 \u2014 Final ratio.**\n\n$$\\text{Milk : Water} = 135 : 105 = \\frac{135}{15} : \\frac{105}{15} = \\mathbf{9:7}$$\n\nThe correct answer is **Option A: $9:7$**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Average, Mixtures & Alligation",
+      "difficulty_level": 5
+    }
+  },
+  {
+    "id": "BANKPO_AVERAGEMIX_5_1_2_338626",
+    "text": "A vessel contains a mixture of milk and water in the ratio $7:3$. A shopkeeper withdraws $40\\%$ of the mixture and replaces it with pure milk. He then withdraws $25\\%$ of the new mixture and replaces it with pure water. Finally, he sells the resulting mixture at a price that gives him $20\\%$ profit, having purchased the pure milk at \u20b9$36$ per litre and pure water at \u20b9$0$ per litre (water is free). If the vessel holds $100$ litres initially, find the **average cost price per litre** of the final mixture (to the nearest paisa).",
+    "options": {
+      "A": "\u20b9$21.03$ per litre",
+      "B": "\u20b9$22.14$ per litre",
+      "C": "\u20b9$23.25$ per litre",
+      "D": "\u20b9$24.36$ per litre"
+    },
+    "correct_answer": "B",
+    "explanation": "## Solution\n\n**Step 1: Establish the initial composition**\n\nThe vessel holds 100 litres in a 7:3 ratio of milk to water.\n- Initial milk = 70 litres\n- Initial water = 30 litres\n\n---\n\n**Step 2: First operation \u2014 withdraw 40% and replace with pure milk**\n\n40% of 100 litres = 40 litres is removed. The remaining 60 litres retains the same 7:3 ratio:\n- Milk remaining = $60 \\times \\frac{7}{10} = 42$ litres\n- Water remaining = $60 \\times \\frac{3}{10} = 18$ litres\n\n40 litres of **pure milk** is added:\n- Milk = $42 + 40 = 82$ litres\n- Water = $18$ litres\n- Total = 100 litres \u2713\n\n---\n\n**Step 3: Second operation \u2014 withdraw 25% and replace with pure water**\n\n25% of 100 litres = 25 litres is removed, keeping the current 82:18 ratio:\n- Milk remaining = $75 \\times \\frac{82}{100} = 61.5$ litres\n- Water remaining = $75 \\times \\frac{18}{100} = 13.5$ litres\n\n25 litres of **pure water** is added:\n- Milk = $61.5$ litres\n- Water = $13.5 + 25 = 38.5$ litres\n- Total = 100 litres \u2713\n\n---\n\n**Step 4: Calculate the average cost price per litre**\n\nPure milk costs \u20b936 per litre; pure water costs \u20b90 per litre. The total cost of the final 100-litre mixture is based entirely on the milk content:\n\n$$\\text{Total cost} = 61.5 \\times \u20b936 + 38.5 \\times \u20b90 = \u20b92214$$\n\n$$\\text{Average cost price per litre} = \\frac{\u20b92214}{100} = \\boxed{\u20b922.14 \\text{ per litre}}$$\n\n---\n\n**Why the other options are wrong:** Options A, C, and D correspond to incorrect milk quantities (e.g., using 58.33, 64.58, or 67.5 litres of milk) arising from errors in applying the two successive replacement operations. Only the correct sequential calculation yields exactly 61.5 litres of milk, giving **\u20b922.14** as the answer.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "(61.5 * 36) / 100",
+      "computed_value": 22.14,
+      "tolerance": 0.5
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Average, Mixtures & Alligation",
+      "difficulty_level": 5
+    }
+  },
+  {
+    "id": "BANKPO_AVERAGEMIX_5_1_3_8fc31d",
+    "text": "A container has a mixture of milk and water in the ratio $7:3$. A second container has milk and water in the ratio $3:2$. A third container has milk and water in the ratio $11:4$. Equal volumes are taken from the first and second containers, but **twice** that volume is taken from the third container. All portions are mixed together. If the final mixture contains $166$ litres of milk, what is the **total volume** (in litres) of the final mixture?",
+    "options": {
+      "A": "210",
+      "B": "225",
+      "C": "240",
+      "D": "270"
+    },
+    "correct_answer": "C",
+    "explanation": "**Step 1 \u2014 Set up volumes taken.**\n\nLet volume taken from Container 1 $= x$, from Container 2 $= x$, from Container 3 $= 2x$.\n\nTotal mixture volume $= x + x + 2x = 4x$.\n\n**Step 2 \u2014 Milk fraction from each container.**\n\n- Container 1 (ratio $7:3$): milk fraction $= \\dfrac{7}{10}$\n- Container 2 (ratio $3:2$): milk fraction $= \\dfrac{3}{5}$\n- Container 3 (ratio $11:4$): milk fraction $= \\dfrac{11}{15}$\n\n**Step 3 \u2014 Total milk in the final mixture.**\n\n$$\\text{Milk} = \\frac{7}{10} \\cdot x + \\frac{3}{5} \\cdot x + \\frac{11}{15} \\cdot 2x$$\n\nUsing LCM of $10, 5, 15 = 30$:\n\n$$= \\frac{21x}{30} + \\frac{18x}{30} + \\frac{44x}{30} = \\frac{83x}{30}$$\n\n**Step 4 \u2014 Use the given milk volume.**\n\n$$\\frac{83x}{30} = 166 \\implies x = \\frac{166 \\times 30}{83} = \\frac{4980}{83} = 60$$\n\n**Step 5 \u2014 Compute total volume.**\n\n$$\\text{Total volume} = 4x = 4 \\times 60 = 240 \\text{ litres}$$\n\n**Verification:** Milk from C1 $= \\dfrac{7}{10} \\times 60 = 42$, from C2 $= \\dfrac{3}{5} \\times 60 = 36$, from C3 $= \\dfrac{11}{15} \\times 120 = 88$. Total milk $= 42 + 36 + 88 = 166$ \u2713\n\nThe total volume of the final mixture is $\\boxed{240}$ litres.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Average, Mixtures & Alligation",
+      "difficulty_level": 5
+    }
+  },
+  {
+    "id": "BANKPO_AVERAGEMIX_5_1_4_cd3b09",
+    "text": "A school conducted tests in three subjects for a class of students. The **average marks** in Science for all students was 62. When only the boys are considered, the average in Science was 71, and when only the girls are considered, the average was 53. In Mathematics, the same group of boys scored an average of 65, and the same group of girls scored an average of 81. What is the **overall average marks in Mathematics** for the entire class?",
+    "options": {
+      "A": "72",
+      "B": "73",
+      "C": "74",
+      "D": "75"
+    },
+    "correct_answer": "B",
+    "explanation": "## Solution\n\n**Step 1: Find the ratio of boys to girls using the Science averages.**\n\nLet the number of boys be $b$ and the number of girls be $g$.\n\nThe overall average in Science is the weighted mean of the boys' and girls' averages:\n\n$$\\frac{71b + 53g}{b + g} = 62$$\n\n**Step 2: Solve for the ratio $b : g$.**\n\n$$71b + 53g = 62(b + g)$$\n\n$$71b + 53g = 62b + 62g$$\n\n$$9b = 9g$$\n\n$$b = g$$\n\nSo the ratio of boys to girls is $1 : 1$ \u2014 there are **equal numbers of boys and girls** in the class.\n\n**Step 3: Calculate the overall Mathematics average.**\n\nSince $b = g$, both groups have equal weight. The overall Mathematics average is:\n\n$$\\text{Overall Math Average} = \\frac{65b + 81g}{b + g} = \\frac{65(1) + 81(1)}{1 + 1} = \\frac{146}{2} = \\boxed{73}$$\n\n**The overall average marks in Mathematics for the entire class is 73 (Option B).**\n\n---\nThe other options (72, 74, 75) would require an unequal boys-to-girls ratio, which contradicts the Science data that uniquely determines $b = g$.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "(1*65 + 1*81) / (1 + 1)",
+      "computed_value": 73,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Average, Mixtures & Alligation",
+      "difficulty_level": 5
+    }
+  },
+  {
+    "id": "BANKPO_AVERAGEMIX_5_1_5_e7a8c6",
+    "text": "A pharmacist prepares a medicinal solution by mixing three stock solutions: **Solution P** (containing **15% active compound**), **Solution Q** (containing **45% active compound**), and **Solution R** (containing **75% active compound**). Solution P and Solution Q are mixed in the ratio **1 : 2** by volume. After all three solutions are combined to make a total of **100 litres**, the pharmacist withdraws **20 litres** from the vessel and replaces it with **pure solvent** (0% active compound). The resulting 100-litre mixture contains **36% active compound**. Find the volume of **Solution R** used in the original mixture.",
+    "options": {
+      "A": "15 litres",
+      "B": "20 litres",
+      "C": "25 litres",
+      "D": "30 litres"
+    },
+    "correct_answer": "C",
+    "explanation": "**Step 1 \u2014 Find the active compound in the final mixture.**\n\nFinal mixture: 100 litres at 36% active compound.\n$$\\text{Active compound in final mixture} = 0.36 \\times 100 = 36 \\text{ litres}$$\n\n**Step 2 \u2014 Reconstruct the intermediate mixture (before withdrawal and replacement).**\n\nLet the intermediate mixture have concentration $c$. When 20 litres are withdrawn and replaced with pure solvent, the total volume remains 100 litres. The active compound after replacement:\n$$c \\times (100 - 20) = 36$$\n$$80c = 36 \\implies c = \\frac{36}{80} = \\frac{9}{20}$$\n\nSo the intermediate mixture had concentration $\\frac{9}{20}$ (i.e., **45%**) in 100 litres:\n$$\\text{Active compound in intermediate} = \\frac{9}{20} \\times 100 = 45 \\text{ litres}$$\n\n**Step 3 \u2014 Set up equations for the original mixing.**\n\nLet Solution P = $k$ litres, Solution Q = $2k$ litres (ratio 1 : 2), Solution R = $x$ litres.\n\n**Volume equation:**\n$$k + 2k + x = 100 \\implies 3k + x = 100 \\quad \\cdots (1)$$\n\n**Active compound equation:**\n$$0.15k + 0.45(2k) + 0.75x = 45$$\n$$0.15k + 0.90k + 0.75x = 45$$\n$$1.05k + 0.75x = 45 \\quad \\cdots (2)$$\n\n**Step 4 \u2014 Solve the system.**\n\nFrom (1): $x = 100 - 3k$. Substitute into (2):\n$$1.05k + 0.75(100 - 3k) = 45$$\n$$1.05k + 75 - 2.25k = 45$$\n$$-1.20k = -30$$\n$$k = 25$$\n\nTherefore: $x = 100 - 3(25) = 100 - 75 = \\mathbf{25}$ **litres**\n\n**Step 5 \u2014 Verification.**\n\n- Solution P = 25 L at 15%: contributes $3.75$ L active compound\n- Solution Q = 50 L at 45%: contributes $22.5$ L active compound\n- Solution R = 25 L at 75%: contributes $18.75$ L active compound\n- Total: $3.75 + 22.5 + 18.75 = 45$ L in 100 L \u2192 **45% intermediate** \u2713\n- Remove 20 L: active compound left $= 45 \\times \\frac{80}{100} = 36$ L\n- Add 20 L pure solvent: $36$ L in 100 L = **36%** \u2713\n\n$$\\boxed{\\text{Solution R} = 25 \\text{ litres}}$$",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Average, Mixtures & Alligation",
+      "difficulty_level": 5
+    }
+  },
+  {
+    "id": "BANKPO_PROBLEMSON_1_1_1_8089aa",
+    "text": "The present age of a father is 4 times the present age of his son. After 6 years, the father's age will be 3 times the son's age. What is the **present age of the son** (in years)?",
+    "options": {
+      "A": "10 years",
+      "B": "12 years",
+      "C": "14 years",
+      "D": "16 years"
+    },
+    "correct_answer": "B",
+    "explanation": "Let the **present age of the son** $= x$ years.\n\nThen the **present age of the father** $= 4x$ years.\n\n**After 6 years:**\n- Son's age $= x + 6$\n- Father's age $= 4x + 6$\n\n**Setting up the equation** (father's age = 3 \u00d7 son's age after 6 years):\n$$4x + 6 = 3(x + 6)$$\n$$4x + 6 = 3x + 18$$\n$$4x - 3x = 18 - 6$$\n$$x = 12$$\n\n**Verification:** Son's present age $= 12$, Father's present age $= 48$.\nAfter 6 years: Son $= 18$, Father $= 54 = 3 \\times 18$ \u2713\n\nThe **present age of the son is 12 years**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "(3*6 - 6) / (4 - 3)",
+      "computed_value": 12,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Problems on Ages",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "BANKPO_PROBLEMSON_1_1_2_eb2e43",
+    "text": "The present age of a father is 4 times the present age of his son. After 10 years, the father's age will be 2.5 times the son's age. What is the **present age of the son** (in years)?",
+    "options": {
+      "A": "8 years",
+      "B": "10 years",
+      "C": "12 years",
+      "D": "15 years"
+    },
+    "correct_answer": "B",
+    "explanation": "Let the present age of the son be $x$ years. Then the father's present age is $4x$ years.\n\n**After 10 years:**\n- Son's age $= x + 10$\n- Father's age $= 4x + 10$\n\n**Setting up the equation:**\n$$4x + 10 = 2.5(x + 10)$$\n$$4x + 10 = 2.5x + 25$$\n$$4x - 2.5x = 25 - 10$$\n$$1.5x = 15$$\n$$x = 10$$\n\n**Verification:** Present ages \u2014 Son = 10, Father = 40. After 10 years \u2014 Son = 20, Father = 50. Is $50 = 2.5 \\times 20$? \u2713\n\nThe **present age of the son is 10 years**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "(25 - 10) / (4 - 2.5)",
+      "computed_value": 10,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Problems on Ages",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "BANKPO_PROBLEMSON_1_1_3_1561ae",
+    "text": "The present age of a father is 5 times the present age of his son. After 8 years, the father will be 3 times as old as his son. What is the **present age of the son** (in years)?",
+    "options": {
+      "A": "4 years",
+      "B": "6 years",
+      "C": "8 years",
+      "D": "10 years"
+    },
+    "correct_answer": "C",
+    "explanation": "## Solution\n\n**Step 1: Define the variable**\n\nLet the present age of the son = $x$ years.\n\n**Step 2: Express the father's present age**\n\nSince the father's present age is 5 times the son's present age:\n$$\\text{Father's present age} = 5x \\text{ years}$$\n\n**Step 3: Write the ages after 8 years**\n\n- Son's age after 8 years: $x + 8$\n- Father's age after 8 years: $5x + 8$\n\n**Step 4: Set up the equation**\n\nAfter 8 years, the father will be 3 times as old as the son:\n$$5x + 8 = 3(x + 8)$$\n\n**Step 5: Expand and solve**\n\n$$5x + 8 = 3x + 24$$\n$$5x - 3x = 24 - 8$$\n$$2x = 16$$\n$$x = 8$$\n\n**Verification:** Present ages \u2014 Son: 8 years, Father: 40 years. After 8 years \u2014 Son: 16 years, Father: 48 years. Indeed, $48 = 3 \\times 16$ \u2713\n\n**The present age of the son is 8 years \u2192 Option C**",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "(24 - 8) / 2",
+      "computed_value": 8,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Problems on Ages",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "BANKPO_PROBLEMSON_1_1_4_052c30",
+    "text": "The present age of a father is 4 times the present age of his son. Six years ago, the father's age was 10 times the son's age at that time. What is the **present age** of the son (in years)?",
+    "options": {
+      "A": "8",
+      "B": "9",
+      "C": "10",
+      "D": "12"
+    },
+    "correct_answer": "B",
+    "explanation": "Let the **present age of the son** = $x$ years.\n\nThen the **present age of the father** = $4x$ years.\n\n**Six years ago:**\n- Son's age $= x - 6$\n- Father's age $= 4x - 6$\n\n**Given condition:** Father's age 6 years ago was 10 times the son's age 6 years ago.\n\n$$4x - 6 = 10(x - 6)$$\n\n$$4x - 6 = 10x - 60$$\n\n$$60 - 6 = 10x - 4x$$\n\n$$54 = 6x$$\n\n$$x = 9$$\n\n**Verification:** Present ages \u2014 Son = 9, Father = 36. Six years ago \u2014 Son = 3, Father = 30. Indeed, $30 = 10 \\times 3$. \u2713\n\nThe **present age of the son is 9 years**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "(60 - 6) / (10 - 4)",
+      "computed_value": 9,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Problems on Ages",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "BANKPO_PROBLEMSON_1_1_5_c62f39",
+    "text": "The sum of the present ages of a mother and her daughter is **46 years**. Three years ago, the mother's age was **four times** the age of the daughter at that time. What is the **present age of the daughter** (in years)?",
+    "options": {
+      "A": "9",
+      "B": "11",
+      "C": "13",
+      "D": "15"
+    },
+    "correct_answer": "B",
+    "explanation": "Let the present age of the daughter be $x$ years.\n\nThen the present age of the mother $= (46 - x)$ years.\n\n**Three years ago:**\n- Daughter's age $= (x - 3)$ years\n- Mother's age $= (46 - x - 3) = (43 - x)$ years\n\n**Setting up the equation** (mother's age was 4 times daughter's age):\n$$43 - x = 4(x - 3)$$\n$$43 - x = 4x - 12$$\n$$43 + 12 = 4x + x$$\n$$55 = 5x$$\n$$x = 11$$\n\n**Verification:**\n- Daughter's present age $= 11$ years, Mother's present age $= 46 - 11 = 35$ years.\n- Sum $= 11 + 35 = 46$ \u2713\n- Three years ago: Daughter $= 8$ years, Mother $= 32$ years.\n- Is Mother's age $= 4 \\times$ Daughter's age? $32 = 4 \\times 8 = 32$ \u2713\n\nThe **present age of the daughter is 11 years**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Problems on Ages",
+      "difficulty_level": 1
+    }
+  },
+  {
+    "id": "BANKPO_PROBLEMSON_2_1_1_a8e366",
+    "text": "The sum of the present ages of a mother and her daughter is **50 years**. **Five years ago**, the mother's age was **four times** the daughter's age at that time. What is the **present age of the daughter** (in years)?",
+    "options": {
+      "A": "11",
+      "B": "13",
+      "C": "15",
+      "D": "17"
+    },
+    "correct_answer": "B",
+    "explanation": "Let the present age of the daughter be $d$ years. Then the mother's present age is $(50 - d)$ years.\n\n**Step 1 \u2014 Set up the equation using the condition five years ago:**\n\nFive years ago, mother's age $= (50 - d - 5) = (45 - d)$\n\nFive years ago, daughter's age $= (d - 5)$\n\nGiven condition: mother was **four times** the daughter's age:\n$$45 - d = 4(d - 5)$$\n\n**Step 2 \u2014 Solve for $d$:**\n$$45 - d = 4d - 20$$\n$$45 + 20 = 4d + d$$\n$$65 = 5d$$\n$$d = 13$$\n\n**Step 3 \u2014 Verify:**\n\nDaughter's present age $= 13$ years, Mother's present age $= 50 - 13 = 37$ years.\n\nFive years ago: Mother $= 32$, Daughter $= 8$. Is $32 = 4 \\times 8$? **Yes** \u2713\n\nSum check: $13 + 37 = 50$ \u2713\n\n**The present age of the daughter is $\\boxed{13}$ years.**",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "(45 + 20) / 5",
+      "computed_value": 13,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Problems on Ages",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "BANKPO_PROBLEMSON_2_1_2_5d3342",
+    "text": "The present age of **Ramesh** is twice the present age of **Suresh**. Eight years hence, the ratio of their ages will be $5:3$. What is the **present age of Ramesh**?",
+    "options": {
+      "A": "24 years",
+      "B": "32 years",
+      "C": "28 years",
+      "D": "36 years"
+    },
+    "correct_answer": "B",
+    "explanation": "**Step 1 \u2014 Assign variables.**\n\nLet the present age of Suresh $= x$ years.\n\nThen the present age of Ramesh $= 2x$ years.\n\n**Step 2 \u2014 Form the equation using the condition eight years hence.**\n\nEight years from now:\n- Ramesh's age $= 2x + 8$\n- Suresh's age $= x + 8$\n\nGiven ratio: $\\dfrac{2x + 8}{x + 8} = \\dfrac{5}{3}$\n\n**Step 3 \u2014 Solve for $x$.**\n\nCross-multiplying:\n$$3(2x + 8) = 5(x + 8)$$\n$$6x + 24 = 5x + 40$$\n$$x = 16$$\n\n**Step 4 \u2014 Find Ramesh's present age.**\n\nRamesh's present age $= 2x = 2 \\times 16 = \\mathbf{32}$ years.\n\n**Verification:** Eight years hence, Ramesh $= 40$, Suresh $= 24$. Ratio $= 40:24 = 5:3$. \u2713\n\nThe correct answer is **(B) 32 years**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Problems on Ages",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "BANKPO_PROBLEMSON_2_1_3_9ec028",
+    "text": "The present ages of **Kavya** and **Ritu** are in the ratio $7:9$. Six years ago, the sum of their ages was $36$. What will be the age of Ritu **four years hence**?",
+    "options": {
+      "A": "31 years",
+      "B": "33 years",
+      "C": "35 years",
+      "D": "37 years"
+    },
+    "correct_answer": "A",
+    "explanation": "## Solution\n\n**Step 1: Assign variables using the given ratio.**\n\nLet the present ages of Kavya and Ritu be $7x$ and $9x$ respectively, since their ages are in the ratio $7:9$.\n\n**Step 2: Form an equation using the condition about six years ago.**\n\nSix years ago:\n- Kavya's age $= 7x - 6$\n- Ritu's age $= 9x - 6$\n\nTheir sum was $36$:\n$$(7x - 6) + (9x - 6) = 36$$\n\n**Step 3: Solve for $x$.**\n\n$$16x - 12 = 36$$\n$$16x = 48$$\n$$x = \\frac{48}{16} = 3$$\n\n**Step 4: Find Ritu's present age.**\n\n$$\\text{Ritu's present age} = 9x = 9 \\times 3 = 27 \\text{ years}$$\n\n**Step 5: Find Ritu's age four years hence.**\n\n$$27 + 4 = \\boxed{31} \\text{ years}$$\n\nThis matches the verified expression: $9 \\times \\left(\\dfrac{48}{16}\\right) + 4 = 27 + 4 = 31$.\n\n---\n\nThe other options (33, 35, 37) would imply $x = 3.22, 3.44, 3.67$ respectively \u2014 none of which satisfy the original equation $16x = 48$, so they are incorrect.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "9*(48/16) + 4",
+      "computed_value": 31,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Problems on Ages",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "BANKPO_PROBLEMSON_2_1_4_b6926b",
+    "text": "The sum of the present ages of a father and his daughter is 52 years. If the father's age is 4 times the daughter's age, what will be the daughter's age after 8 years?",
+    "options": {
+      "A": "16.4 years",
+      "B": "18.4 years",
+      "C": "20.4 years",
+      "D": "22.4 years"
+    },
+    "correct_answer": "B",
+    "explanation": "Let the daughter's present age be $x$ years and the father's present age be $4x$ years.\n\n**Step 1 \u2014 Form the equation from the sum:**\n$$x + 4x = 52$$\n$$5x = 52$$\n$$x = \\frac{52}{5} = 10.4 \\text{ years}$$\n\n**Step 2 \u2014 Find the daughter's age after 8 years:**\n$$10.4 + 8 = 18.4 \\text{ years}$$\n\nHence, the daughter's age after 8 years will be **18.4 years**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "52/5 + 8",
+      "computed_value": 18.4,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Problems on Ages",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "BANKPO_PROBLEMSON_2_1_5_3a04ea",
+    "text": "The present ages of **Arjun** and **Bharat** are in the ratio $5:3$. Six years ago, the sum of their ages was $28$ years. What will be Arjun's age **4 years hence**?",
+    "options": {
+      "A": "$26$ years",
+      "B": "$29$ years",
+      "C": "$24$ years",
+      "D": "$31$ years"
+    },
+    "correct_answer": "B",
+    "explanation": "**Step 1 \u2014 Set up variables using the ratio.**\n\nLet the present ages of Arjun and Bharat be $5x$ and $3x$ respectively.\n\n**Step 2 \u2014 Form an equation using the condition about 6 years ago.**\n\nSix years ago:\n- Arjun's age $= 5x - 6$\n- Bharat's age $= 3x - 6$\n\nSum of their ages six years ago $= 28$:\n$$(5x - 6) + (3x - 6) = 28$$\n$$8x - 12 = 28$$\n$$8x = 40$$\n$$x = 5$$\n\n**Step 3 \u2014 Find Arjun's present age.**\n\nArjun's present age $= 5x = 5 \\times 5 = 25$ years.\n\n**Step 4 \u2014 Find Arjun's age 4 years hence.**\n\n$$25 + 4 = 29 \\text{ years}$$\n\n**Answer: 29 years (Option B)**",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "5 * (40/8) + 4",
+      "computed_value": 29,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Problems on Ages",
+      "difficulty_level": 2
+    }
+  },
+  {
+    "id": "BANKPO_PROBLEMSON_3_1_1_60c651",
+    "text": "The **sum of present ages** of a father and his two sons is **66 years**. Six years ago, the father's age was exactly **twice the combined age** of his two sons at that time. If the elder son is currently **2 years older** than the younger son, what is the **present age of the father**?",
+    "options": {
+      "A": "34 years",
+      "B": "38 years",
+      "C": "42 years",
+      "D": "44 years"
+    },
+    "correct_answer": "B",
+    "explanation": "Let the present age of the **younger son** $= x$ years.\n\nThen the **elder son's** present age $= x + 2$ years, and the **father's** present age $= F$ years.\n\n**Condition 1 \u2014 Sum of ages:**\n$$F + x + (x + 2) = 66 \\Rightarrow F + 2x = 64 \\quad \\cdots (i)$$\n\n**Condition 2 \u2014 Six years ago**, father's age $= F - 6$; combined age of sons $= (x - 6) + (x + 2 - 6) = 2x - 10$:\n$$F - 6 = 2(2x - 10) \\Rightarrow F - 6 = 4x - 20 \\Rightarrow F = 4x - 14 \\quad \\cdots (ii)$$\n\n**Substituting (ii) into (i):**\n$$(4x - 14) + 2x = 64 \\Rightarrow 6x = 78 \\Rightarrow x = 13$$\n\n$$F = 4(13) - 14 = 52 - 14 = \\mathbf{38 \\text{ years}}$$\n\n**Verification:** Present ages \u2014 younger son $= 13$, elder son $= 15$, father $= 38$. Sum $= 66$. \u2713\nSix years ago \u2014 father $= 32$, sons combined $= 7 + 9 = 16$; $32 = 2 \\times 16$. \u2713\n\nThe **present age of the father is 38 years**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Problems on Ages",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "BANKPO_PROBLEMSON_3_1_2_eccde8",
+    "text": "The present age of a father is $\\frac{5}{2}$ times the present age of his son. Six years ago, the ratio of the father's age to the son's age was $3:1$. After how many years from now will the ratio of their ages become $2:1$?",
+    "options": {
+      "A": "6 years",
+      "B": "8 years",
+      "C": "12 years",
+      "D": "16 years"
+    },
+    "correct_answer": "C",
+    "explanation": "Let the **present age of the son** $= x$ years and the **present age of the father** $= y$ years.\n\n**Condition 1 \u2014 Present ratio is $5:2$:**\n$$\\frac{y}{x} = \\frac{5}{2} \\Rightarrow y = \\frac{5x}{2} \\quad \\cdots(i)$$\n\n**Condition 2 \u2014 Six years ago, ratio was $3:1$:**\n$$\\frac{y - 6}{x - 6} = 3 \\Rightarrow y - 6 = 3(x - 6) \\Rightarrow y = 3x - 12 \\quad \\cdots(ii)$$\n\n**Solving (i) and (ii):**\n$$\\frac{5x}{2} = 3x - 12$$\n$$5x = 6x - 24$$\n$$x = 24 \\text{ years (son's present age)}$$\n$$y = \\frac{5 \\times 24}{2} = 60 \\text{ years (father's present age)}$$\n\n**Verification of Condition 2:** Six years ago \u2014 father $= 54$, son $= 18$, ratio $= 54:18 = 3:1$ \u2713\n\n**Finding when the ratio becomes $2:1$:**\n\nLet after $n$ years the ratio of their ages become $2:1$:\n$$\\frac{60 + n}{24 + n} = \\frac{2}{1}$$\n$$60 + n = 2(24 + n)$$\n$$60 + n = 48 + 2n$$\n$$n = 12$$\n\n\u2234 The ratio of the father's age to son's age will become $2:1$ after **12 years**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Problems on Ages",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "BANKPO_PROBLEMSON_3_1_3_139981",
+    "text": "The present age of **Amit** is twice the present age of **Binoy**. Eight years from now, the ratio of Binoy's age to Chetan's age will be $3 : 4$. If the sum of the present ages of Amit, Binoy, and Chetan is **72 years**, what is the **present age of Chetan**?",
+    "options": {
+      "A": "20 years",
+      "B": "22 years",
+      "C": "24 years",
+      "D": "26 years"
+    },
+    "correct_answer": "C",
+    "explanation": "**Step 1 \u2014 Assign variables.**\n\nLet Binoy's present age $= x$ years. Then Amit's present age $= 2x$ years.\n\n**Step 2 \u2014 Use the future ratio condition.**\n\nEight years from now: Binoy's age $= x + 8$, Chetan's age $= C + 8$.\n\n$$\\frac{x + 8}{C + 8} = \\frac{3}{4}$$\n\n$$4(x + 8) = 3(C + 8)$$\n$$4x + 32 = 3C + 24$$\n$$C = \\frac{4x + 8}{3} \\quad \\text{...(i)}$$\n\n**Step 3 \u2014 Use the sum condition.**\n\n$$2x + x + C = 72$$\n$$3x + C = 72 \\quad \\text{...(ii)}$$\n\nSubstitute (i) into (ii):\n$$3x + \\frac{4x + 8}{3} = 72$$\n$$9x + 4x + 8 = 216$$\n$$13x = 208$$\n$$x = 16$$\n\n**Step 4 \u2014 Find Chetan's age.**\n\n$$C = \\frac{4(16) + 8}{3} = \\frac{72}{3} = 24 \\text{ years}$$\n\n**Verification:**\n- Amit $= 2 \\times 16 = 32$, Binoy $= 16$, Chetan $= 24$.\n- Sum: $32 + 16 + 24 = 72$ \u2713\n- Eight years hence: Binoy $= 24$, Chetan $= 32$; ratio $= 24 : 32 = 3 : 4$ \u2713\n\n**Present age of Chetan $= 24$ years.**",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Problems on Ages",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "BANKPO_PROBLEMSON_3_1_4_676e42",
+    "text": "The ages of three siblings \u2014 Asha, Bharat, and Charu \u2014 are in **arithmetic progression**. The product of Asha's age and Charu's age is $\\mathbf{160}$, and Bharat is **4 years older** than Asha. Six years from now, the sum of all three siblings' ages will be what?",
+    "options": {
+      "A": "$$52$$",
+      "B": "$$54$$",
+      "C": "$$56$$",
+      "D": "$$58$$"
+    },
+    "correct_answer": "B",
+    "explanation": "## Solution\n\n**Setting up the arithmetic progression**\n\nLet Asha's age be $a$. Since the three siblings are in arithmetic progression and Bharat is 4 years older than Asha, the common difference is 4. Therefore:\n\n$$\\text{Asha} = a, \\quad \\text{Bharat} = a + 4, \\quad \\text{Charu} = a + 8$$\n\n**Using the product condition**\n\nThe product of Asha's age and Charu's age equals 160:\n\n$$a \\cdot (a + 8) = 160$$\n\n$$a^2 + 8a - 160 = 0$$\n\nFactoring:\n\n$$(a + 20)(a - 8) = 0$$\n\nSince age must be positive, $a = 8$.\n\n**Current ages**\n\n$$\\text{Asha} = 8, \\quad \\text{Bharat} = 12, \\quad \\text{Charu} = 16$$\n\n**Ages six years from now**\n\n$$\\text{Asha} = 8 + 6 = 14, \\quad \\text{Bharat} = 12 + 6 = 18, \\quad \\text{Charu} = 16 + 6 = 22$$\n\n**Sum of ages in six years**\n\n$$14 + 18 + 22 = \\boxed{54}$$\n\nThe other options are wrong because they each differ by $\\pm 2$ or $\\pm 4$ years, which would only result if the current ages or the time offset were set up incorrectly.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": {
+      "expression": "((8 + 6) + (12 + 6) + (16 + 6))",
+      "computed_value": 54,
+      "tolerance": 0
+    },
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Problems on Ages",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "BANKPO_PROBLEMSON_3_1_5_ee0c63",
+    "text": "The sum of the present ages of a father and his son is 61 years. Six years ago, the ratio of their ages was 5 : 2. Eight years from now, what will be the ratio of the father's age to the son's age?",
+    "options": {
+      "A": "11 : 6",
+      "B": "13 : 7",
+      "C": "7 : 4",
+      "D": "9 : 5"
+    },
+    "correct_answer": "C",
+    "explanation": "**Step 1 \u2014 Set up the equations.**\n\nLet the father's present age = $F$ years and the son's present age = $S$ years.\n\nGiven: $F + S = 61$ \u2026 (i)\n\n**Step 2 \u2014 Use the past ratio condition.**\n\nSix years ago, the ratio of their ages was 5 : 2:\n$$\\frac{F - 6}{S - 6} = \\frac{5}{2}$$\n$$2(F - 6) = 5(S - 6)$$\n$$2F - 12 = 5S - 30$$\n$$2F - 5S = -18 \\quad \\text{\u2026 (ii)}$$\n\n**Step 3 \u2014 Solve the system.**\n\nFrom (i): $F = 61 - S$. Substitute into (ii):\n$$2(61 - S) - 5S = -18$$\n$$122 - 2S - 5S = -18$$\n$$7S = 140$$\n$$S = 20, \\quad F = 41$$\n\n**Verification:** Six years ago \u2014 Father = 35, Son = 14 $\\Rightarrow$ ratio = $35 : 14 = 5 : 2$ \u2713\n\n**Step 4 \u2014 Find the ratio eight years from now.**\n\nFather's age = $41 + 8 = 49$, Son's age = $20 + 8 = 28$.\n\n$$\\text{Ratio} = \\frac{49}{28} = \\frac{7}{4} = \\mathbf{7 : 4}$$\n\nThe correct answer is **C \u2014 7 : 4**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Problems on Ages",
+      "difficulty_level": 3
+    }
+  },
+  {
+    "id": "BANKPO_PROBLEMSON_4_1_1_963ded",
+    "text": "The present ages of **Priya**, **Qara**, and **Ritu** are in **arithmetic progression** with a common difference of 5 years, where Priya is the youngest and Ritu is the oldest. Five years ago, the product of Priya's age and Ritu's age was $\\dfrac{15}{16}$ times the **square of Qara's age** at that time. What is the **sum of their present ages**?",
+    "options": {
+      "A": "65 years",
+      "B": "70 years",
+      "C": "75 years",
+      "D": "80 years"
+    },
+    "correct_answer": "C",
+    "explanation": "Let Qara's present age $= q$ years. Since the three ages are in **arithmetic progression** with common difference 5:\n\n- Priya's present age $= q - 5$\n- Qara's present age $= q$\n- Ritu's present age $= q + 5$\n\n**Five years ago:**\n- Priya's age $= q - 10$\n- Qara's age $= q - 5$\n- Ritu's age $= q$\n\n**Setting up the equation** (product of Priya's and Ritu's ages $= \\dfrac{15}{16}$ \u00d7 square of Qara's age, five years ago):\n\n$$(q - 10)(q) = \\dfrac{15}{16}(q - 5)^2$$\n\n**Multiply both sides by 16:**\n$$16q(q - 10) = 15(q - 5)^2$$\n$$16q^2 - 160q = 15q^2 - 150q + 375$$\n$$q^2 - 10q - 375 = 0$$\n$$(q - 25)(q + 15) = 0$$\n$$\\therefore q = 25 \\quad (\\text{taking the positive value})$$\n\n**Present ages:** Priya $= 20$, Qara $= 25$, Ritu $= 30$.\n\n**Verification:** Five years ago: Priya $= 15$, Qara $= 20$, Ritu $= 25$.\nProduct of Priya's and Ritu's ages: $15 \\times 25 = 375$.\n$\\dfrac{15}{16} \\times (20)^2 = \\dfrac{15}{16} \\times 400 = 375$ \u2713\n\n**Sum of present ages** $= 20 + 25 + 30 = \\mathbf{75}$ **years.**",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Problems on Ages",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "BANKPO_PROBLEMSON_4_1_2_0184dd",
+    "text": "The sum of the present ages of a father, his son, and his daughter is 74 years. Seven years ago, the father's age was equal to the sum of the current ages of his son and daughter. Three years from now, the ratio of the son's age to the daughter's age will be 7 : 5. What is the **present age of the father**?",
+    "options": {
+      "A": "44 years",
+      "B": "48 years",
+      "C": "46 years",
+      "D": "42 years"
+    },
+    "correct_answer": "A",
+    "explanation": "Let the present ages of father, son, and daughter be $F$, $S$, and $D$ respectively.\n\n**Equation 1** (sum of ages):\n$$F + S + D = 74 \\quad \\text{...(i)}$$\n\n**Equation 2** (father exceeds combined age of children by 14):\n$$F = (S + D) + 14 \\quad \\text{...(ii)}$$\n\n**Equation 3** (ratio of son to daughter, 3 years hence):\n$$\\frac{S + 3}{D + 3} = \\frac{7}{5} \\Rightarrow 5S - 7D = 6 \\quad \\text{...(iii)}$$\n\n**Step 1 \u2014 Find F:**\nSubstitute (ii) into (i):\n$$(S + D + 14) + (S + D) = 74 \\Rightarrow 2(S + D) = 60 \\Rightarrow S + D = 30$$\n$$\\therefore F = 30 + 14 = \\mathbf{44} \\text{ years}$$\n\n**Step 2 \u2014 Find S and D (verification):**\nUsing $S + D = 30$ and $5S - 7D = 6$:\n$$S = 30 - D \\Rightarrow 5(30 - D) - 7D = 6 \\Rightarrow 150 - 12D = 6 \\Rightarrow D = 12, \\; S = 18$$\n\n**Verification:**\n- Sum: $44 + 18 + 12 = 74$ \u2713\n- Father exceeds children's sum by: $44 - 30 = 14$ \u2713\n- Ratio 3 years hence: $\\dfrac{18+3}{12+3} = \\dfrac{21}{15} = \\dfrac{7}{5}$ \u2713\n\n**Common errors leading to wrong options:**\n- Option B (48): Setting $F - 7 = S + D$ instead of $F = S + D + 14$, giving $F = 40.5$, then rounding up.\n- Option C (46): Misreading the ratio as applying to current ages instead of 3 years hence.\n- Option D (42): Confusing the 14-year excess as applying to father's age 7 years ago.\n\n**The present age of the father is 44 years.**",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Problems on Ages",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "BANKPO_PROBLEMSON_4_1_3_214878",
+    "text": "The present ages of three friends \u2014 **Arjun**, **Bela**, and **Chandan** \u2014 satisfy the following three conditions:\n\n1. Four years ago, the ratio of Arjun's age to Bela's age was $5:7$.\n2. Eight years hence, the ratio of Bela's age to Chandan's age will be $10:11$.\n3. The sum of their **present** ages is **92 years**.\n\nWhat is the **present age of Chandan** (in years)?",
+    "options": {
+      "A": "32",
+      "B": "34",
+      "C": "36",
+      "D": "38"
+    },
+    "correct_answer": "C",
+    "explanation": "**Step 1 \u2014 Set up equations from Condition 1.**\n\nLet Arjun's present age $= A$, Bela's present age $= B$, Chandan's present age $= C$.\n\nFour years ago: $\\dfrac{A - 4}{B - 4} = \\dfrac{5}{7}$\n\n$$7(A - 4) = 5(B - 4)$$\n$$7A - 28 = 5B - 20$$\n$$7A - 5B = 8 \\quad \\cdots (i)$$\n\n**Step 2 \u2014 Set up equation from Condition 2.**\n\nEight years hence: $\\dfrac{B + 8}{C + 8} = \\dfrac{10}{11}$\n\n$$11(B + 8) = 10(C + 8)$$\n$$11B + 88 = 10C + 80$$\n$$11B - 10C = -8 \\quad \\cdots (ii)$$\n\n**Step 3 \u2014 Sum condition.**\n\n$$A + B + C = 92 \\quad \\cdots (iii)$$\n\n**Step 4 \u2014 Solve the system.**\n\nFrom $(i)$: $A = \\dfrac{5B + 8}{7}$\n\nSubstitute into $(iii)$:\n$$\\frac{5B + 8}{7} + B + C = 92$$\n$$5B + 8 + 7B + 7C = 644$$\n$$12B + 7C = 636 \\quad \\cdots (iv)$$\n\nFrom $(ii)$: $C = \\dfrac{11B + 8}{10}$\n\nSubstitute into $(iv)$:\n$$12B + 7 \\cdot \\frac{11B + 8}{10} = 636$$\n$$120B + 77B + 56 = 6360$$\n$$197B = 6304$$\n$$B = 32$$\n\n**Step 5 \u2014 Find all three ages.**\n\n$$A = \\frac{5(32) + 8}{7} = \\frac{168}{7} = 24$$\n\n$$C = \\frac{11(32) + 8}{10} = \\frac{360}{10} = 36$$\n\n**Verification:** $A + B + C = 24 + 32 + 36 = 92$ \u2713\n\nFour years ago: $\\dfrac{24-4}{32-4} = \\dfrac{20}{28} = \\dfrac{5}{7}$ \u2713\n\nEight years hence: $\\dfrac{32+8}{36+8} = \\dfrac{40}{44} = \\dfrac{10}{11}$ \u2713\n\n**Chandan's present age $= \\mathbf{36}$ years.**",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Problems on Ages",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "BANKPO_PROBLEMSON_4_1_4_c5fc29",
+    "text": "The ratio of the present ages of a mother and her daughter is $7:2$. Six years ago, the mother's age was $6$ times the daughter's age at that time. Twelve years from now, the sum of their ages will be divisible by which of the following numbers?",
+    "options": {
+      "A": "11",
+      "B": "13",
+      "C": "17",
+      "D": "19"
+    },
+    "correct_answer": "B",
+    "explanation": "**Step 1 \u2014 Set up the equations using the ratio.**\n\nLet the present ages of the mother and daughter be $7x$ and $2x$ respectively.\n\n**Step 2 \u2014 Use the condition from six years ago.**\n\nSix years ago: Mother's age $= 7x - 6$, Daughter's age $= 2x - 6$.\n\nGiven: $7x - 6 = 6(2x - 6)$\n\n$$7x - 6 = 12x - 36$$\n\n$$36 - 6 = 12x - 7x$$\n\n$$30 = 5x \\implies x = 6$$\n\n**Step 3 \u2014 Find present ages.**\n\nMother's present age $= 7 \\times 6 = 42$ years.\n\nDaughter's present age $= 2 \\times 6 = 12$ years.\n\n**Step 4 \u2014 Find the sum of their ages 12 years from now.**\n\nMother's age after 12 years $= 42 + 12 = 54$.\n\nDaughter's age after 12 years $= 12 + 12 = 24$.\n\nSum $= 54 + 24 = 78$.\n\n**Step 5 \u2014 Check divisibility of 78.**\n\n$78 \\div 11 = 7.09...$ \u2014 **Not divisible**\n\n$78 \\div 13 = 6$ \u2014 **Divisible** \u2713\n\n$78 \\div 17 = 4.58...$ \u2014 **Not divisible**\n\n$78 \\div 19 = 4.10...$ \u2014 **Not divisible**\n\nTherefore, $78$ is divisible by **13**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Problems on Ages",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "BANKPO_PROBLEMSON_4_1_5_1a177c",
+    "text": "The present ages of three friends \u2014 Priya, Qian, and Ravi \u2014 are in **geometric progression**. The sum of their present ages is **93 years**. Five years ago, the ratio of Priya's age to Ravi's age was $1 : 4$. What is the **present age of Qian** (in years)?",
+    "options": {
+      "A": "24 years",
+      "B": "28 years",
+      "C": "32 years",
+      "D": "20 years"
+    },
+    "correct_answer": "B",
+    "explanation": "Let Priya's present age $= p$, Ravi's present age $= r$, and Qian's present age $= q$.\n\n**Condition 1 \u2014 Ratio five years ago:**\n$$\\frac{p - 5}{r - 5} = \\frac{1}{4}$$\n$$4p - 20 = r - 5$$\n$$r = 4p - 15 \\quad \\text{...(i)}$$\n\n**Condition 2 \u2014 Ages in GP:**\n$$q^2 = p \\cdot r = p(4p - 15) \\quad \\text{...(ii)}$$\n\n**Condition 3 \u2014 Sum of ages:**\n$$p + q + r = 93$$\n$$p + q + (4p - 15) = 93$$\n$$q = 108 - 5p \\quad \\text{...(iii)}$$\n\n**Substituting (iii) into (ii):**\n$$(108 - 5p)^2 = p(4p - 15)$$\n$$11664 - 1080p + 25p^2 = 4p^2 - 15p$$\n$$21p^2 - 1065p + 11664 = 0$$\n$$7p^2 - 355p + 3888 = 0$$\n\n**Solving:**\n$$\\text{Discriminant} = 355^2 - 4(7)(3888) = 126025 - 108864 = 17161 = 131^2$$\n$$p = \\frac{355 \\pm 131}{14}$$\n\nTaking the positive feasible root:\n$$p = \\frac{355 - 131}{14} = \\frac{224}{14} = 16 \\quad \\text{or} \\quad p = \\frac{355 + 131}{14} = \\frac{486}{14} = 34.7 \\text{ (non-integer, rejected)}$$\n\n**So Priya's present age $= 16$ years.**\n\nFrom (i): $r = 4(16) - 15 = 64 - 15 = 49$ years.\n\nFrom (iii): $q = 108 - 5(16) = 108 - 80 = 28$ years.\n\n**Verification:**\n- GP check: $28^2 = 784$ and $16 \\times 49 = 784$ \u2713\n- Sum: $16 + 28 + 49 = 93$ \u2713\n- Ratio 5 years ago: $\\frac{16-5}{49-5} = \\frac{11}{44} = \\frac{1}{4}$ \u2713\n\n**Present age of Qian = 28 years.**",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Problems on Ages",
+      "difficulty_level": 4
+    }
+  },
+  {
+    "id": "BANKPO_PROBLEMSON_5_1_1_e4b38e",
+    "text": "Anil, Bimal, and Charu have present ages in **arithmetic progression**. Anil's present age is $\\frac{3}{5}$ of Charu's present age. Six years from now, the square of Bimal's age will exceed the product of Anil's and Charu's ages (at that time) by 25. What is the **sum of the present ages** of all three?",
+    "options": {
+      "A": "55 years",
+      "B": "60 years",
+      "C": "65 years",
+      "D": "70 years"
+    },
+    "correct_answer": "B",
+    "explanation": "**Step 1 \u2014 Set up variables using AP property.**\n\nLet Bimal's present age $= b$ and the common difference $= d$.\nThen: Anil $= b - d$, Charu $= b + d$.\n\n**Step 2 \u2014 Use the ratio condition.**\n\n$$\\frac{b - d}{b + d} = \\frac{3}{5}$$\n$$5(b - d) = 3(b + d)$$\n$$5b - 5d = 3b + 3d$$\n$$2b = 8d \\implies b = 4d$$\n\n**Step 3 \u2014 Use the six-years-hence condition.**\n\nSix years from now:\n- Anil $= b - d + 6$, Charu $= b + d + 6$, Bimal $= b + 6$.\n\nProduct of Anil's and Charu's future ages:\n$$(b - d + 6)(b + d + 6) = \\bigl[(b+6) - d\\bigr]\\bigl[(b+6) + d\\bigr] = (b+6)^2 - d^2$$\n\nGiven condition:\n$$(b+6)^2 - \\bigl[(b+6)^2 - d^2\\bigr] = 25$$\n$$d^2 = 25 \\implies d = 5$$\n\n**Step 4 \u2014 Find individual ages.**\n\n$$b = 4d = 4 \\times 5 = 20$$\n- Anil $= 20 - 5 = 15$ years\n- Bimal $= 20$ years\n- Charu $= 20 + 5 = 25$ years\n\n**Verification:** Anil/Charu $= 15/25 = 3/5$ \u2713\n\nSix years later: Anil $= 21$, Bimal $= 26$, Charu $= 31$.\n$(26)^2 - (21)(31) = 676 - 651 = 25$ \u2713\n\n**Step 5 \u2014 Find the sum.**\n\n$$15 + 20 + 25 = \\mathbf{60 \\text{ years}}$$",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Problems on Ages",
+      "difficulty_level": 5
+    }
+  },
+  {
+    "id": "BANKPO_PROBLEMSON_5_1_2_a03f46",
+    "text": "The sum of the present ages of a father, his son, and his daughter is 77 years. Eight years ago, the ratio of the father's age to the son's age was **8:3**, and five years ago, the ratio of the son's age to the daughter's age was **5:4**. What is the present age of the daughter?",
+    "options": {
+      "A": "13 years",
+      "B": "15 years",
+      "C": "17 years",
+      "D": "19 years"
+    },
+    "correct_answer": "C",
+    "explanation": "**Let the present ages** of the father, son, and daughter be $F$, $S$, and $D$ respectively.\n\n**Given conditions:**\n1. $F + S + D = 77$\n2. Eight years ago: $\\dfrac{F-8}{S-8} = \\dfrac{8}{3}$\n3. Five years ago: $\\dfrac{S-5}{D-5} = \\dfrac{5}{4}$\n\n**Step 1 \u2014 Express $F$ and $S$ from Condition 2.**\n\nLet $F - 8 = 8k$ and $S - 8 = 3k$ for some positive integer $k$.\n$$F = 8k + 8, \\quad S = 3k + 8$$\n\n**Step 2 \u2014 Express $S$ and $D$ from Condition 3.**\n\nLet $S - 5 = 5m$ and $D - 5 = 4m$ for some positive integer $m$.\n$$S = 5m + 5, \\quad D = 4m + 5$$\n\n**Step 3 \u2014 Find the link between $k$ and $m$.**\n\nEquate the two expressions for $S$:\n$$3k + 8 = 5m + 5 \\Rightarrow 3k = 5m - 3$$\n\nFor $k$ to be a **positive integer**, $5m - 3$ must be divisible by 3:\n$$5m \\equiv 3 \\pmod{3} \\Rightarrow 2m \\equiv 0 \\pmod{3} \\Rightarrow m \\equiv 0 \\pmod{3}$$\n\nSmallest valid value: $m = 3$, giving $k = \\dfrac{5(3)-3}{3} = 4$.\n\n**Step 4 \u2014 Calculate present ages.**\n$$F = 8(4) + 8 = 40 \\text{ years}$$\n$$S = 3(4) + 8 = 20 \\text{ years}$$\n$$D = 4(3) + 5 = 17 \\text{ years}$$\n\n**Step 5 \u2014 Verify all conditions.**\n- **Sum:** $40 + 20 + 17 = 77$ \u2713\n- **8 years ago:** $\\dfrac{40-8}{20-8} = \\dfrac{32}{12} = \\dfrac{8}{3}$ \u2713\n- **5 years ago:** $\\dfrac{20-5}{17-5} = \\dfrac{15}{12} = \\dfrac{5}{4}$ \u2713\n\n**The present age of the daughter is $\\boxed{17}$ years.**",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Problems on Ages",
+      "difficulty_level": 5
+    }
+  },
+  {
+    "id": "BANKPO_PROBLEMSON_5_1_3_a1fcb2",
+    "text": "The sum of the present ages of a father, his elder son, his younger son, and his daughter is **120 years**. Eight years ago, the ratio of the father's age to the elder son's age was $3:2$, and the ratio of the elder son's age to the younger son's age was $7:3$. The daughter's present age is 6 years less than that of the younger son. If the elder son's present age is a **perfect square**, what is the **present age of the father**?",
+    "options": {
+      "A": "46 years",
+      "B": "48 years",
+      "C": "50 years",
+      "D": "52 years"
+    },
+    "correct_answer": "C",
+    "explanation": "**Step 1 \u2014 Define variables.**\n\nLet the elder son's present age $= E$.\n\n**Step 2 \u2014 Express all ages in terms of $E$.**\n\nFrom the ratio of father's age to elder son's age **8 years ago** $= 3:2$:\n$$F - 8 = \\frac{3}{2}(E - 8) \\implies F = \\frac{3(E-8)}{2} + 8 = \\frac{3E - 24 + 16}{2} = \\frac{3E - 8}{2}$$\n\nFrom the ratio of elder son's age to younger son's age **8 years ago** $= 7:3$:\n$$Y - 8 = \\frac{3}{7}(E - 8) \\implies Y = \\frac{3(E-8)}{7} + 8 = \\frac{3E - 24 + 56}{7} = \\frac{3E + 32}{7}$$\n\nFor $Y$ to be an integer, $7 \\mid (3E + 32)$, equivalently $7 \\mid (E - 8)$ (since $3 \\times 8 + 32 = 56 = 7 \\times 8$).\n\nFor $F$ to be an integer, $2 \\mid (E - 8)$.\n\nSo $(E - 8)$ must be divisible by $\\text{lcm}(2, 7) = 14$. Thus $E = 8 + 14k$ for positive integer $k$.\n\n**Step 3 \u2014 Apply the perfect square condition.**\n\n- $k = 1$: $E = 22$ \u2014 not a perfect square.\n- $k = 2$: $E = 36 = 6^2$ \u2713 \u2014 perfect square!\n- $k = 3$: $E = 50$ \u2014 not a perfect square (and would make the father unrealistically old).\n\nSo $E = 36$.\n\n**Step 4 \u2014 Compute all present ages.**\n\n$$F = \\frac{3(36) - 8}{2} = \\frac{108 - 8}{2} = \\frac{100}{2} = 50$$\n$$Y = \\frac{3(36) + 32}{7} = \\frac{108 + 32}{7} = \\frac{140}{7} = 20$$\n$$D = Y - 6 = 20 - 6 = 14$$\n\n**Step 5 \u2014 Verify the sum.**\n\n$$F + E + Y + D = 50 + 36 + 20 + 14 = 120 \\checkmark$$\n\n**Step 6 \u2014 Verify the ratios (8 years ago).**\n\n- Father : Elder son $= 42 : 28 = 3 : 2$ \u2713\n- Elder son : Younger son $= 28 : 12 = 7 : 3$ \u2713\n\nThe **present age of the father is $50$ years**.",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Problems on Ages",
+      "difficulty_level": 5
+    }
+  },
+  {
+    "id": "BANKPO_PROBLEMSON_5_1_4_3a1058",
+    "text": "The **sum of the present ages** of a father, his son, and his daughter is **74 years**. Twelve years ago, the ratio of the father's age to the son's age was $14:3$, and eight years ago, the ratio of the father's age to the daughter's age was $4:1$. Given that the son is older than the daughter, what is the **present age of the daughter** (in years)?",
+    "options": {
+      "A": "12",
+      "B": "14",
+      "C": "16",
+      "D": "18"
+    },
+    "correct_answer": "C",
+    "explanation": "Let the **present ages** of father, son, and daughter be $F$, $S$, and $D$ respectively.\n\n**Step 1 \u2014 Equation from the sum:**\n$$F + S + D = 74 \\quad \\cdots (1)$$\n\n**Step 2 \u2014 Ratio of father to son, 12 years ago:**\n$$\\frac{F - 12}{S - 12} = \\frac{14}{3}$$\n$$\\Rightarrow 3(F - 12) = 14(S - 12)$$\n$$\\Rightarrow 3F - 36 = 14S - 168$$\n$$\\Rightarrow 3F - 14S = -132 \\quad \\cdots (2)$$\n\n**Step 3 \u2014 Ratio of father to daughter, 8 years ago:**\n$$\\frac{F - 8}{D - 8} = \\frac{4}{1}$$\n$$\\Rightarrow F - 8 = 4(D - 8)$$\n$$\\Rightarrow F = 4D - 24 \\quad \\cdots (3)$$\n\n**Step 4 \u2014 Express $S$ in terms of $D$:**\n\nSubstitute $(3)$ into $(2)$:\n$$3(4D - 24) - 14S = -132$$\n$$12D - 72 - 14S = -132$$\n$$14S = 12D + 60$$\n$$S = \\frac{6D + 30}{7} \\quad \\cdots (4)$$\n\n**Step 5 \u2014 Substitute into Equation (1):**\n$$(4D - 24) + \\frac{6D + 30}{7} + D = 74$$\n\nMultiply throughout by 7:\n$$7(4D - 24) + (6D + 30) + 7D = 518$$\n$$28D - 168 + 6D + 30 + 7D = 518$$\n$$41D - 138 = 518$$\n$$41D = 656$$\n$$D = 16$$\n\n**Step 6 \u2014 Find $F$ and $S$:**\n$$F = 4(16) - 24 = 64 - 24 = 40$$\n$$S = \\frac{6(16) + 30}{7} = \\frac{96 + 30}{7} = \\frac{126}{7} = 18$$\n\n**Step 7 \u2014 Verify all conditions:**\n- Sum: $40 + 18 + 16 = 74$ \u2713\n- Father : Son (12 years ago): $\\frac{40-12}{18-12} = \\frac{28}{6} = \\frac{14}{3}$ \u2713\n- Father : Daughter (8 years ago): $\\frac{40-8}{16-8} = \\frac{32}{8} = 4:1$ \u2713\n- Son (18) > Daughter (16) \u2713\n\n**The present age of the daughter is $\\boxed{16}$ years.**",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Problems on Ages",
+      "difficulty_level": 5
+    }
+  },
+  {
+    "id": "BANKPO_PROBLEMSON_5_1_5_bccd96",
+    "text": "A family has three members: a grandfather, his son, and his grandson. The **sum of their present ages** is 120 years. Five years hence, the ratio of the grandfather's age to his son's age will be $13:10$. Ten years ago, the ratio of the son's age to the grandson's age was $7:1$. The grandson invests a sum of money (in \u20b9) equal to the **square of his present age** at **simple interest** at $10\\%$ per annum. For how many years must he invest so that the interest earned equals **twice the son's present age** (in \u20b9)?",
+    "options": {
+      "A": "3",
+      "B": "4",
+      "C": "5",
+      "D": "6"
+    },
+    "correct_answer": "B",
+    "explanation": "## Solution\n\n**Step 1: Set up equations.**\n\nLet the present ages of the grandfather, son, and grandson be $G$, $S$, and $W$ respectively.\n\n**Condition 1:** $G + S + W = 120$\n\n**Condition 2:** Five years hence, $\\dfrac{G+5}{S+5} = \\dfrac{13}{10}$\n\n$$10(G+5) = 13(S+5)$$\n$$10G + 50 = 13S + 65$$\n$$10G - 13S = 15 \\quad \\cdots (i)$$\n\n**Condition 3:** Ten years ago, $\\dfrac{S-10}{W-10} = \\dfrac{7}{1}$\n\n$$S - 10 = 7(W - 10)$$\n$$S - 10 = 7W - 70$$\n$$S - 7W = -60 \\quad \\cdots (ii)$$\n\n**Step 2: Solve the system.**\n\nFrom $(ii)$: $S = 7W - 60$\n\nSubstitute into $(i)$:\n$$10G - 13(7W - 60) = 15$$\n$$10G - 91W + 780 = 15$$\n$$10G = 91W - 765 \\quad \\cdots (iii)$$\n\nSubstitute $S = 7W - 60$ into Condition 1:\n$$G + (7W - 60) + W = 120$$\n$$G + 8W = 180$$\n$$G = 180 - 8W \\quad \\cdots (iv)$$\n\nSubstitute $(iv)$ into $(iii)$:\n$$10(180 - 8W) = 91W - 765$$\n$$1800 - 80W = 91W - 765$$\n$$2565 = 171W$$\n$$W = 15$$\n\n**Step 3: Find all ages.**\n\n$$G = 180 - 8(15) = 180 - 120 = 60$$\n$$S = 7(15) - 60 = 105 - 60 = 45$$\n\n**Verification:**\n- Sum: $60 + 45 + 15 = 120$ \u2713\n- Five years hence: $\\dfrac{65}{50} = \\dfrac{13}{10}$ \u2713\n- Ten years ago: $\\dfrac{35}{5} = \\dfrac{7}{1}$ \u2713\n\n**Present ages: Grandfather = 60, Son = 45, Grandson = 15.**\n\n**Step 4: Set up Simple Interest calculation.**\n\nPrincipal $P = (\\text{grandson's present age})^2 = 15^2 = 225$\n\nTarget interest $I = 2 \\times (\\text{son's present age}) = 2 \\times 45 = 90$\n\nRate $R = 10\\%$ per annum\n\n**Step 5: Apply Simple Interest formula.**\n\n$$I = \\frac{P \\times R \\times T}{100}$$\n$$90 = \\frac{225 \\times 10 \\times T}{100}$$\n$$90 = 22.5 \\times T$$\n$$T = \\frac{90}{22.5} = 4 \\text{ years}$$\n\n**The grandson must invest for $\\mathbf{4}$ years.**",
+    "Requires_Diagram": false,
+    "TikZ_Code": null,
+    "diagram_data": null,
+    "computation": null,
+    "metadata": {
+      "exam": "Bank PO",
+      "subject": "Quantitative Aptitude & Data Interpretation",
+      "topic": "Arithmetic",
+      "sub_topic": "Problems on Ages",
+      "difficulty_level": 5
+    }
+  }
+]

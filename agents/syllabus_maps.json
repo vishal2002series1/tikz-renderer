@@ -1,171 +1,796 @@
 {
   "UPSC CSE Prelims": {
-    "General Studies Paper 1 (GS-1)": {
-      "Current Events": [
-        "National Government Schemes & Programmes",
-        "Acts, Bills & Amendments",
-        "Supreme Court & High Court Judgements",
-        "International Organisations & their Initiatives",
-        "Global Indices, Reports & Summits",
-        "Bilateral & Multilateral Relations",
-        "Persons, Places & Species in News",
-        "Awards & Honours"
+    "Current Events": {
+      "National Government Schemes & Programmes": [
+        "Poverty Alleviation & Employment Schemes",
+        "Health & Women Development Programmes",
+        "Agriculture & Rural Development Initiatives",
+        "Digital India & Infrastructure Schemes"
       ],
-      "History of India": [
-        "Indus Valley Civilisation",
-        "Vedic Age & Mahajanapadas",
-        "Buddhism & Jainism",
-        "Mauryan & Post-Mauryan Empires",
-        "Gupta Empire & Post-Gupta Period",
-        "South Indian Kingdoms (Chola, Pandya, Chera)",
-        "Delhi Sultanate",
-        "Mughal Empire",
-        "Bhakti & Sufi Movements",
-        "Maratha Empire",
-        "Advent of European Powers",
-        "British Conquest & Economic Impact",
-        "Social & Religious Reform Movements",
-        "Revolt of 1857",
-        "Rise of Indian Nationalism & INC",
-        "Gandhian Movements (Non-Cooperation, Civil Disobedience, Quit India)",
-        "Revolutionary Nationalism (INA, Bhagat Singh)",
-        "Constitutional Developments (1919, 1935 Acts)",
-        "Partition & Independence"
+      "Acts, Bills & Amendments": [
+        "Recent Constitutional Amendments",
+        "Key Parliamentary Bills",
+        "Draft Policies in Public Domain",
+        "State Specific Significant Legislations"
       ],
-      "Art & Culture": [
-        "Classical Dance Forms (Bharatanatyam, Kathak, Odissi, etc.)",
-        "Hindustani & Carnatic Music",
-        "Indian Painting Traditions (Madhubani, Warli, Miniature, etc.)",
-        "Temple Architecture (Nagara, Dravida, Vesara)",
-        "Sculpture Traditions (Gandhara, Mathura, Amaravati)",
-        "Languages & Literature of India",
-        "Fairs & Festivals",
-        "Indian Textiles & GI-tagged Products",
-        "UNESCO Intangible Cultural Heritage from India",
-        "Indian Philosophy (Orthodox Schools, Buddhism, Jainism)"
+      "Supreme Court & High Court Judgements": [
+        "Constitutional Bench Decisions",
+        "Environment & Rights-Based Judgements",
+        "Tribunal Orders & Judicial Reviews",
+        "Election Commission & Political Rulings"
       ],
-      "Indian Geography": [
-        "Physiographic Divisions of India",
-        "Himalayan & Peninsular Rivers",
-        "Indian Climate & Monsoon Mechanism",
-        "Soils of India",
-        "Natural Vegetation & Biodiversity Hotspots",
-        "Agriculture – Crops, Irrigation, Green Revolution",
-        "Major Industries & their Location",
-        "Transport – Roads, Railways, Ports, Airways",
-        "India's International Boundaries & Neighbours"
+      "International Organisations & their Initiatives": [
+        "UN & its Agencies (WHO, UNESCO, etc.)",
+        "Economic Bodies (IMF, World Bank, WTO)",
+        "Regional Groupings (ASEAN, SAARC, EU)",
+        "Environmental Coalitions (UNEP, IUCN)"
       ],
-      "World Geography": [
-        "Interior of the Earth & Plate Tectonics",
-        "Rocks, Earthquakes & Volcanoes",
-        "Geomorphic Processes & Landforms (Fluvial, Glacial, Aeolian, Coastal)",
-        "Atmosphere – Pressure Belts, Wind Systems & Cyclones",
-        "World Climate Classification",
-        "Ocean Currents, Tides & Salinity",
-        "Major World Mountain Ranges, Rivers & Lakes",
-        "Important Straits, Seas & Water Bodies",
-        "Major Continents – Physical & Economic Features"
+      "Global Indices, Reports & Summits": [
+        "Human Development & Economic Indices",
+        "Democracy & Freedom Reports",
+        "Climate Change & Environmental Rankings",
+        "G20, BRICS, & COP Summits"
       ],
-      "Indian Polity": [
-        "Preamble, Salient Features & Schedules",
-        "Fundamental Rights (Articles 12–35)",
-        "Directive Principles & Fundamental Duties",
-        "President, Vice President & Council of Ministers",
-        "Parliament – Lok Sabha & Rajya Sabha",
-        "Supreme Court & Judicial Review",
-        "Governor, Chief Minister & State Legislature",
-        "Panchayati Raj (73rd Amendment) & Urban Local Bodies (74th Amendment)",
-        "Constitutional & Statutory Bodies (ECI, CAG, UPSC, Finance Commission, NHRC, CIC, NGT)",
-        "Emergency Provisions (Articles 352, 356, 360)",
-        "Centre-State Relations & Federalism",
-        "Key Constitutional Amendments"
+      "Bilateral & Multilateral Relations": [
+        "India's Neighborhood First Policy",
+        "Strategic Partnerships (US, Russia, France)",
+        "Indo-Pacific & Quad Developments",
+        "Trade & Defense Agreements"
       ],
-      "Economy & Social Development": [
-        "GDP, GNP, National Income Accounting",
-        "Inflation – Types, Measurement (WPI, CPI)",
-        "Monetary Policy – RBI Instruments (Repo, CRR, SLR, OMO)",
-        "Fiscal Policy, Union Budget & Government Expenditure",
-        "Balance of Payments & Foreign Exchange",
-        "Agricultural Sector – MSP, APMC, e-NAM, Crop Insurance",
-        "Five Year Plans, NITI Aayog & Atmanirbhar Bharat",
-        "Banking Sector – NPAs, IBC, Payment Banks",
-        "Capital Markets, SEBI & Insurance",
-        "Poverty Measurement & Alleviation Programmes (MGNREGA, PMAY)",
-        "Sustainable Development Goals (SDGs)",
-        "Social Sector Schemes (Ayushman Bharat, NEP 2020, Swachh Bharat, Jal Jeevan Mission)",
-        "International Economic Institutions (IMF, World Bank, WTO, ADB, NDB, AIIB)"
+      "Persons, Places & Species in News": [
+        "Geopolitical Conflict Zones",
+        "Newly Discovered/Endangered Species",
+        "Key Political & Historical Figures in News",
+        "GI Tags & Heritage Sites"
       ],
-      "Environment & Ecology": [
-        "Ecosystem Structure, Food Chains & Energy Flow",
-        "Biogeochemical Cycles (Carbon, Nitrogen, Phosphorus)",
-        "Biodiversity – Levels, Hotspots, IUCN Categories",
-        "Threats to Biodiversity & Conservation (In-situ, Ex-situ)",
-        "International Conventions (CBD, Nagoya Protocol, CITES, Ramsar)",
-        "National Parks, Wildlife Sanctuaries & Biosphere Reserves",
-        "Environmental Pollution (Air, Water, Soil, Noise, Marine)",
-        "Solid & Hazardous Waste Management",
-        "Ozone Layer Depletion & Montreal Protocol",
-        "Climate Change – Causes, Impacts & IPCC Reports",
-        "UNFCCC, Paris Agreement, COPs & NDCs",
-        "Environmental Laws (EPA 1986, WPA 1972, FCA 1980)",
-        "National Green Tribunal (NGT)"
-      ],
-      "General Science": [
-        "Physics – Waves, Light, Electricity, Magnetism, Radioactivity, Nuclear Energy",
-        "Chemistry – Periodic Table, Acids & Bases, Polymers, Fertilisers, Drugs",
-        "Biology – Cell Division, Genetics, Human Physiology, Diseases & Vaccines",
-        "Biotechnology – GMOs, Recombinant DNA, CRISPR, Stem Cells",
-        "Space Technology – ISRO Missions (Chandrayaan, Gaganyaan, PSLV, GSLV)",
-        "Defence Technology – Missiles, Drones, Stealth",
-        "Artificial Intelligence, IoT & Blockchain",
-        "5G, Quantum Computing & Cybersecurity",
-        "Renewable Energy – Solar, Wind, Hydrogen, Battery Storage",
-        "Medical Technology – Genomics, Precision Medicine, Telemedicine"
+      "Awards & Honours": [
+        "Nobel Prizes",
+        "National Civilian & Gallantry Awards",
+        "Literature & Arts Awards",
+        "Environmental & Peace Prizes"
       ]
     },
-    "CSAT (Paper 2)": {
-      "Reading Comprehension": [
-        "Inference-Based Passages",
-        "Theme & Title Identification",
-        "Fact vs Opinion",
-        "Vocabulary in Context"
+    "History of India": {
+      "Indus Valley Civilisation": [
+        "Town Planning & Architecture",
+        "Economy, Trade & Agriculture",
+        "Seals, Script & Religion",
+        "Theories of Decline"
       ],
-      "Logical Reasoning & Analytical Ability": [
-        "Logical Sequences & Analogies",
-        "Syllogisms & Statements-Conclusions",
-        "Assumptions & Arguments",
-        "Courses of Action",
-        "Critical Reasoning"
+      "Vedic Age & Mahajanapadas": [
+        "Early vs Later Vedic Society & Economy",
+        "Vedic Literature & Philosophy",
+        "Rise of 16 Mahajanapadas",
+        "Magadhan Imperialism"
       ],
-      "Decision Making & Problem Solving": [
-        "Situational Judgement",
-        "Administrative Problem Solving",
-        "Ethical Dilemmas in Decisions"
+      "Buddhism & Jainism": [
+        "Origins & Core Teachings",
+        "Buddhist Councils & Sects (Mahayana, Hinayana)",
+        "Jain Tirthankaras & Philosophy",
+        "Contribution to Art & Literature"
       ],
-      "General Mental Ability": [
-        "Number Series & Letter Series",
-        "Coding & Decoding",
-        "Blood Relations",
-        "Direction & Distance",
-        "Calendars & Clocks"
+      "Mauryan & Post-Mauryan Empires": [
+        "Chandragupta & Ashokan Edicts",
+        "Mauryan Administration & Economy",
+        "Sungas, Kanvas, & Satavahanas",
+        "Foreign Invasions (Indo-Greeks, Sakas, Kushans)"
       ],
-      "Basic Numeracy": [
-        "Number System & Divisibility",
-        "Percentages, Profit & Loss",
-        "Ratio, Proportion & Mixtures",
-        "Time, Speed & Distance",
-        "Simple & Compound Interest",
-        "Data Sufficiency"
+      "Gupta Empire & Post-Gupta Period": [
+        "Samudragupta & Chandragupta II",
+        "Golden Age of Art, Science & Literature",
+        "Harshavardhana & Pushyabhutis",
+        "Vakatakas & Chalukyas"
       ],
-      "Data Interpretation": [
-        "Tables",
-        "Bar Graphs & Line Graphs",
-        "Pie Charts",
-        "Caselets"
+      "South Indian Kingdoms (Chola, Pandya, Chera)": [
+        "Sangam Age & Literature",
+        "Chola Naval Power & Local Self-Government",
+        "Pallava & Pandya Cultural Contributions",
+        "Trade Guilds & Economy"
+      ],
+      "Delhi Sultanate": [
+        "Slave, Khalji, Tughlaq, Sayyid, Lodi Dynasties",
+        "Iqta System & Administration",
+        "Market Reforms of Alauddin Khalji",
+        "Indo-Islamic Architecture"
+      ],
+      "Mughal Empire": [
+        "Babur to Aurangzeb: Political Expansion",
+        "Mansabdari & Jagirdari Systems",
+        "Cultural, Literary & Architectural Synthesis",
+        "Causes of Decline"
+      ],
+      "Bhakti & Sufi Movements": [
+        "Nirguna vs Saguna Schools",
+        "Key Saints (Kabir, Nanak, Mirabai)",
+        "Sufi Silsilas (Chishti, Suhrawardi)",
+        "Socio-Cultural Impact"
+      ],
+      "Maratha Empire": [
+        "Rise of Shivaji & Ashtapradhan System",
+        "Peshwa Administration",
+        "Third Battle of Panipat",
+        "Anglo-Maratha Wars"
+      ],
+      "Advent of European Powers": [
+        "Portuguese & Dutch Trading Centers",
+        "British East India Company vs French",
+        "Carnatic Wars",
+        "Establishment of British Supremacy"
+      ],
+      "British Conquest & Economic Impact": [
+        "Battles of Plassey & Buxar",
+        "Land Revenue Systems (Zamindari, Ryotwari)",
+        "Deindustrialisation & Drain of Wealth",
+        "Commercialisation of Agriculture"
+      ],
+      "Social & Religious Reform Movements": [
+        "Brahmo Samaj, Arya Samaj, Ramakrishna Mission",
+        "Aligarh Movement & Islamic Reforms",
+        "Lower Caste & Women's Upliftment Movements",
+        "Key Reformers (Raja Ram Mohan Roy, Phule)"
+      ],
+      "Revolt of 1857": [
+        "Political, Economic & Social Causes",
+        "Centers of Rebellion & Key Leaders",
+        "Reasons for Failure",
+        "Government of India Act 1858"
+      ],
+      "Rise of Indian Nationalism & INC": [
+        "Pre-Congress Political Associations",
+        "Formation of INC & Moderate Phase",
+        "Rise of Extremism & Surat Split",
+        "Swadeshi & Boycott Movement"
+      ],
+      "Gandhian Movements (Non-Cooperation, Civil Disobedience, Quit India)": [
+        "Early Satyagrahas (Champaran, Kheda, Ahmedabad)",
+        "Khilafat & Non-Cooperation Movement",
+        "Salt March & Civil Disobedience",
+        "Quit India Movement & August Kranti"
+      ],
+      "Revolutionary Nationalism (INA, Bhagat Singh)": [
+        "HRA, HSRA & Bhagat Singh",
+        "Bengal Revolutionaries & Surya Sen",
+        "Ghadar Party & Overseas Movements",
+        "Subhas Chandra Bose & Indian National Army"
+      ],
+      "Constitutional Developments (1919, 1935 Acts)": [
+        "Regulating & Charter Acts",
+        "Morley-Minto Reforms (1909)",
+        "Montagu-Chelmsford Reforms (1919)",
+        "Government of India Act 1935"
+      ],
+      "Partition & Independence": [
+        "August Offer & Cripps Mission",
+        "Cabinet Mission Plan",
+        "Mountbatten Plan & Partition",
+        "Integration of Princely States"
+      ]
+    },
+    "Art & Culture": {
+      "Classical Dance Forms (Bharatanatyam, Kathak, Odissi, etc.)": [
+        "Natya Shastra & Abhinaya Darpan",
+        "Rasa Theory & Mudras",
+        "Features of 8 Classical Dances",
+        "Folk Dances of India"
+      ],
+      "Hindustani & Carnatic Music": [
+        "Raga & Tala Systems",
+        "Gharanas in Hindustani Music",
+        "Trinity of Carnatic Music",
+        "Folk Music & Instruments"
+      ],
+      "Indian Painting Traditions (Madhubani, Warli, Miniature, etc.)": [
+        "Mural Paintings (Ajanta, Ellora)",
+        "Mughal & Rajput Miniature Schools",
+        "Pahari & Deccan Schools",
+        "Folk Paintings (Warli, Pattachitra)"
+      ],
+      "Temple Architecture (Nagara, Dravida, Vesara)": [
+        "Features of Nagara Style (Khajuraho, Odisha)",
+        "Features of Dravida Style (Chola, Pallava)",
+        "Features of Vesara Style (Chalukya, Hoysala)",
+        "Rock-cut Architecture & Cave Temples"
+      ],
+      "Sculpture Traditions (Gandhara, Mathura, Amaravati)": [
+        "Indo-Greek Influence in Gandhara",
+        "Indigenous Mathura School",
+        "Buddhist Themes in Amaravati",
+        "Bronze Sculptures (Chola Nataraja)"
+      ],
+      "Languages & Literature of India": [
+        "Classical Languages & Criteria",
+        "Vedic & Sanskrit Literature",
+        "Pali, Prakrit & Sangam Literature",
+        "Medieval & Modern Indian Literature"
+      ],
+      "Fairs & Festivals": [
+        "Harvest Festivals (Pongal, Bihu, Makar Sankranti)",
+        "Religious Congregations (Kumbh Mela)",
+        "Tribal Festivals (Hornbill, Medaram Jatra)",
+        "New Year Festivals across States"
+      ],
+      "Indian Textiles & GI-tagged Products": [
+        "Traditional Weaves (Banarasi, Kanjeevaram)",
+        "Embroidery Styles (Chikankari, Phulkari)",
+        "Handicrafts & Pottery",
+        "Recent Cultural GI Tags"
+      ],
+      "UNESCO Intangible Cultural Heritage from India": [
+        "Koodiyattam, Mudiyettu, Ramlila",
+        "Vedic Chanting & Yoga",
+        "Kumbh Mela & Durga Puja",
+        "Garba of Gujarat"
+      ],
+      "Indian Philosophy (Orthodox Schools, Buddhism, Jainism)": [
+        "Six Orthodox Schools (Shad Darshana)",
+        "Heterodox Schools (Charvaka, Ajivika)",
+        "Advaita Vedanta & Vishishtadvaita",
+        "Sufi & Bhakti Philosophies"
+      ]
+    },
+    "Indian Geography": {
+      "Physiographic Divisions of India": [
+        "The Himalayas & Northern Mountains",
+        "The Northern Plains",
+        "Peninsular Plateau & Central Highlands",
+        "Coastal Plains & Islands"
+      ],
+      "Himalayan & Peninsular Rivers": [
+        "Indus, Ganga & Brahmaputra Systems",
+        "East-Flowing Peninsular Rivers",
+        "West-Flowing Peninsular Rivers",
+        "River Interlinking Projects"
+      ],
+      "Indian Climate & Monsoon Mechanism": [
+        "Factors Influencing Indian Climate",
+        "Mechanism of Southwest & Retreating Monsoon",
+        "El Nino, La Nina & Indian Ocean Dipole (IOD)",
+        "Western Disturbances & Tropical Cyclones"
+      ],
+      "Soils of India": [
+        "ICAR Soil Classification",
+        "Alluvial, Black, Red & Laterite Soils",
+        "Soil Erosion & Degradation",
+        "Soil Conservation Techniques"
+      ],
+      "Natural Vegetation & Biodiversity Hotspots": [
+        "Forest Types (Evergreen, Deciduous, Thorny)",
+        "Mangroves & Coral Reefs",
+        "Endemic Species & Hotspots (Western Ghats, Himalayas)",
+        "Deforestation & Afforestation Programs"
+      ],
+      "Agriculture – Crops, Irrigation, Green Revolution": [
+        "Kharif, Rabi & Zaid Cropping Seasons",
+        "Major Food & Cash Crops",
+        "Types of Irrigation & Micro-Irrigation",
+        "Green, White, Blue & Yellow Revolutions"
+      ],
+      "Major Industries & their Location": [
+        "Iron & Steel, Cotton & Jute Textiles",
+        "Agro-based vs Mineral-based Industries",
+        "Industrial Corridors & SEZs",
+        "Factors Affecting Industrial Location"
+      ],
+      "Transport – Roads, Railways, Ports, Airways": [
+        "National Highways & Bharatmala",
+        "Dedicated Freight Corridors",
+        "Major vs Minor Ports (Sagarmala)",
+        "Inland Waterways & UDAN Scheme"
+      ],
+      "India's International Boundaries & Neighbours": [
+        "Border Disputes (China, Pakistan)",
+        "Cross-Border Infrastructure Projects",
+        "Maritime Boundaries & EEZ",
+        "Strategic Geopolitics in the Indian Ocean"
+      ]
+    },
+    "World Geography": {
+      "Interior of the Earth & Plate Tectonics": [
+        "Crust, Mantle, Core Characteristics",
+        "Continental Drift Theory",
+        "Seafloor Spreading",
+        "Convergent, Divergent & Transform Boundaries"
+      ],
+      "Rocks, Earthquakes & Volcanoes": [
+        "Igneous, Sedimentary, Metamorphic Rocks",
+        "Seismic Waves (P, S, L Waves)",
+        "Distribution of Earthquakes (Ring of Fire)",
+        "Types of Volcanoes & Landforms"
+      ],
+      "Geomorphic Processes & Landforms (Fluvial, Glacial, Aeolian, Coastal)": [
+        "Weathering & Mass Movement",
+        "River Erosion & Depositional Landforms",
+        "Glacial Landforms (Moraines, Fjords)",
+        "Wind & Wave Action Landforms"
+      ],
+      "Atmosphere – Pressure Belts, Wind Systems & Cyclones": [
+        "Structure & Composition of Atmosphere",
+        "Global Pressure Belts & Coriolis Force",
+        "Planetary, Seasonal & Local Winds",
+        "Tropical vs Extra-Tropical Cyclones"
+      ],
+      "World Climate Classification": [
+        "Koeppen's Climate Classification",
+        "Equatorial, Monsoon, Desert Climates",
+        "Mediterranean, Steppe, Taiga Climates",
+        "Climate Change & Shifting Zones"
+      ],
+      "Ocean Currents, Tides & Salinity": [
+        "Temperature & Density of Ocean Water",
+        "Major Warm & Cold Ocean Currents",
+        "Spring & Neap Tides",
+        "Factors Affecting Ocean Salinity"
+      ],
+      "Major World Mountain Ranges, Rivers & Lakes": [
+        "Andes, Rockies, Alps, Himalayas",
+        "Amazon, Nile, Mississippi, Yangtze Rivers",
+        "Great Lakes, Baikal, Victoria",
+        "Rift Valleys & Block Mountains"
+      ],
+      "Important Straits, Seas & Water Bodies": [
+        "Malacca, Hormuz, Bab-el-Mandeb Straits",
+        "South China Sea, Black Sea, Mediterranean",
+        "Suez & Panama Canals",
+        "Choke Points in Global Trade"
+      ],
+      "Major Continents – Physical & Economic Features": [
+        "Resource Distribution (Minerals, Oil)",
+        "Major Agricultural Belts of the World",
+        "Population Distribution & Density",
+        "Global Industrial Regions"
+      ]
+    },
+    "Indian Polity": {
+      "Preamble, Salient Features & Schedules": [
+        "Philosophy & Objectives of the Preamble",
+        "Federal & Unitary Features of the Constitution",
+        "Sources of the Constitution",
+        "12 Schedules & their Contents"
+      ],
+      "Fundamental Rights (Articles 12–35)": [
+        "Right to Equality & Freedom",
+        "Right Against Exploitation & Religious Freedom",
+        "Cultural, Educational & Constitutional Remedies",
+        "Reasonable Restrictions & Exceptions"
+      ],
+      "Directive Principles & Fundamental Duties": [
+        "Socialist, Gandhian & Liberal-Intellectual DPSP",
+        "Relationship between FRs and DPSP",
+        "Swaran Singh Committee & 42nd Amendment",
+        "Enforceability & Significance of Duties"
+      ],
+      "President, Vice President & Council of Ministers": [
+        "Election, Powers & Impeachment of President",
+        "Ordinance Making & Pardoning Powers",
+        "Role of Vice President",
+        "Prime Minister & Collective Responsibility"
+      ],
+      "Parliament – Lok Sabha & Rajya Sabha": [
+        "Composition & Qualification of Members",
+        "Legislative Procedures & Types of Bills",
+        "Parliamentary Committees & Sessions",
+        "Anti-Defection Law & Privilege Motions"
+      ],
+      "Supreme Court & Judicial Review": [
+        "Appointment & Removal of Judges (Collegium)",
+        "Original, Appellate & Advisory Jurisdiction",
+        "Judicial Activism vs Judicial Overreach",
+        "Public Interest Litigation (PIL)"
+      ],
+      "Governor, Chief Minister & State Legislature": [
+        "Discretionary Powers of the Governor",
+        "State Council of Ministers",
+        "Bicameral vs Unicameral Legislatures",
+        "Ordinances at the State Level"
+      ],
+      "Panchayati Raj (73rd Amendment) & Urban Local Bodies (74th Amendment)": [
+        "Balwant Rai & Ashok Mehta Committees",
+        "Gram Sabha & Three-Tier Structure",
+        "Municipalities & Metropolitan Planning",
+        "PESA Act 1996"
+      ],
+      "Constitutional & Statutory Bodies (ECI, CAG, UPSC, Finance Commission, NHRC, CIC, NGT)": [
+        "Election Commission & Electoral Reforms",
+        "Role of CAG in Accountability",
+        "Finance Commission Tax Devolution",
+        "Functions of Niti Aayog, NHRC, & NGT"
+      ],
+      "Emergency Provisions (Articles 352, 356, 360)": [
+        "National Emergency & Impact on FRs",
+        "President's Rule (State Emergency) & SR Bommai Case",
+        "Financial Emergency",
+        "Approval & Revocation Procedures"
+      ],
+      "Centre-State Relations & Federalism": [
+        "Legislative, Administrative & Financial Relations",
+        "Inter-State Council & Zonal Councils",
+        "Sarkaria & Punchhi Commission Recommendations",
+        "Issues in Cooperative Federalism"
+      ],
+      "Key Constitutional Amendments": [
+        "Procedure for Amendment (Article 368)",
+        "Basic Structure Doctrine (Kesavananda Bharati)",
+        "42nd, 44th, 73rd, 74th, 97th Amendments",
+        "Recent Amendments (101st to 106th)"
+      ]
+    },
+    "Economy & Social Development": {
+      "GDP, GNP, National Income Accounting": [
+        "Methods of Calculating National Income",
+        "Real vs Nominal GDP & GDP Deflator",
+        "Base Year & Gross Value Added (GVA)",
+        "Limitations of GDP as a Welfare Measure"
+      ],
+      "Inflation – Types, Measurement (WPI, CPI)": [
+        "Demand-Pull vs Cost-Push Inflation",
+        "Core vs Headline Inflation",
+        "CPI & WPI Basket and Weights",
+        "Impact of Inflation on Economy"
+      ],
+      "Monetary Policy – RBI Instruments (Repo, CRR, SLR, OMO)": [
+        "Monetary Policy Committee (MPC) Mandate",
+        "Quantitative Tools (Liquidity Adjustment Facility)",
+        "Qualitative Tools (Margin Requirements)",
+        "Monetary Policy Transmission"
+      ],
+      "Fiscal Policy, Union Budget & Government Expenditure": [
+        "Revenue Receipts vs Capital Receipts",
+        "Fiscal, Revenue, and Primary Deficits",
+        "FRBM Act & Debt-to-GDP Ratio",
+        "Taxation (Direct, Indirect, GST Framework)"
+      ],
+      "Balance of Payments & Foreign Exchange": [
+        "Current Account vs Capital Account",
+        "FDI vs FPI/FII",
+        "Exchange Rate Determination (Floating vs Managed Float)",
+        "Forex Reserves & Convertibility"
+      ],
+      "Agricultural Sector – MSP, APMC, e-NAM, Crop Insurance": [
+        "Commission for Agricultural Costs and Prices (CACP)",
+        "Agricultural Subsidies & WTO Issues",
+        "PM-KISAN & PMFBY",
+        "Food Security & Public Distribution System (PDS)"
+      ],
+      "Five Year Plans, NITI Aayog & Atmanirbhar Bharat": [
+        "Evolution of Economic Planning",
+        "NITI Aayog Structure & Indices",
+        "Make in India & PLI Schemes",
+        "Privatisation & National Monetisation Pipeline"
+      ],
+      "Banking Sector – NPAs, IBC, Payment Banks": [
+        "Non-Performing Assets & Provisioning",
+        "Insolvency and Bankruptcy Code (IBC) & Bad Banks",
+        "Basel Norms & Capital Adequacy Ratio",
+        "Digital Banking (UPI, CBDC, Fintech)"
+      ],
+      "Capital Markets, SEBI & Insurance": [
+        "Primary vs Secondary Markets",
+        "Derivatives, Bonds, and Mutual Funds",
+        "Role of SEBI in Market Regulation",
+        "Insurance Penetration & IRDAI"
+      ],
+      "Poverty Measurement & Alleviation Programmes (MGNREGA, PMAY)": [
+        "Tendulkar & Rangarajan Committees",
+        "Multidimensional Poverty Index (MPI)",
+        "Employment Generation Schemes",
+        "Universal Basic Income Debate"
+      ],
+      "Sustainable Development Goals (SDGs)": [
+        "17 Global Goals & Targets",
+        "India's Progress & NITI Aayog SDG Index",
+        "Green Finance & Sovereign Green Bonds",
+        "ESG (Environmental, Social, Governance) Criteria"
+      ],
+      "Social Sector Schemes (Ayushman Bharat, NEP 2020, Swachh Bharat, Jal Jeevan Mission)": [
+        "National Health Mission & Insurance",
+        "Education Policies & Skilling India",
+        "Sanitation & Rural Water Supply",
+        "Women Empowerment Schemes (Beti Bachao Beti Padhao)"
+      ],
+      "International Economic Institutions (IMF, World Bank, WTO, ADB, NDB, AIIB)": [
+        "IMF Quotas & Special Drawing Rights (SDR)",
+        "World Bank Group Lending Modalities",
+        "WTO Dispute Settlement & Subsidies (Amber, Blue, Green Boxes)",
+        "BRICS Bank & Asian Infrastructure Funding"
+      ]
+    },
+    "Environment & Ecology": {
+      "Ecosystem Structure, Food Chains & Energy Flow": [
+        "Components of Ecosystem (Biotic & Abiotic)",
+        "Food Web, Trophic Levels & Ecological Pyramids",
+        "Ecological Succession",
+        "Ecotone & Edge Effect"
+      ],
+      "Biogeochemical Cycles (Carbon, Nitrogen, Phosphorus)": [
+        "Gaseous vs Sedimentary Cycles",
+        "Nitrogen Fixation & Denitrification",
+        "Carbon Sequestration & Sinks",
+        "Human Impact on Nutrient Cycles"
+      ],
+      "Biodiversity – Levels, Hotspots, IUCN Categories": [
+        "Genetic, Species & Ecosystem Diversity",
+        "Criteria for Biodiversity Hotspots",
+        "IUCN Red List Data (Extinct, CR, EN, VU)",
+        "Endemism & Keystone Species"
+      ],
+      "Threats to Biodiversity & Conservation (In-situ, Ex-situ)": [
+        "Habitat Loss, Poaching & Invasive Species",
+        "In-situ: Sanctuaries, National Parks, Reserves",
+        "Ex-situ: Zoos, Seed Banks, Cryopreservation",
+        "Project Tiger, Project Elephant & Rhino Vision"
+      ],
+      "International Conventions (CBD, Nagoya Protocol, CITES, Ramsar)": [
+        "Convention on Biological Diversity & Protocols (Cartagena, Nagoya)",
+        "CITES Appendices & Wildlife Trade",
+        "Ramsar Convention on Wetlands (Montreux Record)",
+        "Bonn Convention (Migratory Species)"
+      ],
+      "National Parks, Wildlife Sanctuaries & Biosphere Reserves": [
+        "Man and Biosphere (MAB) Programme",
+        "Eco-Sensitive Zones",
+        "Marine Protected Areas",
+        "Important Protected Areas in News"
+      ],
+      "Environmental Pollution (Air, Water, Soil, Noise, Marine)": [
+        "Air Quality Index (AQI) & Smog",
+        "Eutrophication, BOD & COD",
+        "Heavy Metal Toxicity (Minamata, Itai-Itai)",
+        "Microplastics & Ocean Acidification"
+      ],
+      "Solid & Hazardous Waste Management": [
+        "E-Waste & Plastic Waste Rules",
+        "Biomedical Waste Segregation",
+        "Landfills & Incineration",
+        "Circular Economy & Extended Producer Responsibility (EPR)"
+      ],
+      "Ozone Layer Depletion & Montreal Protocol": [
+        "Mechanism of Ozone Depletion (CFCs, HFCs)",
+        "Ozone Hole & Polar Stratospheric Clouds",
+        "Vienna Convention & Montreal Protocol",
+        "Kigali Amendment"
+      ],
+      "Climate Change – Causes, Impacts & IPCC Reports": [
+        "Greenhouse Effect & Global Warming Potential",
+        "Melting Glaciers & Sea Level Rise",
+        "Extreme Weather Events",
+        "Key Findings of Latest IPCC Assessment"
+      ],
+      "UNFCCC, Paris Agreement, COPs & NDCs": [
+        "Evolution from Kyoto Protocol to Paris Agreement",
+        "Nationally Determined Contributions (NDCs)",
+        "Climate Finance & Loss and Damage Fund",
+        "Panchamrit Targets of India"
+      ],
+      "Environmental Laws (EPA 1986, WPA 1972, FCA 1980)": [
+        "Wildlife Protection Act Schedules",
+        "Environment Protection Act & EIA",
+        "Forest Conservation & Forest Rights Act",
+        "Biodiversity Act 2002"
+      ],
+      "National Green Tribunal (NGT)": [
+        "Structure & Jurisdiction of NGT",
+        "Principles of Natural Justice",
+        "Polluter Pays & Precautionary Principle",
+        "Key Environmental Judgements"
+      ]
+    },
+    "General Science": {
+      "Physics – Waves, Light, Electricity, Magnetism, Radioactivity, Nuclear Energy": [
+        "Electromagnetic Spectrum & Optics",
+        "Semiconductors & Superconductivity",
+        "Nuclear Fission, Fusion & Reactors",
+        "Everyday Applications of Physics"
+      ],
+      "Chemistry – Periodic Table, Acids & Bases, Polymers, Fertilisers, Drugs": [
+        "Chemical Bonding & Reactions",
+        "pH Scale & Everyday Chemicals",
+        "Plastics, Elastomers & Biopolymers",
+        "Nanomaterials & Carbon Allotropes (Graphene, Nanotubes)"
+      ],
+      "Biology – Cell Division, Genetics, Human Physiology, Diseases & Vaccines": [
+        "Plant vs Animal Cells (Mitosis, Meiosis)",
+        "Digestive, Respiratory & Nervous Systems",
+        "Endocrine System & Hormones",
+        "Viral, Bacterial, Zoonotic Diseases & mRNA Vaccines"
+      ],
+      "Biotechnology – GMOs, Recombinant DNA, CRISPR, Stem Cells": [
+        "Genetic Engineering & Transgenic Crops (Bt Cotton, Mustard)",
+        "CRISPR-Cas9 Gene Editing",
+        "Stem Cell Therapy & Cloning",
+        "Bioinformatics & DNA Profiling"
+      ],
+      "Space Technology – ISRO Missions (Chandrayaan, Gaganyaan, PSLV, GSLV)": [
+        "Launch Vehicles (PSLV, GSLV, LVM3, SSLV)",
+        "Satellite Orbits (LEO, MEO, GEO, Sun-Synchronous)",
+        "Mars, Lunar & Solar Missions (Aditya L1)",
+        "Space Debris & Kessler Syndrome"
+      ],
+      "Defence Technology – Missiles, Drones, Stealth": [
+        "IGMDP & Agni, Prithvi, BrahMos Missiles",
+        "Submarines & Aircraft Carriers (Project 75)",
+        "Unmanned Aerial Vehicles (UAVs) & Anti-Drone Tech",
+        "Ballistic Missile Defence Systems"
+      ],
+      "Artificial Intelligence, IoT & Blockchain": [
+        "Machine Learning vs Deep Learning",
+        "Generative AI & LLMs",
+        "Internet of Things (IoT) Applications",
+        "Cryptocurrencies & Distributed Ledger Tech"
+      ],
+      "5G, Quantum Computing & Cybersecurity": [
+        "Evolution of Telecom (4G, 5G, 6G) & Spectrum",
+        "Quantum Supremacy & Qubits",
+        "Malware, Ransomware, Phishing",
+        "Data Protection & CERT-In"
+      ],
+      "Renewable Energy – Solar, Wind, Hydrogen, Battery Storage": [
+        "Photovoltaic Cells & Solar Parks",
+        "Onshore vs Offshore Wind Energy",
+        "Green, Blue & Grey Hydrogen",
+        "Lithium-ion & Solid State Batteries"
+      ],
+      "Medical Technology – Genomics, Precision Medicine, Telemedicine": [
+        "Human Genome Project & Genome Sequencing",
+        "Targeted Therapy & Personalised Medicine",
+        "Wearable Health Devices",
+        "Robotic Surgery & AI in Diagnostics"
       ]
     }
   },
-
+  "CSAT": {
+    "Reading Comprehension": {
+      "Inference-Based Passages": [
+        "Identifying Implicit Premises",
+        "Drawing Logical Conclusions",
+        "Differentiating Between Fact and Inference",
+        "Author's Tone and Attitude"
+      ],
+      "Theme & Title Identification": [
+        "Identifying the Central Idea",
+        "Summarising Core Arguments",
+        "Selecting Appropriate Titles",
+        "Paragraph Structure Analysis"
+      ],
+      "Fact vs Opinion": [
+        "Objective Statements vs Subjective Claims",
+        "Evaluating Evidence",
+        "Recognising Bias and Fallacies"
+      ],
+      "Vocabulary in Context": [
+        "Contextual Meaning of Words",
+        "Idiomatic Expressions in Text",
+        "Synonyms and Antonyms (Passage Based)"
+      ]
+    },
+    "Logical Reasoning & Analytical Ability": {
+      "Logical Sequences & Analogies": [
+        "Word Analogies",
+        "Semantic Relationships",
+        "Alphanumeric Patterns"
+      ],
+      "Syllogisms & Statements-Conclusions": [
+        "Venn Diagram Method",
+        "Categorical Propositions",
+        "Deductive Validity"
+      ],
+      "Assumptions & Arguments": [
+        "Identifying Implicit Assumptions",
+        "Strong vs Weak Arguments",
+        "Evaluating Forcefulness of Arguments"
+      ],
+      "Courses of Action": [
+        "Problem-Solution Feasibility",
+        "Practical and Objective Decision Making"
+      ],
+      "Critical Reasoning": [
+        "Strengthening/Weakening Arguments",
+        "Cause and Effect Relationships",
+        "Identifying Paradoxes"
+      ]
+    },
+    "Decision Making & Problem Solving": {
+      "Situational Judgement": [
+        "Administrative Dilemmas",
+        "Prioritisation of Tasks",
+        "Crisis Management Scenarios"
+      ],
+      "Administrative Problem Solving": [
+        "Resource Allocation",
+        "Conflict Resolution in Public Service",
+        "Public Grievance Redressal"
+      ],
+      "Ethical Dilemmas in Decisions": [
+        "Balancing Rules vs Compassion",
+        "Integrity and Anti-Corruption Choices"
+      ]
+    },
+    "General Mental Ability": {
+      "Number Series & Letter Series": [
+        "Arithmetic and Geometric Progressions",
+        "Missing Term Identification",
+        "Wrong Term Identification"
+      ],
+      "Coding & Decoding": [
+        "Letter to Letter Coding",
+        "Letter to Number Coding",
+        "Substitution Coding"
+      ],
+      "Blood Relations": [
+        "Family Tree Construction",
+        "Coded Blood Relations",
+        "Pointing to a Photograph Questions"
+      ],
+      "Direction & Distance": [
+        "Pythagorean Theorem Applications",
+        "Shadow Based Concepts",
+        "Clockwise/Anti-Clockwise Turns"
+      ],
+      "Calendars & Clocks": [
+        "Finding Day of the Week",
+        "Leap Year Concepts",
+        "Angle Between Clock Hands",
+        "Faulty Clocks"
+      ]
+    },
+    "Basic Numeracy": {
+      "Number System & Divisibility": [
+        "Types of Numbers (Prime, Composite, etc.)",
+        "Divisibility Rules",
+        "Unit Digit and Remainder Theorem",
+        "LCM and HCF Applications"
+      ],
+      "Percentages, Profit & Loss": [
+        "Percentage Increase/Decrease",
+        "Successive Discounts",
+        "Marked Price vs Cost Price",
+        "Faulty Weights"
+      ],
+      "Ratio, Proportion & Mixtures": [
+        "Direct and Inverse Proportion",
+        "Partnership and Shares",
+        "Alligation Rule",
+        "Replacement in Mixtures"
+      ],
+      "Time, Speed & Distance": [
+        "Average Speed",
+        "Relative Speed (Trains passing)",
+        "Boats and Streams",
+        "Circular Motion"
+      ],
+      "Simple & Compound Interest": [
+        "Calculation of SI and CI",
+        "Difference between SI and CI",
+        "Installments",
+        "Population Growth/Depreciation"
+      ],
+      "Data Sufficiency": [
+        "Evaluating Statement Adequacy",
+        "Mathematical and Logical Data Requirements"
+      ]
+    },
+    "Data Interpretation": {
+      "Tables": [
+        "Missing Data Tables",
+        "Calculation Intensive Tables",
+        "Multi-variable Tabular Data"
+      ],
+      "Bar Graphs & Line Graphs": [
+        "Single and Double Bar Graphs",
+        "Trend Analysis via Line Graphs",
+        "Stacked Bar Charts"
+      ],
+      "Pie Charts": [
+        "Degree and Percentage Conversions",
+        "Double Pie Charts",
+        "Proportional Distribution"
+      ],
+      "Caselets": [
+        "Paragraph Based Data Extraction",
+        "Venn Diagram Based Caselets",
+        "Equation Based Caselets"
+      ]
+    }
+  },
   "UPSC CSE Mains": {
     "Essay Paper": {
       "Section A – Abstract & Philosophical Themes": [
@@ -349,7 +974,6 @@
       ]
     }
   },
-
   "SSC CGL": {
     "Tier 1 – General Intelligence & Reasoning": {
       "Verbal Reasoning": [
@@ -531,66 +1155,63 @@
       ]
     }
   },
-
-  "IBPS PO": {
-    "Preliminary Exam – Reasoning Ability": {
+  "Bank PO": {
+    "Reasoning Ability": {
       "Puzzles & Seating Arrangement": [
         "Linear Seating Arrangement (Single & Double Row)",
         "Circular & Rectangular Arrangement",
         "Floor-based Puzzles",
         "Box & Scheduling Puzzles",
-        "Month & Day-based Puzzles"
+        "Month & Day-based Puzzles",
+        "Complex Multi-Variable Puzzles"
       ],
-      "Logical Reasoning": [
+      "Logical & Verbal Reasoning": [
         "Syllogism (With & Without Possibility)",
-        "Inequality – Mathematical & Coded",
-        "Input-Output Machine",
-        "Statement-Assumption / Conclusion / Course of Action",
-        "Cause & Effect"
-      ],
-      "Verbal Reasoning": [
+        "Inequality (Mathematical & Coded)",
         "Coding-Decoding (Old & New Pattern)",
         "Blood Relations",
         "Direction & Distance",
         "Ranking & Order",
         "Alphanumeric Series"
       ],
-      "Analytical Reasoning": [
-        "Data Sufficiency",
+      "Analytical & Critical Reasoning": [
+        "Input-Output Machine (Basic & Advanced)",
+        "Data Sufficiency (Basic & Advanced)",
         "Decision Making",
-        "Critical Reasoning"
+        "Critical Reasoning (Arguments, Assumptions, Inferences)",
+        "Strengthening & Weakening Arguments"
       ]
     },
-    "Preliminary Exam – Quantitative Aptitude": {
+    "Quantitative Aptitude & Data Interpretation": {
       "Arithmetic": [
         "Number System & Simplification / Approximation",
         "Percentages",
         "Profit, Loss & Discount",
-        "Ratio, Proportion & Partnership",
-        "Simple & Compound Interest",
+        "Ratio, Proportion & Partnership (Basic & Complex)",
+        "Simple & Compound Interest (Basic & Complex)",
         "Time, Speed & Distance (Boats, Trains)",
         "Time & Work & Pipes",
         "Average, Mixtures & Alligation",
         "Problems on Ages"
       ],
-      "Data Interpretation": [
-        "Tabular DI",
-        "Bar Graph DI",
-        "Line Graph DI",
-        "Pie Chart DI",
-        "Mixed & Caselet DI"
+      "Data Interpretation & Analysis": [
+        "Tabular, Bar, Line & Pie Charts",
+        "Mixed DI (Two or more graphs combined)",
+        "Caselet DI – Paragraph-based Data",
+        "Radar / Web Charts",
+        "Data Analysis – Comparison & Inference"
       ],
-      "Advanced Mathematics": [
+      "Advanced Mathematics & Statistics": [
         "Quadratic Equations",
         "Number Series (Missing & Wrong Term)",
-        "Data Sufficiency",
         "Probability",
-        "Permutation & Combination"
+        "Permutation & Combination",
+        "Mean, Median, Mode"
       ]
     },
-    "Preliminary Exam – English Language": {
+    "English Language": {
       "Grammar & Usage": [
-        "Error Detection & Correction",
+        "Error Detection in Sentences & Paragraphs",
         "Sentence Improvement",
         "Fill in the Blanks (Single & Double)",
         "Active & Passive Voice",
@@ -598,110 +1219,76 @@
       ],
       "Vocabulary": [
         "Synonyms & Antonyms",
-        "Word Usage – Contextual Meaning",
+        "Word Usage & Contextual Meaning",
         "Idioms & Phrases",
         "One-word Substitution",
         "Spelling & Word Pair Errors"
       ],
-      "Comprehension & Writing": [
-        "Reading Comprehension",
+      "Comprehension & Verbal Ability": [
+        "Reading Comprehension (Factual, Inferential & Analytical)",
+        "Theme & Tone Identification",
         "Cloze Test",
         "Para Jumbles",
         "Para / Sentence Completion",
         "Sentence Connectors & Column-based Matching"
+      ],
+      "Descriptive Writing": [
+        "Formal & Informal Letter Writing",
+        "Essay – Banking, Economy & Current Affairs Topics"
       ]
     },
-    "Mains Exam – Reasoning & Computer Aptitude": {
-      "Advanced Reasoning": [
-        "Complex Multi-Variable Puzzles",
-        "Advanced Input-Output",
-        "Logical Reasoning – Arguments, Assumptions, Inferences",
-        "Data Sufficiency (Advanced)",
-        "Coded Inequality & Coding-Decoding (New Pattern)"
-      ],
-      "Computer Aptitude": [
+    "Computer Aptitude": {
+      "Computer Fundamentals & Software": [
         "Basics of Computer – Hardware, Software, Input/Output",
         "Operating Systems (Windows, Linux Basics)",
         "MS Office – Word, Excel, PowerPoint Shortcuts",
-        "Internet & Networking – Browsers, Email, TCP/IP, LAN/WAN",
-        "Cybersecurity – Threats, Malware, Firewalls",
         "Database Basics – DBMS, SQL Fundamentals",
         "Number Systems – Binary, Octal, Hexadecimal Conversions",
         "Programming Basics – Algorithms, Flowcharts"
-      ]
-    },
-    "Mains Exam – Data Analysis & Interpretation": {
-      "Data Interpretation (Advanced)": [
-        "Complex Tabular DI",
-        "Mixed DI (Two or more graphs combined)",
-        "Caselet DI – Paragraph-based Data",
-        "Radar / Web Charts",
-        "Data Analysis – Comparison & Inference"
       ],
-      "Statistical Concepts": [
-        "Mean, Median, Mode",
-        "Standard Deviation & Variance",
-        "Probability",
-        "Permutation & Combination",
-        "Set Theory & Venn Diagrams"
+      "Internet, Networking & Cybersecurity": [
+        "Internet & Networking – Browsers, Email, TCP/IP, LAN/WAN",
+        "Cybersecurity – Threats, Malware, Firewalls"
       ]
     },
-    "Mains Exam – General / Economy / Banking / Financial Awareness": {
+    "General, Economy & Banking Awareness": {
       "Banking & Financial Awareness": [
-        "Functions of RBI – Monetary Policy, CRR, SLR, Repo, MSF",
-        "Types of Banks – Commercial, Cooperative, Payment, Small Finance",
+        "Functions of RBI – Monetary Policy, CRR, SLR, Repo",
+        "Types of Banks – Commercial, RRB, Cooperative, Payment, Small Finance",
+        "NABARD & Priority Sector Lending",
         "Banking Schemes – Jan Dhan, Mudra, PM SVANidhi",
         "NPA Management – IBC, SARFAESI Act, CIBIL",
         "Financial Inclusion & Digital Banking – UPI, BHIM, RuPay",
         "Insurance – IRDAI, Types of Insurance Products",
-        "Capital Markets – SEBI, Primary & Secondary Markets",
-        "Mutual Funds, Bonds & Derivatives",
-        "Budget – Revenue & Capital Expenditure, Deficit Types",
-        "Monetary Policy Committees & their Decisions"
+        "Capital Markets – SEBI, Primary & Secondary Markets"
       ],
       "Economy": [
         "Macroeconomic Indicators – GDP, Inflation, Balance of Payments",
         "Economic Survey & Union Budget Highlights",
         "International Economic Institutions – IMF, World Bank, WTO",
-        "Government Schemes – Infrastructure, Housing, Employment",
-        "Trade Policy & FDI Regulations"
+        "Government Schemes – Infrastructure, Housing, Employment"
       ],
-      "Static GK": [
+      "Current Affairs & Static GK": [
+        "Last 6 Months of Banking, Financial & Economy News",
+        "RBI Circulars & Policy Announcements",
+        "New Appointments – Governor, CMD, CEO of Banks",
+        "National & International Events",
         "Currencies & Capitals of Countries",
         "National Parks, Tiger Reserves & Sanctuaries",
         "Important Dams, Rivers & Passes",
-        "Books & Authors",
-        "Science & Technology – Basics & Current Developments",
-        "Awards & Honours – National & International",
         "Headquarters of Financial & International Organisations"
-      ],
-      "Current Affairs": [
-        "Last 6 Months of Banking & Financial News",
-        "RBI Circulars & Policy Announcements",
-        "New Appointments – Governor, CMD, CEO of Banks",
-        "International Summits & their Outcomes",
-        "Government Policy Announcements & Schemes"
       ]
     },
-    "Mains Exam – English Language": {
-      "Advanced Grammar & Usage": [
-        "Error Detection in Sentences & Paragraphs",
-        "Advanced Sentence Reconstruction",
-        "Connector-based Sentence Joining"
-      ],
-      "Advanced Comprehension": [
-        "Long Reading Comprehension (Inferential & Analytical)",
-        "Theme & Tone Identification",
-        "Vocabulary from Context"
-      ],
-      "Descriptive Writing (Essay & Letter)": [
-        "Formal & Informal Letter Writing",
-        "Essay – Banking, Economy & Current Affairs Topics",
-        "Précis Writing"
+    "Hindi Language (Optional for RRB PO)": {
+      "Hindi Grammar & Comprehension": [
+        "गद्यांश – पठन बोध",
+        "वाक्य-शुद्धि (Error Detection)",
+        "मुहावरे और लोकोक्तियाँ",
+        "रिक्त स्थान भरना",
+        "विलोम, समानार्थी शब्द"
       ]
     }
   },
-
   "GATE CSE": {
     "General Aptitude (GA)": {
       "Verbal Ability": [
@@ -987,140 +1574,6 @@
       ]
     }
   },
-
-  "IBPS RRB PO": {
-    "Preliminary Exam – Reasoning Ability": {
-      "Puzzles & Arrangements": [
-        "Linear Seating Arrangement",
-        "Circular Arrangement",
-        "Floor-based Puzzles",
-        "Scheduling & Month-based Puzzles",
-        "Box, Stack & Bag Puzzles"
-      ],
-      "Verbal Reasoning": [
-        "Syllogism",
-        "Blood Relations",
-        "Coding-Decoding",
-        "Alphanumeric Series",
-        "Direction & Distance"
-      ],
-      "Analytical Reasoning": [
-        "Inequality (Direct & Coded)",
-        "Input-Output",
-        "Data Sufficiency",
-        "Order & Ranking"
-      ]
-    },
-    "Preliminary Exam – Quantitative Aptitude": {
-      "Arithmetic": [
-        "Number System, HCF & LCM",
-        "Simplification & Approximation",
-        "Percentages, Profit & Loss",
-        "Ratio, Proportion & Mixtures",
-        "Time, Speed & Distance",
-        "Time & Work",
-        "Simple & Compound Interest",
-        "Average & Problems on Ages"
-      ],
-      "Data Interpretation & Advanced Maths": [
-        "Tabular DI",
-        "Bar Graph & Line Graph DI",
-        "Pie Chart DI",
-        "Number Series (Missing & Wrong Term)",
-        "Quadratic Equations"
-      ]
-    },
-    "Mains Exam – Reasoning": {
-      "High-Level Reasoning": [
-        "Multi-Dimensional & Multi-Variable Puzzles",
-        "Advanced Syllogism (Possibility Cases)",
-        "Advanced Input-Output",
-        "Machine-based Coding",
-        "Critical Reasoning – Strengthening & Weakening Arguments"
-      ],
-      "Data Sufficiency & Decision Making": [
-        "Numerical Data Sufficiency",
-        "Verbal Data Sufficiency",
-        "Situational Decision Making"
-      ]
-    },
-    "Mains Exam – Quantitative Aptitude": {
-      "DI & Analytical": [
-        "Complex Mixed DI",
-        "Caselet DI",
-        "Data Analysis & Comparison"
-      ],
-      "Advanced Arithmetic & Algebra": [
-        "Partnership & Compound Interest (Complex)",
-        "Probability & Set Theory",
-        "Permutation & Combination",
-        "Statistics – Mean, Median, Mode"
-      ]
-    },
-    "Mains Exam – General Awareness": {
-      "Banking & Financial Awareness": [
-        "RBI – Functions, Monetary Policy & Instruments",
-        "Regional Rural Banks – Structure, Functions, Role",
-        "NABARD – Mission, Schemes, Agricultural Finance",
-        "Priority Sector Lending – Categories & Targets",
-        "Government Banking Schemes (PM Jan Dhan, MUDRA, Kisan Credit Card)",
-        "Financial Inclusion – Business Correspondents, Digital Banking",
-        "NPA & Bad Loan Resolution",
-        "Insurance – IRDAI, Crop & Life Insurance"
-      ],
-      "Current Affairs": [
-        "National & International Events (Last 6 months)",
-        "Government Schemes & Policy Announcements",
-        "Banking & Economy News",
-        "Awards, Appointments & Sports"
-      ],
-      "Static GK": [
-        "Capitals, Currencies & Headquarters",
-        "Important Days & Themes",
-        "Books & Authors",
-        "National Parks & Wildlife Sanctuaries",
-        "Dams, Rivers & Passes of India"
-      ]
-    },
-    "Mains Exam – English / Hindi Language": {
-      "English": [
-        "Reading Comprehension",
-        "Cloze Test",
-        "Error Detection & Sentence Improvement",
-        "Para Jumbles",
-        "Fill in the Blanks – Grammar & Vocabulary"
-      ],
-      "Hindi": [
-        "गद्यांश – पठन बोध",
-        "वाक्य-शुद्धि (Error Detection)",
-        "मुहावरे और लोकोक्तियाँ",
-        "रिक्त स्थान भरना",
-        "विलोम, समानार्थी शब्द"
-      ]
-    },
-    "Mains Exam – Computer Knowledge": {
-      "Computer Fundamentals": [
-        "History & Generations of Computers",
-        "Hardware – CPU, Memory, Input/Output Devices",
-        "Software – System Software, Application Software",
-        "Operating Systems – Windows, Linux Basics",
-        "Memory Types – RAM, ROM, Cache, Secondary Storage"
-      ],
-      "Networking & Internet": [
-        "Internet & its Services – WWW, Email, Search Engines",
-        "Networking Basics – LAN, WAN, MAN, Topologies",
-        "Protocols – HTTP, FTP, TCP/IP, DNS",
-        "Cybersecurity – Viruses, Malware, Firewalls, Phishing"
-      ],
-      "MS Office & Database": [
-        "MS Word – Formatting, Tables, Mail Merge",
-        "MS Excel – Formulas, Functions, Charts, Pivot Tables",
-        "MS PowerPoint – Slides, Animations, Transitions",
-        "Database Basics – DBMS, SQL, Queries"
-      ]
-    }
-  },
-
   "RBI Grade B": {
     "Phase 1 – General Awareness": {
       "Banking & Financial Awareness": [
@@ -1525,36 +1978,44 @@
         "Simple & Multiple Linear Regression – R², Residual Analysis, Multicollinearity"
       ]
     },
-    "Improve Phase": [
-      "Design of Experiments (DOE) – Terminology (Factors, Levels, Responses, Runs)",
-      "Full Factorial Experiments – Main Effects, Interaction Effects, Confounding",
-      "Fractional Factorial Experiments – Resolution III, IV, V; Aliasing",
-      "Plackett-Burman Designs – Screening Experiments",
-      "Response Surface Methodology (RSM) – Central Composite, Box-Behnken Designs",
-      "Taguchi Methods – Signal-to-Noise Ratio, Loss Function, Orthogonal Arrays",
-      "EVOP (Evolutionary Operation) – Process Optimisation",
-      "Lean Tools – 5S, Kaizen, Kanban, Poka-Yoke (Mistake Proofing), SMED",
-      "Setup Reduction – Internal vs External Setup, SMED Steps",
-      "Pull Systems – Kanban Sizing, Supermarket Pull, FIFO Lanes",
-      "Theory of Constraints (TOC) – Bottleneck Identification, Drum-Buffer-Rope",
-      "Solution Selection – Pugh Matrix, Weighted Decision Matrix",
-      "Pilot Planning – Piloting, Simulation, Risk Mitigation"
-    ],
-    "Control Phase": [
-      "Statistical Process Control (SPC) – Control Chart Selection Guide",
-      "Variable Control Charts – X̄-R Chart, X̄-S Chart, I-MR Chart",
-      "Attribute Control Charts – p-chart, np-chart, c-chart, u-chart",
-      "Control Chart Interpretation – Western Electric Rules, Nelson Rules",
-      "Process Capability Post-improvement – Cp, Cpk Validation",
-      "Control Plans – Key Control Points, Reaction Plans, Responsible Parties",
-      "Standard Operating Procedures (SOPs) – Writing, Training, Compliance",
-      "Visual Management – Dashboards, Andon, Shadow Boards",
-      "Mistake Proofing (Poka-Yoke) – Contact, Fixed-value, Motion-step Methods",
-      "Training & Knowledge Transfer – Cross-training, Documentation",
-      "Sustaining Gains – Monitoring Plans, Audit Schedules",
-      "Project Closure – Financial Validation, Lessons Learned, Handoff to Process Owner",
-      "Replication Opportunities – Applying Solutions to Similar Processes"
-    ]
+    "Improve Phase": {
+      "Design of Experiments (DOE)": [
+        "Design of Experiments (DOE) – Terminology (Factors, Levels, Responses, Runs)",
+        "Full Factorial Experiments – Main Effects, Interaction Effects, Confounding",
+        "Fractional Factorial Experiments – Resolution III, IV, V; Aliasing",
+        "Plackett-Burman Designs – Screening Experiments",
+        "Response Surface Methodology (RSM) – Central Composite, Box-Behnken Designs",
+        "Taguchi Methods – Signal-to-Noise Ratio, Loss Function, Orthogonal Arrays",
+        "EVOP (Evolutionary Operation) – Process Optimisation"
+      ],
+      "Lean Improvement Tools": [
+        "Lean Tools – 5S, Kaizen, Kanban, Poka-Yoke (Mistake Proofing), SMED",
+        "Setup Reduction – Internal vs External Setup, SMED Steps",
+        "Pull Systems – Kanban Sizing, Supermarket Pull, FIFO Lanes",
+        "Theory of Constraints (TOC) – Bottleneck Identification, Drum-Buffer-Rope",
+        "Solution Selection – Pugh Matrix, Weighted Decision Matrix",
+        "Pilot Planning – Piloting, Simulation, Risk Mitigation"
+      ]
+    },
+    "Control Phase": {
+      "Statistical Process Control (SPC)": [
+        "Statistical Process Control (SPC) – Control Chart Selection Guide",
+        "Variable Control Charts – X̄-R Chart, X̄-S Chart, I-MR Chart",
+        "Attribute Control Charts – p-chart, np-chart, c-chart, u-chart",
+        "Control Chart Interpretation – Western Electric Rules, Nelson Rules",
+        "Process Capability Post-improvement – Cp, Cpk Validation"
+      ],
+      "Sustaining & Closing": [
+        "Control Plans – Key Control Points, Reaction Plans, Responsible Parties",
+        "Standard Operating Procedures (SOPs) – Writing, Training, Compliance",
+        "Visual Management – Dashboards, Andon, Shadow Boards",
+        "Mistake Proofing (Poka-Yoke) – Contact, Fixed-value, Motion-step Methods",
+        "Training & Knowledge Transfer – Cross-training, Documentation",
+        "Sustaining Gains – Monitoring Plans, Audit Schedules",
+        "Project Closure – Financial Validation, Lessons Learned, Handoff to Process Owner",
+        "Replication Opportunities – Applying Solutions to Similar Processes"
+      ]
+    }
   },
   "Microsoft Azure Administrator (AZ-104)": {
     "Manage Azure Identities & Governance": {
@@ -1885,18 +2346,20 @@
         "SLIs, SLOs & SLAs – Error Budget Concepts"
       ]
     },
-    "Configuring Access & Security": [
-      "Cloud IAM Best Practices – Least Privilege, Separation of Duties, Resource Hierarchy",
-      "Service Accounts – Types, Keys, Workload Identity Federation",
-      "IAM Conditions – Attribute-based Access Control",
-      "Audit Logs – Admin Activity, Data Access, System Event, Policy Denied Logs",
-      "Cloud Armor – Security Policies, WAF Rules, Adaptive Protection, Rate Limiting",
-      "Cloud KMS – Key Rings, Keys, Versions, CMEK, CSEK",
-      "Secret Manager – Secret Versions, IAM, Rotation, Replication",
-      "Binary Authorization – Attestation for GKE",
-      "VPC Service Controls – Perimeters, Access Policies",
-      "Chronicle SIEM & Security Command Center (SCC) – Findings, Assets, Compliance"
-    ]
+    "Configuring Access & Security": {
+      "IAM, Keys & Security Services": [
+        "Cloud IAM Best Practices – Least Privilege, Separation of Duties, Resource Hierarchy",
+        "Service Accounts – Types, Keys, Workload Identity Federation",
+        "IAM Conditions – Attribute-based Access Control",
+        "Audit Logs – Admin Activity, Data Access, System Event, Policy Denied Logs",
+        "Cloud Armor – Security Policies, WAF Rules, Adaptive Protection, Rate Limiting",
+        "Cloud KMS – Key Rings, Keys, Versions, CMEK, CSEK",
+        "Secret Manager – Secret Versions, IAM, Rotation, Replication",
+        "Binary Authorization – Attestation for GKE",
+        "VPC Service Controls – Perimeters, Access Policies",
+        "Chronicle SIEM & Security Command Center (SCC) – Findings, Assets, Compliance"
+      ]
+    }
   },
   "PMI Project Management Professional (PMP)": {
     "Predictive (Waterfall) Project Environments": {
@@ -2002,5 +2465,4 @@
       ]
     }
   }
-
 }
